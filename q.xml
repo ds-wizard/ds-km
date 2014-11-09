@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<datastewardship>
+<chapter id="1" title="Design of experiment">
+In this part of the data stewardship questionnaire, you will be asked
+questions about the setup of your research.
+<question id="1" title="Is there any pre-existing data?">
+Are there any data sets available in the world that are relevant to
+your planned research?
+<expert name="Barend Mons" email="barend.mons@dtls.nl"/>
+<answer label="No" responsetype="advice">
+You know that this is very unlikely? This question is not only about
+data sets that are similar to what you want to determine yourself, but
+also reference data or data that should be mined from the existing
+literature. Further, it is very likely that you will refer to related
+data, e.g. other databases where you usually "quickly look something
+up", but that could maybe be properly integrated, especially if you
+need to do such lookups multiple times.
+</answer>
+<answer label="Yes" responsetype="followup">
+<ask id="2"/>
+</answer>
+</question>
+<question id="2" title="Will you be using any pre-existing data?">
+Will you be referring to any earlier measured data, reference data, or data that should be mined from 
+existing literature?
+<answer label="No" responsetype="ok"/>
+<answer label="Yes" responsetype="followup">
+  <ask id="3"/>
+  <ask id="9"/>
+</answer>
+</question>
+<question id="3" title="Will you use reference data?">
+Much of todays data is used in comparison with reference data. A
+genome for instance is compared with a reference genome to identify
+genomic variants. If you use reference data, there are several other
+issues that you should consider.
+<answer label="Yes" responsetype="followup">
+<ask id="4"/>
+<ask id="5"/>
+<ask id="6"/>
+</answer>
+<answer label="No" responsetype="ok"/>
+</question>
+<question id="4" title="Where is it available?">
+  Do you know where the reference data is available, what the
+  conditions for use are, and how to reference it?
+</question>
+<question id="5" title="What format?">
+  Do you know the data format of the reference data? Is this suitable
+  for your work? Does it need to be converted?
+</question>
+<question id="6" title="Is it versioned?">
+ Many reference data sets evolve over time. If the reference data set
+ changes, this may affect your results. If different versions of a
+ reference data set exist, you need to establish your
+ "version policy".
+ <answer label="Yes" responsetype="followup">
+   <ask id="7"/>
+   <ask id="8"/>
+ </answer>
+ <answer label="No" responsetype="ok"/>
+</question>
+<question id="7" title="Which version will you be using?">
+If there are different versions available, you have to decide with all
+project partners together which version you will be using. Probably
+you will go for the latest release as of the date of the start of your
+research project. However, if you have other data from older projects
+that need to be merged, you may need to consider using the same
+release you used for a previous project.
+</question>
+<question id="8" title="Will you change the reference when it is updated?">
+If the reference changes while you are working on your research
+project, you need to decide whether you will follow these
+changes. Most likely that will mean that you have to do some analyses
+again, so you will need to make sure enough resources are available to
+do so. You can decide to stay with the version that you started with;
+this can have the disadvantage that you will not benefit from added
+information or added consistency.
+</question>
+<question id="9" title="Will you use any existing (non-reference) data
+			sets?">
+  Even if you will be producing your own data, you often will also be
+  relying on existing data sets. You may need to integrate your new data
+  with an existing data set or retrieve additional information from
+  related data bases. Will you be doing such things?
+  <answer label="Yes" responsetype="followup">
+    <ask id="10"/>
+    <ask id="14"/>
+  </answer>
+  <answer label="No" responsetype="advice">
+    Did you research all the data that exists? You may not be aware of
+    all existing data that could be available. Although using and/or integrating
+    existing data sets may pose a challenge, it will normally be
+    cheaper than collecting everything yourself. Even if you decide
+    not to use an existing data set, it is better to do this as a
+    conscious decision!
+  </answer>
+</question>
+<question id="10" title="Will you be able to get access to the data?">
+  Do you know who owns the data, and how to get access?
+  Obviously, this question and the followup questions will need to be
+  answered for every data set you plan to use.
+  <answer label="Yes" responsetype="followup">
+    <ask id="11"/>
+    <ask id="12"/>
+    <ask id="13"/>
+  </answer>
+  <answer label="No" responsetype="advice">
+    I guess that means you will not be using the existing data anyway.
+  </answer>
+</question>
+<question id="11" title="Will the owners of the existing data work
+			 with you on your research?"/>
+<question id="12" title="Will a renewal of any informed consent be
+			 needed?"/>
+<question id="13" title="Are there usage restrictions that could be in
+			 the way of your research?"/>
+<question id="14" title="How will you access the data?"/>
+</chapter>
+</datastewardship>
