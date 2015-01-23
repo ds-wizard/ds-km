@@ -27,6 +27,8 @@ existing literature?
 <answer label="Yes" responsetype="followup">
   <ask id="3"/>
   <ask id="9"/>
+  <ask id="20"/>
+  <ask id="21"/>
 </answer>
 </question>
 <question id="3" title="Will you use reference data?">
@@ -86,6 +88,10 @@ information or added consistency.
   <answer label="Yes" responsetype="followup">
     <ask id="10"/>
     <ask id="14"/>
+    <ask id="15"/>
+    <ask id="17"/>
+    <ask id="18"/>
+    <ask id="19"/>
   </answer>
   <answer label="No" responsetype="advice">
     Did you research all the data that exists? You may not be aware of
@@ -97,7 +103,7 @@ information or added consistency.
   </answer>
 </question>
 <question id="10" title="Will you be able to get access to the data?">
-  Do you know who owns the data, and how to get access?
+  For all data that is not your own, do you know who owns the data, and how to get access?
   Obviously, this question and the followup questions will need to be
   answered for every data set you plan to use.
   <answer label="Yes" responsetype="followup">
@@ -110,11 +116,126 @@ information or added consistency.
   </answer>
 </question>
 <question id="11" title="Will the owners of the existing data work
-			 with you on your research?"/>
+			 with you on your research?">
+ Will you enter into a collaboration with the owners of the original
+ data that you plan to use? Will they be available to help you with
+ integration questions? Will they be linking their work to you?
+</question>
 <question id="12" title="Will a renewal of any informed consent be
-			 needed?"/>
+			 needed?">
+  If the data that you will re-use is coupled to people, Is the
+  informed consent that was originally obtained from those people
+  including your current research?
+</question>
 <question id="13" title="Are there usage restrictions that could be in
-			 the way of your research?"/>
-<question id="14" title="How will you access the data?"/>
+			 the way of your research?">
+ What will you not be allowed to do with the existing data? Will this
+ pose any problems to your project? How are you ensuring that you will
+ adhere to the usage restrictions?
+</question>
+<question id="14" title="How will you access the data?">
+  Will you have full access of the data (i.e. will you receive a copy)
+  or will you be have access in another way (i.e. via a web site with
+  restricted questions or by running your own analysis on the computer
+  of the data owners? Will this be seamless for your research?
+</question>
+<question id="15" title="Is the existing data available in a format
+			 that is identical to what you will be using
+			 yourself?">
+  Data formats can vary, and evolve. For each existing data source you
+  need to ask yourself whether it has the same format as you are using
+  yourself. Differences could also be in the terms used to fill in the
+  data (e.g. are they using "cancer" or "malignant neoplasm"? or maybe
+  a term from a different language?).
+  <answer label="Yes" responsetype="ok"/>
+  <answer label="No" responsetype="followup">
+    <ask id="16"/>
+  </answer>
+</question>
+<question id="16" title="Will you need to harmonize different sources
+			 of existing data?">
+  If you are combining data from different sources, harmonization may
+  be required. You may need to re-analyse some original data.
+</question>
+<question id="17" title="Is the data you are re-using fixed? Or is it still actively updated?">
+  If a data source that you are using is being updated over time, this
+  can affect your results. You therefore need to decide what you will do when the
+  data source changes: will you be able to keep using the same old version
+  (documented) for all your analyses? Or will you always be using the
+  latest version at any moment in time?
+  Will you re-do any analysis if the source changes? How can you
+  ensure reproducibility of your own results?
+</question>
+<question id="18" title="Is all of the data usable in its available
+			 form?">
+  Can you use all the data from the existing source in the form in
+  which it is available? Or will you need to curate the data? Will you
+  be making a subset? Can you make a subset easily? How will you
+  document these efforts so that others can reproduce what you did?
+</question>
+<question id="19" title="Do you know what data exists?">
+  Are you aware of all the existing data that you may be able to use?
+  Are you confident that you know what you could use?
+</question>
+<question id="20" title="How will the existing data be integrated?">
+  Who will do the work to integrate the existing data sources?
+  Is it known how this needs to be done exactly?
+</question>
+<question id="21" title="Will you be gathering data from literature?">
+  Will you be gathering data from the scientific literature?
+  <answer label="No" responsetype="ok"/>
+  <answer label="Yes" responsetype="followup">
+    <ask id="22"/>
+  </answer>
+</question>
+<question id="22" title="Will you be using text mining?">
+  Will you be using text mining tools to get the data from the
+  literature? Unless the data you are extracting is in one or a few
+  tables in a few papers, you may need an expert in text mining
+  literature data to be able to get a consistent result with a
+  reasonable effort.
+</question>
+<question id="23" title="Do you need to link to different types of
+			 data?">
+  The power of data is unleashed when different sources containing
+  different types of existing data are linked together. Will you be doing that?
+  <answer label="No" responsetype="ok"/>
+  <answer label="Yes" responsetype="followup">
+   <ask id="24"/>
+   <ask id="25"/>
+   <ask id="26"/>
+   <ask id="27"/>
+   <ask id="28"/>
+  </answer>
+</question>
+<question id="24" title="Will that need a project plan?">
+  Unless the coupling is of a type that has been done numerous times
+  before in similar ways, this kind of job can be tricky. It may be a
+  good idea to have someone knowledgeable in this field check whether
+  you need to take any special provisions.
+</question>
+<question id="25" title="What will you do if the coupled data is
+			 updated?">
+  If a data source that you are using is being updated over time, this
+  can affect your results. You therefore need to decide what you will do when the
+  data source changes: will you be able to keep using the same old version
+  (documented) for all your analyses? Or will you always be using the
+  latest version at any moment in time?
+  Will you re-do any analysis if the source changes? How can you
+  ensure reproducibility of your own results?
+</question>
+<question id="26" title="What will you do if the format is changed?">
+ How will it affect your project if the format in which the original
+ data is available is changed?
+</question>
+<question id="27" title="Are conversions needed?"/>
+<question id="28" title="Will you link existing data or join them?">
+  Will your coupling of existing data be a new data set that contains
+  the relations between the two original data sets, and link back to
+  the sources? Or will you ingest the data that you will be coupling
+  and combine it into a single new source? This decision has
+  implications for data ownership, data access, and for the burden of
+  maintenance.
+</question>
 </chapter>
 </datastewardship>
