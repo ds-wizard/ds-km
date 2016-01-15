@@ -228,7 +228,11 @@ information or added consistency.
  How will it affect your project if the format in which the original
  data is available is changed?
 </question>
-<question id="27" title="Are conversions needed?"/>
+<question id="27" title="Are conversions needed?">
+  Will you need to be performing a format conversion, translate items,
+  or do you need to change the data you couple to to another nomenclature?
+  In that case, make sure you plan enough time for this.
+</question>
 <question id="28" title="Will you link existing data or join them?">
   Will your coupling of existing data be a new data set that contains
   the relations between the two original data sets, and link back to
@@ -236,6 +240,26 @@ information or added consistency.
   and combine it into a single new source? This decision has
   implications for data ownership, data access, and for the burden of
   maintenance.
+</question>
+<question id="29" title="Are you creating reference data?">
+  Will you be creating data that others will use as reference data
+  later?
+  <answer label="Yes" responsetype="followup">
+    <ask id="30"/>
+    <ask id="31"/>
+    <ask id="32"/>
+  </answer>
+  <answer label="No" responsetype="ok"/>
+</question>
+<question id="30" title="What will the rules for use be?"/>
+<question id="31" title="How will you maintain it?"/>
+<question id="32" title="How will the release schedule be?"/>
+<question id="33" title="Will you be storing data on biological samples?">
+  Will you be doing biobanking?
+  <answer label="Yes" responsetype="advice">
+    <ask id="34"/>
+  </answer>
+  <answer label="No" responsetype="ok"/>
 </question>
 </chapter>
 </datastewardship>
