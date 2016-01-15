@@ -241,7 +241,7 @@ information or added consistency.
   implications for data ownership, data access, and for the burden of
   maintenance.
 </question>
-<question id="29" title="Are you creating reference data?">
+<question id="29" bookid="1.12" title="Are you creating reference data?">
   Will you be creating data that others will use as reference data
   later?
   <answer label="Yes" responsetype="followup">
@@ -251,15 +251,47 @@ information or added consistency.
   </answer>
   <answer label="No" responsetype="ok"/>
 </question>
-<question id="30" title="What will the rules for use be?"/>
-<question id="31" title="How will you maintain it?"/>
-<question id="32" title="How will the release schedule be?"/>
-<question id="33" title="Will you be storing data on biological samples?">
-  Will you be doing biobanking?
-  <answer label="Yes" responsetype="advice">
+<question id="30" bookid="1.12.1" title="What will the rules for use be?"/>
+<question id="31" bookid="1.12.2" title="How will you maintain it?"/>
+<question id="32" bookid="1.12.3" title="How will the release schedule be?"/>
+<question id="33" bookid="1.13" title="Will you be biobanking?">
+  Will you be storing data about biological samples?
+  <answer label="Yes" responsetype="followup">
     <ask id="34"/>
   </answer>
   <answer label="No" responsetype="ok"/>
+</question>
+<question id="34" bookid="1.13.1" title="Where will information about the samples be stored?">
+  What is the biobank information system where your information will be stored?
+  <answer label="I will start my own biobank" responsetype="followup">
+    <ask id="35"/>
+  </answer>
+  <answer label="They will be added to an existing biobank" responsetype="followup">
+    <ask id="36"/>
+    <ask id="37"/>
+  </answer>
+</question>
+<question id="35" bookid="1.13.3" title="How will you make sure your biobank will be properly represented in relevant Catalogues?"/>
+<question id="36" bookid="1.13.4.1" title="Do you consult the owners of the biobank?"/>
+<question id="37" bookid="1.13.4.2" title="Does the biobank adhere to the FAIR principles?"/>
+<question id="38" bookid="1.14" title="Will you be collecting any experimental data?">
+  <answer label="No" responsetype="ok"/>
+  <answer label="Yes" responsetype="followup">
+    <ask id="39"/>
+    <ask id="40"/>
+  </answer>
+</question>
+<question id="39" bookid="1.14.1" title="How many subjects do you need to be able to get statistically meaningful results?">
+  How many control and how many intervention subjects will your study need? This can require quite a statistical optimization. Consulting an expert could be a good idea.
+</question>
+<question id="40" bookid="1.15" title="Selection of analysis technique.">
+  We will now pass a few questions related to the kind analysis you will be doing.
+  <answer label="Ok" responsetype="followup">
+          <ask id="41"/>
+  </answer>
+</question>
+<question id="41" bookid="1.15.1" title="At which level of biology do you need data?">
+  The choice of the analysis technique depends strongly on whether you need genetic data, expression data, data about the metabolome, or any other type of data.
 </question>
 </chapter>
 </datastewardship>
