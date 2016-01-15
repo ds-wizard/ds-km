@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <datastewardship>
 <chapter id="1" title="Design of experiment">
-Before you decide to embark on any new study, it is nowadays good practice to consider all options to keep the data generation part of your study as limited as possible. It is not because we can generate massive amounts of data that we always need to do so. Creating data with public money is bringing with it the responsibility to treat those data well and (if potentially useful) make them available for re-use by others. So, given the research question you would like to address, a very first question should always be
-
+In this part of the data stewardship questionnaire, you will be asked
+questions about the setup of your research.
 <question id="1" bookid="1.1" title="Is there any pre-existing data?">
 Are there any data sets available in the world that are relevant to
 your planned research?
@@ -22,7 +22,7 @@ need to do such lookups multiple times.
 </question>
 <question id="2" bookid="1.2" title="Will you be using any pre-existing data (including other people's data)?">
 Will you be referring to any earlier measured data, reference data, or data that should be mined from 
-existing literature? Your own data as well as data from others?
+existing literature?
 <answer label="No" responsetype="ok"/>
 <answer label="Yes" responsetype="followup">
   <ask id="3"/>
@@ -79,7 +79,7 @@ do so. You can decide to stay with the version that you started with;
 this can have the disadvantage that you will not benefit from added
 information or added consistency.
 </question>
-<question id="9" bookid="1.7" title="Will you use any existing (non-reference) data
+<question id="9" title="Will you use any existing (non-reference) data
 			sets?">
   Even if you will be producing your own data, you often will also be
   relying on existing data sets. You may need to integrate your new data
@@ -115,13 +115,13 @@ information or added consistency.
     I guess that means you will not be using the existing data anyway.
   </answer>
 </question>
-<question id="11" bookid="1.8" title="Will the owners of the existing data work
+<question id="11" title="Will the owners of the existing data work
 			 with you on your research?">
  Will you enter into a collaboration with the owners of the original
  data that you plan to use? Will they be available to help you with
  integration questions? Will they be linking their work to you?
 </question>
-<question id="12" bookid="1.9" title="Will a renewal of any informed consent be
+<question id="12" title="Will a renewal of any informed consent be
 			 needed?">
   If the data that you will re-use is coupled to people, Is the
   informed consent that was originally obtained from those people
@@ -152,7 +152,7 @@ information or added consistency.
     <ask id="16"/>
   </answer>
 </question>
-<question id="16" bookid="1.10" title="Will you need to harmonize different sources
+<question id="16" title="Will you need to harmonize different sources
 			 of existing data?">
   If you are combining data from different sources, harmonization may
   be required. You may need to re-analyse some original data.
@@ -177,18 +177,18 @@ information or added consistency.
   Are you aware of all the existing data that you may be able to use?
   Are you confident that you know what you could use?
 </question>
-<question id="20" bookid="1.11" title="How will the existing data be integrated?">
+<question id="20" title="How will the existing data be integrated?">
   Who will do the work to integrate the existing data sources?
   Is it known how this needs to be done exactly?
 </question>
-<question id="21" bookid="1.11.1" title="Will you be gathering data from literature?">
+<question id="21" title="Will you be gathering data from literature?">
   Will you be gathering data from the scientific literature?
   <answer label="No" responsetype="ok"/>
   <answer label="Yes" responsetype="followup">
     <ask id="22"/>
   </answer>
 </question>
-<question id="22" bookid="1.11.2" title="Will you be using text mining?">
+<question id="22" title="Will you be using text mining?">
   Will you be using text mining tools to get the data from the
   literature? Unless the data you are extracting is in one or a few
   tables in a few papers, you may need an expert in text mining
