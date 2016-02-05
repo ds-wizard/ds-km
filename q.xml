@@ -29,6 +29,7 @@ existing literature? Your own data as well as data from others?
   <ask id="9"/>
   <ask id="20"/>
   <ask id="21"/>
+  <ask id="42"/>
 </answer>
 </question>
 <question id="3" bookid="1.3" title="Will you use reference data?">
@@ -177,7 +178,7 @@ information or added consistency.
   Are you aware of all the existing data that you may be able to use?
   Are you confident that you know what you could use?
 </question>
-<question id="20" bookid="1.11" title="How will the existing data be integrated?">
+<question id="20" bookid="1.11" title="What/How/Who will integrate existing data?">
   Who will do the work to integrate the existing data sources?
   Is it known how this needs to be done exactly?
 </question>
@@ -292,6 +293,65 @@ information or added consistency.
 </question>
 <question id="41" bookid="1.15.1" title="At which level of biology do you need data?">
   The choice of the analysis technique depends strongly on whether you need genetic data, expression data, data about the metabolome, or any other type of data.
+  <!-- Could add information here on the types of data coming out of these techniques -->
+  <answer label="genes" responsetype="ok"/> <!-- sequencing, gene expression, imprinting -->
+  <answer label="proteins" responsetype="ok"/>
+  <answer label="metabolites" responsetype="ok"/>
+  <answer label="pathways" responsetype="ok"/>
 </question>
+<question id="42"  title="Will you couple existing (biobank) data sets?">
+  <answer label="Yes" responsetype="followup">
+    <ask id="48"/>
+    <ask id="43"/>
+    <ask id="44"/>
+    <ask id="45"/>
+    <ask id="46"/>
+    <ask id="47"/>
+    </answer>
+  </question>
+ <question id="43" title="Will you use deterministic or probabilistic couplings?"/>
+ <question id="44" title="Will you be using a Trusted Third Party?">
+   What is the procedure followed with the TTP? Where will what data be sent? 
+   Did a juridical advisor look at these?
+ </question>
+ <question id="45" title="Is the consent available for the coupling?">
+   A special consent is often necessary as further risks occur for re-identification when multiple data sets are coupled.
+ </question>
+ <question id="46" title="How will you check whether coupled data are representative of your goal population?">
+   Sometimes when data sets are intersected, the coupled data are no longer representative (e.g. a required parameter
+   was never or less frequently recorded for men). How will you make sure that the data still cover the entire 
+   goal population?
+ </question>
+ <question id="47" title="What is the goal of the coupling?">
+   Are you looking for more data about the same subjects (intersection, enrichment)? Or getting more different subjects (union)?
+ </question>
+ <question id="48" title="What variables will you use for coupling?"/>
+ <question id="49" bookid="1.15.2" title="Will you conduct intervention studies?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="50"/>
+     <ask id="53"/>
+     <ask id="54"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="50" bookid="1.15.2.1" title="Will you do challenge tests?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="51"/>
+     <ask id="52"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="51" bookid="1.15.2.1.1" title="How do you select the proper time points?"/>
+ <question id="52" bookid="1.15.2.1.2" title="How many time points are needed?"/>
+ <question id="53" title="Will you be using the Phenotype Database?"/>
+ <question id="54" title="Will you perform a human intervention study?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="55"/>
+     <ask id="56"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="55" title="Will you register at clinicaltrial.gov?"/>
+ <question id="56" bookid="1.15.2.2.1" title="Did you get ethical approval?"/>
 </chapter>
 </datastewardship>
