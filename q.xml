@@ -275,11 +275,16 @@ information or added consistency.
 <question id="35" bookid="1.13.3" title="How will you make sure your biobank will be properly represented in relevant Catalogues?"/>
 <question id="36" bookid="1.13.4.1" title="Do you consult the owners of the biobank?"/>
 <question id="37" bookid="1.13.4.2" title="Does the biobank adhere to the FAIR principles?"/>
-<question id="38" bookid="1.14" title="Will you be collecting any experimental data?">
+<question id="38" bookid="1.14" title="Will you be collecting experimental data?">
   <answer label="No" responsetype="ok"/>
   <answer label="Yes" responsetype="followup">
     <ask id="39"/>
     <ask id="40"/>
+    <ask id="49"/>
+    <ask id="57"/>
+    <ask id="58"/>
+    <ask id="64"/>
+    <adk id="73"/>
   </answer>
 </question>
 <question id="39" bookid="1.14.1" title="How many subjects do you need to be able to get statistically meaningful results?">
@@ -307,7 +312,8 @@ information or added consistency.
     <ask id="45"/>
     <ask id="46"/>
     <ask id="47"/>
-    </answer>
+   </answer>
+   <answer label="No" responsetype="ok"/>
   </question>
  <question id="43" title="Will you use deterministic or probabilistic couplings?"/>
  <question id="44" title="Will you be using a Trusted Third Party?">
@@ -353,5 +359,78 @@ information or added consistency.
  </question>
  <question id="55" title="Will you register at clinicaltrial.gov?"/>
  <question id="56" bookid="1.15.2.2.1" title="Did you get ethical approval?"/>
+ <question id="57" bookid="1.15.3" title="Which database will you use to store the data?"/>
+ <question id="58" bookid="1.15.4" title="Do you need to arrange informed consent?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="59"/>
+     <ask id="60"/>
+     <ask id="61"/>
+     <ask id="62"/>
+     <ask id="63"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="59" bookid="1.15.4.1" title="What kind of feedback will be given to the subjects/patients?">
+   Does that potentially have consequences for their family members?
+ </question>
+ <question id="60" bookid="1.15.4.2" title="Did you get separate and explicit consent about sharing (individual) data?"/>
+ <question id="61" bookid="1.15.4.3" title="Do you already have enough statistical power?">
+   Does sufficient data already exist elsewhere?
+ </question>
+ <question id="62" bookid="1.15.4.4" title="Do you need all the privacy sensitive data fields?"/>
+ <question id="63" bookid="1.15.4.5" title="Do you need to consult your ethical committee?"/>
+ <question id="64" bookid="1.17" title="Are there any data format considerations?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="65"/>
+     <ask id="66"/>
+     <ask id="67"/>
+     <ask id="68"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="65" bookid="1.17.1" title="What is the volume of each anticipated data set?"/>
+ <question id="66" bookid="1.17.2" title="What data formats do the machines yield?"/>
+ <question id="67" bookid="1.17.3" title="Is preprocessing needed?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="69"/>
+     <ask id="70"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="68" bookid="1.17.4" title="Will you create images?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="71"/>
+     <ask id="72"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="69" bookid="1.17.3.1" title="Are there ready to use workflows for formatting and preprocessing?"/>
+ <question id="70" bookid="1.17.3.2" title="What compute capacity is needed?"/>
+ <question id="71" bookid="1.17.4.1" title="Do images need to be pseudonymized?"/>
+ <question id="72" bookid="1.17.4.2" title="Is there textual information in the photographs?"/>
+ <question id="73" bookid="1.18" title="Are there potential issues regarding data ownershop and access control?">
+   <answer label="Drill deeper" responsetype="followup">
+     <ask id="74"/>
+     <ask id="75"/>
+     <ask id="76"/>
+   </answer>
+   <answer label="Skip" responsetype="ok"/>
+ </question>
+ <question id="74" bookid="1.18.1" title="Who needs access?"/>
+ <question id="75" bookid="1.18.2" title="Where will the storage and compute servers be placed?"/>
+ <question id="76" bookid="1.18.3" title="What level of data protection is needed?">
+   <answer label="Drill deeper" responsetype="followup">
+     <ask id="77"/>
+   </answer>
+   <answer label="Skip" responsetype="ok"/>
+ </question>
+ <question id="77" bookid="1.18.3.1" title="Is the collected data privacy sensitive?">
+   <answer label="Yes" responsetype="followup">
+     <ask id="78"/>
+   </answer>
+   <answer label="No" responsetype="ok"/>
+ </question>
+ <question id="78" bookid="1.18.3.1.1" title="Does it need to be anonymized?"/>
+ <question id="99" bookid="1.18.4" title="What will the IP situation be?"/>
 </chapter>
 </datastewardship>

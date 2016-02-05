@@ -237,6 +237,12 @@ class HTGenerator(object):
             f.write("<p>%s</p>\n" % q.text)
         s = []
         self.qpath.addq(q)
+        # Some sanity in anwers
+        labels = [answer.get('label') for answer in q.iter('answer')]
+        if 'Yes' in labels and 'No' not in labels:
+            print "WARNING: question %s has Yes but lacks No answer" % q.get('id')
+        if 'No' in labels and 'Yes' not in labels:
+            print "WARNING: question %s has No but lacks Yes answer" % q.get('id')
         for answer in q.iter('answer'):
             self.namer.set(a=answer)
             # If the answer has only one followup question, and there is no answer text,
@@ -327,6 +333,8 @@ class HTGenerator(object):
             else:
                 qra.append(q)
         # Store the array to be able to "calculate the next question".
+        if len(qra) == 0:
+            raise ValueError("No answers in followup for %s" % self.qpath.toptitle())
         self.qpath.addfollowuprow(qra)
         for q in qra:
             f.write('<li><a href="../%s">%s</a>\n' % (self.namer.copy(q=q).questionlink(), q.get('title')))
