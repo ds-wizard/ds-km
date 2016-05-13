@@ -1,20 +1,20 @@
 { "datastewardship": 
-  { "chapter": 
-    { "id": 1,
-      "title": "Design of experiment",
-      "text": "Before you decide to embark on any new study, it is nowadays good practice to consider all options to keep the data generation part of your study as limited as possible. It is not because we can generate massive amounts of data that we always need to do so. Creating data with public money is bringing with it the responsibility to treat those data well and (if potentially useful) make them available for re-use by others.",
-      "questions" :
-      [ { "id": 1,
-          "bookid": "1.1",
-          "type": "choice",
-          "title": "Is there any pre-existing data?",
-          "description": "Are there any data sets available in the world that are relevant to your planned research?",
-          "expert": {"name": "Barend Mons", "email": "barend.mons@dtls.nl"},
-          "answer": 
-          [ { "label": "No",
-              "responsetype": "advice",
-              "text": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually "quickly look something up", but that could maybe be properly integrated, especially if you need to do such lookups multiple times." },
-            { "label": "Yes",
-              "responsetype": "followup",
-              "followup": [ 2 ] } ] } ] } } }
+    { "chapter": 
+	{ "id": 1,
+	    "title": "Design of experiment",
+	    "text": "Before you decide to embark on any new study, it is nowadays good practice to consider all options to keep the data generation part of your study as limited as possible. It is not because we can generate massive amounts of data that we always need to do so. Creating data with public money is bringing with it the responsibility to treat those data well and (if potentially useful) make them available for re-use by others.",
+	    "questions" :
+	    [ { "id": 1,
+		"bookid": "1.1",
+		"type": "choice",
+		"title": "Is there any pre-existing data?",
+		"description": "Are there any data sets available in the world that are relevant to your planned research?",
+		"expert": {"name": "Barend Mons", "email": "barend.mons@dtls.nl"},
+		"answer": 
+		[ { "label": "No",
+		    "responsetype": "advice",
+		    "text": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually \"quickly look something up\", but that could maybe be properly integrated, especially if you need to do such lookups multiple times." },
+		    { "label": "Yes",
+			"responsetype": "followup",
+			"followup": [ 2 ] } ] } ] } } }
 
