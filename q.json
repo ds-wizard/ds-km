@@ -1,10 +1,7 @@
-{ "chapterid": 1,
-  "title": "Design of experiment",
-  "text": "Before you decide to embark on any new study, it is nowadays good practice to consider all options to keep the data generation part of your study as limited as possible. It is not because we can generate massive amounts of data that we always need to do so. Creating data with public money is bringing with it the responsibility to treat those data well and (if potentially useful) make them available for re-use by others.",
+{ "chapterid": 1, "chaptertitle": "Design of experiment",
+  "introtext": "Before you decide to embark on any new study, it is nowadays good practice to consider all options to keep the data generation part of your study as limited as possible. It is not because we can generate massive amounts of data that we always need to do so. Creating data with public money is bringing with it the responsibility to treat those data well and (if potentially useful) make them available for re-use by others.",
   "questions" :
-  [ { "questionid": 1,
-    "bookreference": "1.1",
-    "type": "choice",
+  [ { "questionid": 1, "bookreference": "1.1", "type": "choice",
     "title": "Is there any pre-existing data?",
     "description": "Are there any data sets available in the world that are relevant to your planned research?",
     "expert": {"name": "Barend Mons", "email": "barend.mons@dtls.nl"},
@@ -15,13 +12,15 @@
     }
     ] 
   },
-  { "questionid": 2,
-    "bookreference": "1.2",
-    "type": "choice",
+  { "questionid": 2, "bookreference": "1.2", "type": "choice",
     "title": "Will you be using any pre-existing data (including other people's data)?",
     "description": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
     "answer": 
     [ { "label": "No", "response": {"type": "ok"} },
-      { "label": "Yes", "response": {"type": "followup", "questions": [ 3, 9, 20 ] } }
+      { "label": "Yes", "response": {"type": "followup", "questions": [ 3, 9, 20, 21, 42 ] } }
     ]
-  } 
+  },
+  { "questionid": 3, "bookreference": "1.3", "type": "choice",
+    "title": "Will you use reference data?"
+  }
+}
