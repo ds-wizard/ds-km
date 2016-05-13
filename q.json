@@ -29,6 +29,13 @@
       [ { "label": "No", "response": {"type": "ok"} },
         { "label": "Yes", "response": {"type": "followup", "questions": [ 4, 5, 6 ] } }
       ]
-    } 
+    },
+    { "questionid": 4, "bookreference": "1.4", "type": "choice",
+      "title": "Do you know where the reference data is available, what the conditions for use are, and how to reference it?",
+      "answer": 
+      [ { "label": "No", "response": { "type": "advice", "text": "Figure this out quickly!" } },
+        { "label": "Yes", "response": {"type": "ok" } } 
+      ] 
+    }
   ]
 }
