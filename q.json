@@ -1,26 +1,34 @@
 { "chapterid": 1, "chaptertitle": "Design of experiment",
   "introtext": "Before you decide to embark on any new study, it is nowadays good practice to consider all options to keep the data generation part of your study as limited as possible. It is not because we can generate massive amounts of data that we always need to do so. Creating data with public money is bringing with it the responsibility to treat those data well and (if potentially useful) make them available for re-use by others.",
   "questions" :
-  [ { "questionid": 1, "bookreference": "1.1", "type": "choice",
-    "title": "Is there any pre-existing data?",
-    "description": "Are there any data sets available in the world that are relevant to your planned research?",
-    "expert": {"name": "Barend Mons", "email": "barend.mons@dtls.nl"},
-    "answer": 
-    [ { "label": "No",
-      "response": { "type": "advice", "text": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually \"quickly look something up\", but that could maybe be properly integrated, especially if you need to do such lookups multiple times." },
-      { "label": "Yes", "response": {"type": "followup", "questions": [ 2 ] } } 
-    }
-    ] 
-  },
-  { "questionid": 2, "bookreference": "1.2", "type": "choice",
-    "title": "Will you be using any pre-existing data (including other people's data)?",
-    "description": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
-    "answer": 
-    [ { "label": "No", "response": {"type": "ok"} },
-      { "label": "Yes", "response": {"type": "followup", "questions": [ 3, 9, 20, 21, 42 ] } }
-    ]
-  },
-  { "questionid": 3, "bookreference": "1.3", "type": "choice",
-    "title": "Will you use reference data?"
-  }
+  [ 
+    { "questionid": 1, "bookreference": "1.1", "type": "choice",
+      "title": "Is there any pre-existing data?",
+      "description": "Are there any data sets available in the world that are relevant to your planned research?",
+      "expert": {"name": "Barend Mons", "email": "barend.mons@dtls.nl"},
+      "answer": 
+      [ 
+        { "label": "No",
+          "response": { "type": "advice", "text": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually \"quickly look something up\", but that could maybe be properly integrated, especially if you need to do such lookups multiple times." }
+        },
+        { "label": "Yes", "response": {"type": "followup", "questions": [ 2 ] } } 
+      ] 
+    },
+    { "questionid": 2, "bookreference": "1.2", "type": "choice",
+      "title": "Will you be using any pre-existing data (including other people's data)?",
+      "description": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
+      "answer": 
+      [ { "label": "No", "response": {"type": "ok"} },
+        { "label": "Yes", "response": {"type": "followup", "questions": [ 3, 9, 20, 21, 42 ] } }
+      ]
+    },
+    { "questionid": 3, "bookreference": "1.3", "type": "choice",
+      "title": "Will you use reference data?",
+      "description": "Much of todays data is used in comparison with reference data. A genome for instance is compared with a reference genome to identify genomic variants. If you use reference data, there are several other issues that you should consider.",
+      "answer": 
+      [ { "label": "No", "response": {"type": "ok"} },
+        { "label": "Yes", "response": {"type": "followup", "questions": [ 4, 5, 6 ] } }
+      ]
+    } 
+  ]
 }
