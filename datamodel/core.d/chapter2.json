@@ -1,0 +1,68 @@
+{
+    "chapterid": 2,
+    "namespace": "core",
+    "formatversion": 1,
+    "title": "Data design and planning",
+    "text": "In the data design and planning phase, we will make sure that we know what data comes when, that we have enough storage space and compute power to deal with it, and that all the responsibilities have been taken care of.",
+    "questions" :
+    [
+	{
+	    "questionid": 1, "bookreference": "2.1", "type": "choice",
+	    "title": "Are you using data types used by others too?",
+	    "answers": 
+	    [
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup"}
+	    ]
+	},
+	{
+	    "questionid": 2, "bookreference": "2.2", "type": "choice",
+	    "title": "Will you be using new types of data?",
+	    "answers": 
+	    [
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup"}
+	    ]
+	},
+	{
+	    "questionid": 3, "bookreference": "2.3", "type": "choice",
+	    "title": "How will you be storing metadata?",
+	    "text": "For the re-usability of your data by yourself or others at a later stage, a lot of information about the data, how it was collected and how it can be used should be stored with the data. Such data about the data is called metadata, and this set of questions are about this metadata",
+	    "answers": 
+	    [
+		{   "label": "Skip", "responsetype": "ok" },
+		{   "label": "Explore", "responsetype": "followup"}
+	    ]
+	},
+	{
+	    "questionid": 4, "type": "choice",
+	    "title": "Do you need to do storage capacity planning?",
+	    "text": "If you collect substantial amounts of data, amounts that do not trivially fit on the storage that you normally have available or that can not be trivially transported between systems, some planning is necessary. Do you think you need to do storage capacity planning? If the expected total data volume is larger than 1 TB, you probably need to answer 'yes' here.",
+	    "answers": 
+	    [
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup"}
+	    ]
+	},
+	{
+	    "questionid": 5, "type": "choice",
+	    "title": "Is the risk of information loss or theft acceptable?",
+	    "text": "There are many factors that can contribute to the risk of information loss or information theft. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
+	    "answers": 
+	    [
+		{   "label": "Yes", "responsetype": "ok" },
+		{   "label": "Drill deeper", "responsetype": "followup"}
+	    ]
+	},
+	{
+	    "questionid": 6, "type": "choice",
+	    "title": "Do you need to do compute capacity planning?",
+	    "text": "If you require substantial amounts of compute power, amounts that are not trivially absorbed in what you usually have abailable, some planning is necessary. Do you think you need to do compute capacity planning?",
+	    "answers": 
+	    [
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup"}
+	    ]
+	}
+    ]
+}

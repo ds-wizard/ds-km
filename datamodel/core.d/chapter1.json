@@ -50,6 +50,33 @@
 		{    "label": "No", "responsetype": "advice", "text": "Figure this out quickly!" },
 		{    "label": "Yes", "responsetype": "ok" } 
 	    ] 
+	},
+	{
+	    "questionid": 29, "bookrefererence": "1.12", "type": "choice",
+	    "title": "Will reference data be created?",
+	    "answers": 
+	    [
+		{   "label": "No", "responsetype": "ok"},
+		{   "label": "Yes", "responsetype": "followup"}
+	    ]
+	},
+	{
+	    "questionid": 33, "bookreference": "1.13", "type": "choice",
+	    "title": "Will you be storing samples?",
+	    "answers": 
+	    [
+		{   "label": "No", "responsetype": "ok"},
+		{   "label": "Yes", "responsetype": "followup"}
+	    ]
+	},
+	{
+	    "questionid": 38, "bookreference": "1.14", "type": "choice",
+	    "title": "Will you be collecting experimental data?",
+	    "answers": 
+	    [
+		{   "label": "No", "responsetype": "ok"},
+		{   "label": "Yes", "responsetype": "followup"}
+	    ]
 	}
     ]
 }
