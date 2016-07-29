@@ -1,0 +1,54 @@
+{
+    "chapterid": 5,
+    "namespace": "core",
+    "formatversion": 1,
+    "title": "Data integration",
+    "questions" :
+    [
+	{
+	    "questionid": 1, "type": "choice",
+	    "title": "What is the framework you will use for data integration?",
+	    "answers": 
+	    [ 
+		{   "label": "Taken care of", "responsetype": "ok" },
+		{   "label": "Drill deeper", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 2, "type": "choice",
+	    "title": "Will you be using common or exchangeable units?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "ok" }
+	    ]
+	},
+	{
+	    "questionid": 3, "type": "choice",
+	    "title": "Will you be using common ontologies?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "advice", "text": "Choose the ontologies before you start" }
+	    ]
+	},
+	{
+	    "questionid": 4, "type": "choice",
+	    "title": "Will there be potential issues with statistical normalization?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 5, "type": "choice",
+	    "title": "Do you have all tools to couple the necessary data types?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "ok" }
+	    ]
+	}
+    ]
+}

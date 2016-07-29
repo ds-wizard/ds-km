@@ -26,4 +26,6 @@ Ideas behind the data model
    * Only answers that have responsetype "followup" can be used as preconditions for other questions. [this may need consideration.... do we need this at all?]
    * [Can we deal with internationalization? Does an answer need an "id" to refer to rather than a label?]
 * [How/when will we deal with blue arrows in the mind map? Can we make hyperlinks between different parts of the questionnaire?]
+* [In due time we can add "dmptext" attributes to answers of choice questions. Other questions may require the user to type the dmptext himself]
+* [Can we/do we need to make version dependencies between the core and localizations?]
 
