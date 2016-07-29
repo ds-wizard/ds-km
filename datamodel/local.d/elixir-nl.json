@@ -1,0 +1,13 @@
+{
+    "chapterid": 1,
+    "namespace": "elixir-nl",
+    "formatversion": 1,
+    "questions":
+    [
+	{
+	    "questionid" : 1, "namespace": "core",
+	    "expert" : {"type": "person", "name": "Barend Mons", "email": "barend.mons@dtls.nl"}
+	}
+    ]
+}
+ 
