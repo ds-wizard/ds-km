@@ -9,6 +9,7 @@ Ideas behind the data model
 * Localizations can be used to add specifics for a field of research, or to add specifics for an institute or infrastructure.
 * Localizations can add new questions, or modify properties of core questions.
 * A question property specified in a localization /replaces/ that property completely.
+  * [Do we need a way in which a localization can "add" an answer? Could it add a question instead? AGILE, solve it when it comes up?]
 * Localizations can be stacked, and extend or overwrite each others changes
 * Chapters are simply numbered. Every localization can refer to the same chapters.
 * If two localizations both want to define a new chapter (probably rare?), that requires coordination.
@@ -22,4 +23,7 @@ Ideas behind the data model
    * Each answer has a "label", often "Yes" and "No", in some cases "Skip" and "Drill deeper" are used [how to deal with refering to an expert?]
    * Each answer has a "responsetype" that is one of "ok", "followup" or "advice".
    * Answers of type "advice" have a "text" that will be shown if that answer is selected.
-   * Only answers that have responsetype "followup" can be used as preconditions for other questions. [this may need consideration....]
+   * Only answers that have responsetype "followup" can be used as preconditions for other questions. [this may need consideration.... do we need this at all?]
+   * [Can we deal with internationalization? Does an answer need an "id" to refer to rather than a label?]
+* [How/when will we deal with blue arrows in the mind map? Can we make hyperlinks between different parts of the questionnaire?]
+
