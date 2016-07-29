@@ -1,7 +1,15 @@
 #!/usr/bin/env python
-import glob
-import json
-for f in glob.glob('*.json'):
-    print "Testing %s..." % f
-    void = json.load(open(f))
+import os
+
+def testf(fn): 
+    import json
+    print "Testing %s..." % fn
+    void = json.load(open(fn))
+
+def testd(arg, dirname, fnames):
+    for fn in fnames:
+        if fn.endswith('.json'):
+            testf(os.path.join(dirname, fn))
+
+os.path.walk('datamodel', testd, None)
 
