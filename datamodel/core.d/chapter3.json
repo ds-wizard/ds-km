@@ -1,0 +1,47 @@
+{
+    "chapterid": 3,
+    "namespace": "core",
+    "formatversion": 1,
+    "title": "Data Capture (the equipment phase)",
+    "questions" :
+    [
+	{
+	    "questionid": 1, "type": "choice",
+	    "title": "Who will do the measurements?",
+	    "text": "Are there easily accessible specialized service providers for data capture?",
+	    "answers": 
+	    [ 
+		{   "label": "In the project", "responsetype": "ok" },
+		{   "label": "External party", "responsetype": "advice", "text": "consider making them partner in the project" }
+	    ]
+	},
+	{
+	    "questionid": 2, "type": "choice",
+	    "title": "Is special care needed to get the raw data ready for processing?",
+	    "text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion of the primary data may take special planning.",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 3, "type": "choice",
+	    "title": "Do you have any non-equipment data capture?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 4, "type": "choice",
+	    "title": "Is there a data integration tool that can handle and combine all the data types you are dealing with in your project?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "followup" },
+		{   "label": "Yes", "responsetype": "followup" }
+	    ]
+	}
+    ]
+}
