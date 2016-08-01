@@ -3,8 +3,10 @@ Ideas behind the data model
 * It consists of a large core that is applicable everywhere, and localizations.
 * It consists of chapters of questions that belong together
 * questions form hierarchies: most questions are only asked under the precondition that another question has been answered in a specific way
+   * "precondition" refers to a question id (plus name space, if different from default) and an answer id.
+   * only one precondition can be given for a question. (currently?)
 * questions that need to be posed as a series are asked in order of their "order" property (an integer number).
-   * If the order is not given, it is 10 times the questionid.
+   * If the order is not given, it is 10 times the questionid plus 1000 times the number of the namespace.
    * If two questions have the same order, the order in which they will be presented is undefined.
 * Localizations can be used to add specifics for a field of research, or to add specifics for an institute or infrastructure.
 * Localizations can add new questions, or modify properties of core questions.
@@ -20,7 +22,13 @@ Ideas behind the data model
 * Questions come in different types: "choice", ....
 * For questions of type "choice" a fixed number of selections are possible for the answer.
    * The possible answers are given in the "answers" property.
-   * Each answer has a "label", often "Yes" and "No", in some cases "Skip" and "Drill deeper" are used [how to deal with refering to an expert?]
+   * Each answer has a "label", often "Yes" and "No", in some cases "Skip" and "Drill deeper" are used. 
+   * The answer that does not require followup is preferred to be the first, that is a "No" or "taken care of" answer.
+   * Answers have an integer "id" that is used to specify the order in which they are presented. 
+   * We use "id" instead of "answerid" for brevity. Since the "answer" section is always small, there should never be confusion.
+   * The "id" of the answer is also the reference for the "precondition" for a "followup" quetion.
+   * It is a reasonable idea to have the No answer have id=0, and the yes answer id=1 for human readability.
+   * [how to deal with refering to an expert?]
    * Each answer has a "responsetype" that is one of "ok", "followup" or "advice".
    * Answers of type "advice" have a "text" that will be shown if that answer is selected.
    * Only answers that have responsetype "followup" can be used as preconditions for other questions. [this may need consideration.... do we need this at all?]

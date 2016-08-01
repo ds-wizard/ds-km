@@ -10,8 +10,8 @@
 	    "title": "Will data interpretation and modeling require significant compute infrastructure capacity?",
 	    "answers": 
 	    [ 
-		{   "label": "Taken care of", "responsetype": "ok" },
-		{   "label": "Yes", "responsetype": "advice", "text": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
+		{   "id": 0, "label": "Taken care of", "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "advice", "text": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
 	    ]
 	},
 	{
@@ -20,8 +20,8 @@
 	    "text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
 	    "answers": 
 	    [ 
-		{   "label": "Taken care of", "responsetype": "ok" },
-		{   "label": "Drill deeper", "responsetype": "followup" }
+		{   "id": 0, "label": "Taken care of", "responsetype": "ok" },
+		{   "id": 1, "label": "Drill deeper", "responsetype": "followup" }
 	    ]
 	},
 	{
@@ -29,8 +29,8 @@
 	    "title": "Will you be doing (automated) knowledge discovery?",
 	    "answers": 
 	    [ 
-		{   "label": "No", "responsetype": "ok" },
-		{   "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No", "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "followup" }
 	    ]
 	}	
     ]

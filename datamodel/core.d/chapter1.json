@@ -13,21 +13,21 @@
 	    "answers": 
 	    [ 
 		{
-		    "label": "No", "responsetype": "advice",
+		    "id": 0, "label": "No", "responsetype": "advice",
 		    "text": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually \"quickly look something up\", but that could maybe be properly integrated, especially if you need to do such lookups multiple times."
 		},
-		{   "label": "Yes", "responsetype": "followup" }
+		{   "id": 1, "label": "Yes", "responsetype": "followup" }
 	    ]
 	},
 	{
 	    "questionid": 2, "bookreference": "1.2", "type": "choice",
-	    "precondition": { "questionid": 1, "answer": "Yes"},
+	    "precondition": { "questionid": 1, "answerid": 1 },
 	    "title": "Will you be using any pre-existing data (including other people's data)?",
 	    "text": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
 	    "answers": 
 	    [
-		{   "label": "No", "responsetype": "ok" },
-		{   "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No", "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "followup"}
 	    ]
 	},
 	{
@@ -37,8 +37,8 @@
 	    "text": "Much of todays data is used in comparison with reference data. A genome for instance is compared with a reference genome to identify genomic variants. If you use reference data, there are several other issues that you should consider.",
 	    "answers": 
 	    [
-		{   "label": "No", "responsetype": "ok"},
-		{   "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No", "responsetype": "ok"},
+		{   "id": 1, "label": "Yes", "responsetype": "followup"}
 	    ]
 	},
 	{
@@ -47,8 +47,8 @@
 	    "title": "Do you know where the reference data is available, what the conditions for use are, and how to reference it?",
 	    "answers": 
 	    [
-		{    "label": "No", "responsetype": "advice", "text": "Figure this out quickly!" },
-		{    "label": "Yes", "responsetype": "ok" } 
+		{    "id": 0, "label": "No", "responsetype": "advice", "text": "Figure this out quickly!" },
+		{    "id": 1, "label": "Yes", "responsetype": "ok" } 
 	    ] 
 	},
 	{
@@ -56,8 +56,8 @@
 	    "title": "Will reference data be created?",
 	    "answers": 
 	    [
-		{   "label": "No", "responsetype": "ok"},
-		{   "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No", "responsetype": "ok"},
+		{   "id": 1, "label": "Yes", "responsetype": "followup"}
 	    ]
 	},
 	{
@@ -65,8 +65,8 @@
 	    "title": "Will you be storing samples?",
 	    "answers": 
 	    [
-		{   "label": "No", "responsetype": "ok"},
-		{   "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No", "responsetype": "ok"},
+		{   "id": 1, "label": "Yes", "responsetype": "followup"}
 	    ]
 	},
 	{
@@ -74,8 +74,8 @@
 	    "title": "Will you be collecting experimental data?",
 	    "answers": 
 	    [
-		{   "label": "No", "responsetype": "ok"},
-		{   "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No", "responsetype": "ok"},
+		{   "id": 1, "label": "Yes", "responsetype": "followup"}
 	    ]
 	}
     ]
