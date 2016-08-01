@@ -28,4 +28,5 @@ Ideas behind the data model
 * [How/when will we deal with blue arrows in the mind map? Can we make hyperlinks between different parts of the questionnaire?]
 * [In due time we can add "dmptext" attributes to answers of choice questions. Other questions may require the user to type the dmptext himself]
 * [Can we/do we need to make version dependencies between the core and localizations?]
+* Does each localization require a separate file for each chapter, or can these be combined if desired?
 

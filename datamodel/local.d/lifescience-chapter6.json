@@ -1,0 +1,18 @@
+{
+    "chapterid": 6,
+    "namespace": "lifesciences",
+    "formatversion": 1,
+    "questions" :
+    [
+	{
+	    "questionid": 1, "type": "choice",
+	    "title": "Will you do systems biology modeling?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup" }
+	    ]
+	}
+    ]
+}
+

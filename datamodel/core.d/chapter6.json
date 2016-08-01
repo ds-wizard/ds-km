@@ -1,0 +1,41 @@
+{
+    "chapterid": 6,
+    "namespace": "core",
+    "formatversion": 1,
+    "title": "Data integration",
+    "questions" :
+    [
+	{
+	    "questionid": 1, "type": "choice",
+	    "title": "Will data interpretation and modeling require significant compute infrastructure capacity?",
+	    "answers": 
+	    [ 
+		{   "label": "Taken care of", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "advice", "text": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
+	    ]
+	},
+	{
+	    "questionid": 2, "type": "choice",
+	    "title": "How will you be making sure there is good provenance of the data analysis?",
+	    "text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
+	    "answers": 
+	    [ 
+		{   "label": "Taken care of", "responsetype": "ok" },
+		{   "label": "Drill deeper", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 3, "type": "choice",
+	    "title": "Will you be doing (automated) knowledge discovery?",
+	    "answers": 
+	    [ 
+		{   "label": "No", "responsetype": "ok" },
+		{   "label": "Yes", "responsetype": "followup" }
+	    ]
+	}	
+    ]
+}
+
+	
+	
+
