@@ -1,0 +1,63 @@
+{
+    "chapterid": 7,
+    "namespace": "core",
+    "formatversion": 1,
+    "title": "Information and insight",
+    "questions" :
+    [
+	{
+	    "questionid": 1, "type": "choice",
+	    "title": "Will you be working with the philosophy 'as open as possible' for your data?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No", "responsetype": "advice", "text": "You will need to explain!" },
+		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 2, "type": "choice",
+	    "title": " Are there legal reasons why (some of your) data can not be completely open?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" , "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 3, "type": "choice",
+	    "title": " Are there business reasons why (some of your) data can not be completely open?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" , "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 4, "type": "choice",
+	    "title": "Where will you make your data available?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "Skip" , "responsetype": "ok" },
+		{   "id": 1, "label": "Drill Deeper", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 5, "type": "choice",
+	    "title": "Did you work out the financial aspects of making the data available?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "Skip" , "responsetype": "ok" },
+		{   "id": 1, "label": "Drill Deeper", "responsetype": "followup" }
+	    ]
+	},
+	{
+	    "questionid": 6, "type": "choice",
+	    "title": "Will you be archiving data?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" , "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+	    ]
+	}
+    ]
+}	
