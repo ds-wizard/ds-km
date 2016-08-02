@@ -3,7 +3,7 @@ Ideas behind the data model
 * It consists of a large core that is applicable everywhere, and localizations.
 * It consists of chapters of questions that belong together
 * questions form hierarchies: most questions are only asked under the precondition that another question has been answered in a specific way
-   * "precondition" refers to a question id (plus name space, if different from default) and an answer id.
+   * "precondition" refers to a question id (plus name space, if different from default) and an answer id (if a choice question).
    * only one precondition can be given for a question. (currently?)
 * questions that need to be posed as a series are asked in order of their "order" property (an integer number).
    * If the order is not given, it is 10 times the questionid plus 1000 times the number of the namespace.
@@ -19,8 +19,9 @@ Ideas behind the data model
 * If a localization wants to add a question, it is numbered in its own namespace.
 * If a localization wants to modify/augment a question of the core, it must explicitly mention the "core" namespace for the question.
 * The core does not mention any experts. The "expert" property of questions is added through localization.
-* Questions come in different types: "choice", ....
-* For questions of type "choice" a fixed number of selections are possible for the answer.
+* Questions come in different types: "choice", "list", "text"....
+* For questions of type "choice":
+   * a fixed number of selections are possible for the answer, presented as radio buttons to the user.
    * The possible answers are given in the "answers" property.
    * Each answer has a "label", often "Yes" and "No", in some cases "Skip" and "Drill deeper" are used. 
    * The answer that does not require followup is preferred to be the first, that is a "No" or "taken care of" answer.
@@ -32,7 +33,13 @@ Ideas behind the data model
    * Each answer has a "responsetype" that is one of "ok", "followup" or "advice".
    * Answers of type "advice" have a "text" that will be shown if that answer is selected.
    * Only answers that have responsetype "followup" can be used as preconditions for other questions. [this may need consideration.... do we need this at all?]
-   * [Can we deal with internationalization? Does an answer need an "id" to refer to rather than a label?]
+* For questions of "list" type:
+   * No possible answers are given in the data model.
+   * The user can type short free text items. "Add another one"....
+   * Any followup questions need to be answered for each of the given free text answers.
+* For questions of type "text":
+   * No possible answers are given in the data model.
+   * The user can type a short free text answer.
 * [How/when will we deal with blue arrows in the mind map? Can we make hyperlinks between different parts of the questionnaire?]
 * [In due time we can add "dmptext" attributes to answers of choice questions. Other questions may require the user to type the dmptext himself]
 * [Can we/do we need to make version dependencies between the core and localizations?]
