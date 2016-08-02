@@ -26,7 +26,8 @@
 	    "text": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "No", "responsetype": "ok" },
+		{   "id": 0, "label": "No", "responsetype": "advice",
+		    "text": "Did you research all the data that exists? You may not be aware of all existing data that could be available. Although using and/or integrating existing data sets may pose a challenge, it will normally be cheaper than collecting everything yourself. Even if you decide not to use an existing data set, it is better to do this as a conscious decision." },
 		{   "id": 1, "label": "Yes", "responsetype": "followup"}
 	    ]
 	},
@@ -92,6 +93,40 @@
 	    "precondition": { "questionid": 2, "answerid": 1 },
 	    "title": "What existing non-reference data sets will you use?",
 	    "text": "Even if you will be producing your own data, you often will also be relying on existing data sets. You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?"
+	},
+	{
+	    "questionid": 11, "bookreference": "1.8", "type": "choice",
+	    "precondition": { "questionid": 9 },
+	    "title": "Will the owners of this data set work with you on this study",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No", "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "ok" },
+		{   "id": 2, "label": "We are the owners", "responsetype": "ok" }
+	    ]
+	},
+	{
+	    "questionid": 12, "bookreference": "1.9", "type": "choice",
+	    "precondition": { "questionid": 9 },
+	    "title": "Is extenstion of any consent for privacy sensitive data be needed?",
+	    "text": "If the data that you will re-use is coupled to people, is the informed consent that was originally obtained from those people covering your current research?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "Not applicable", "responsetype": "ok" },
+		{   "id": 1, "label": "Existing consent applies", "responsetype": "ok" },
+		{   "id": 2, "label": "New consent needed", "responsetype": "ok" }
+	    ]
+	},
+	{
+	    "questionid": 16, "bookreference": "1.10", "type": "choice",
+	    "precondition": { "questionid": 2 },
+	    "title": "Do you need to harmonize different sources of existing data?",
+	    "text": "If you are combining data from different sources, harmonization may be required. You may need to re-analyse some original data.",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No", "responsetype": "ok" },
+		{   "id": 1, "label": "Yes", "responsetype": "ok" }
+	    ]
 	},
 	{
 	    "questionid": 29, "bookrefererence": "1.12", "type": "choice",
