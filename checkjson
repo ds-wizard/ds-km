@@ -8,7 +8,7 @@ def testf(fn):
 
 def testd(arg, dirname, fnames):
     for fn in fnames:
-        if fn.endswith('.json'):
+        if fn.endswith('.json') and not fn.startswith('.#'):
             testf(os.path.join(dirname, fn))
 
 os.path.walk('datamodel', testd, None)
