@@ -12,6 +12,7 @@ Ideas behind the data model
 6 Localizations can add new questions, or modify properties of core questions.
 7 A question property specified in a localization /replaces/ that property completely.
   * [Do we need a way in which a localization can "add" an answer? Could it add a question instead? AGILE, solve it when it comes up?]
+  * A localization can add the property "hidden": 1 to a question to remove that question and all subquestions from the questionnaire.
 8 Localizations can be stacked, and extend or overwrite each others changes
 9 Chapters are simply numbered. Every localization can refer to the same chapters.
 10 If two localizations both want to define a new chapter (probably rare?), that requires coordination.
@@ -19,7 +20,7 @@ Ideas behind the data model
 12 If a localization wants to add a question, it is numbered in its own namespace.
 13 If a localization wants to modify/augment a question of the core, it must explicitly mention the "core" namespace for the question.
 14 The core does not mention any experts. The "expert" property of questions is added through localization.
-15 Questions come in different types: "option", "list", "text"....
+15 Questions come in different types: "option", "list", "string", "text"....
 16 For questions of type "options":
    * a fixed number of selections are possible for the answer, presented as radio buttons to the user. The user selects one.
    * A set of radiobuttons is good because it explicitly shows wheter the user has answered a question or not.
@@ -38,9 +39,9 @@ Ideas behind the data model
    * No possible answers are given in the data model.
    * The user can type short free text items. "Add another one"....
    * Any followup questions need to be answered for each of the given free text answers.
-18 For questions of type "text":
+18 For questions of type "string", "text":
    * No possible answers are given in the data model.
-   * The user can type a short free text answer.
+   * The user can type a short or long free text answer.
 19 [How/when will we deal with blue arrows in the mind map? Can we make hyperlinks between different parts of the questionnaire?]
 20 [In due time we can add "dmptext" attributes to answers of choice questions, with the literal text to be put in the data management plan. Other questions may require the user to type the dmptext himself]
 21 [Can we/do we need to make version dependencies between the core and localizations?]
