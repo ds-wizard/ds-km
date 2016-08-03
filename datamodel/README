@@ -13,6 +13,7 @@ Ideas behind the data model
 7 A question property specified in a localization /replaces/ that property completely.
   * [Do we need a way in which a localization can "add" an answer? Could it add a question instead? AGILE, solve it when it comes up?]
   * A localization can add the property "hidden": 1 to a question to remove that question and all subquestions from the questionnaire.
+  * Should a localization be able to set a fixed answer to a question? An editable answer?
 8 Localizations can be stacked, and extend or overwrite each others changes
 9 Chapters are simply numbered. Every localization can refer to the same chapters.
 10 If two localizations both want to define a new chapter (probably rare?), that requires coordination.
