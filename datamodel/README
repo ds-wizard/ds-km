@@ -1,26 +1,26 @@
 Ideas behind the data model
 
-* It consists of a large core that is applicable everywhere, and localizations.
-* It consists of chapters of questions that belong together
-* questions form hierarchies: most questions are only asked under the precondition that another question has been answered in a specific way
+1 It consists of a large core that is applicable everywhere, and localizations.
+2 It consists of chapters of questions that belong together
+3 questions form hierarchies: most questions are only asked under the precondition that another question has been answered in a specific way
    * "precondition" refers to a question id (plus name space, if different from default) and an answer id (if a choice question).
    * only one precondition can be given for a question. (currently?)
-* questions that need to be posed as a series are asked in order of their "order" property (an integer number).
+4 questions that need to be posed as a series are asked in order of their "order" property (an integer number).
    * If the order is not given, it is 10 times the questionid plus 1000 times the number of the namespace.
    * If two questions have the same order, the order in which they will be presented is undefined.
-* Localizations can be used to add specifics for a field of research, or to add specifics for an institute or infrastructure.
-* Localizations can add new questions, or modify properties of core questions.
-* A question property specified in a localization /replaces/ that property completely.
+5 Localizations can be used to add specifics for a field of research, or to add specifics for an institute or infrastructure.
+6 Localizations can add new questions, or modify properties of core questions.
+7 A question property specified in a localization /replaces/ that property completely.
   * [Do we need a way in which a localization can "add" an answer? Could it add a question instead? AGILE, solve it when it comes up?]
-* Localizations can be stacked, and extend or overwrite each others changes
-* Chapters are simply numbered. Every localization can refer to the same chapters.
-* If two localizations both want to define a new chapter (probably rare?), that requires coordination.
-* Questions in a chapter are numbered, but within a namespace. Every localization has a namespace that differs from "core".
-* If a localization wants to add a question, it is numbered in its own namespace.
-* If a localization wants to modify/augment a question of the core, it must explicitly mention the "core" namespace for the question.
-* The core does not mention any experts. The "expert" property of questions is added through localization.
-* Questions come in different types: "option", "list", "text"....
-* For questions of type "options":
+8 Localizations can be stacked, and extend or overwrite each others changes
+9 Chapters are simply numbered. Every localization can refer to the same chapters.
+10 If two localizations both want to define a new chapter (probably rare?), that requires coordination.
+11 Questions in a chapter are numbered, but within a namespace. Every localization has a namespace that differs from "core".
+12 If a localization wants to add a question, it is numbered in its own namespace.
+13 If a localization wants to modify/augment a question of the core, it must explicitly mention the "core" namespace for the question.
+14 The core does not mention any experts. The "expert" property of questions is added through localization.
+15 Questions come in different types: "option", "list", "text"....
+16 For questions of type "options":
    * a fixed number of selections are possible for the answer, presented as radio buttons to the user. The user selects one.
    * A set of radiobuttons is good because it explicitly shows wheter the user has answered a question or not.
    * The possible answers are given in the "answers" property.
@@ -34,15 +34,15 @@ Ideas behind the data model
    * Each answer has a "responsetype" that is one of "ok", "followup" or "advice".
    * Answers of type "advice" have a "text" that will be shown if that answer is selected.
    * Only answers that have responsetype "followup" can be used as preconditions for other questions. [this may need consideration.... do we need this at all?]
-* For questions of "list" type:
+17 For questions of "list" type:
    * No possible answers are given in the data model.
    * The user can type short free text items. "Add another one"....
    * Any followup questions need to be answered for each of the given free text answers.
-* For questions of type "text":
+18 For questions of type "text":
    * No possible answers are given in the data model.
    * The user can type a short free text answer.
-* [How/when will we deal with blue arrows in the mind map? Can we make hyperlinks between different parts of the questionnaire?]
-18 [In due time we can add "dmptext" attributes to answers of choice questions, with the literal text to be put in the data management plan. Other questions may require the user to type the dmptext himself]
-* [Can we/do we need to make version dependencies between the core and localizations?]
-* Does each localization require a separate file for each chapter, or can these be combined if desired?
+19 [How/when will we deal with blue arrows in the mind map? Can we make hyperlinks between different parts of the questionnaire?]
+20 [In due time we can add "dmptext" attributes to answers of choice questions, with the literal text to be put in the data management plan. Other questions may require the user to type the dmptext himself]
+21 [Can we/do we need to make version dependencies between the core and localizations?]
+22 Does each localization require a separate file for each chapter, or can these be combined if desired?
 
