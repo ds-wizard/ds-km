@@ -6,7 +6,7 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "type": "choice",
+	    "questionid": 1, "type": "option",
 	    "title": "Will you be working with the philosophy 'as open as possible' for your data?",
 	    "answers": 
 	    [ 
@@ -15,7 +15,7 @@
 	    ]
 	},
 	{
-	    "questionid": 2, "type": "choice",
+	    "questionid": 2, "type": "option",
 	    "title": " Are there legal reasons why (some of your) data can not be completely open?",
 	    "answers": 
 	    [ 
@@ -24,7 +24,7 @@
 	    ]
 	},
 	{
-	    "questionid": 3, "type": "choice",
+	    "questionid": 3, "type": "option",
 	    "title": " Are there business reasons why (some of your) data can not be completely open?",
 	    "answers": 
 	    [ 
@@ -33,7 +33,7 @@
 	    ]
 	},
 	{
-	    "questionid": 4, "type": "choice",
+	    "questionid": 4, "type": "option",
 	    "title": "Where will you make your data available?",
 	    "answers": 
 	    [ 
@@ -42,7 +42,7 @@
 	    ]
 	},
 	{
-	    "questionid": 5, "type": "choice",
+	    "questionid": 5, "type": "option",
 	    "title": "Did you work out the financial aspects of making the data available?",
 	    "answers": 
 	    [ 
@@ -51,7 +51,7 @@
 	    ]
 	},
 	{
-	    "questionid": 6, "type": "choice",
+	    "questionid": 6, "type": "option",
 	    "title": "Will you be archiving data?",
 	    "answers": 
 	    [ 

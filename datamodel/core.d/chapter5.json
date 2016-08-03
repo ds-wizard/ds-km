@@ -6,7 +6,7 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "type": "choice",
+	    "questionid": 1, "type": "option",
 	    "title": "What is the framework you will use for data integration?",
 	    "answers": 
 	    [ 
@@ -15,7 +15,7 @@
 	    ]
 	},
 	{
-	    "questionid": 2, "type": "choice",
+	    "questionid": 2, "type": "option",
 	    "title": "Will you be using common or exchangeable units?",
 	    "answers": 
 	    [ 
@@ -24,7 +24,7 @@
 	    ]
 	},
 	{
-	    "questionid": 3, "type": "choice",
+	    "questionid": 3, "type": "option",
 	    "title": "Will you be using common ontologies?",
 	    "answers": 
 	    [ 
@@ -33,7 +33,7 @@
 	    ]
 	},
 	{
-	    "questionid": 4, "type": "choice",
+	    "questionid": 4, "type": "option",
 	    "title": "Will there be potential issues with statistical normalization?",
 	    "answers": 
 	    [ 
@@ -42,7 +42,7 @@
 	    ]
 	},
 	{
-	    "questionid": 5, "type": "choice",
+	    "questionid": 5, "type": "option",
 	    "title": "Do you have all tools to couple the necessary data types?",
 	    "answers": 
 	    [ 

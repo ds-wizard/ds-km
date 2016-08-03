@@ -5,7 +5,7 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "type": "choice",
+	    "questionid": 1, "type": "option",
 	    "title": "Will you do systems biology modeling?",
 	    "answers": 
 	    [ 
@@ -14,7 +14,7 @@
 	    ]
 	},
 	{
-	    "questionid": 2, "type": "choice",
+	    "questionid": 2, "type": "option",
 	    "title": "Will you do structural modeling?",
 	    "answers": 
 	    [ 

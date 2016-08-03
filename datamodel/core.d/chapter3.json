@@ -6,7 +6,7 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "type": "choice",
+	    "questionid": 1, "type": "option",
 	    "title": "Who will do the measurements?",
 	    "text": "Are there easily accessible specialized service providers for data capture?",
 	    "answers": 
@@ -16,7 +16,7 @@
 	    ]
 	},
 	{
-	    "questionid": 2, "type": "choice",
+	    "questionid": 2, "type": "option",
 	    "title": "Is special care needed to get the raw data ready for processing?",
 	    "text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion of the primary data may take special planning.",
 	    "answers": 
@@ -26,7 +26,7 @@
 	    ]
 	},
 	{
-	    "questionid": 3, "type": "choice",
+	    "questionid": 3, "type": "option",
 	    "title": "Do you have any non-equipment data capture?",
 	    "answers": 
 	    [ 
@@ -35,7 +35,7 @@
 	    ]
 	},
 	{
-	    "questionid": 4, "type": "choice",
+	    "questionid": 4, "type": "option",
 	    "title": "Is there a data integration tool that can handle and combine all the data types you are dealing with in your project?",
 	    "answers": 
 	    [ 

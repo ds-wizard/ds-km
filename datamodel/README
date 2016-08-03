@@ -19,9 +19,10 @@ Ideas behind the data model
 * If a localization wants to add a question, it is numbered in its own namespace.
 * If a localization wants to modify/augment a question of the core, it must explicitly mention the "core" namespace for the question.
 * The core does not mention any experts. The "expert" property of questions is added through localization.
-* Questions come in different types: "choice", "list", "text"....
-* For questions of type "choice":
-   * a fixed number of selections are possible for the answer, presented as radio buttons to the user.
+* Questions come in different types: "option", "list", "text"....
+* For questions of type "options":
+   * a fixed number of selections are possible for the answer, presented as radio buttons to the user. The user selects one.
+   * A set of radiobuttons is good because it explicitly shows wheter the user has answered a question or not.
    * The possible answers are given in the "answers" property.
    * Each answer has a "label", often "Yes" and "No", in some cases "Skip" and "Drill deeper" are used. 
    * The answer that does not require followup is preferred to be the first, that is a "No" or "taken care of" answer.
