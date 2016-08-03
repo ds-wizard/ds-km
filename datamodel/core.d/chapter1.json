@@ -7,7 +7,7 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "bookreference": "1.1", "type": "choice",
+	    "questionid": 1, "bookreference": "1.1", "type": "option",
 	    "title": "Is there any pre-existing data?",
 	    "text": "Are there any data sets available in the world that are relevant to your planned research?",
 	    "answers": 
@@ -20,7 +20,7 @@
 	    ]
 	},
 	{
-	    "questionid": 2, "bookreference": "1.2", "type": "choice",
+	    "questionid": 2, "bookreference": "1.2", "type": "option",
 	    "precondition": { "questionid": 1, "answerid": 1 },
 	    "title": "Will you be using any pre-existing data (including other people's data)?",
 	    "text": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
@@ -38,7 +38,7 @@
 	    "text": "Much of todays data is used in comparison with reference data. A genome for instance is compared with a reference genome to identify genomic variants. If you use reference data, there are several other issues that you should consider. What are the reference data sets that you will use?"
 	},
 	{
-	    "questionid": 4, "bookreference": "1.4", "type": "choice",
+	    "questionid": 4, "bookreference": "1.4", "type": "option",
 	    "precondition": { "questionid": 3 },
 	    "title": "Where is it available?",
 	    "text": "Do you know where the reference data is available, what the conditions for use are, and how to reference it?",
@@ -49,7 +49,7 @@
 	    ] 
 	},
 	{
-	    "questionid": 5, "bookreference": "1.5", "type": "choice",
+	    "questionid": 5, "bookreference": "1.5", "type": "option",
 	    "precondition": { "questionid": 3 },
 	    "title": "In what format is the reference data available?",
 	    "text": "Do you know the data format of the reference data? Is this suitable for your work? Does it need to be converted?",
@@ -60,7 +60,7 @@
 	    ] 
 	},
 	{
-	    "questionid": 6, "bookreference": "1.6", "type": "choice",
+	    "questionid": 6, "bookreference": "1.6", "type": "option",
 	    "precondition": { "questionid": 3 },
 	    "title": "Is the reference data resource versioned?",
 	    "text": "Many reference data sets evolve over time. If the reference data set changes, this may affect your results. If different versions of a reference data set exist, you need to establish your \"version policy\".",
@@ -77,7 +77,7 @@
 	    "text": "If there are different versions available, you have to decide with all project partners together which version you will be using. Probably you will go for the latest release as of the date of the start of your research project. However, if you have other data from older projects that need to be merged, you may need to consider using the same release you used for a previous project."
 	},
 	{
-	    "questionid": 8, "bookreference": "1.7", "type": "choice",
+	    "questionid": 8, "bookreference": "1.7", "type": "option",
 	    "precondition": { "questionid": 6, "answerid": 1 },
 	    "title": "Will you change version if it updates?",
 	    "text": "If the reference changes while you are working on your research project, you need to decide whether you will follow these changes. Most likely that will mean that you have to do some analyses again, so you will need to make sure enough resources are available to do so. You can decide to stay with the version that you started with; this can have the disadvantage that you will not benefit from added information or added consistency.",
@@ -95,7 +95,7 @@
 	    "text": "Even if you will be producing your own data, you often will also be relying on existing data sets. You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?"
 	},
 	{
-	    "questionid": 11, "bookreference": "1.8", "type": "choice",
+	    "questionid": 11, "bookreference": "1.8", "type": "option",
 	    "precondition": { "questionid": 9 },
 	    "title": "Will the owners of this data set work with you on this study",
 	    "answers":
@@ -106,7 +106,7 @@
 	    ]
 	},
 	{
-	    "questionid": 12, "bookreference": "1.9", "type": "choice",
+	    "questionid": 12, "bookreference": "1.9", "type": "option",
 	    "precondition": { "questionid": 9 },
 	    "title": "Is extenstion of any consent for privacy sensitive data be needed?",
 	    "text": "If the data that you will re-use is coupled to people, is the informed consent that was originally obtained from those people covering your current research?",
@@ -118,7 +118,7 @@
 	    ]
 	},
 	{
-	    "questionid": 16, "bookreference": "1.10", "type": "choice",
+	    "questionid": 16, "bookreference": "1.10", "type": "option",
 	    "precondition": { "questionid": 2 },
 	    "title": "Do you need to harmonize different sources of existing data?",
 	    "text": "If you are combining data from different sources, harmonization may be required. You may need to re-analyse some original data.",
@@ -129,7 +129,7 @@
 	    ]
 	},
 	{
-	    "questionid": 29, "bookrefererence": "1.12", "type": "choice",
+	    "questionid": 29, "bookrefererence": "1.12", "type": "option",
 	    "title": "Will reference data be created?",
 	    "answers": 
 	    [
@@ -138,7 +138,7 @@
 	    ]
 	},
 	{
-	    "questionid": 33, "bookreference": "1.13", "type": "choice",
+	    "questionid": 33, "bookreference": "1.13", "type": "option",
 	    "title": "Will you be storing samples?",
 	    "answers": 
 	    [
@@ -147,7 +147,7 @@
 	    ]
 	},
 	{
-	    "questionid": 38, "bookreference": "1.14", "type": "choice",
+	    "questionid": 38, "bookreference": "1.14", "type": "option",
 	    "title": "Will you be collecting experimental data?",
 	    "answers": 
 	    [
