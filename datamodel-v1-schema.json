@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
+    "title": "chapter",
     "properties": {
 	"chapterid": {
 	    "type": "integer"
@@ -21,6 +22,7 @@
 	    "type": "array",
 	    "items": {
 		"type": "object",
+		"title": "question",
 		"properties": {
 		    "questionid": {
 			"type": "integer"
@@ -29,6 +31,7 @@
 			"type": "array",
 			"items": {
 			    "type": "object",
+			    "title": "reference",
 			    "properties": {
 				"type": { "type": "string" }
 			    },
@@ -45,6 +48,7 @@
 			"type": "array",
 			"items": {
 			    "type": "object",
+			    "title": "answer",
 			    "properties": {
 				"id": {
 				    "type": "integer"
