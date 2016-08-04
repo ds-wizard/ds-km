@@ -1,10 +1,25 @@
 #!/usr/bin/env python
 import os
 
-def testf(fn): 
+try:
+    import jsonschema, json
+    schema = json.load(open('datamodel-v1-schema.json'))
+    validator = jsonschema.Draft4Validator(schema)
+    def testf(fn):
+        print "Testing %s..." % fn
+        if False:
+            for error in sorted(validator.iter_errors(json.load(open(fn))), key=str):
+                print error.message
+        else:
+            validator.validate(json.load(open(fn)))
+        
+
+except ImportError:
+    print "JSON Schema not available, only checking basic syntax"
     import json
-    print "Testing %s..." % fn
-    void = json.load(open(fn))
+    def testf(fn): 
+        print "Testing %s..." % fn
+        void = json.load(open(fn))
 
 def testd(arg, dirname, fnames):
     for fn in fnames:

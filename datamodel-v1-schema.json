@@ -1,0 +1,79 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+	"chapterid": {
+	    "type": "integer"
+	},
+	"namespace": {
+	    "type": "string"
+	},
+	"formatversion": {
+	    "type": "integer"
+	},
+	"title": {
+	    "type": "string"
+	},
+	"text": {
+	    "type": "string"
+	},
+	"questions": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"properties": {
+		    "questionid": {
+			"type": "integer"
+		    },
+		    "references": {
+			"type": "array",
+			"items": {
+			    "type": "object",
+			    "properties": {
+				"type": { "type": "string" }
+			    },
+			    "required": ["type"]
+			}
+		    },
+		    "type": {
+			"type": "string"
+		    },
+		    "title": {
+			"type": "string"		  
+		    },
+		    "answers": {
+			"type": "array",
+			"items": {
+			    "type": "object",
+			    "properties": {
+				"id": {
+				    "type": "integer"
+				},
+				"label": {
+				    "type": "string"
+				},
+				"responsetype": {
+				    "type": "string"
+				}
+			    },
+			    "required": [
+				"id",
+				"label",
+				"responsetype"
+			    ]
+			}
+		    }
+		},
+		"required": [
+		    "questionid"
+		]
+	    }
+	}
+    },
+    "required": [
+	"chapterid",
+	"namespace",
+	"formatversion",
+	"questions"
+    ]
+}
