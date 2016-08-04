@@ -7,32 +7,35 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "bookreference": "2.1", "type": "option",
+	    "questionid": 1, "type": "option",
 	    "title": "Are you using data types used by others too?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No", "responsetype": "ok" },
 		{   "id": 1, "label": "Yes", "responsetype": "followup"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.1"}]
 	},
 	{
-	    "questionid": 2, "bookreference": "2.2", "type": "option",
+	    "questionid": 2, "type": "option",
 	    "title": "Will you be using new types of data?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No", "responsetype": "ok" },
 		{   "id": 1, "label": "Yes", "responsetype": "followup"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.2"}]
 	},
 	{
-	    "questionid": 3, "bookreference": "2.3", "type": "option",
+	    "questionid": 3, "type": "option",
 	    "title": "How will you be storing metadata?",
 	    "text": "For the re-usability of your data by yourself or others at a later stage, a lot of information about the data, how it was collected and how it can be used should be stored with the data. Such data about the data is called metadata, and this set of questions are about this metadata",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "Skip", "responsetype": "ok" },
 		{   "id": 1, "label": "Explore", "responsetype": "followup"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.3"}]
 	},
 	{
 	    "questionid": 4, "type": "option",

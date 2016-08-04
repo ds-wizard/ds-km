@@ -6,7 +6,7 @@
     [
 	{
 	    "questionid" : 1, "namespace": "core",
-	    "expert" : {"type": "person", "name": "Barend Mons", "email": "barend.mons@dtls.nl"}
+	    "references" : [{"type": "expert", "name": "Barend Mons", "email": "barend.mons@dtls.nl"}]
 	}
     ]
 }

@@ -7,7 +7,7 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "bookreference": "1.1", "type": "option",
+	    "questionid": 1, "type": "option",
 	    "title": "Is there any pre-existing data?",
 	    "text": "Are there any data sets available in the world that are relevant to your planned research?",
 	    "answers": 
@@ -17,10 +17,11 @@
 		    "text": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually \"quickly look something up\", but that could maybe be properly integrated, especially if you need to do such lookups multiple times."
 		},
 		{   "id": 1, "label": "Yes", "responsetype": "followup" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.1"}]
 	},
 	{
-	    "questionid": 2, "bookreference": "1.2", "type": "option",
+	    "questionid": 2, "type": "option",
 	    "precondition": { "questionid": 1, "answerid": 1 },
 	    "title": "Will you be using any pre-existing data (including other people's data)?",
 	    "text": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
@@ -29,16 +30,18 @@
 		{   "id": 0, "label": "No", "responsetype": "advice",
 		    "text": "Did you research all the data that exists? You may not be aware of all existing data that could be available. Although using and/or integrating existing data sets may pose a challenge, it will normally be cheaper than collecting everything yourself. Even if you decide not to use an existing data set, it is better to do this as a conscious decision." },
 		{   "id": 1, "label": "Yes", "responsetype": "followup"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.2"}]
 	},
 	{
-	    "questionid": 3, "bookreference": "1.3", "type": "list",
+	    "questionid": 3, "type": "list",
 	    "precondition": { "questionid": 2, "answerid": 1 },
 	    "title": "What reference data will you use?",
-	    "text": "Much of todays data is used in comparison with reference data. A genome for instance is compared with a reference genome to identify genomic variants. If you use reference data, there are several other issues that you should consider. What are the reference data sets that you will use?"
+	    "text": "Much of todays data is used in comparison with reference data. A genome for instance is compared with a reference genome to identify genomic variants. If you use reference data, there are several other issues that you should consider. What are the reference data sets that you will use?",
+	    "references": [{"type": "dmpbook", "chapter": "1.3"}]
 	},
 	{
-	    "questionid": 4, "bookreference": "1.4", "type": "option",
+	    "questionid": 4, "type": "option",
 	    "precondition": { "questionid": 3 },
 	    "title": "Where is it available?",
 	    "text": "Do you know where the reference data is available, what the conditions for use are, and how to reference it?",
@@ -46,10 +49,11 @@
 	    [
 		{    "id": 0, "label": "No", "responsetype": "advice", "text": "Figure this out quickly!" },
 		{    "id": 1, "label": "Yes", "responsetype": "ok" } 
-	    ] 
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.4"}]
 	},
 	{
-	    "questionid": 5, "bookreference": "1.5", "type": "option",
+	    "questionid": 5, "type": "option",
 	    "precondition": { "questionid": 3 },
 	    "title": "In what format is the reference data available?",
 	    "text": "Do you know the data format of the reference data? Is this suitable for your work? Does it need to be converted?",
@@ -57,10 +61,11 @@
 	    [
 		{    "id": 0, "label": "I can directly use it", "responsetype": "ok" },
 		{    "id": 1, "label": "I need to convert it before using", "responsetype": "ok" } 
-	    ] 
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.5"}]
 	},
 	{
-	    "questionid": 6, "bookreference": "1.6", "type": "option",
+	    "questionid": 6, "type": "option",
 	    "precondition": { "questionid": 3 },
 	    "title": "Is the reference data resource versioned?",
 	    "text": "Many reference data sets evolve over time. If the reference data set changes, this may affect your results. If different versions of a reference data set exist, you need to establish your \"version policy\".",
@@ -68,16 +73,17 @@
 	    [
 		{    "id": 0, "label": "No", "responsetype": "ok" },
 		{    "id": 1, "label": "Yes", "responsetype": "followup" } 
-	    ] 
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.6"}]
 	},
 	{
-	    "questionid": 7, "bookreference": "1.7", "type": "text",
+	    "questionid": 7, "type": "text",
 	    "precondition": { "questionid": 6, "answerid": 1 },
 	    "title": "Which version will you use?",
 	    "text": "If there are different versions available, you have to decide with all project partners together which version you will be using. Probably you will go for the latest release as of the date of the start of your research project. However, if you have other data from older projects that need to be merged, you may need to consider using the same release you used for a previous project."
 	},
 	{
-	    "questionid": 8, "bookreference": "1.7", "type": "option",
+	    "questionid": 8, "type": "option",
 	    "precondition": { "questionid": 6, "answerid": 1 },
 	    "title": "Will you change version if it updates?",
 	    "text": "If the reference changes while you are working on your research project, you need to decide whether you will follow these changes. Most likely that will mean that you have to do some analyses again, so you will need to make sure enough resources are available to do so. You can decide to stay with the version that you started with; this can have the disadvantage that you will not benefit from added information or added consistency.",
@@ -86,16 +92,17 @@
 		{    "id": 0, "label": "Will stay with the old version", "responsetype": "followup" },
 		{    "id": 1, "label": "New analyses will be done with the new version", "responsetype": "ok" },
 		{    "id": 2, "label": "All analyses will be redone with the new version", "responsetype": "ok" } 
-	    ] 
+	    ]
 	},
 	{
-	    "questionid": 9, "bookreference": "1.7", "type": "list",
+	    "questionid": 9, "type": "list",
 	    "precondition": { "questionid": 2, "answerid": 1 },
 	    "title": "What existing non-reference data sets will you use?",
-	    "text": "Even if you will be producing your own data, you often will also be relying on existing data sets. You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?"
+	    "text": "Even if you will be producing your own data, you often will also be relying on existing data sets. You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?",
+	    "references": [{"type": "dmpbook", "chapter": "1.7"}]
 	},
 	{
-	    "questionid": 11, "bookreference": "1.8", "type": "option",
+	    "questionid": 11, "type": "option",
 	    "precondition": { "questionid": 9 },
 	    "title": "Will the owners of this data set work with you on this study",
 	    "answers":
@@ -103,10 +110,11 @@
 		{   "id": 0, "label": "No", "responsetype": "ok" },
 		{   "id": 1, "label": "Yes", "responsetype": "ok" },
 		{   "id": 2, "label": "We are the owners", "responsetype": "ok" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.8"}]
 	},
 	{
-	    "questionid": 12, "bookreference": "1.9", "type": "option",
+	    "questionid": 12, "type": "option",
 	    "precondition": { "questionid": 9 },
 	    "title": "Is extenstion of any consent for privacy sensitive data be needed?",
 	    "text": "If the data that you will re-use is coupled to people, is the informed consent that was originally obtained from those people covering your current research?",
@@ -115,10 +123,11 @@
 		{   "id": 0, "label": "Not applicable", "responsetype": "ok" },
 		{   "id": 1, "label": "Existing consent applies", "responsetype": "ok" },
 		{   "id": 2, "label": "New consent needed", "responsetype": "ok" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.9"}]
 	},
 	{
-	    "questionid": 16, "bookreference": "1.10", "type": "option",
+	    "questionid": 16, "type": "option",
 	    "precondition": { "questionid": 2 },
 	    "title": "Do you need to harmonize different sources of existing data?",
 	    "text": "If you are combining data from different sources, harmonization may be required. You may need to re-analyse some original data.",
@@ -126,34 +135,38 @@
 	    [
 		{   "id": 0, "label": "No", "responsetype": "ok" },
 		{   "id": 1, "label": "Yes", "responsetype": "ok" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.10"}]
 	},
 	{
-	    "questionid": 29, "bookrefererence": "1.12", "type": "option",
+	    "questionid": 29, "type": "option",
 	    "title": "Will reference data be created?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No", "responsetype": "ok"},
 		{   "id": 1, "label": "Yes", "responsetype": "followup"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.12"}]
 	},
 	{
-	    "questionid": 33, "bookreference": "1.13", "type": "option",
+	    "questionid": 33, "type": "option",
 	    "title": "Will you be storing samples?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No", "responsetype": "ok"},
 		{   "id": 1, "label": "Yes", "responsetype": "followup"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.13"}]
 	},
 	{
-	    "questionid": 38, "bookreference": "1.14", "type": "option",
+	    "questionid": 38, "type": "option",
 	    "title": "Will you be collecting experimental data?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No", "responsetype": "ok"},
 		{   "id": 1, "label": "Yes", "responsetype": "followup"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.14"}]
 	}
     ]
 }
