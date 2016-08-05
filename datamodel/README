@@ -7,10 +7,8 @@ Ideas behind the data model
    * Most questions are only asked under the precondition that another question has been answered in a specific way
    * "precondition" refers to a question id (plus name space, if different from default) and an answer id (if a choice question).
    * only one precondition can be given for a question.
-4 questions that need to be posed as a series are asked in order of their "order" property (an integer number).
-   * If the order is not given, it is 10 times the questionid plus 1000 times the number of the namespace.
-   * If two questions have the same order, the order in which they will be presented is undefined.
-   * Orders may be necessary if localizations want to insert questions somewhere rather than append
+4 questions that need to be posed as a series are usually asked in order of their definition.
+   * If you want to define a question that needs to be posed before another question (it must be a question with the same precondition!), you should give it the "insertBefore" property, and specify a questionid, chapterid and namespace. The new question will then be inserted before the specified referred question in the chain.
 5 Localizations can be used to add specifics for a field of research, or to add specifics for an institute or infrastructure.
 6 Localizations can add new questions, or modify properties of core questions.
 7 A question property specified in a localization /replaces/ that property completely.

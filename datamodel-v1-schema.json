@@ -33,6 +33,16 @@
 	    "type": "array",
 	    "items": { "$ref": "#/definitions/expert" }
 	},
+	"questionpointer": {
+	    "type": "object",
+	    "properties": { 
+		"chapterid": { "$ref": "#/definitions/chapterid" },
+		"questionid": { "$ref": "#/definitions/questionid" },
+		"namespace" : { "$ref": "#/definitions/namespace" }
+	    },
+	    "required": ["chapterid", "questionid", "namespace"],
+	    "additionalProperties": false
+	},
 	"dmpbookreference": {
 	    "type": "object",
 	    "properties": {
@@ -104,6 +114,7 @@
 		"questionid": { "$ref": "#/definitions/questionid" },
 		"namespace": { "$ref": "#/definitions/namespace" },
 		"precondition": { "$ref": "#/definitions/precondition" },
+		"insertBefore": { "$ref": "#/definitions/questionpointer" },
 		"references": { "$ref": "#/definitions/references" },
 		"experts": { "$ref": "#/definitions/experts" },
 		"type": {
