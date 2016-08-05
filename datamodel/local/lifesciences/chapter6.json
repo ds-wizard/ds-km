@@ -9,8 +9,8 @@
 	    "title": "Will you do systems biology modeling?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -18,8 +18,8 @@
 	    "title": "Will you do structural modeling?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	}
     ]

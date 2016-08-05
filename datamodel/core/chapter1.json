@@ -13,10 +13,10 @@
 	    "answers": 
 	    [ 
 		{
-		    "id": 0, "label": "No", "responsetype": "advice",
-		    "text": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually \"quickly look something up\", but that could maybe be properly integrated, especially if you need to do such lookups multiple times."
+		    "id": 0, "label": "No", 
+		    "advice": "You know that this is very unlikely? This question is not only about data sets that are similar to what you want to determine yourself, but also reference data or data that should be mined from the existing literature. Further, it is very likely that you will refer to related data, e.g. other databases where you usually \"quickly look something up\", but that could maybe be properly integrated, especially if you need to do such lookups multiple times."
 		},
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 1, "label": "Yes"}
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.1"}]
 	},
@@ -27,9 +27,9 @@
 	    "text": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "No", "responsetype": "advice",
-		    "text": "Did you research all the data that exists? You may not be aware of all existing data that could be available. Although using and/or integrating existing data sets may pose a challenge, it will normally be cheaper than collecting everything yourself. Even if you decide not to use an existing data set, it is better to do this as a conscious decision." },
-		{   "id": 1, "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No",
+		    "advice": "Did you research all the data that exists? You may not be aware of all existing data that could be available. Although using and/or integrating existing data sets may pose a challenge, it will normally be cheaper than collecting everything yourself. Even if you decide not to use an existing data set, it is better to do this as a conscious decision." },
+		{   "id": 1, "label": "Yes" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.2"}]
 	},
@@ -47,8 +47,8 @@
 	    "text": "Do you know where the reference data is available, what the conditions for use are, and how to reference it?",
 	    "answers": 
 	    [
-		{    "id": 0, "label": "No", "responsetype": "advice", "text": "Figure this out quickly!" },
-		{    "id": 1, "label": "Yes", "responsetype": "ok" } 
+		{    "id": 0, "label": "No", "advice": "Figure this out quickly!" },
+		{    "id": 1, "label": "Yes" } 
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.4"}]
 	},
@@ -59,8 +59,8 @@
 	    "text": "Do you know the data format of the reference data? Is this suitable for your work? Does it need to be converted?",
 	    "answers": 
 	    [
-		{    "id": 0, "label": "I can directly use it", "responsetype": "ok" },
-		{    "id": 1, "label": "I need to convert it before using", "responsetype": "ok" } 
+		{    "id": 0, "label": "I can directly use it" },
+		{    "id": 1, "label": "I need to convert it before using" } 
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.5"}]
 	},
@@ -71,8 +71,8 @@
 	    "text": "Many reference data sets evolve over time. If the reference data set changes, this may affect your results. If different versions of a reference data set exist, you need to establish your \"version policy\".",
 	    "answers": 
 	    [
-		{    "id": 0, "label": "No", "responsetype": "ok" },
-		{    "id": 1, "label": "Yes", "responsetype": "followup" } 
+		{    "id": 0, "label": "No" },
+		{    "id": 1, "label": "Yes" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.6"}]
 	},
@@ -89,9 +89,9 @@
 	    "text": "If the reference changes while you are working on your research project, you need to decide whether you will follow these changes. Most likely that will mean that you have to do some analyses again, so you will need to make sure enough resources are available to do so. You can decide to stay with the version that you started with; this can have the disadvantage that you will not benefit from added information or added consistency.",
 	    "answers": 
 	    [
-		{    "id": 0, "label": "Will stay with the old version", "responsetype": "followup" },
-		{    "id": 1, "label": "New analyses will be done with the new version", "responsetype": "ok" },
-		{    "id": 2, "label": "All analyses will be redone with the new version", "responsetype": "ok" } 
+		{    "id": 0, "label": "Will stay with the old version" },
+		{    "id": 1, "label": "New analyses will be done with the new version" },
+		{    "id": 2, "label": "All analyses will be redone with the new version" }
 	    ]
 	},
 	{
@@ -107,9 +107,9 @@
 	    "title": "Will the owners of this data set work with you on this study",
 	    "answers":
 	    [
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "ok" },
-		{   "id": 2, "label": "We are the owners", "responsetype": "ok" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" },
+		{   "id": 2, "label": "We are the owners" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.8"}]
 	},
@@ -120,9 +120,9 @@
 	    "text": "If the data that you will re-use is coupled to people, is the informed consent that was originally obtained from those people covering your current research?",
 	    "answers":
 	    [
-		{   "id": 0, "label": "Not applicable", "responsetype": "ok" },
-		{   "id": 1, "label": "Existing consent applies", "responsetype": "ok" },
-		{   "id": 2, "label": "New consent needed", "responsetype": "ok" }
+		{   "id": 0, "label": "Not applicable" },
+		{   "id": 1, "label": "Existing consent applies" },
+		{   "id": 2, "label": "New consent needed" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.9"}]
 	},
@@ -133,8 +133,8 @@
 	    "text": "If you are combining data from different sources, harmonization may be required. You may need to re-analyse some original data.",
 	    "answers":
 	    [
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "ok" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.10"}]
 	},
@@ -143,8 +143,8 @@
 	    "title": "Will reference data be created?",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "No", "responsetype": "ok"},
-		{   "id": 1, "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.12"}]
 	},
@@ -153,8 +153,8 @@
 	    "title": "Will you be storing samples?",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "No", "responsetype": "ok"},
-		{   "id": 1, "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.13"}]
 	},
@@ -163,8 +163,8 @@
 	    "title": "Will you be collecting experimental data?",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "No", "responsetype": "ok"},
-		{   "id": 1, "label": "Yes", "responsetype": "followup"}
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.14"}]
 	}

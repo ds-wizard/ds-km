@@ -11,8 +11,8 @@
 	    "text": "Are there easily accessible specialized service providers for data capture?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "In the project", "responsetype": "ok" },
-		{   "id": 1, "label": "External party", "responsetype": "advice", "text": "consider making them partner in the project" }
+		{   "id": 0, "label": "In the project" },
+		{   "id": 1, "label": "External party", "advice": "consider making them partner in the project" }
 	    ]
 	},
 	{
@@ -21,8 +21,8 @@
 	    "text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion of the primary data may take special planning.",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -30,8 +30,8 @@
 	    "title": "Do you have any non-equipment data capture?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -39,8 +39,8 @@
 	    "title": "Is there a data integration tool that can handle and combine all the data types you are dealing with in your project?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "followup" },
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	}
     ]

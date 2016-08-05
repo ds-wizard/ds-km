@@ -10,8 +10,8 @@
 	    "title": "What is the framework you will use for data integration?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Taken care of", "responsetype": "ok" },
-		{   "id": 1, "label": "Drill deeper", "responsetype": "followup" }
+		{   "id": 0, "label": "Taken care of" },
+		{   "id": 1, "label": "Drill deeper" }
 	    ]
 	},
 	{
@@ -19,8 +19,8 @@
 	    "title": "Will you be using common or exchangeable units?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "ok" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -28,8 +28,8 @@
 	    "title": "Will you be using common ontologies?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "advice", "text": "Choose the ontologies before you start" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes", "advice": "Choose the ontologies before you start" }
 	    ]
 	},
 	{
@@ -37,8 +37,8 @@
 	    "title": "Will there be potential issues with statistical normalization?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -46,8 +46,8 @@
 	    "title": "Do you have all tools to couple the necessary data types?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "ok" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	}
     ]

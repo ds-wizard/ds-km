@@ -10,8 +10,8 @@
 	    "title": "Will you couple existing (biobank) data sets?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "followup" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes"}
 	    ]
 	},
 	{
@@ -21,8 +21,8 @@
 	    "text": "Data sets that have exactly identical fields that are well filled can be coupled using deterministic methods. Will you be using such methods?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "ok" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -37,8 +37,8 @@
 	    "title": "Is consent available for the couplings?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "ok" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -53,8 +53,8 @@
 	    "title": "What is the goal of the coupling?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "More data about the same subjects (intersection)", "responsetype": "ok" },
-		{   "id": 1, "label": "Enlarging the group of subjects (union)", "responsetype": "ok" }
+		{   "id": 0, "label": "More data about the same subjects (intersection)" },
+		{   "id": 1, "label": "Enlarging the group of subjects (union)"} 
 	    ]
 	},
 	{
@@ -69,8 +69,8 @@
 	    "text": "Data sets that have similar but not identical fields or with identical fields that are not consistently filled can be coupled using probabilistic methods. Will you be using such methods?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "No", "responsetype": "ok" },
-		{   "id": 1, "label": "Yes", "responsetype": "ok" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	}
     ]
