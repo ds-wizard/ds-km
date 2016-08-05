@@ -59,7 +59,7 @@
 		"url": {"type": "string" },
 		"anchor": {"type": "string" }
 	    },
-	    "required" : ["type", "url"],
+	    "required" : ["type", "weblink"],
 	    "additionalProperties": false
 	},
 	"crossreference": {
@@ -98,6 +98,10 @@
 	    "required": [ "id", "label"],
 	    "additionalProperties": false
 	},
+	"optionanswers": {
+	    "type": "array",
+	    "items": { "$ref": "#/definitions/optionanswer" }
+	},
 	"precondition": {
 	    "type": "object",
 	    "properties": {
@@ -116,17 +120,17 @@
 		"precondition": { "$ref": "#/definitions/precondition" },
 		"insertBefore": { "$ref": "#/definitions/questionpointer" },
 		"references": { "$ref": "#/definitions/references" },
+		"addReferences": { "$ref": "#/definitions/references" },
 		"experts": { "$ref": "#/definitions/experts" },
+		"addExperts": { "$ref": "#/definitions/experts" },		
 		"type": {
 		    "type": "string",
 		    "enum": ["option", "list", "string", "text"]
 		},
 		"title": { "type": "string" },
 		"text": { "type": "string" },
-		"answers": {
-		    "type": "array",
-		    "items": { "$ref": "#/definitions/optionanswer" }
-		}
+		"answers": { "$ref": "#/definitions/optionanswers" },
+		"addAnswers": { "$ref": "#/definitions/optionanswers" }		
 	    },
 	    "required": ["questionid"],
 	    "additionalProperties": false
