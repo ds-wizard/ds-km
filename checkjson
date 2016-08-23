@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 import os
 
+#schema_file = 'datamodel-v1-schema.json'
+schema_file = 'schema.alt.json'
+
 try:
     import jsonschema, json
-    schema = json.load(open('datamodel-v1-schema.json'))
+    schema = json.load(open(schema_file))
     validator = jsonschema.Draft4Validator(schema)
     def testf(fn):
         print "Testing %s..." % fn
@@ -12,12 +15,12 @@ try:
                 print error.message
         else:
             validator.validate(json.load(open(fn)))
-        
+
 
 except ImportError:
     print "JSON Schema not available, only checking basic syntax"
     import json
-    def testf(fn): 
+    def testf(fn):
         print "Testing %s..." % fn
         void = json.load(open(fn))
 
@@ -27,4 +30,3 @@ def testd(arg, dirname, fnames):
             testf(os.path.join(dirname, fn))
 
 os.path.walk('datamodel', testd, None)
-
