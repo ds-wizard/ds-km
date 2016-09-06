@@ -22,4 +22,4 @@ See also the list of [contributors](https://github.com/CCMi-FIT/ds-km-core/graph
 
 ## License
 
-This project is licensed under the Apache License v2.0 - see the [LICENSE](LICENSE) file for details
+This project is licensed under the Apache License v2.0 - see the [LICENSE](LICENSE) file for more details.
