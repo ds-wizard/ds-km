@@ -2,7 +2,7 @@ import pytest
 import warnings
 import os
 
-reporoot = '..'
+reporoot = '.'
 modelfolder = 'datamodel'
 
 @pytest.fixture(scope='module')
