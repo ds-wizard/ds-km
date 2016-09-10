@@ -1,0 +1,6 @@
+# DS KM Validator
+# Python requirements
+############################
+pytest
+jsonschema >= 2.4.0
+pytest-warnings >= 0.1.0
