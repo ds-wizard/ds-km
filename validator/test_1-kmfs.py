@@ -2,8 +2,8 @@ import pytest
 import warnings
 import os
 
-reporoot = '.'
-modelfolder = 'datamodel'
+reporoot = '.'            # TODO move to some common config
+modelfolder = 'datamodel' # TODO move to some common config
 
 @pytest.fixture(scope='module')
 def kmfs():

@@ -3,7 +3,7 @@ import os
 def extract_chapterid(filepath):
     try:
         filename = os.path.split(filepath)[-1]
-        if filename[0:6] == 'chapter' and filename[-5:] == '.json':
+        if filename[0:7] == 'chapter' and filename[-5:] == '.json':
             return int(filename[7:-5])
         else:
             return 0
@@ -26,5 +26,6 @@ def kmfs2dict(root):
     return kmfs
 
 if __name__ == '__main__':
-    kmfs=kmfs2dict('../datamodel')
+    kmfs=kmfs2dict('./datamodel')
     print(kmfs)
+    print(extract_chapterid('datamodel/core/chapter1.json'))
