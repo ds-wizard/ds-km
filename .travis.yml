@@ -1,14 +1,12 @@
 language: python
 python:
-  - "3.2"
-  - "3.3"
   - "3.4"
   - "3.5"
-  - "3.5-dev" # 3.5 development branch
-  - "nightly" # currently points to 3.6-dev
-# command to install dependencies
+  - "3.5-dev"
+  - "nightly"
 install:
-  - pip install -r validator/requirements.txt
-# command to run tests
+  - pip install -U pip
+  - pip install -U -r validator/requirements.txt
+  - pip freeze
 script:
-  - python -m pytest validator
+  - py.test validator

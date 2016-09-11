@@ -1,5 +1,6 @@
 import os
 
+
 def extract_chapterid(filepath):
     try:
         filename = os.path.split(filepath)[-1]
@@ -10,11 +11,13 @@ def extract_chapterid(filepath):
     except ValueError:
         return -1
 
+
 def is_chapter(filepath):
     return extract_chapterid(filepath) > 0
 
+
 def kmfs2dict(root):
-    kmfs = {'dirs':{}, 'files':[]}
+    kmfs = {'dirs': {}, 'files': []}
     for name in os.listdir(root):
         filepath = os.path.join(root, name)
         if os.path.isfile(filepath):
@@ -25,7 +28,8 @@ def kmfs2dict(root):
             pass
     return kmfs
 
+
 if __name__ == '__main__':
-    kmfs=kmfs2dict('./datamodel')
+    kmfs = kmfs2dict('./datamodel')
     print(kmfs)
     print(extract_chapterid('datamodel/core/chapter1.json'))
