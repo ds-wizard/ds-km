@@ -1,5 +1,5 @@
 {
-    "chapterid": 6,
+    "chapterid": 1,
     "namespace": "lifesciences",
     "formatversion": 1,
     "questions" :
@@ -8,8 +8,8 @@
 	    "questionid": 42, "type": "option",
 	    "precondition": { "questionid": 2, "namespace": "core", "answerid": 1 },
 	    "title": "Will you couple existing (biobank) data sets?",
-	    "answers": 
-	    [ 
+	    "answers":
+	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes"}
 	    ]
@@ -19,8 +19,8 @@
 	    "precondition": { "questionid": 42, "answerid": 1 },
 	    "title": "Will you use deterministic couplings?",
 	    "text": "Data sets that have exactly identical fields that are well filled can be coupled using deterministic methods. Will you be using such methods?",
-	    "answers": 
-	    [ 
+	    "answers":
+	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ]
@@ -35,8 +35,8 @@
 	    "questionid": 45, "type": "option",
 	    "precondition": { "questionid": 42, "answerid": 1 },
 	    "title": "Is consent available for the couplings?",
-	    "answers": 
-	    [ 
+	    "answers":
+	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ]
@@ -51,10 +51,10 @@
 	    "questionid": 47, "type": "option",
 	    "precondition": { "questionid": 42, "answerid": 1 },
 	    "title": "What is the goal of the coupling?",
-	    "answers": 
-	    [ 
+	    "answers":
+	    [
 		{   "id": 0, "label": "More data about the same subjects (intersection)" },
-		{   "id": 1, "label": "Enlarging the group of subjects (union)"} 
+		{   "id": 1, "label": "Enlarging the group of subjects (union)"}
 	    ]
 	},
 	{
@@ -67,12 +67,11 @@
 	    "precondition": { "questionid": 42, "answerid": 1 },
 	    "title": "Will you use probabilistic couplings?",
 	    "text": "Data sets that have similar but not identical fields or with identical fields that are not consistently filled can be coupled using probabilistic methods. Will you be using such methods?",
-	    "answers": 
-	    [ 
+	    "answers":
+	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ]
 	}
     ]
 }
-
