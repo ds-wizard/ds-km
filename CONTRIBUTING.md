@@ -19,6 +19,7 @@ Encountered any bug, typo, inefficiency or other bothersome problem? Please repo
 ## Validation
 
 If your changes affect knowledge model or it's schema you should check validity and eventually repair inconsistencies. Validation will also occur automatically after commit to this repository by Travis CI.
+Validator tool is built on widely-used testing framework `pytest` (and some extensions). Please do not use `[ci skip]` if you are changing KM data, schema or validator itself.
 
 ## Guidelines
 
