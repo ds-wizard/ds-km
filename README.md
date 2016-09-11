@@ -1,6 +1,6 @@
 # DS Knowledge Model
 
-[![Build Status](https://travis-ci.org/CCMi-FIT/ds-km-core.svg)](https://travis-ci.org/CCMi-FIT/ds-km-core)
+[![Build Status](https://travis-ci.org/CCMi-FIT/ds-km-core.svg?branch=master)](https://travis-ci.org/CCMi-FIT/ds-km-core)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](LICENSE)
 
 **D**ata **S**tewardship **K**nowledge **M**odel project deals with storing questions, which are needed to answer in order to create Data Stewardship Plan, as well as other related questionnaire data. This data are stored in JSON format in accordance with given [JSON schema](http://json-schema.org). In order to check validity of all data, schema and other repository content project also introduces validator.
