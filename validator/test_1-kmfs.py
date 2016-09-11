@@ -3,17 +3,6 @@ import warnings
 import os
 
 
-reporoot = '.'             # TODO move to some common config
-modelfolder = 'datamodel'  # TODO move to some common config
-
-
-@pytest.fixture(scope='module')
-def kmfs():
-    '''KM FS representation in dictionary'''
-    from helper.kmfs import kmfs2dict
-    return kmfs2dict(os.path.join(reporoot, modelfolder))
-
-
 def test_core(kmfs):
     assert 'core' in kmfs['dirs'],\
            '"core" folder not found in the root of KM'

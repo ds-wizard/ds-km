@@ -2,17 +2,7 @@ import pytest
 import json
 import jsonschema
 import os
-from helper.kmfs import kmfs2dict, is_chapter
-
-
-reporoot = '.'             # TODO move to some common config
-modelfolder = 'datamodel'  # TODO move to some common config
-
-
-@pytest.fixture(scope='module')
-def kmfs():
-    '''KM FS representation in dictionary'''
-    return kmfs2dict(os.path.join(reporoot, modelfolder))
+from helper.kmfs import is_chapter
 
 
 # TODO test loading actual schema
