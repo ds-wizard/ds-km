@@ -12,4 +12,13 @@ def kmfs():
     return kmfs2dict(os.path.join(reporoot, modelfolder))
 
 
-# TODO: KM/JSON container for loaded chapters as fixture
+@pytest.fixture(scope='session')
+def chapters():
+    '''Chapters JSON data container'''
+    return dict()
+
+
+@pytest.fixture(scope='session')
+def km():
+    '''KM data container'''
+    return dict()
