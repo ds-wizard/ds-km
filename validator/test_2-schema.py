@@ -1,12 +1,20 @@
 import pytest
 import os
 from helper.chapters import load_chapter
+from helper.schemas import load_schema, check_schema, get_validator
 
 
-# TODO test loading actual schema
+def test_load_act_schema(schemas):
+    load_schema(schemas, 'schema.alt.json', 0)  # TODO: catch and provide nicer info
+
+# TODO test loading archived schema (in /schemas folder??)
+def test_load_old_schemas(schemas):
+    pass
 
 
-# TODO test loading archived schema (in /schema folder)
+def test_valid_schemas(schemas):
+    for schema in schemas.values():
+        check_schema(schemas)  # TODO: catch and provide nicer info
 
 
 # Test loading all chapter files as json
@@ -27,3 +35,7 @@ def test_local_chapter_json(kmfs, chapters):
 
 # TODO test checking all chapter files via schema (or older schema with
 #      warning, decide version by "formatversion attribute")
+def test_chapters_valid(chapters, schemas):
+    v = get_validator(schemas[0])
+    for chapterfile, chapter in chapters.items():
+        v.validate(chapter)

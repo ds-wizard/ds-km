@@ -22,3 +22,9 @@ def chapters():
 def km():
     '''KM data container'''
     return dict()
+
+
+@pytest.fixture(scope='session')
+def schemas():
+    '''JSON schemas container'''
+    return dict()
