@@ -1,25 +1,27 @@
 import pytest
-import os
 from helper.chapters import load_chapter
-from helper.schemas import load_schema, check_schema, get_validator
+from helper.schemas import *
 
 
 def test_load_act_schema(schemas):
-    load_schema(schemas, 'schema.alt.json', 0)  # TODO: catch and provide nicer info
+    load_schema(schemas, 'schema-chapter.json', 0)
 
-# TODO test loading archived schema (in /schemas folder??)
+
 def test_load_old_schemas(schemas):
-    pass
+    schema_files = list_chapter_schemas()
+    for file in schema_files:
+        load_schema(schemas, file, extract_schemaversion(file))
+
 
 
 def test_valid_schemas(schemas):
     for schema in schemas.values():
-        check_schema(schemas)  # TODO: catch and provide nicer info
+        check_schema(schema)
 
 
 # Test loading all chapter files as json
 def check_chapter_file(chapters, chapterfile):
-    load_chapter(chapters, chapterfile)  # TODO: catch and provide nicer info
+    load_chapter(chapters, chapterfile)
 
 
 def test_core_chapter_json(kmfs, chapters):

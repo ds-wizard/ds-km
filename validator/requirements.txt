@@ -4,6 +4,6 @@
 # common
 jsonschema >= 2.4.0
 # test
-pytest>=2.9.2
+pytest == 2.9.2
 pytest-sugar
 pytest-warnings
