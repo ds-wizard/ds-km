@@ -99,7 +99,7 @@
                 "additionalProperties": false
             },
             "reference": {
-                "oneOf": [
+                "anyOf": [
                     { "$ref": "#/common/references/dmpbookreference" },
                     { "$ref": "#/common/references/urlreference" },
                     { "$ref": "#/common/references/crossreference" }
@@ -196,7 +196,7 @@
                 ]
             },
             "reference": {
-                "oneOf": [
+                "anyOf": [
                     { "$ref": "#/common/references/dmpbookreference" },
                     { "$ref": "#/common/references/urlreference" },
                     { "$ref": "#/core/references/crossreference" }
@@ -235,7 +235,7 @@
                 ]
             },
             "question": {
-                "oneOf": [
+                "anyOf": [
                     { "$ref": "#/core/questions/optionquestion" },
                     { "$ref": "#/core/questions/fieldquestion" }
                 ]
@@ -347,7 +347,7 @@
             ]
         }
     },
-    "oneOf": [
+    "anyOf": [
         { "$ref": "#/core/chapter" },
         { "$ref": "#/local/chapter" }
     ]
