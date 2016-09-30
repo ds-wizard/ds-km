@@ -13,7 +13,6 @@ def test_load_old_schemas(schemas):
         load_schema(schemas, file, extract_schemaversion(file))
 
 
-
 def test_valid_schemas(schemas):
     for schema in schemas.values():
         check_schema(schema)
