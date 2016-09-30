@@ -12,12 +12,12 @@ def load_chapter(km, chapter):
         qid = q['questionid']
         if qid in questions:
             raise KeyError('Question {} in chapter {}, NS {} already exists!'.format(qid, chid, ns))
-        questions[qid] = _transform_question(q)
+        questions[qid] = _transform_question(q, qid, chid, ns)
     chapter['questions'] = questions
     km[ns][chid] = chapter
 
 
-def _transform_question(q):
+def _transform_question(q, qid, chid, ns):
     if 'answers' in q:
         answers = {}
         for a in q['answers']:
