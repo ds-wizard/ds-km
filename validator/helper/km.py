@@ -6,8 +6,9 @@ def load_chapter(km, chapter):
     ns = chapter['namespace']
     if exists_chapter(km, ns, chid):
         raise KeyError('Chapter {} in NS {} already exists!'.format(chid, ns))
-    km[ns] = {}
-    questions = {}
+    elif ns not in km:
+        km[ns] = dict()
+    questions = dict()
     for q in chapter['questions']:
         qid = q['questionid']
         if qid in questions:
@@ -47,5 +48,3 @@ def exists_answer(km, namespace, chapterid, questionid, answerid):
     return exists_question(km, namespace, chapterid, questionid) and \
            'answers' in km[namespace][chapterid]['questions'][questionid] and \
            answerid in km[namespace][chapterid]['questions'][questionid]['answers']
-
-

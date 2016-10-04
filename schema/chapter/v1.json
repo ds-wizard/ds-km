@@ -31,7 +31,6 @@
             "type": "object",
             "properties": {
                 "namespace" : { "$ref": "#/common/namespace" },
-                "chapterid": { "$ref": "#/common/ids/chapterid" },
                 "questionid": { "$ref": "#/common/ids/questionid" }
             },
             "required": ["chapterid", "questionid", "namespace"],

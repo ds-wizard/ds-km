@@ -8,7 +8,7 @@ Ideas behind the data model
    * "precondition" refers to a question id (plus name space, if different from default) and an answer id (if a choice question).
    * only one precondition can be given for a question.
 4 questions that need to be posed as a series are usually asked in order of their definition.
-   * If you want to define a question that needs to be posed before another question (it must be a question with the same precondition!), you should give it the "insertBefore" property, and specify a questionid, chapterid and namespace. The new question will then be inserted before the specified referred question in the chain.
+   * If you want to define a question that needs to be posed before another question (it must be a question with the same precondition!), you should give it the "insertBefore" property, and specify a questionid and namespace. The new question will then be inserted before the specified referred question in the chain.
 5 Localizations can be used to add specifics for a field of research, or to add specifics for an institute or infrastructure.
 6 Localizations can add new questions, or modify properties of core questions.
 7 A question property specified in a localization /replaces/ that property completely.
@@ -34,9 +34,9 @@ Ideas behind the data model
    * a fixed number of selections are possible for the answer, presented as radio buttons to the user. The user selects one.
    * A set of radiobuttons is good because it explicitly shows wheter the user has answered a question or not.
    * The possible answers are given in the "answers" property of the question.
-   * Each answer has a "label"; often "Yes" and "No", in some cases "Skip" and "Drill deeper" are used. 
+   * Each answer has a "label"; often "Yes" and "No", in some cases "Skip" and "Drill deeper" are used.
    * For binary questions, the answer that does not require followup is preferred to be the first, that is a "No" or "taken care of" answer.
-   * Answers have an integer "id" that is used to specify the order in which they are presented. 
+   * Answers have an integer "id" that is used to specify the order in which they are presented.
    * We use "id" instead of "answerid" for brevity. Since the "answer" section is always small, there should never be confusion.
    * The "id" of the answer is also the reference for the "precondition" for a "followup" question.
    * It is a reasonable idea to have the No answer have id=0, and the yes answer id=1 for human readability.
@@ -55,4 +55,3 @@ Ideas behind the data model
 20 [In due time we can add "dmptext" attributes to answers of choice questions, with the literal text to be put in the data management plan. Other questions may require the user to type the dmptext himself]
 21 [Can we/do we need to make version dependencies between the core and localizations?]
 22 Does each localization require a separate file for each chapter, or can these be combined if desired?
-
