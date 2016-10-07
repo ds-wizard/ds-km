@@ -1,3 +1,8 @@
+branches:
+  only:
+  - master
+  - /^.*validator$/
+  - /^.*data$/
 language: python
 python:
   - "3.4"
