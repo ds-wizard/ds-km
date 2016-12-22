@@ -43,7 +43,7 @@
 	{
 	    "questionid": 4, "type": "option",
 	    "precondition": { "questionid": 3 },
-	    "title": "Where is it available?",
+	    "title": "Do you know where and how is it available?",
 	    "text": "Do you know where the reference data is available, what the conditions for use are, and how to reference it?",
 	    "answers": 
 	    [
@@ -55,7 +55,7 @@
 	{
 	    "questionid": 5, "type": "option",
 	    "precondition": { "questionid": 3 },
-	    "title": "In what format is the reference data available?",
+	    "title": "Do you knpw in what format the reference data is available?",
 	    "text": "Do you know the data format of the reference data? Is this suitable for your work? Does it need to be converted?",
 	    "answers": 
 	    [
@@ -116,7 +116,7 @@
 	{
 	    "questionid": 12, "type": "option",
 	    "precondition": { "questionid": 9 },
-	    "title": "Is extenstion of any consent for privacy sensitive data be needed?",
+	    "title": "Is extenstion of any consent for privacy sensitive data needed?",
 	    "text": "If the data that you will re-use is coupled to people, is the informed consent that was originally obtained from those people covering your current research?",
 	    "answers":
 	    [
