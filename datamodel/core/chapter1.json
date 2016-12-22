@@ -114,6 +114,26 @@
 	    "references": [{"type": "dmpbook", "chapter": "1.8"}]
 	},
 	{
+	    "questionid": 10, "type": "option",
+	    "precondition": { "questionid": 11, "answerid": 0 },
+	    "title": "Do you need to request access to the data",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 13, "type": "option",
+	    "precondition": { "questionid": 9 },
+	    "title": "Will any usage restrictions affect your reuse?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
 	    "questionid": 12, "type": "option",
 	    "precondition": { "questionid": 9 },
 	    "title": "Is extenstion of any consent for privacy sensitive data needed?",
@@ -125,6 +145,17 @@
 		{   "id": 2, "label": "New consent needed" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.9"}]
+	},
+	{
+	    "questionid": 14, "type": "option",
+	    "precondition": { "questionid": 9 },
+	    "title": "How will you be accessing the data?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "Already have physical copy" },
+		{   "id": 1, "label": "Will make physical copy" },
+		{   "id": 2, "label": "Will use it online" }
+	    ]
 	},
 	{
 	    "questionid": 16, "type": "option",
