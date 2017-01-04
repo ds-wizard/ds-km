@@ -250,7 +250,210 @@
 	{
 	    "questionid": 4, "type": "option",
 	    "title": "Do you need to do storage capacity planning?",
-	    "text": "If you collect substantial amounts of data, amounts that do not trivially fit on the storage that you normally have available or that can not be trivially transported between systems, some planning is necessary. Do you think you need to do storage capacity planning? If the expected total data volume is larger than 1 TB, you probably need to answer 'yes' here.",
+	    "text": "If you collect substantial amounts of data, amounts that do not trivially fit on the storage that you normally have available or that can not be trivially transported between systems, some planning is necessary. Do you think you need to do storage capacity planning? If the expected total data volume is larger than 1 TB, you probably need to answer 'yes' here. Discuss these questions with your ICT department.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+ 	{
+	    "questionid": 26, "type": "option",
+	    "precondition": { "questionid": 4, "answerid": 1 },	    
+	    "title": "Will you be archiving data for long term preservation?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+ 	{
+	    "questionid": 27, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 0 },	    
+	    "title": "Can the original data be recreated?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+ 	{
+	    "questionid": 30, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 0 },	    
+	    "title": "When is the raw data archived?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "As soon as it comes in, in chunks" },
+		{   "id": 1, "label": "As soon as it has all arrived, in one session" },
+		{   "id": 2, "label": "All at once with the results at the end of the project" }
+	    ]
+	},
+	{
+	    "questionid": 28, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Is the archived data changing over time, needing re-archival?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 29, "type": "option",
+	    "precondition": { "questionid": 28, "answerid": 1 },	    
+	    "title": "Do you need frequent backups?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, data changes infrequently" },
+		{   "id": 1, "label": "Yes, data changes frequently" }
+	    ]
+	},
+	{
+	    "questionid": 31, "type": "option",
+	    "precondition": { "questionid": 28, "answerid": 1 },	    
+	    "title": "Will you be relying on these backups to recover from human error (accidental changes or deletions)?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 32, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Will the archive be stored on disc or on tape?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Disc" },
+		{   "id": 1, "label": "Tape" }
+	    ]
+	},
+	{
+	    "questionid": 33, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Will the archive be stored in a remote location, protecting the data against disasters?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 34, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Will the archive need to be protected against loss or theft?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 35, "type": "option",
+	    "precondition": { "questionid": 34, "answerid": 1 },	    
+	    "title": "Will the archive be encrypted?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 36, "type": "option",
+	    "precondition": { "questionid": 35, "answerid": 1 },	    
+	    "title": "Is it clear who has access to the key? Also in case of a required data restore?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 37, "type": "option",
+	    "precondition": { "questionid": 34, "answerid": 1 },	    
+	    "title": "Is it clear who has physical access to the archives?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 38, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Will your project require the archives to be available on-line?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 39, "type": "option",
+	    "precondition": { "questionid": 38, "answerid": 1 },	    
+	    "title": "Will data integrity be guaranteed?",
+	    "text": "If the 'master copy' of the data is available on line, it should probably be protected against being tampered with.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 40, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Has it been established who has access to the archive, and how fast?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 41, "type": "option",
+	    "precondition": { "questionid": 40, "answerid": 1 },	    
+	    "title": "Has it been established who can ask for a restore during the project?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 42, "type": "option",
+	    "precondition": { "questionid": 40, "answerid": 1 },	    
+	    "title": "If the data is voluminous, will the project be able to cope with the time needed for a restore?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 43, "type": "option",
+	    "precondition": { "questionid": 40, "answerid": 1 },	    
+	    "title": "has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 44, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Has it been established how long the archived data need to be kept? For each of the different parts of the archive (raw data / results)?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 45, "type": "option",
+	    "precondition": { "questionid": 26, "answerid": 1 },	    
+	    "title": "Will the data still be understandable after a long time?",
+	    "text": "See also all questions about keeping metadata and data formats. Make sure the metadata is kept close to the data in the archive, and that community supported data formats are used for all long term archiving.",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No" },
