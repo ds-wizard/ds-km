@@ -82,7 +82,7 @@
 	    "title": "Which version will you use?",
 	    "text": "If there are different versions available, you have to decide with all project partners together which version you will be using. Probably you will go for the latest release as of the date of the start of your research project. However, if you have other data from older projects that need to be merged, you may need to consider using the same release you used for a previous project."
 	},
-	{
+ 	{
 	    "questionid": 8, "type": "option",
 	    "precondition": { "questionid": 6, "answerid": 1 },
 	    "title": "Will you change version if it updates?",
@@ -94,11 +94,34 @@
 		{    "id": 2, "label": "All analyses will be redone with the new version" }
 	    ]
 	},
+ 	{
+	    "questionid": 79, "type": "option",
+	    "precondition": { "questionid": 8, "answerid": 0},
+	    "title": "How will the old version be available?",
+	    "text": "Since you want to keep using the old version of the reference data, how will it be available to you?",
+	    "answers": 
+	    [
+		{    "id": 0, "label": "I will need it only at the beginning" },
+		{    "id": 1, "label": "I will use a downloaded version" },
+		{    "id": 2, "label": "The provider keeps old versions around" }
+	    ]
+	},
+ 	{
+	    "questionid": 80, "type": "option",
+	    "precondition": { "questionid": 3},
+	    "title": "How will you make sure the same reference data will be available to reproduce your results?",
+	    "text": "Will the reference data in the version you use be available to others?",
+	    "answers": 
+	    [
+		{    "id": 0, "label": "I will keep a copy and make it available with my results" },
+		{    "id": 1, "label": "The provider keeps old versions around" }
+	    ]
+	},
 	{
 	    "questionid": 9, "type": "list",
 	    "precondition": { "questionid": 2, "answerid": 1 },
 	    "title": "What existing non-reference data sets will you use?",
-	    "text": "Even if you will be producing your own data, you often will also be relying on existing data sets. You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?",
+	    "text": "Even if you will be producing your own data, you often will also be relying on existing data sets (e.g. from earlier . You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?",
 	    "references": [{"type": "dmpbook", "chapter": "1.7"}]
 	},
 	{
@@ -158,6 +181,40 @@
 	    ]
 	},
 	{
+	    "questionid": 15, "type": "option",
+	    "precondition": { "questionid": 9 },
+	    "title": "Do you knpw in what format the data is available?",
+	    "text": "Do you know the data format of the data? Is this suitable for your work? Does it need to be converted?",
+	    "answers": 
+	    [
+		{    "id": 0, "label": "I can directly use it" },
+		{    "id": 1, "label": "I need to convert it before using" } 
+	    ]
+	},
+	{
+	    "questionid": 17, "type": "option",
+	    "precondition": { "questionid": 9 },
+	    "title": "Is the data set fixed, or will it be updated in the future?",
+	    "text": "Is the data set you will reuse a fixed data set (with a persistent identifier), or is it a data set that is being worked on (by others) and may be updated during your project or after?",
+	    "answers": 
+	    [
+		{    "id": 0, "label": "It is a fixed data set, this will not influence reproducibility of my results" },
+		{    "id": 1, "label": "It may change, I will make sure a copy of the version I used will be available with my results" } 
+	    ]
+	},
+	{
+	    "questionid": 18, "type": "option",
+	    "precondition": { "questionid": 9 },
+	    "title": "Can you and will you use the complete existing data set?",
+	    "text": "If you use any filtering, how will you make sure that your results will be reproducible by yourself and others at a later time?",
+	    "answers": 
+	    [
+		{    "id": 0, "label": "I will use the complete data set" },
+		{    "id": 1, "label": "Any filtering or selection will be well documented" },
+		{    "id": 2, "label": "I will make sure the selected subset will be available together with my results"}
+	    ]
+	},
+	{
 	    "questionid": 16, "type": "option",
 	    "precondition": { "questionid": 2 },
 	    "title": "Do you need to harmonize different sources of existing data?",
@@ -170,14 +227,44 @@
 	    "references": [{"type": "dmpbook", "chapter": "1.10"}]
 	},
 	{
+	    "questionid": 81, "type": "option",
+	    "precondition": { "questionid": 2 },
+	    "title": "Will you be using data that needs to be (re-)made computer readable first?",
+	    "text": "Some old data may need to be recovered, e.g. from tables in scientific papers or may be punch cards.",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, I will make sure to make this data available with my results." }
+	    ]
+	},
+	{
 	    "questionid": 29, "type": "option",
 	    "title": "Will reference data be created?",
+	    "text": "Will any of the data that you will be creating form a reference data set for future research (by others)?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "1.12"}]
+	},
+	{
+	    "questionid": 30, "type": "text",
+	    "precondition": { "questionid": 29, "answerid": 1 },
+	    "title": "What will the Intellectual Property be like?",
+	    "text": "Who will own the rights to the reference data set? Who will be able to use it?"
+	},
+	{
+	    "questionid": 31, "type": "text",
+	    "precondition": { "questionid": 29, "answerid": 1 },
+	    "title": "How will you maintain it?",
+	    "text": "How will maintenance be paid for in the long run? Will you host it yourself or deposit it with a repository? How will you deal with requests for help? And with requests for adding data?"
+	},
+	{
+	    "questionid": 32, "type": "text",
+	    "precondition": { "questionid": 29, "answerid": 1 },
+	    "title": "How will the release schedule be?",
+	    "text": "Will you be updating the reference data at regular intervals?"
 	},
 	{
 	    "questionid": 33, "type": "option",
