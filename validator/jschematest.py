@@ -2,7 +2,6 @@
 import jsonschema
 import json
 
-
 # Custom printing of errors (skip no-information messages)
 # TODO: solve repetition of same error (with different paths)
 def print_errors(errors, indent=0):
@@ -24,10 +23,19 @@ def print_errors(errors, indent=0):
         new_errors = sorted(error.context, key=lambda e: e.schema_path)
         print_errors(new_errors, next_indent)
 
-with open('../schema.alt.json') as f:
-    schema = json.load(f)
-with open('../datamodel/core/chapter1.json') as f:
-    instance = json.load(f)
-v = jsonschema.Draft4Validator(schema)
-errors = sorted(v.iter_errors(instance), key=lambda e: e.path)
-print_errors(errors)
+
+if __name__ == "__main__":
+    import os
+
+    with open('../schema-chapter.json') as f:
+        schema = json.load(f)
+    v = jsonschema.Draft4Validator(schema)
+
+    for root, dirs, files in os.walk('../datamodel'):
+        for name in files:
+            if name.endswith('.json'):
+                print (os.path.join(root, name))
+                with open(os.path.join(root, name)) as f:
+                    instance = json.load(f)
+                errors = sorted(v.iter_errors(instance), key=lambda e: e.path)
+                print_errors(errors)
