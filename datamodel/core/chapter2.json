@@ -8,23 +8,76 @@
     [
 	{
 	    "questionid": 1, "type": "option",
-	    "title": "Are you using data types used by others too?",
+	    "title": "Have you identified types of data that you will use that are used by others too?",
+	    "text": "Some types of data (e.g. genetic variants in the life sciences) are used by many different projects. For such data, often common standards exist that help to make these data reusable. Are you using such common data formats?",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
+		{   "id": 0, "label": "No, I am not using any common data types" },
+		{   "id": 1, "label": "Yes, I will make sure to use common formats for common data types" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "2.1"}]
 	},
 	{
 	    "questionid": 2, "type": "option",
 	    "title": "Will you be using new types of data?",
+	    "text": "Sometimes the type of data you collect can not be stored in a commonly used data format. In such cases you may need to make your own, keeping interoperability as high as possible.",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
+		{   "id": 0, "label": "No, all of my data will fit in common formats" },
+		{   "id": 1, "label": "Yes, I will need to use custom formats for some of my data" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "2.2"}]
+	},
+	{
+	    "questionid": 7, "type": "option",
+	    "precondition": { "questionid": 2, "answerid": 1 },	    
+	    "title": "Will you need to add fields in your data format to a data type registry?",
+	    "text": "Even if the data format you are using is unique to your project, the discrete data items should be reused or reusable as much as possible. Data type registries can help with that.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, all of my data types are described in a data type registry already" },
+		{   "id": 1, "label": "Yes, I will add new types to an existing data type registry" },
+		{   "id": 2, "label": "Yes, I will create my own data type registry" }
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.2.1"}]
+	},
+	{
+	    "questionid": 9, "type": "text",
+	    "precondition": { "questionid": 2, "answerid": 1 },	    
+	    "title": "Which data type registries will you use?"
+	},
+	{
+	    "questionid": 8, "type": "option",
+	    "precondition": { "questionid": 2, "answerid": 1 },	    
+	    "title": "Do you need to create vocabularies or ontologies for any of your data items?",
+	    "text": "For good interoperability the use of controlled vocabularies for each discrete data item is advisable. If such vocabularies exist, it is best to reuse those.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types" },
+		{   "id": 1, "label": "Yes, I will make and publish a vocabulary or ontology for some of my data" }
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.2.1"}]
+	},
+	{
+	    "questionid": 10, "type": "option",
+	    "precondition": { "questionid": 2, "answerid": 1 },	    
+	    "title": "How will you design your new data format?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "There is a closely related more generic and open format that I can specialize" },
+		{   "id": 1, "label": "I will use a Linked Data format" },
+		{   "id": 2, "label": "I will use a completely custom data format"}
+	    ]
+	},
+	{
+	    "questionid": 11, "type": "option",
+	    "precondition": { "questionid": 2, "answerid": 1 },	    
+	    "title": "Will you describe your new data format for others?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, this is not needed" },
+		{   "id": 1, "label": "Yes, I will register my standards at a data standards registry" }		
+	    ]
 	},
 	{
 	    "questionid": 3, "type": "option",
@@ -36,6 +89,163 @@
 		{   "id": 1, "label": "Explore" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "2.3"}]
+	},
+	{
+	    "questionid": 12, "type": "option",
+	    "precondition": { "questionid": 3, "answerid": 1 },	    
+	    "title": "Do suitable 'Minimal Metadata About ...' (MIA...) standards exist for your experiments?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 13, "type": "option",
+	    "precondition": { "questionid": 3, "answerid": 1 },	    
+	    "title": "Will you consider re-usability of your data beyond your original purpose?",
+	    "text": "Adding more than the strict minimum metadata about your experiment will possibly allow more wide re-use of your data, with associated higher data citation rates. Please note that it is not easy for yourself to see all other ways in which others could be reusing your data.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, I will just document the bare minimum" },
+		{   "id": 1, "label": "Yes, I will document more metadata than needed for reproducibility" }
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.3.1"}]
+	},
+	{
+	    "questionid": 14, "type": "option",
+	    "precondition": { "questionid": 13, "answerid": 1 },	    
+	    "title": "How will you balance the extra efforts with the potential for added reusability?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "I will see what I can do" },
+		{   "id": 1, "label": "I will use preselected additional standard modules of metadata" },
+		{   "id": 1, "label": "I will store all metadata I can gather and document" }
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.3.1.1"}]
+	},
+	{
+	    "questionid": 15, "type": "option",
+	    "precondition": { "questionid": 13, "answerid": 1 },	    
+	    "title": "Do you need to exchange your data with others?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.3.1.2"}]
+	},
+	{
+	    "questionid": 16, "type": "option",
+	    "precondition": { "questionid": 3, "answerid": 1 },	    
+	    "title": "Did you consider how to monitor data integrity?",
+	    "text": "Working with large amounts of heterogenous data in a larger research group has implications for the data integrity. How do you make sure every step of the workflow is done with the right version of the data? How do you handle the situation when a mistake is uncovered? Will you be able to redo the strict minimum data handling?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Skip" },
+		{   "id": 1, "label": "Explore" }
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.3.2"}]
+	},
+	{
+	    "questionid": 17, "type": "option",
+	    "precondition": { "questionid": 16, "answerid": 1 },	    
+	    "title": "Will you be keeping a master list with checksums of certified/correct/canonical/verified data?",
+	    "text": "Data corruption or mistakes can happen with large amounts of files or large files. Keeping a master list with data checksums can be helpful to prevent expensive mistakes. It can also be helpful to keep the sample list under version control forcing that all changes are well documented.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 18, "type": "option",
+	    "precondition": { "questionid": 16, "answerid": 1 },	    
+	    "title": "Will you define a way to detect file or sample swaps, e.g. by measuring something independently?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 20, "type": "option",
+	    "precondition": { "questionid": 3, "answerid": 1 },	    
+	    "title": "Do all datasets you work with have a license?",
+	    "text": "It is not always clear to everyone in the project (ad outside) what can and can not be done with a data set. It is helpful to associate each data set with a license as early as possible in the project. A data license should ideally be as free as possible: any restriction like 'only for non-commercial use' or 'attribution required' may reduce the reusability and thereby the number of citations. If possible, use a computer-readable and computer actionable license.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 19, "type": "option",
+	    "precondition": { "questionid": 20, "answerid": 1 },	    
+	    "title": "Will you store the licenses with the data at all time?",
+	    "text": "It is very likely that data will be moved and copied. At some point people may lose track of the origins. It can be helpful to have the licenses (of coarse as open as possible) stored in close association with the data.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.3.3"}]
+	},
+	{
+	    "questionid": 21, "type": "option",
+	    "precondition": { "questionid": 3, "answerid": 1 },	    
+	    "title": "How will you keep provenance?",
+	    "text": "To make your experiments reproducible, all steps in the data processing must be documented in detail. The software you used, including version number, all options and parameters. This information together for every step of the analysis is part of the so-called data provenance. There are more questions regarding this in the chapter on data processing and curation.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "All steps will be documented in an (electronic) lab notebook" },
+		{   "id": 1, "label": "Our work flow system documents the provenance automatically and completely" }
+	    ],
+	    "references": [{"type": "xref", "chapterid": 4, "questionid": 2}]
+	},
+	{
+	    "questionid": 22, "type": "option",
+	    "precondition": { "questionid": 3, "answerid": 1 },	    
+	    "title": "How will you do file naming and file organization?",
+	    "text": "Putting some thoughts into file naming can save a lot of trouble later.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Skip" },
+		{   "id": 1, "label": "Explore" }
+	    ]
+	},
+	{
+	    "questionid": 23, "type": "option",
+	    "precondition": { "questionid": 22, "answerid": 1 },	    
+	    "title": "Did you make a SOP (Standard Operating Procedure) for file naming?",
+	    "text": "It can help if everyone in the project uses the same naming scheme.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 24, "type": "option",
+	    "precondition": { "questionid": 22, "answerid": 1 },	    
+	    "title": "Will you be keeping the relationships between data clear in the file names?",
+	    "text": "Advice: Use the same identifiers for sample IDs etc throughout the entire project.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 25, "type": "option",
+	    "precondition": { "questionid": 22, "answerid": 1 },	    
+	    "title": "Will all the metadata in the file names also be available in the proper metadata?",
+	    "text": "The file names are very useful as metadata for people involved in the project, but to computers they are just identifiers. To prevent accidents with e.g. renamed files metadata information should always also be available elsewhere and not only through the file name.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, the file names in the project are an essential part of the metadata" },
+		{   "id": 1, "label": "Yes, all metadata is also explicitly available elsewhere" }
+	    ]
 	},
 	{
 	    "questionid": 4, "type": "option",
