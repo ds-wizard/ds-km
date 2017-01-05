@@ -910,6 +910,18 @@
 	    ]
 	},
 	{
+	    "questionid": 93, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },	    
+	    "title": "Is there sufficient experience with the chosen computer experience in the project?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "We will recruit" },
+		{   "id": 1, "label": "Training has been arranged" },
+		{   "id": 2, "label": "Our people will be able to call for help" },
+		{   "id": 3, "label": "We have sufficient knowledge in the project" }
+	    ]
+	},
+	{
 	    "questionid": 87, "type": "option",
 	    "precondition": { "questionid": 6, "answerid": 1 },	    
 	    "title": "Have you established with the provider when will you need the compute capacity?",
@@ -946,6 +958,26 @@
 	    "precondition": { "questionid": 88, "answerid": 0 },	    
 	    "title": "Can all data be legally transported and processed at the computing site?",
 	    "text": "Are the risks of data leaks covered?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 91, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },	    
+	    "title": "Will different groups work on different parts of the workflow? Will parts of the computing be done on 'local' infrastructure to the group?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "All steps of the workflow will be performed at central computing locations" },
+		{   "id": 1, "label": "Some steps may be performed at local computing locations" }
+	    ]
+	},
+	{
+	    "questionid": 92, "type": "option",
+	    "precondition": { "questionid": 91, "answerid": 1 },	    
+	    "title": "Is there sufficient network capacity to the other computing locations?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No" },
