@@ -845,6 +845,7 @@
 	},
  	{
 	    "questionid": 82, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
 	    "title": "Did you consider the possible impact to the project or organization if information is lost?",
 	    "answers": 
 	    [
@@ -855,6 +856,7 @@
 	},
  	{
 	    "questionid": 83, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
 	    "title": "Did you consider the possible impact to the project or organization if information leaks?",
 	    "answers": 
 	    [
@@ -865,6 +867,7 @@
 	},
  	{
 	    "questionid": 84, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
 	    "title": "Did you consider the possible impact to the project or organization if information is vandalized?",
 	    "answers": 
 	    [
@@ -873,11 +876,76 @@
 		{   "id": 1, "label": "The risk is acceptably low" }
 	    ]
 	},
-	    
 	{
 	    "questionid": 6, "type": "option",
 	    "title": "Do you need to do compute capacity planning?",
 	    "text": "If you require substantial amounts of compute power, amounts that are not trivially absorbed in what you usually have abailable, some planning is necessary. Do you think you need to do compute capacity planning?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 85, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },	    
+	    "title": "Do you know how much CPU power, memory and I/O band width a typical analysis will take?",
+	    "text": "Did you run pilot jobs? Do you know this information from comparable projects? Did you test whether the work scales up as you expected if you run more than one job?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 86, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },	    
+	    "title": "What type of compute architecture is most suitable for your work? Will you have that available?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "We will use a compute cluster" },
+		{   "id": 1, "label": "We will use grid computing" },
+		{   "id": 2, "label": "We will use cloud computing" },
+		{   "id": 3, "label": "We will use a mix of computing architectures for different parts of the work" }
+	    ]
+	},
+	{
+	    "questionid": 87, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },	    
+	    "title": "Have you established with the provider when will you need the compute capacity?",
+	    "text": "Do you need the compute capacity also for development? Can you start developing locally and start with a deployment test later?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 88, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },	    
+	    "title": "Is all required compute capacity available close to the project working storage area?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 89, "type": "option",
+	    "precondition": { "questionid": 88, "answerid": 0 },	    
+	    "title": "Did you plan the required network capacity between storage and compute services?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "There are no special networking requirements" },
+		{   "id": 1, "label": "Copying or network delays are considered to be acceptable" },
+		{   "id": 2, "label": "We will be able to use a dedicated network connection" }
+	    ]
+	},
+	{
+	    "questionid": 90, "type": "option",
+	    "precondition": { "questionid": 88, "answerid": 0 },	    
+	    "title": "Can all data be legally transported and processed at the computing site?",
+	    "text": "Are the risks of data leaks covered?",
 	    "answers": 
 	    [
 		{   "id": 0, "label": "No" },
