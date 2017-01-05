@@ -247,19 +247,8 @@
 		{   "id": 1, "label": "Yes, all metadata is also explicitly available elsewhere" }
 	    ]
 	},
-	{
-	    "questionid": 4, "type": "option",
-	    "title": "Do you need to do storage capacity planning?",
-	    "text": "If you collect substantial amounts of data, amounts that do not trivially fit on the storage that you normally have available or that can not be trivially transported between systems, some planning is necessary. Do you think you need to do storage capacity planning? If the expected total data volume is larger than 1 TB, you probably need to answer 'yes' here. Discuss these questions with your ICT department.",
-	    "answers": 
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
  	{
 	    "questionid": 26, "type": "option",
-	    "precondition": { "questionid": 4, "answerid": 1 },	    
 	    "title": "Will you be archiving data for long term preservation?",
 	    "answers": 
 	    [
@@ -461,15 +450,430 @@
 	    ]
 	},
 	{
-	    "questionid": 5, "type": "option",
-	    "title": "Is the risk of information loss or theft acceptable?",
-	    "text": "There are many factors that can contribute to the risk of information loss or information theft. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
+	    "questionid": 46, "type": "option",
+	    "title": "Will you need a shared working space to work with your data?",
 	    "answers": 
 	    [
-		{   "id": 0, "label": "Yes" },
-		{   "id": 1, "label": "Drill deeper" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
+	{
+	    "questionid": 47, "type": "option",
+	    "precondition": { "questionid": 46, "answerid": 1 },	    
+	    "title": "How will you work with your data?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Skip" },
+		{   "id": 1, "label": "Explore" }
+	    ]
+	},
+	{
+	    "questionid": 48, "type": "text",
+	    "precondition": { "questionid": 47, "answerid": 1 },	    
+	    "title": "What kind of data will you have in your work space?",
+	    "text": "When making the work space, it helps to know whether you expect to work with very many small files, a few very large files, whether you will use a (SQL) database to store most of the data. Maybe your data is suitable for a system like Hadoop? Such information can be collected here."
+	},
+	{
+	    "questionid": 49, "type": "option",
+	    "precondition": { "questionid": 47, "answerid": 1 },	    
+	    "title": "Do you need the work space to be close to the compute capacity?",
+	    "text": "If you have large volumes of data that are intensely and repeatedly used by the computing work flow, it may be needed to keep the storage in the same place as where the computing takes place.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ],
+	    "references": [ {"type": "xref", "chapterid": 2, "questionid": 6 } ]
+	},
+	{
+	    "questionid": 50, "type": "option",
+	    "precondition": { "questionid": 47, "answerid": 1 },	    
+	    "title": "Will you be working with your data in another form than the way it will be archived?",
+	    "text": "Archival and working with data have different requirements. You want archived information to be in a form that others could read and in a format that is also understandable in a number of years. When working with the data, you need to be able to address it efficiently. If the two differ, you need to plan for conversions.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, data format will be archived in the same way we work with it" },
+		{   "id": 1, "label": "Yes, archival will require a conversion step" }
+	    ]
+	},
+	{
+	    "questionid": 51, "type": "option",
+	    "precondition": { "questionid": 47, "answerid": 1 },	    
+	    "title": "How does the storage need change over time?",
+	    "text": "To perform capacity planning, it is important to know what the need for storage capacity at the beginning and the end of the project will be.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Storage needs will be the same during the whole project" },
+		{   "id": 1, "label": "Storage needs are large at the beginning and will be reduced later" },
+		{   "id": 2, "label": "Storage needs are small at the beginning and will grow later" },
+		{   "id": 3, "label": "Storage needs are largest in the middle of the project" },
+		{   "id": 4, "label": "Explore" }		
+	    ]
+	},
+	{
+	    "questionid": 52, "type": "option",
+	    "precondition": { "questionid": 51, "answerid": 4 },	    
+	    "title": "When will your raw data become available?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Raw data will come in right at the start" },
+		{   "id": 1, "label": "Raw data will come in during the project" }
+	    ]
+	},
+	{
+	    "questionid": 53, "type": "option",
+	    "precondition": { "questionid": 51, "answerid": 4 },	    
+	    "title": "How much of the raw data do you need to keep in the work space?",
+	    "text": "Sometimes the raw data is relatively large, and it pays of to clean it quickly.",
+	    "answers":
+	    [
+		{   "id": 0, "label": "Raw data will need to stay in the work space" },
+		{   "id": 1, "label": "Raw data can be cleaned out or archived quickly" },
+		{   "id": 2, "label": "Raw data do not form a major part of the storage needs" }
+	    ]
+	},
+	{
+	    "questionid": 54, "type": "option",
+	    "precondition": { "questionid": 53, "answerid": 1 },	    
+	    "title": "Do your raw data need to be archived?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, it is also stored elsewhere can can be recovered easily" },
+		{   "id": 1, "label": "No, it can be remeasured easily and more cheaply than archiving" },
+		{   "id": 2, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 55, "type": "option",
+	    "precondition": { "questionid": 51, "answerid": 4 },	    
+	    "title": "Did you plan how much intermediate data you will get during analysis and how long each step needs to be kept?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "The volume of intermediate data will not be significant" },
+		{   "id": 1, "label": "A large volume of intermediate data will be in the work space" }
+	    ]
+	},
+	{
+	    "questionid": 56, "type": "option",
+	    "precondition": { "questionid": 55, "answerid": 1 },	    
+	    "title": "Is it possible to store intermediate temporary data on a separate (scratch) file system that is not backed up?",
+	    "text": "If the intermediate results are in your main work space, a restore in case of a problem could take much more time. It may be faster to recover it by re-running computations",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "We will use the main work space for temporary data" },
+		{   "id": 1, "label": "We can offload intermediate results to a scratch file system that is not backed up" }
+	    ]
+	},
+	{
+	    "questionid": 71, "type": "option",
+	    "precondition": { "questionid": 56, "answerid": 1 },	    
+	    "title": "Are you sure you will not need a backup of the data stored on the scratch file systems (any scratch you use)?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+ 		{   "id": 1, "label": "Yes" }
+	    ],
+	    "references": [ {"type": "url", "weblink": "https://www.csc.fi/web/blog/post/-/blogs/the-largest-unplanned-outage-in-years-and-how-we-survived-it",
+			     "anchor": "How CSC restored 850 million temporary files" } ]
+	},
+	{
+	    "questionid": 57, "type": "option",
+	    "precondition": { "questionid": 51, "answerid": 4 },	    
+	    "title": "Will you have different versions of intermediate data that need to be kept?",
+	    "text": "Consider storing only the workflow parameters if the data itself could be reproduced quickly",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 58, "type": "option",
+	    "precondition": { "questionid": 47, "answerid": 1 },	    
+	    "title": "Will you need to temporarilty archive data sets (to tape)?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 59, "type": "option",
+	    "precondition": { "questionid": 47, "answerid": 1 },	    
+	    "title": "How will your first data come in?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No special planning is needed for the initial data" },
+		{   "id": 1, "label": "Initial data will need to be made available through a local network copy" },
+		{   "id": 2, "label": "We will need a high-speed network connection to copy the initial data" },
+		{   "id": 3, "label": "Initial data will arrive on separate media and will need to be copied to the work space" }
+	    ]
+	},
+	{
+	    "questionid": 60, "type": "option",
+	    "precondition": { "questionid": 47, "answerid": 1 },	    
+	    "title": "How will project partners access the work space?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Skip" },
+		{   "id": 1, "label": "Explore" }
+	    ]
+	},
+	{
+	    "questionid": 61, "type": "option",
+	    "precondition": { "questionid": 60, "answerid": 1 },	    
+	    "title": "Who will arrange access control?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No special provisions are needed" },
+		{   "id": 1, "label": "Project management will need to be able to give people access" },
+		{   "id": 2, "label": "The work space should be connected to a single-sign-on system" }
+	    ]
+	},
+	{
+	    "questionid": 62, "type": "option",
+	    "precondition": { "questionid": 60, "answerid": 1 },	    
+	    "title": "Will the work space need to be remote mounted?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, for occasional exploration" },
+		{   "id": 2, "label": "Yes, for actual computations, requiring high performance" }
+	    ]
+	},
+	{
+	    "questionid": 63, "type": "option",
+	    "precondition": { "questionid": 60, "answerid": 1 },	    
+	    "title": "Will data be copied out and in to the workspace by remote users?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No, this should not be allowed" },
+		{   "id": 1, "label": "Yes, occasionally" },
+		{   "id": 2, "label": "Yes, for actual computations, requiring high performance" }
+	    ]
+	},
+	{
+	    "questionid": 64, "type": "option",
+	    "precondition": { "questionid": 63, "answerid": 2 },	    
+	    "title": "Are data integrity and reliability requirements also met by the other storage spaces used in the project?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "This is not needed" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 65, "type": "option",
+	    "precondition": { "questionid": 46, "answerid": 1 },	    
+	    "title": "How available/reliable should must the workspace be?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Skip" },
+		{   "id": 1, "label": "Explore" }
+	    ]
+	},
+	{
+	    "questionid": 66, "type": "option",
+	    "precondition": { "questionid": 65, "answerid": 1 },	    
+	    "title": "What is the acceptable risk for a total loss?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "This is unacceptable" },
+		{   "id": 1, "label": "All essential data is also stored elsewhere" }
+	    ]
+	},
+	{
+	    "questionid": 67, "type": "option",
+	    "precondition": { "questionid": 66, "answerid": 1 },	    
+	    "title": "Is there software in the work space? Can it also be restored quickly?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "There is no software" },
+		{   "id": 1, "label": "Software in the work space is only a copy" },
+		{   "id": 2, "label": "Special care will be taken for the software and configurations" }
+	    ]
+	},
+	{
+	    "questionid": 68, "type": "option",
+	    "precondition": { "questionid": 65, "answerid": 1 },	    
+	    "title": "Can you handle it when the work space is off line for a while?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "We could handle a few days of offline time per year" },
+ 		{   "id": 1, "label": "We can only miss the work space for a few hours during work hours" },
+ 		{   "id": 2, "label": "Problems during the evenings and weekends can not wait for work hours to be repaired" }
+	    ]
+	},
+	{
+	    "questionid": 69, "type": "option",
+	    "precondition": { "questionid": 65, "answerid": 1 },	    
+	    "title": "How long can you wait for a restore if the storage fails?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "We can wait for repair and a restore from tape" },
+ 		{   "id": 1, "label": "A spare copy needs to be deployed quickly" },
+ 		{   "id": 2, "label": "No waiting is possible, a hot copy must be ready to take over" }
+	    ]
+	},
+	{
+	    "questionid": 70, "type": "option",
+	    "precondition": { "questionid": 65, "answerid": 1 },	    
+	    "title": "How long can you wait for a restore if you accidentally damage a file?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Days" },
+ 		{   "id": 1, "label": "Hours" },
+ 		{   "id": 2, "label": "Any user needs to be able to restore an old copy instantaneously" }
+	    ]
+	},
+	{
+	    "questionid": 72, "type": "option",
+	    "precondition": { "questionid": 65, "answerid": 1 },	    
+	    "title": "Do you need to make backups of project data stored elsewhere into your work space?",
+	    "text": "Are there any data files e.g. on laptops of project members? Also: supercomputing centers and other high performance computer centers often write in their terms of use that you need to take care of your own backups",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "There is no data elsewhere" },
+ 		{   "id": 1, "label": "All data elsewhere is adequately backed up" },
+ 		{   "id": 2, "label": "We make (automated) backups of all data stored outside of the working area" }
+	    ]
+	},
+	{
+	    "questionid": 73, "type": "option",
+	    "precondition": { "questionid": 46, "answerid": 0 },	    
+	    "title": "Are data all project members store adequately backed up and traceable?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+ 		{   "id": 1, "label": "Yes, protected against both equipment failure and human error" }
+	    ]
+	},
+ 	{
+	    "questionid": 5, "type": "option",
+	    "title": "Is the risk of information loss, leaks and vandalism acceptably low?",
+	    "text": "There are many factors that can contribute to the risk of information loss or information leaks. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Skip" },
+		{   "id": 1, "label": "Explore" }
+	    ]
+	},
+  	{
+	    "questionid": 74, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
+	    "title": "Do project members store data or software on computers in the lab or external hard drives connected to those computers?",
+	    "text": "When assessing the risk, take into account who has access to the lab, who has (physical) access to the computer hardware itself. Also consider whether data on those systems is properly backed up",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+  	{
+	    "questionid": 75, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
+	    "title": "Do project members carry data with them?",
+	    "text": "Does anyone carry project data on laptops, USB sticks or other external media?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+  	{
+	    "questionid": 76, "type": "option",
+	    "precondition": { "questionid": 75, "answerid": 1 },	    
+	    "title": "Are all data carriers encrypted? Are accounts on the laptop password protected?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+   	{
+	    "questionid": 77, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
+	    "title": "Do project members store project data in cloud accounts?",
+	    "text": "Think about services like Dropbox, but also about Google Drive, Apple iCloud accounts, or Microsoft's Office365",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+   	{
+	    "questionid": 78, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
+	    "title": "Do project members send project data or reports per e-mail or other messaging services?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+   	{
+	    "questionid": 79, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
+	    "title": "Do all data centers where project data is stored carry sufficient certifications?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+   	{
+	    "questionid": 80, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
+	    "title": "Are all project web services addressed via secure http (https://)?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+   	{
+	    "questionid": 81, "type": "option",
+	    "precondition": { "questionid": 5, "answerid": 1 },	    
+	    "title": "Have project members been instructed about the risks (generic and specific to the project)?",
+	    "text": "Project members may need to know about passwords (not sharing accounts, using different passwords for each service, and two factor authentication), about security for data they carry (encryption, backups), data stored in their own labs and in personal cloud accounts, and about the use of open WiFi and https",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+ 	{
+	    "questionid": 82, "type": "option",
+	    "title": "Did you consider the possible impact to the project or organization if information is lost?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "The effect is small" },
+		{   "id": 1, "label": "The risk is acceptably low" }
+	    ]
+	},
+ 	{
+	    "questionid": 83, "type": "option",
+	    "title": "Did you consider the possible impact to the project or organization if information leaks?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "The effect is small" },
+		{   "id": 1, "label": "The risk is acceptably low" }
+	    ]
+	},
+ 	{
+	    "questionid": 84, "type": "option",
+	    "title": "Did you consider the possible impact to the project or organization if information is vandalized?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "The effect is small" },
+		{   "id": 1, "label": "The risk is acceptably low" }
+	    ]
+	},
+	    
 	{
 	    "questionid": 6, "type": "option",
 	    "title": "Do you need to do compute capacity planning?",
