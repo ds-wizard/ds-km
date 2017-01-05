@@ -120,7 +120,7 @@
 	    [
 		{   "id": 0, "label": "I will see what I can do" },
 		{   "id": 1, "label": "I will use preselected additional standard modules of metadata" },
-		{   "id": 1, "label": "I will store all metadata I can gather and document" }
+		{   "id": 2, "label": "I will store all metadata I can gather and document" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "2.3.1.1"}]
 	},
@@ -851,7 +851,7 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "The effect is small" },
-		{   "id": 1, "label": "The risk is acceptably low" }
+		{   "id": 2, "label": "The risk is acceptably low" }
 	    ]
 	},
  	{
@@ -862,7 +862,7 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "The effect is small" },
-		{   "id": 1, "label": "The risk is acceptably low" }
+		{   "id": 2, "label": "The risk is acceptably low" }
 	    ]
 	},
  	{
@@ -873,7 +873,7 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "The effect is small" },
-		{   "id": 1, "label": "The risk is acceptably low" }
+		{   "id": 2, "label": "The risk is acceptably low" }
 	    ]
 	},
 	{
