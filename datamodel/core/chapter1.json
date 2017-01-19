@@ -159,7 +159,7 @@
 	{
 	    "questionid": 12, "type": "option",
 	    "precondition": { "questionid": 9 },
-	    "title": "Is extenstion of any consent for privacy sensitive data needed?",
+	    "title": "Is extension of any consent for privacy sensitive data needed?",
 	    "text": "If the data that you will re-use is coupled to people, is the informed consent that was originally obtained from those people covering your current research?",
 	    "answers":
 	    [
