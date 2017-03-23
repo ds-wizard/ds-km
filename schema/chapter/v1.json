@@ -33,7 +33,7 @@
                 "namespace" : { "$ref": "#/common/namespace" },
                 "questionid": { "$ref": "#/common/ids/questionid" }
             },
-            "required": ["chapterid", "questionid", "namespace"],
+            "required": ["questionid", "namespace"],
             "additionalProperties": false
         },
         "precondition": {
