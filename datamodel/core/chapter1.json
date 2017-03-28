@@ -55,7 +55,7 @@
 	{
 	    "questionid": 5, "type": "option",
 	    "precondition": { "questionid": 3 },
-	    "title": "Do you knpw in what format the reference data is available?",
+	    "title": "Do you know in what format the reference data is available?",
 	    "text": "Do you know the data format of the reference data? Is this suitable for your work? Does it need to be converted?",
 	    "answers": 
 	    [
@@ -183,7 +183,7 @@
 	{
 	    "questionid": 15, "type": "option",
 	    "precondition": { "questionid": 9 },
-	    "title": "Do you knpw in what format the data is available?",
+	    "title": "Do you know in what format the data is available?",
 	    "text": "Do you know the data format of the data? Is this suitable for your work? Does it need to be converted?",
 	    "answers": 
 	    [
