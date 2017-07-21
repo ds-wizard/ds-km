@@ -7,24 +7,102 @@
     [
 	{
 	    "questionid": 1, "type": "option",
-	    "title": "Who will do the measurements?",
+	    "title": "Who will do the measurements? And where?",
 	    "text": "Are there easily accessible specialized service providers for data capture?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "In the project" },
-		{   "id": 1, "label": "External party", "advice": "consider making them partner in the project" }
+		{   "id": 0, "label": "Experts in the project, with our own equipment" },
+		{   "id": 1, "label": "Experts in the project, at a specialized infrastructure" },
+		{   "id": 2, "label": "External party", "advice": "consider making them partner in the project" }
+	    ]
+	},
+	{
+	    "questionid": 5, "type": "option",
+	    "title": "Is the equipment completely standard and well described?",
+	    "text": "If the technology is very much under development, you may want to come back later to understand exactly how the measurements have been made. Is the measurement equipment and protocol sufficiently standard that you will be able to explain how it is done or refer to a standard explanation?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "Very well described and known"},
+		{   "id": 1, "label": "Less well described or not completely standard",
+		    "advice": "Take pictures of the instruments for documentation, and keep copies of any documentation."}
 	    ]
 	},
 	{
 	    "questionid": 2, "type": "option",
 	    "title": "Is special care needed to get the raw data ready for processing?",
-	    "text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion of the primary data may take special planning.",
+	    "text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion or transport of the primary data may take special planning. You also need to make sure that data is secure and that data integrity is guaranteed.",
 	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No, this is all fine" },
+		{   "id": 1, "label": "Yes, lets explore this" }
+	    ]
+	},
+	{
+	    "questionid": 6, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Is the data format established?",
+	    "text": "Has the storage and transport format of the primary data been established between the people responsible for the measurement and the people responsible for the processing?",
+	    "answers":
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ]
-	},
+	},	    
+	{
+	    "questionid": 7, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "How will the raw data be transported?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No transport is needed, analysis is done where it is obtained" },
+		{   "id": 1, "label": "On physical media" },
+		{   "id": 2, "label": "Via the network" }
+	    ]
+	},	    
+	{
+	    "questionid": 8, "type": "option",
+	    "precondition": {"questionid": 7, "answerid": 1},
+	    "title": "Is sufficient writing and reading capacity available for the physical media?",
+	    "text": "Has time been reserved on any tape/disk reading and writing stations?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "Not yet" },
+		{   "id": 1, "label": "Yes, has been taken care of" }
+	    ]
+	},	    
+	{
+	    "questionid": 9, "type": "option",
+	    "precondition": {"questionid": 7, "answerid": 2},
+	    "title": "Is sufficient network capacity available?",
+	    "text": "Can the volume of data be accommodated by the standard network connection? Has a special network connection (e.g. light path) that is needed been reserved?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "Not yet" },
+		{   "id": 1, "label": "Yes, has been taken care of" }
+	    ]
+	},	    
+	{
+	    "questionid": 10, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Is data integrity guaranteed during this stage?",
+	    "text": "Do you have any means of identifying whether the raw data has been transferred error free and has not been tampered with?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	    
+	{
+	    "questionid": 11, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Is data security guaranteed during this stage?",
+	    "text": "Are the raw data encrypted or otherwise protected from theft or leaks at either site or during transport?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No, not needed" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	    
 	{
 	    "questionid": 3, "type": "option",
 	    "title": "Do you have any non-equipment data capture?",
