@@ -11,17 +11,116 @@
 	    "text": "It is likely that you will be developing or modifying the workflow for data processing. There are a lot of aspects of this workflow that can play a role in your data management, such as the use of an existing work flow engine, the use of existing software vs development of new components, and whether every run needs human intervention or whether all data processing can be run in bulk once the work flow has been defined.",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Taken care of" },
-		{   "id": 1, "label": "Drill deeper" }
+		{   "id": 0, "label": "This has been arranged" },
+		{   "id": 1, "label": "More guidance is desired" }
 	    ]
+	},
+	{
+	    "questionid": 5, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "Will you be exploring options, or run in bulk?",
+	    "text": "What will be the operational mode for your workflows? Will you be exploring options by changing tools and tweaking parameters? Of will you be running the same exact workflow on a large number of data files?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "We will be exploring options" },
+		{   "id": 1, "label": "We will be running in bulk" },
+		{   "id": 2, "label": "A bit of both"}
+	    ]
+	},
+	{
+	    "questionid": 6, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "What data will the workflow developers or implementers use?",
+	    "text": "The people implementing the data analysis work flow for your project probably need test data that they can use to see whether what they build works. How will this be arranged?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "They do not need data" },
+		{   "id": 1, "label": "They can use existing data from another project" },
+		{   "id": 2, "label": "They can use data from our project" }
+	    ]
+	},
+	{
+	    "questionid": 7, "type": "option",
+	    "precondition": {"questionid": 6, "answerid": 2},
+	    "title": "When will they have access?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Data will be available at the start of the project, no waiting needed"},
+		{   "id": 1, "label": "They can start with a subset as soon as our first data comes" },
+		{   "id": 2, "label": "Workflow development will commence as soon as our data is available" }
+	    ]
+	},
+	{
+	    "questionid": 8, "type": "option",
+	    "precondition": {"questionid": 6, "answerid": 2},
+	    "title": "How will data serurity be dealt with?",
+	    "answers": 
+	    [
+		{   "id": 0, "label": "Data security is not an issue"},
+		{   "id": 1, "label": "Data will not be on systems owned by workflow developers"},
+		{   "id": 2, "label": "Data will always be encrypted"},
+		{   "id": 3, "label": "We have made other arrangements"}
+	    ]
+	},
+	{
+	    "questionid": 9, "type": "text",
+	    "precondition": {"questionid": 8, "answerid": 3},
+	    "title": "What other arrangements?"
+	},
+	{
+	    "questionid": 10, "type": "list",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "List existing software components you will use in the analysis workflow",
+	    "text": "Your workflow may be available in components from different sources. Specify the different parts that you recognize and that you will each acquire in a different way"
+	},
+	{   "questionid": 12, "type": "text",
+	    "precondition": {"questionid": 10},
+	    "title": "Where are you getting this software from? Please specify a web address if available."
+	},
+	{   "questionid": 13, "type": "option",
+	    "precondition": {"questionid": 10},
+	    "title": "What version of this software will you use?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "The exact version that we point to"},
+		{   "id": 1, "label": "The current version, and we will stick with that"},
+		{   "id": 2, "label": "Whatever is the latest version at the time the analysis is run"}
+	    ]
+	},	   
+	{   "questionid": 14, "type": "option",
+	    "precondition": {"questionid": 13, "answerid": 2},
+	    "title": "Will you re-run any analysis when a new version comes out?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No"},
+		{   "id": 1, "label": "If there is potentially a better result",  "advice": "Make sure to take that into account when calculating the need for compute resources"},
+		{   "id": 2, "label": "Yes", "advice": "Make sure to take that into account when calculating the need for compute resources"}
+	    ]
+	},	   
+	{   "questionid": 15, "type": "option",
+	    "precondition": {"questionid": 10},
+	    "title": "How is your experience with this software?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "We know the software well"},
+		{   "id": 1, "label": "We know the authors well"},
+		{   "id": 2, "label": "We will gather experience by visiting others who have used it"},
+		{   "id": 3, "label": "We will use the manual"}
+	    ]
+	},	   
+	{
+	    "questionid": 11, "type": "list",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "List existing software components you will use in the analysis workflow",
+	    "text": "Not all components you need may be available already. Please list here what you will be developing yourself. Do not underestimate the time needed to integrate components into a work flow!"
 	},
 	{
 	    "questionid": 2, "type": "option",
 	    "title": "How will you make sure to know what exactly has been run?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Taken care of" },
-		{   "id": 1, "label": "Drill deeper" }
+		{   "id": 0, "label": "This has been arranged" },
+		{   "id": 1, "label": "More guidance is desired" }
 	    ]
 	},
 	{
@@ -29,8 +128,8 @@
 	    "title": "How will you validate the integrity of the results?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Taken care of" },
-		{   "id": 1, "label": "Drill deeper" }
+		{   "id": 0, "label": "This has been arranged" },
+		{   "id": 1, "label": "More guidance is desired" }
 	    ]
 	},
 	{
@@ -39,7 +138,7 @@
 	    "text": "What will you do if the compute facility is down?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Wait" },
+		{   "id": 0, "label": "We will wait until the problem is fixed" },
 		{   "id": 1, "label": "We have an alternative" }
 	    ]
 	}
