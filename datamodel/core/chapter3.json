@@ -6,7 +6,12 @@
     "questions" :
     [
 	{
+	    "questionid": 16, "type": "list",
+	    "title": "Please specify what data sets you will acquire using measurement equipment"
+	},
+	{
 	    "questionid": 1, "type": "option",
+	    "precondition": {"questionid": 16},
 	    "title": "Who will do the measurements? And where?",
 	    "text": "Are there easily accessible specialized service providers for data capture?",
 	    "answers": 
@@ -17,7 +22,43 @@
 	    ]
 	},
 	{
+	    "questionid": 12, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 2},
+	    "title": "Has formal ownership of the data been established?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "The party measuring the data owns it" },
+		{   "id": 1, "label": "The project partners acquire full ownership"},
+		{   "id": 2, "label": "We have made other arrangements" },
+		{   "id": 3, "label": "This still needs to be decided" }
+	    ]
+	},
+	{
+	    "questionid": 14, "type": "text",
+	    "precondition": {"questionid": 12, "answerid": 2},
+	    "title": "What other arrangements?"
+	},
+	{
+	    "questionid": 13, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 2},
+	    "title": "Has responsibility for long term safe keeping of the raw data been established? Who will deal with data publication?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "The measuring party will publish it after a fixed embargo period" },
+		{   "id": 1, "label": "The measuring party will publish it when the project tells them to" },
+		{   "id": 2, "label": "The measuring party will delete the data, the project partners will deal with data publication"},
+		{   "id": 3, "label": "We have made other arrangements" },
+		{   "id": 4, "label": "This still needs to be decided" }
+	    ]
+	},
+	{
+	    "questionid": 15, "type": "text",
+	    "precondition": {"questionid": 13, "answerid": 3},
+	    "title": "What other arrangements?"
+	},
+	{
 	    "questionid": 5, "type": "option",
+	    "precondition": {"questionid": 16},
 	    "title": "Is the equipment completely standard and well described?",
 	    "text": "If the technology is very much under development, you may want to come back later to understand exactly how the measurements have been made. Is the measurement equipment and protocol sufficiently standard that you will be able to explain how it is done or refer to a standard explanation?",
 	    "answers":
@@ -29,6 +70,7 @@
 	},
 	{
 	    "questionid": 2, "type": "option",
+	    "precondition": {"questionid": 16},
 	    "title": "Is special care needed to get the raw data ready for processing?",
 	    "text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion or transport of the primary data may take special planning. You also need to make sure that data is secure and that data integrity is guaranteed.",
 	    "answers": 
@@ -96,21 +138,132 @@
 	    "questionid": 11, "type": "option",
 	    "precondition": {"questionid": 2, "answerid": 1},
 	    "title": "Is data security guaranteed during this stage?",
-	    "text": "Are the raw data encrypted or otherwise protected from theft or leaks at either site or during transport?",
+	    "text": "Are the raw data encrypted or otherwise protected from theft or leaks at either site or during transport? You could e.g. use a light path or a virtual private network if you transport the data over the net.",
 	    "answers":
 	    [ 
 		{   "id": 0, "label": "No, not needed" },
 		{   "id": 1, "label": "Yes" }
 	    ]
-	},	    
+	},
 	{
 	    "questionid": 3, "type": "option",
 	    "title": "Do you have any non-equipment data capture?",
+	    "text": "Does the data you collect contain non-equipment captured data such as questionnaires, case report forms, electronic patient records?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ]
+	},
+	{
+	    "questionid": 18, "type": "option",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Will you be collecting questionnaires?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "No"},
+		{    "id": 1, "label": "Yes"}
+	    ]
+	},
+	{
+	    "questionid": 19, "type": "option",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Will you be collecting case report forms?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "No"},
+		{    "id": 1, "label": "Yes"}
+	    ]
+	},
+	{
+	    "questionid": 20, "type": "option",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Will you be collecting data from electronic patient records?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "No"},
+		{    "id": 1, "label": "Yes"}
+	    ]
+	},
+	{
+	    "questionid": 21, "type": "option",
+	    "precondition": {"questionid": 20, "answerid": 1},
+	    "title": "Has access to the electronic patient records been arranged?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "Not yet"},
+		{    "id": 1, "label": "Yes"}
+	    ]
+	},
+	{
+	    "questionid": 17, "type": "list",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Please list all non-equipment data sets you will collect"
+	},
+	{
+	    "questionid": 22, "type": "option",
+	    "precondition": {"questionid": 17},
+	    "title": "How will the data be captured?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "All immediately in digital form"},
+		{    "id": 1, "label": "Data will first be on paper"}
+	    ]
+	},
+	{
+	    "questionid": 23, "type": "option",
+	    "precondition": {"questionid": 22, "answerid": 1},
+	    "title": "Who will do the data entry?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "A specialized team"},
+		{    "id": 1, "label": "One of the members of the project team"},
+		{    "id": 2, "label": "We have made other arrangements"},
+		{    "id": 3, "label": "This is not yet clear"}
+	    ]
+	},
+	{
+	    "questionid": 24, "type": "text",
+	    "precondition": {"questionid": 23, "answerid": 2},
+	    "title": "What other arrangements?"
+	},
+	{
+	    "questionid": 25, "type": "option",
+	    "precondition": {"questionid": 22, "answerid": 1},
+	    "title": "Did you arrange who will make the data digitally available to you?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "Not yet"},
+		{    "id": 1, "label": "Yes"}
+	    ]
+	},
+	{
+	    "questionid": 26, "type": "option",
+	    "precondition": {"questionid": 17},
+	    "title": "Will all data be collected by a single person?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "This data will be collected by one person"},
+		{    "id": 1, "label": "More people will capture data"}
+	    ]
+	},
+	{
+	    "questionid": 27, "type": "option",
+	    "precondition": {"questionid": 26, "answerid": 1},
+	    "title": "Is there a risk of different interpretations? Subjectivity?",
+	    "answers":
+	    [
+		{    "id": 0, "label": "The data capture is objective"},
+		{    "id": 1, "label": "There are internal controls to deal with interperation differences"},
+		{    "id": 2, "label": "We accept the risk of different interpretations"},
+		{    "id": 3, "label": "We do validation afterwards"},
+		{    "id": 4, "label": "We have made other arrangements"}
+	    ]
+	},
+	{
+	    "questionid": 28, "type": "text",
+	    "precondition": {"questionid": 27, "answerid": 4},
+	    "title": "What other arrangements?"
 	},
 	{
 	    "questionid": 4, "type": "option",
@@ -120,6 +273,38 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ]
-	}
+	},
+	{
+	    "questionid": 29, "type": "option",
+	    "precondition": {"questionid": 4, "answerid": 0},
+	    "title": "Can all data be brought into the same format, e.g. RDF?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 30, "type": "option",
+	    "precondition": {"questionid": 4, "answerid": 1},
+	    "title": "What software will you be using to collect all data?",
+	    "answers":
+	    [ 
+  		{   "id": 0, "label": "We will not use a data warehouse" },
+  		{   "id": 1, "label": "TranSMART" },
+		{   "id": 98, "label": "Software not listed here" },
+		{   "id": 99, "label": "We will develop our own" }
+	    ]
+	},	    
+	{
+	    "questionid": 31, "type": "option",
+	    "precondition": {"questionid": 30, "answerid": 99},
+	    "title": "Why will you develop your own software?",
+	    "answers":
+	    [ 
+  		{   "id": 0, "label": "Nothing like this has ever been done before" },
+  		{   "id": 1, "label": "Existing solutions are not suitable", "advice": "Did you consider collaborating to improve an existing solution?" }
+	    ]
+	}	    
     ]
 }
