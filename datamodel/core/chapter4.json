@@ -111,13 +111,61 @@
 	{
 	    "questionid": 11, "type": "list",
 	    "precondition": {"questionid": 1, "answerid": 1},
-	    "title": "List existing software components you will use in the analysis workflow",
+	    "title": "List new software components you will develop for the analysis workflow",
 	    "text": "Not all components you need may be available already. Please list here what you will be developing yourself. Do not underestimate the time needed to integrate components into a work flow!"
+	},
+	{
+	    "questionid": 16, "type": "text",
+	    "precondition": {"questionid": 11},
+	    "title": "Please specify the software repository you use for development",
+	    "text": "Preferably use a direct URL other users could use"
+	},
+	{
+	    "questionid": 20, "type": "option",
+	    "precondition": {"questionid": 11},
+	    "title": "Did you consider existing options?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "Nothing like this exists" },
+		{   "id": 1, "label": "Authors of similar alternatives are not willing to work with us" },
+		{   "id": 2, "label": "Alternatives exist, but we prefer to develop our own" },
+		{   "id": 3, "label": "This will be one of the prime distinctive outcomes of our project"}
+ 	    ]
+	},	
+	{
+	    "questionid": 17, "type": "option",
+	    "precondition": {"questionid": 11},
+	    "title": "What license will you use for your tool?",
+	    "text": "Make sure the license is compatible with all components you use, and also make sure the license is made explicit in the repository.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "Apache 2.0" },
+		{   "id": 1, "label": "GPL 3.0 or later" },
+		{   "id": 2, "label": "AGPL 3.0 or later" },
+		{   "id": 3, "label": "LGPL 3.0 or later" },
+		{   "id": 99, "label": "We are using a different license"}
+ 	    ]
+	},	
+	{
+	    "questionid": 18, "type": "text",
+	    "precondition": {"questionid": 17, "answerid": 99},
+	    "title": "What other license?",
+	    "text": "Preferably give a web pointer to the license."
+	},
+	{
+	    "questionid": 19, "type": "option",
+	    "precondition": {"questionid": 17, "answerid": 99},
+	    "title": "Is this a recognised reusable open source license?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
 	},
 	{
 	    "questionid": 2, "type": "option",
 	    "title": "How will you make sure to know what exactly has been run?",
-	    "answers": 
+	    "answers":
 	    [ 
 		{   "id": 0, "label": "This has been arranged" },
 		{   "id": 1, "label": "More guidance is desired" }
