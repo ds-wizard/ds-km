@@ -120,7 +120,7 @@
 	    [
 		{   "id": 0, "label": "I will see what I can do" },
 		{   "id": 1, "label": "I will use preselected additional standard modules of metadata" },
-		{   "id": 2, "label": "I will store all metadata I can gather and document" }
+		{   "id": 2, "label": "I will collect all metadata I can gather and document the data set beyond minimal standards" }
 	    ],
 	    "references": [{"type": "dmpbook", "chapter": "2.3.1.1"}]
 	},
