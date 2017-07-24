@@ -96,7 +96,7 @@
 	    "title": "Do suitable 'Minimal Metadata About ...' (MIA...) standards exist for your experiments?",
 	    "answers":
 	    [
-		{   "id": 0, "label": "No" },
+		{   "id": 0, "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?" },
 		{   "id": 1, "label": "Yes" }
 	    ]
 	},
