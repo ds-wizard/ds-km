@@ -292,6 +292,7 @@
 	    "questionid": 29, "type": "option",
 	    "precondition": { "questionid": 28, "answerid": 1 },
 	    "title": "Do you need frequent backups?",
+	    "text": "The general term 'backup' is used for protection against two different kinds of problems: equipment failure and human error. Protections against these two may need different solutions. Both are considered backup for this and subsequent questions.",
 	    "answers":
 	    [
 		{   "id": 0, "label": "No, data changes infrequently" },
