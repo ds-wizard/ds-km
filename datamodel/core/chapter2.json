@@ -390,6 +390,16 @@
 	    ]
 	},
 	{
+	    "questionid": 94, "type": "option",
+	    "precondition": { "questionid": 38, "answerid": 1 },
+	    "title": "Is there an interface and a defined process for people to request access to the data?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
 	    "questionid": 40, "type": "option",
 	    "precondition": { "questionid": 26, "answerid": 1 },
 	    "title": "Has it been established who has access to the archive, and how fast?",
