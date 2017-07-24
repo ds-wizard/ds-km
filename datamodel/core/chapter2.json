@@ -541,7 +541,8 @@
 	    [
 		{   "id": 0, "label": "Raw data will need to stay in the work space" },
 		{   "id": 1, "label": "Raw data can be cleaned out or archived quickly" },
-		{   "id": 2, "label": "Raw data do not form a major part of the storage needs" }
+		{   "id": 2, "label": "Raw data do not form a major part of the storage needs" },
+		{   "id": 3, "label": "Raw data will only be loaded in the work space on demand from the primary archives" }
 	    ]
 	},
 	{
