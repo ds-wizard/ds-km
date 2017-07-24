@@ -175,8 +175,8 @@
 	    "title": "How will you be accessing the data?",
 	    "answers":
 	    [
-		{   "id": 0, "label": "Already have physical copy" },
-		{   "id": 1, "label": "Will make physical copy" },
+		{   "id": 0, "label": "Already have a copy" },
+		{   "id": 1, "label": "Will download or get a copy" },
 		{   "id": 2, "label": "Will use it online" }
 	    ]
 	},
