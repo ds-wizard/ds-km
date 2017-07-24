@@ -53,6 +53,7 @@
 	{
 	    "questionid": 6, "type": "option",
 	    "title": "Will you be archiving data?",
+	    "text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
