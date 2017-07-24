@@ -648,7 +648,7 @@
 	{
 	    "questionid": 62, "type": "option",
 	    "precondition": { "questionid": 60, "answerid": 1 },
-	    "title": "Will the work space need to be remote mounted?",
+	    "title": "Will the work space storage need to be remote mounted?",
 	    "answers":
 	    [
 		{   "id": 0, "label": "No" },
@@ -659,7 +659,7 @@
 	{
 	    "questionid": 63, "type": "option",
 	    "precondition": { "questionid": 60, "answerid": 1 },
-	    "title": "Will data be copied out and in to the workspace by remote users?",
+	    "title": "Will data be copied out and in to the workspace storage by remote users?",
 	    "answers":
 	    [
 		{   "id": 0, "label": "No, this should not be allowed" },
@@ -680,7 +680,7 @@
 	{
 	    "questionid": 65, "type": "option",
 	    "precondition": { "questionid": 46, "answerid": 1 },
-	    "title": "How available/reliable should must the workspace be?",
+	    "title": "How available/reliable should must the work space be?",
 	    "answers":
 	    [
 		{   "id": 0, "label": "Skip" },
