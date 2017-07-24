@@ -10,7 +10,7 @@
 	    "title": "Will data interpretation and modeling require significant compute infrastructure capacity?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Taken care of" },
+		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes", "advice": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
 	    ]
 	},
@@ -20,8 +20,8 @@
 	    "text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Taken care of" },
-		{   "id": 1, "label": "Drill deeper"}
+		{   "id": 0, "label": "This as been taken care of" },
+		{   "id": 1, "label": "Explore this with additional questions" }
 	    ]
 	},
 	{

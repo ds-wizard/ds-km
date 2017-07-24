@@ -10,8 +10,8 @@
 	    "title": "What is the framework you will use for data integration?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Taken care of" },
-		{   "id": 1, "label": "Drill deeper" }
+		{   "id": 0, "label": "This as been taken care of" },
+		{   "id": 1, "label": "Explore this with additional questions" }
 	    ]
 	},
 	{
