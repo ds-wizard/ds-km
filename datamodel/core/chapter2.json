@@ -249,7 +249,7 @@
 	},
  	{
 	    "questionid": 26, "type": "option",
-	    "title": "Will you be archiving data for long term preservation?",
+	    "title": "Will you be archiving data (using so-called 'cold storage') for long term preservation?",
 	    "text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication; questions related to data publication will follow later.",
 	    "answers":
 	    [
@@ -315,7 +315,8 @@
 	    "answers":
 	    [
 		{   "id": 0, "label": "Disk" },
-		{   "id": 1, "label": "Tape" }
+		{   "id": 1, "label": "Tape" },
+		{   "id": 2, "label": "Other" }
 	    ]
 	},
 	{
@@ -603,7 +604,7 @@
 	{
 	    "questionid": 58, "type": "option",
 	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "Will you need to temporarily archive data sets (to tape)?",
+	    "title": "Will you need to temporarily archive data sets (e.g. to tape)?",
 	    "answers":
 	    [
 		{   "id": 0, "label": "No" },
@@ -723,7 +724,7 @@
 	    "title": "How long can you wait for a restore if the storage fails?",
 	    "answers":
 	    [
-		{   "id": 0, "label": "We can wait for repair and a restore from tape" },
+		{   "id": 0, "label": "We can wait for repair and a restore" },
  		{   "id": 1, "label": "A spare copy needs to be deployed quickly" },
  		{   "id": 2, "label": "No waiting is possible, a hot copy must be ready to take over" }
 	    ]
