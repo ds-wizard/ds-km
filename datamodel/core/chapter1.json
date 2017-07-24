@@ -199,7 +199,7 @@
 	    "answers": 
 	    [
 		{    "id": 0, "label": "It is a fixed data set, this will not influence reproducibility of my results" },
-		{    "id": 1, "label": "It may change, I will make sure a copy of the version I used will be available with my results" } 
+		{    "id": 1, "label": "It may change", "advice": "Make sure a copy of the version you use will be available with my results" } 
 	    ]
 	},
 	{
