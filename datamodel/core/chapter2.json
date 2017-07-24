@@ -250,6 +250,7 @@
  	{
 	    "questionid": 26, "type": "option",
 	    "title": "Will you be archiving data for long term preservation?",
+	    "text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication; questions related to data publication will follow later.",
 	    "answers":
 	    [
 		{   "id": 0, "label": "No" },
