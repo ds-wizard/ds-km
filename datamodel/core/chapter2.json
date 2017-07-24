@@ -681,10 +681,11 @@
 	    "questionid": 65, "type": "option",
 	    "precondition": { "questionid": 46, "answerid": 1 },
 	    "title": "How available/reliable should must the work space be?",
+	    "text": "There are a number of questions that can help you to decide whether your work space will be reliable enough for your project. Do you want to skip those questions now, or go through them?",
 	    "answers":
 	    [
-		{   "id": 0, "label": "Skip" },
-		{   "id": 1, "label": "Explore" }
+		{   "id": 0, "label": "Skip this section" },
+		{   "id": 1, "label": "Explore this with more questions" }
 	    ]
 	},
 	{
