@@ -916,7 +916,7 @@
 	{
 	    "questionid": 93, "type": "option",
 	    "precondition": { "questionid": 6, "answerid": 1 },
-	    "title": "Is there sufficient experience with the chosen computer experience in the project?",
+	    "title": "Is there sufficient experience with the chosen computer in the project, and sufficient time to support the project partners?",
 	    "answers":
 	    [
 		{   "id": 0, "label": "We will recruit" },
