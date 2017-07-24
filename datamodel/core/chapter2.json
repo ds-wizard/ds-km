@@ -756,8 +756,8 @@
 	    "text": "There are many factors that can contribute to the risk of information loss or information leaks. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
 	    "answers":
 	    [
-		{   "id": 0, "label": "Skip" },
-		{   "id": 1, "label": "Explore" }
+		{   "id": 0, "label": "Skip this set of questions" },
+		{   "id": 1, "label": "Explore the factors" }
 	    ]
 	},
   	{
@@ -851,8 +851,9 @@
 	    "answers":
 	    [
 		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "The effect is small" },
-		{   "id": 2, "label": "The risk is acceptably low" }
+		{   "id": 1, "label": "Yes; the effect is small" },
+		{   "id": 2, "label": "Yes; the risk is acceptably low" },
+		{   "id": 3, "label": "Yes; we will need to work on this." }
 	    ]
 	},
  	{
@@ -862,8 +863,9 @@
 	    "answers":
 	    [
 		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "The effect is small" },
-		{   "id": 2, "label": "The risk is acceptably low" }
+		{   "id": 1, "label": "Yes; the effect is small" },
+		{   "id": 2, "label": "Yes; the risk is acceptably low" },
+		{   "id": 3, "label": "Yes; we will need to work on this." }
 	    ]
 	},
  	{
@@ -873,8 +875,9 @@
 	    "answers":
 	    [
 		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "The effect is small" },
-		{   "id": 2, "label": "The risk is acceptably low" }
+		{   "id": 1, "label": "Yes; the effect is small" },
+		{   "id": 2, "label": "Yes; the risk is acceptably low" },
+		{   "id": 3, "label": "Yes; we will need to work on this." }
 	    ]
 	},
 	{
