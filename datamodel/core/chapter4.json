@@ -491,6 +491,81 @@
 		]
 	},
 	{
+	    "questionid": 47, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "Do you plan taking special measures to guaranty the integrity of tools in the workflow?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No", "advice": "Consider changing this!" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 48, "type": "option",
+	    "precondition": {"questionid": 47, "answerid": 1},
+	    "title": "Will you only use well-scrutinized open source tools?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 49, "type": "option",
+	    "precondition": {"questionid": 47, "answerid": 1},
+	    "title": "Will you have all changes checked by a second developer before deploying them?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 50, "type": "option",
+	    "precondition": {"questionid": 47, "answerid": 1},
+	    "title": "How will you handle upgrades to tools?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "We will trust a new release and deploy" },
+		{   "id": 1, "label": "We will offer multiple versions of tools for the end user to choose" },
+		{   "id": 2, "label": "We will only deploy selected stable upgrades to tools" },
+		{   "id": 3, "label": "We will test all tool changes on a subset of our own data before deployment" },
+		{   "id": 4, "label": "We will not change tool versions after the initial selection", "advice": "Please consider how you will be solving issues/problems you find yourself and that are fixed in a new release" }
+	    ]
+	},
+	{
+	    "questionid": 51, "type": "option",
+	    "precondition": {"questionid": 47, "answerid": 1},
+	    "title": "Will you test whether known correct results are obtained over time?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, we will regularly make test runs on the same data" },
+		{   "id": 2, "label": "Yes, we will automatically make test runs on the same data" }
+	    ]
+	},
+	{
+	    "questionid": 52, "type": "option",
+	    "precondition": {"questionid": 47, "answerid": 1},
+	    "title": "Are all tools you use under your complete control?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No, we use tools maintained by others" },
+		{   "id": 1, "label": "Yes, we only use tools that we can maintain ourselves" }
+	    ]
+	},
+	{
+	    "questionid": 53, "type": "option",
+	    "precondition": {"questionid": 52, "answerid": 0},
+	    "title": "How will you deal with the situation where support for a tool is dropped?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "We will keep running it unchanged" },
+		{   "id": 1, "label": "We will start to do necessary maintenance ourselves" }
+		{   "id": 2, "label": "We will look for alternatives" }
+	    ]
+	},
+	{
 	    "questionid": 2, "type": "option",
 	    "title": "How will you make sure to know what exactly has been run?",
 	    "answers":
@@ -499,6 +574,71 @@
 		{   "id": 1, "label": "More guidance is desired" }
 	    ]
 	},
+	{
+	    "questionid": 54, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you keep results together with all processing scripts or workflows including documentation of the versions of the tools that have been run?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+	{
+	    "questionid": 55, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you make use of the metadata fields in your output data files to register how the data was obtained?",
+	    "text": "File formats like VCF (for genetics) and TIFF (for images) have possibilities to document metadata in the file header. It is a good idea to use work flow tools that use these fields to document what was done to obtain the data.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+	{
+	    "questionid": 56, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you use a central repository for all tools and their versions as used in your project?",
+	    "text": "Especially if analysis and processing of data in the project is done on multiple different computers by different people, it is a good idea to have your own repository of tools and their blessed versions.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+	{
+	    "questionid": 57, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you use a central repository for reference data used in your project?",
+	    "text": "Especially if analysis and processing of data in the project is done on multiple different computers by different people, it is a good idea to have your own repository of reference data versions.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+	{
+	    "questionid": 58, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you make use of standard workflow engines and automatic work flows for all data analysis in the project?",
+	    "text": "It is much easier to guarantee consistency and reproducibility if all data processing is done using automated work flows, especially if the workflow engine automatically keeps adequate provenance data.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+	{
+	    "questionid": 59, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Are all software tools in the work flow professionally maintained, with version control?",
+	    "text": "Will you be able to find and reproduce exactly which version was used for any analysis? Not only for the major tools in the workflows, but also for all 'glue' code and small tools you created especially for the project?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
 	{
 	    "questionid": 3, "type": "option",
 	    "title": "How will you validate the integrity of the results?",
