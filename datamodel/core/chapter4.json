@@ -163,6 +163,334 @@
 	    ]
 	},
 	{
+	    "questionid": 21, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "Did you choose the workflow engine you will be using?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "Yes, we will be using what we always use", "advice": "Make sure that you are not missing out on alternatives that would have better properties for the project"},
+		{   "id": 1, "label": "Yes, we have selected one based on what features we need" },
+		{   "id": 2, "label": "Not yet, we will" },
+		{   "id": 3, "label": "Not yet, please guide the choice with more questions on this topic" }
+	    ]
+	},
+	{
+	    "questionid": 22, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Do you need the workflow engine to produce provenance information automatically?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 25, "type": "option",
+	    "precondition": {"questionid": 22, "answerid": 1},
+	    "title": "Does the provenance need to be stored or converted to some standard format?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 24, "type": "option",
+	    "precondition": {"questionid": 22, "answerid": 1},
+	    "title": "Can the work flow be annotated to make it understandable?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 23, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Do you need the workflow engine to be run high-throughput?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 25, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Is ease of development of the workflow engine itself an issue for you?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 26, "type": "option",
+	    "precondition": {"questionid": 25, "answerid": 3},
+	    "title": "Can you reach out to the developers? Is there a contact?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 27, "type": "option",
+	    "precondition": {"questionid": 25, "answerid": 3},
+	    "title": "Does the workflow engine need to support a particular compute back end you will use?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 28, "type": "option",
+	    "precondition": {"questionid": 25, "answerid": 3},
+	    "title": "Does the workflow engine need standard tools for administrators?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 29, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Is ease of development of the workflows an issue for you?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 30, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does the workflow engine need a developer GUI?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 31, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does it need to be easy to support new tools in a workflow?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 31, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does it need to be easy to support new tools in a workflow?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 32, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does it need support for specific kinds of data processing or data integration pipelines?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 33, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does it need support for complex control structures like conditionals and/or loops?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 34, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does it need native support for specific data types?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 35, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does it need  support for nested workflows?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 36, "type": "option",
+	    "precondition": {"questionid": 29, "answerid": 1},
+	    "title": "Does it need  support collaborative editing of workflows?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 37, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Is ease of use an issue for you?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 38, "type": "option",
+	    "precondition": {"questionid": 37, "answerid": 1},
+	    "title": "Who are the people that will run the workflows?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "Computer savvy operators" },
+		{   "id": 1, "label": "Subject matter experts with a strong computer knowledge" },
+		{   "id": 2, "label": "Subject matter experts with no affinity for computer solutions" }
+	    ]
+	},
+	{
+	    "questionid": 39, "type": "option",
+	    "precondition": {"questionid": 37, "answerid": 1},
+	    "title": "Does the running of work flows need to be controlled via a GUI?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 40, "type": "option",
+	    "precondition": {"questionid": 37, "answerid": 1},
+	    "title": "Do work flows need to be run on remote computers?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 41, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Is durability of work flows for you?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 42, "type": "option",
+	    "precondition": {"questionid": 41, "answerid": 1},
+	    "title": "Do you need the same workflow to run next year? Durability against 'workflow decay'?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 43, "type": "option",
+	    "precondition": {"questionid": 41, "answerid": 1},
+	    "title": "Are all versions of all tools under total control of the project?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 44, "type": "option",
+	    "precondition": {"questionid": 41, "answerid": 1},
+	    "title": "Do you need to be able to export/import workflows (e.g. in the Common Workflow Language, CWL)?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 46, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Do you want your workflow engine to be professionally hosted by a specialized party?",
+	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 45, "type": "option",
+	    "precondition": {"questionid": 21, "answerid": 3},
+	    "title": "Can you make a decision for the workflow engine based on the criteria deemed important?",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No selection can be made at this point" },
+		{   "id": 1, "label": "We will use 'make'" },
+		{   "id": 2, "label": "We will use 'snakemake'" },
+		{   "id": 3, "label": "We will use 'taverna'" },
+		{   "id": 4, "label": "We will use 'galaxy'" },
+		{   "id": 5, "label": "We will use 'molgenis'" },
+		{   "id": 6, "label": "We will use 'moteur'" },
+		{   "id": 7, "label": "We will use 'knime'" },
+		{   "id": 8, "label": "We will use 'clcbio'" },
+		{   "id": 9, "label": "We will use 'chipster'" },
+		{   "id": 99, "label": "We will need more than one engine" }
+	    ],
+	    "references": [
+		{ "type": "url", "anchor": "snakemake", "weblink": "https://snakemake.readthedocs.io/en/stable/" },
+		{ "type": "url", "anchor": "taverna", "weblink": "https://taverna.incubator.apache.org" },
+		{ "type": "url", "anchor": "galaxy", "weblink": "https://galaxyproject.org" },
+		{ "type": "url", "anchor": "molgenis", "weblink": "http://www.molgenis.org/wiki/ComputeStart" },
+		{ "type": "url", "anchor": "moteur", "weblink": "https://www.shiwa-workflow.eu/wiki/-/wiki/Main/MOTEUR" },
+		{ "type": "url", "anchor": "knime", "weblink": "https://www.knime.org/knime-analytics-platform" },
+		{ "type": "url", "anchor": "clcbio", "weblink": "https://www.qiagenbioinformatics.com/products/clc-main-workbench/" },
+		{ "type": "url", "anchor": "chipster", "weblink": "http://chipster.csc.fi" }
+		]
+	},
+	{
 	    "questionid": 2, "type": "option",
 	    "title": "How will you make sure to know what exactly has been run?",
 	    "answers":
