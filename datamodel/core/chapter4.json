@@ -561,7 +561,7 @@
 	    "answers":
 	    [ 
 		{   "id": 0, "label": "We will keep running it unchanged" },
-		{   "id": 1, "label": "We will start to do necessary maintenance ourselves" }
+		{   "id": 1, "label": "We will start to do necessary maintenance ourselves" },
 		{   "id": 2, "label": "We will look for alternatives" }
 	    ]
 	},
@@ -648,6 +648,50 @@
 		{   "id": 1, "label": "More guidance is desired" }
 	    ]
 	},
+ 	{
+	    "questionid": 60, "type": "option",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Will you run a subset of your jobs several times across the different compute infrastructures you are using?",
+	    "text": "There are surprisingly many complications that can cause (slight) inconsistencies between results when workflows are run on different compute infrastructures. A good way to make sure this does not bite you is to run a subset of all jobs on all different infrastructure to check the consistency.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+ 	{
+	    "questionid": 61, "type": "option",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Will you be instrumenting the tools into pipelines and workflows using automated tools?",
+	    "text": "Surrounding all tools in your data processing and analysis workflows with the 'boilerplate' code necessary on the computer system you are using is tedious and error prone. Especially if you are using the same tools in multiple different work flows and/or on multiple different computer architectures. Automated instrumentation, e.g. by using a workflow management system, can prevent many mistakes.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+ 	{
+	    "questionid": 62, "type": "option",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Will you use independently developed duplicate tools or workflows for critical steps to reduce or eliminate human errors?",
+	    "text": "Validation of results without a golden standard is very hard. One way of doing it is to develop two solutions for a problem (two independent workflows or two independently developed tools) to check whether the results are identical or comparable.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+ 	{
+	    "questionid": 63, "type": "option",
+	    "precondition": {"questionid": 3, "answerid": 1},
+	    "title": "Will you run part of the data set repeatedly to catch unexpected changes in results?",
+	    "text": "Running a small subset of the data repeatedly can be useful to catch unexpected problems that would otherwise be very hard to detect.",
+	    "answers":
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
 	{
 	    "questionid": 4, "type": "option",
 	    "title": "Do you have a contingency plan?",
