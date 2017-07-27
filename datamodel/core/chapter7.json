@@ -212,7 +212,7 @@
 	{
 	    "questionid": 3, "type": "option",
 	    "precondition": { "questionid": 25, "answerid": 0 },
-	    "title": " Are there business reasons why (some of your) data can not be completely open?",
+	    "title": "Are there business reasons why (some of your) data can not be completely open?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
@@ -228,7 +228,7 @@
 	{
 	    "questionid": 27, "type": "option",
 	    "precondition": { "questionid": 25, "answerid": 0 },
-	    "title": " Are there other reasons why (some of your) data can not be completely open?",
+	    "title": "Are there other reasons why (some of your) data can not be completely open?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
@@ -260,7 +260,81 @@
 	{
 	    "questionid": 4, "type": "list",
 	    "title": "Specify a list of data sets you will be publishing",
-	    "text": "Specify a short name for each data set, sufficient for yourself to know what data it is about"
+	    "text": "Specify a short name for each data set, sufficient for yourself to know what data it is about. It is useful to think about a data set as some collection of data that will be ending up in the same place."
+	},
+	{
+	    "questionid": 31, "type": "option",
+	    "precondition": { "questionid": 4 },
+	    "title": "What kind of repository will this data be stored in?",
+	    "text": "Domain repositories often have the best functionality to make the data findable and reusable. Many of them are listed in https://fairsharing,org/",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "A domain-specific repository" },
+		{   "id": 1, "label": "Our national repository" },
+		{   "id": 2, "label": "Our institutional repository" },
+		{   "id": 3, "label": "A special-purpose repository for the project" }
+	    ],
+	    "references":
+	    [
+		{ "type": "url", "weblink": "https://fairsharing.org/", "anchor": "FAIRSharing" }
+	    ]
+	},
+	{
+	    "questionid": 32, "type": "option",
+	    "precondition": { "questionid": 31, "answerid": 3 },
+	    "title": "Will you be able to support this repository for a sufficiently long time?",
+	    "text": "Maintaining a repository is a long term commitment that can most of the time not be funded from project money. Think about who will be doing the system maintenance, hardware maintenance, and who will make necessary code changes to accommodate future (safe) versions of the system",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 33, "type": "text",
+	    "precondition": { "questionid": 31, "answerid": 0 },
+	    "title": "What repository?"
+	},
+	{
+	    "questionid": 36, "type": "option",
+	    "precondition": { "questionid": 31, "answerid": 0 },
+	    "title": "Will you contact the repository beforehand?",
+	    "text": "Contacting the repository early may be useful to establish conditions, formats, and metadata requirements for submission. It may also be necessary to establish whether the repository can accommodate your data",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No, this submission is routine both for us and the repository" },
+		{   "id": 1, "label": "Yes, we have contacted the repository" },
+		{   "id": 2, "label": "Yes, we will contact the repository" },
+		{   "id": 3, "label": "We have made other arrangements" }
+	    ]
+	},
+	{
+	    "questionid": 37, "type": "text",
+	    "precondition": {"questionid": 36, "answerid": 3},
+	    "title": "What other arrangements?"
+	},
+	{
+	    "questionid": 34, "type": "option",
+	    "precondition": { "questionid": 31, "answerid": 3 },
+	    "title": "What kind of service will your repository offer to users?",
+	    "text": "The amount of funding needed to maintain a repository is strongly dependent on the services offered",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "Find and download only" },
+		{   "id": 1, "label": "Search and advanced access" },
+		{   "id": 2, "label": "Anything including some data processing" }
+	    ]
+	},
+	{
+	    "questionid": 35, "type": "option",
+	    "precondition": { "questionid": 4 },
+	    "title": "Will you be adding a reference to the published data to at least one data catalogue?",
+	    "text": "Data is sometimes difficult to locate, especially if it is not in a domain-specific repository. Data catalogues may increase findability.",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
 	},
 	{
 	    "questionid": 5, "type": "option",
