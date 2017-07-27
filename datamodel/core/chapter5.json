@@ -7,11 +7,72 @@
     [
 	{
 	    "questionid": 1, "type": "option",
-	    "title": "What is the framework you will use for data integration?",
+	    "title": "How will you be doing the integration of different data sources?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "This as been taken care of" },
 		{   "id": 1, "label": "Explore this with additional questions" }
+	    ]
+	},
+	{
+	    "questionid": 6, "type": "option",
+	    "precondition": { "questionid": 1, "answerid": 1 },
+	    "title": "What kind of framework will you use?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "Spreadsheets like Microsoft Excel" },
+		{   "id": 1, "label": "A regular tabular database" },
+		{   "id": 2, "label": "A graph database" },
+		{   "id": 3, "label": "RDF" },
+		{   "id": 4, "label": "(meta)data fields in a domain specific file" },
+		{   "id": 98, "label": "A combination of the above" },
+		{   "id": 99, "label": "We have made other arrangements" }
+	    ]
+	},
+	{
+	    "questionid": 7, "type": "text",
+	    "precondition": {"questionid": 6, "answerid": 99},
+	    "title": "What other arrangements?"
+	},
+	{
+	    "questionid": 8, "type": "option",
+	    "precondition": { "questionid": 1, "answerid": 1 },
+	    "title": "Will you be using a workflow for data integration, e.g. with tools for database access or conversion?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 9, "type": "option",
+	    "precondition": { "questionid": 1, "answerid": 1 },
+	    "title": "Will you use a 'linked data' approach?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 10, "type": "option",
+	    "precondition": { "questionid": 9, "answerid": 1 },
+	    "title": "Are your data sources using linked data?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Partly" },
+		{   "id": 2, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 11, "type": "option",
+	    "precondition": { "questionid": 9, "answerid": 1 },
+	    "title": "Will you provide your results as semantically interoperable linked data?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
@@ -41,6 +102,76 @@
 		{   "id": 1, "label": "Yes" }
 	    ]
 	},
+	{
+	    "questionid": 12, "type": "option",
+	    "title": "Will you be integrating different data sources to get more samples or more data points?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 14, "type": "option",
+	    "precondition": { "questionid": 12, "answerid": 1 },
+	    "title": "Have these been collected with sufficiently identical protocols?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 13, "type": "option",
+	    "title": "Will you be integrating different data sources in order to get more information for each sample or data point?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 15, "type": "option",
+	    "precondition": { "questionid": 13, "answerid": 1 },
+	    "title": "Did you already select the variables on which you will join the data sets?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 16, "type": "option",
+	    "precondition": { "questionid": 13, "answerid": 1 },
+	    "title": "Will you make sure that you do not inadvertently create a biased subset?",
+	    "text": "Some parameters you select on may have been collected only for a subset of the subjects or data points. An obvious example is if you match on secondary education type, you will bias to people over 18 years old because younger people do not have this field. In many cases the selection bias may be a lot less obvious and special measures exist to verify that the diversity of the sample is not reduced by the integration step.",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 17, "type": "option",
+	    "precondition": { "questionid": 13, "answerid": 1 },
+	    "title": "Could the coupling of data create a danger of re-identification of anonymized privacy sensitive data?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes", "advice": "Plan either preventative or corrective measures" }
+	    ]
+	},
+	{
+	    "questionid": 18, "type": "option",
+	    "precondition": { "questionid": 13, "answerid": 1 },
+	    "title": "Did you make a conscious decision to be either accurate or complete?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	
 	{
 	    "questionid": 5, "type": "option",
 	    "title": "Do you have all tools to couple the necessary data types?",
