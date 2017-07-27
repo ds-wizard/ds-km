@@ -12,6 +12,10 @@
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes", "advice": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
+	    ],
+	    "references":
+	    [
+		{ "type": "xref", "chapterid": 2, "questionid": 6 }
 	    ]
 	},
 	{
@@ -20,9 +24,15 @@
 	    "text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "This as been taken care of" },
-		{   "id": 1, "label": "Explore this with additional questions" }
+		{   "id": 0, "label": "We use lab notebooks", "advice": "Make sure to make the notes available in electronic form along with your data" },
+		{   "id": 1, "label": "We use an electronic lab notebook" },
+		{   "id": 99, "label": "We use other arrangements" }
 	    ]
+	},
+	{
+	    "questionid": 4, "type": "text",
+	    "precondition": {"questionid": 2, "answerid": 99},
+	    "title": "What other arrangements?"
 	},
 	{
 	    "questionid": 3, "type": "option",
