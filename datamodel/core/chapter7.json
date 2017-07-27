@@ -11,11 +11,21 @@
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No", "advice": "You will need to explain!" },
-		{   "id": 1, "label": "Yes"}
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 25, "type": "option",
+	    "title": "Cal all of your data become completely open immediately?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
 	    ]
 	},
 	{
 	    "questionid": 2, "type": "option",
+	    "precondition": { "questionid": 25, "answerid": 0 },
 	    "title": " Are there legal reasons why (some of your) data can not be completely open?",
 	    "answers": 
 	    [ 
@@ -24,8 +34,32 @@
 	    ]
 	},
 	{
-	    "questionid": 3, "type": "option",
-	    "title": " Are there business reasons why (some of your) data can not be completely open?",
+	    "questionid": 7, "type": "option",
+	    "precondition": { "questionid": 2, "answerid": 1 },
+	    "title": "Are there privacy reasons why your data can not be open?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 10, "type": "option",
+	    "precondition": { "questionid": 7, "answerid": 1 },
+	    "title": "Are there restrictions on where the data need to be stored?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, they must stay in the EU" },
+		{   "id": 2, "label": "Yes, they must stay in the same country" },
+		{   "id": 3, "label": "Yes, they must stay in the same institute" }
+	    ]
+	},
+	{
+	    "questionid": 11, "type": "option",
+	    "precondition": { "questionid": 7, "answerid": 1 },
+	    "title": "Could pseudonymization be used to make the data more openly available?",
+	    "text": "Legally, pseudonymous data (which means that someone has the key to reverse the process) is still considered privacy sensitive information. However, the EU is working on special cases where the data can still be opened as long as the key availability is sufficiently limited.",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
@@ -33,13 +67,200 @@
 	    ]
 	},
 	{
-	    "questionid": 4, "type": "option",
-	    "title": "Where will you make your data available?",
+	    "questionid": 12, "type": "option",
+	    "precondition": { "questionid": 11, "answerid": 1 },
+	    "title": "Can you make use of an existing 'trusted third party' for pseudonymization?",
+	    "text": "Making use of the same pseudonymization for different studies makes it possible to integrate information later. Obviously it also raises the risk of re-identification",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "This as been taken care of" },
-		{   "id": 1, "label": "Explore this with additional questions" }
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes"}
 	    ]
+	},
+	{
+	    "questionid": 13, "type": "option",
+	    "precondition": { "questionid": 7, "answerid": 1 },
+	    "title": "Could anonymization be used to make the data more openly available?",
+	    "text": "Different anonymization techniques exist. Disadvantage of anonymization is that data integration becomes virtually impossible, but it may be the only way to open up your data for other research",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes"}
+	    ]
+	},	
+	{
+	    "questionid": 14, "type": "option",
+	    "precondition": { "questionid": 7, "answerid": 1 },
+	    "title": "Could you use data aggregation to make the data openly available?",
+	    "text": "Aggregated data, where typically at least 15 individuals are in any data point, are considered sufficiently anonymous. This is an alternative way of making data openly available for future research",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes"}
+	    ]
+	},	
+	{
+	    "questionid": 8, "type": "option",
+	    "precondition": { "questionid": 2, "answerid": 1 },
+	    "title": "Are there IP reasons why your data can not be open?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 15, "type": "option",
+	    "precondition": { "questionid": 8, "answerid": 1 },
+	    "title": "Is it clear who owns data and documents?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes"}
+	    ]
+	},	
+	{
+	    "questionid": 16, "type": "option",
+	    "precondition": { "questionid": 8, "answerid": 1 },
+	    "title": "Will someone be given decision power to move documents or data to a new place after the project has finished?",
+	    "text": "In one case in the past, all documents that had been assembled by a project in a documentation system had to be deleted because not a single person could decide to move them to a new platform when the documentation system was going off-line.",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes"}
+	    ]
+	},	
+	{
+	    "questionid": 9, "type": "option",
+	    "precondition": { "questionid": 2, "answerid": 1 },
+	    "title": "Will you be allowing authenticated access to the data?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 17, "type": "option",
+	    "precondition": { "questionid": 9, "answerid": 1 },
+	    "title": "Where will the data be stored?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "In a domain repository (like EBI's EGA) that arranges restricted access" },
+		{   "id": 1, "label": "In a national or institutional repository that arranges restricted access" },
+		{   "id": 2, "label": "In a dedicated repository", "advice": "make sure you can guarantee longevity of this repository!" }
+	    ]
+	},	
+	{
+	    "questionid": 18, "type": "option",
+	    "precondition": { "questionid": 9, "answerid": 1 },
+	    "title": "Who will take care of authentication of potential users?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "We will use username/password authentication, possibly augmented with two-factor security" },
+		{   "id": 1, "label": "We will use a single sign-on system such as edugain" },
+		{   "id": 2, "label": "We will make other arrangements" }
+	    ]
+	},
+	{
+	    "questionid": 19, "type": "text",
+	    "precondition": {"questionid": 18, "answerid": 2},
+	    "title": "What other arrangements?"
+	},
+	{
+	    "questionid": 20, "type": "option",
+	    "precondition": { "questionid": 9, "answerid": 1 },
+	    "title": "Who will take care of authorization of potential users?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "One of the project members will authorize", "advice" : "It is not a good idea to tie this to a person" },
+		{   "id": 1, "label": "We will set up a data access committee" },
+		{   "id": 2, "label": "We will make use of an existing data access committee" },
+		{   "id": 3, "label": "We will make other arrangements" }
+	    ]
+	},
+	{
+	    "questionid": 21, "type": "text",
+	    "precondition": {"questionid": 20, "answerid": 2},
+	    "title": "Which existing Data Access Committee?"
+	},
+	{
+	    "questionid": 22, "type": "text",
+	    "precondition": {"questionid": 20, "answerid": 3},
+	    "title": "What other arrangements?"
+	},
+	{
+	    "questionid": 23, "type": "option",
+	    "precondition": { "questionid": 9, "answerid": 1 },
+	    "title": "Are the criteria for application to access the data openly available?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 24, "type": "option",
+	    "precondition": { "questionid": 9, "answerid": 1 },
+	    "title": "Has auditing for the re-use been arranged?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 3, "type": "option",
+	    "precondition": { "questionid": 25, "answerid": 0 },
+	    "title": " Are there business reasons why (some of your) data can not be completely open?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, patents still need to be applied for" },
+		{   "id": 2, "label": "Yes, other business reasons" }
+	    ]
+	},
+	{
+	    "questionid": 26, "type": "text",
+	    "precondition": { "questionid": 3, "answerid": 2 },
+	    "title": "What other business reasons are there not to open all data immediately?"
+	},
+	{
+	    "questionid": 27, "type": "option",
+	    "precondition": { "questionid": 25, "answerid": 0 },
+	    "title": " Are there other reasons why (some of your) data can not be completely open?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, papers need to be submitted first" },
+		{   "id": 2, "label": "Yes, other reasons" }
+	    ]
+	},
+	{
+	    "questionid": 28, "type": "text",
+	    "precondition": { "questionid": 27, "answerid": 2 },
+	    "title": "What other reasons are there not to open all data immediately?"
+	},
+	{
+	    "questionid": 29, "type": "option",
+	    "precondition": { "questionid": 25, "answerid": 0 },
+	    "title": "Will you use a limited embargo?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No, some restricted data will be embargoed indefinitely" },
+		{   "id": 1, "label": "No, data will be released only as soon as restrictions are falling away" },
+		{   "id": 2, "label": "Yes, data that is not legally restrained will be released after a fixed time period, unconditionally" }
+	    ]
+	},
+	{
+	    "questionid": 30, "type": "text",
+	    "precondition": { "questionid": 29, "answerid": 0 },
+	    "title": "What is the maximum embargo period?"
+	},
+	{
+	    "questionid": 4, "type": "list",
+	    "title": "Specify a list of data sets you will be publishing",
+	    "text": "Specify a short name for each data set, sufficient for yourself to know what data it is about"
 	},
 	{
 	    "questionid": 5, "type": "option",
