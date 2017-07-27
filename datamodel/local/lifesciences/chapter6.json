@@ -14,8 +14,105 @@
 	    ]
 	},
 	{
+	    "questionid": 3, "type": "string",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "What knowledge model will you be using?"
+	},
+	{
+	    "questionid": 4, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "How detailed will you be modeling?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "Organ level" },
+		{   "id": 1, "label": "Cell level" },
+		{   "id": 2, "label": "Pathway level" },
+		{   "id": 3, "label": "Metabolome level" }
+	    ]
+	},
+	{
+	    "questionid": 5, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "Will you be building pathways?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 6, "type": "option",
+	    "precondition": {"questionid": 5, "answerid": 1},
+	    "title": "Will you be building new pathways?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 7, "type": "option",
+	    "precondition": {"questionid": 5, "answerid": 1},
+	    "title": "Will you be extending existing pathways?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 8, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "Will you be using statistical modeling?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 9, "type": "option",
+	    "precondition": {"questionid": 1, "answerid": 1},
+	    "title": "Will you be building kinetic models?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
 	    "questionid": 2, "type": "option",
 	    "title": "Will you do structural modeling?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 10, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you use model building by homology?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 11, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you use enzyme activity models?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 12, "type": "option",
+	    "precondition": {"questionid": 2, "answerid": 1},
+	    "title": "Will you use molecular dynamics?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
