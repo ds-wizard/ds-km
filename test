@@ -1,0 +1,3 @@
+#!/bin/sh
+cd validator
+/opt/local/bin/python3.5 jschematest.py
