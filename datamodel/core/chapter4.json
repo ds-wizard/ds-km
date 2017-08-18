@@ -296,17 +296,6 @@
 	    ]
 	},
 	{
-	    "questionid": 31, "type": "option",
-	    "precondition": {"questionid": 29, "answerid": 1},
-	    "title": "Does it need to be easy to support new tools in a workflow?",
-	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
 	    "questionid": 32, "type": "option",
 	    "precondition": {"questionid": 29, "answerid": 1},
 	    "title": "Does it need support for specific kinds of data processing or data integration pipelines?",
