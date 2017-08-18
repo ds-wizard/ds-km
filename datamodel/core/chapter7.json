@@ -270,8 +270,8 @@
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "A domain-specific repository" },
-		{   "id": 1, "label": "Our national repository" },
-		{   "id": 2, "label": "Our institutional repository" },
+		{   "id": 1, "label": "Our national repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability" },
+		{   "id": 2, "label": "Our institutional repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability" },
 		{   "id": 3, "label": "A special-purpose repository for the project" }
 	    ],
 	    "references":
@@ -284,6 +284,27 @@
 	    "precondition": { "questionid": 31, "answerid": 3 },
 	    "title": "Will you be able to support this repository for a sufficiently long time?",
 	    "text": "Maintaining a repository is a long term commitment that can most of the time not be funded from project money. Think about who will be doing the system maintenance, hardware maintenance, and who will make necessary code changes to accommodate future (safe) versions of the system",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 38, "type": "option",
+	    "precondition": { "questionid": 31, "answerid": 3 },
+	    "title": "What is the service level you will be offering to users of the data?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "Download only", "advice": "That functionality level can surely be found in another place too!" },
+		{   "id": 1, "label": "A search and access interface" },
+		{   "id": 2, "label": "A processing service", "advice": "Make sure to budget sufficient compute resources for the users" }
+	    ]
+	},
+	{
+	    "questionid": 39, "type": "option",
+	    "precondition": { "questionid": 31, "answerid": 3 },
+	    "title": "Did you arrange for system administration (at least security updates) and hardware maintenance for the server(s)?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
@@ -337,6 +358,22 @@
 	    ]
 	},
 	{
+	    "questionid": 40, "type": "option",
+	    "title": "Will you be making sure that blocks of data deposited in different repositories can be recognized as belonging to the same study?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, all data sets will have links to the related data" },
+		{   "id": 2, "label": "Yes, all data sets will be linked from a single catalog entry" },
+		{   "id": 3, "label": "Yes, we have made other arrangements" }
+	    ]
+	},
+	{
+	    "questionid": 41, "type": "text",
+	    "precondition": {"questionid": 40, "answerid": 3},
+	    "title": "What other arrangements?"
+	},
+	{
 	    "questionid": 5, "type": "option",
 	    "title": "Did you work out the financial aspects of making the data available?",
 	    "answers": 
@@ -346,9 +383,104 @@
 	    ]
 	},
 	{
+	    "questionid": 42, "type": "option",
+	    "title": "Will your publications be open access?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, this is budgeted in the project" },
+		{   "id": 2, "label": "Yes, our department/institute will pay for open access publishing" }
+	    ]
+	},
+	{
+	    "questionid": 43, "type": "option",
+	    "title": "Are there any recurring fees to keep data or documents available?",
+	    "text": "Are you using any commercially licensed products to keep data, software or documents available, for which a regular fee must be paid?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes", "advice": "Make sure this will be kept running by the department or institute. It is best to also have a backup plan, being able to move data and documents to a different place if a service is discontinued. For this, you may need to arrange permission from all project partners beforehand." }
+	    ]
+	},
+	{
 	    "questionid": 6, "type": "option",
-	    "title": "Will you be archiving data?",
-	    "text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended?",
+	    "title": "Will you be archiving your data after the project in 'cold storage'?",
+	    "text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended? Possibly as a continuation of archival as part of data storage strategy during the project?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 45, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },
+	    "title": "Will data formats of data in cold storage be upgraded if they become obsolete?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 46, "type": "option",
+	    "precondition": { "questionid": 6, "answerid": 1 },
+	    "title": "Will data be migrated regularly to more modern storage media (e.g. newer tapes)?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},
+	{
+	    "questionid": 47, "type": "option",
+	    "title": "Will you also publish data if the results of your study are negative/inconclusive or unpublishable?",
+	    "text": "Even if you do not obtain the results you had foreseen from your own study, the data can still be valuable for reuse in another context. Also, publishing the data can avoid that someone else collects a similar data set with a similar negative result.",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+	{
+	    "questionid": 48, "type": "list",
+	    "title": "Specify a list of software packages you will be publishing",
+	    "text": "Specify a short name for each software package."
+	},
+	{
+	    "questionid": 49, "type": "option",
+	    "precondition": { "questionid": 48 },
+	    "title": "Will you be adding a proper open-source license?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes, we have decided on an open source license" },
+		{   "id": 2, "label": "Yes, we will decide on an open source license" }
+	    ]
+	},	
+	{
+	    "questionid": 50, "type": "string",
+	    "precondition": { "questionid": 49, "answerid": 1 },
+	    "title": "What is the license?"
+	},
+	{
+	    "questionid": 51, "type": "string",
+	    "precondition": { "questionid": 48 },
+	    "title": "Where will the software package be available?"
+	},
+	{
+	    "questionid": 52, "type": "option",
+	    "precondition": { "questionid": 48 },
+	    "title": "Will this software be listed in a catalogue?",
+	    "answers": 
+	    [ 
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+	},	
+	{
+	    "questionid": 53, "type": "option",
+	    "title": "Will there be planning of valorization or translational returns?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
@@ -356,4 +488,4 @@
 	    ]
 	}
     ]
-}	
+}
