@@ -38,8 +38,7 @@
 		{   "id": 0, "label": "No, all of my data types are described in a data type registry already" },
 		{   "id": 1, "label": "Yes, I will add new types to an existing data type registry" },
 		{   "id": 2, "label": "Yes, I will create my own data type registry" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2.1"}]
+	    ]
 	},
 	{
 	    "questionid": 9, "type": "text",
@@ -56,7 +55,7 @@
 		{   "id": 0, "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types" },
 		{   "id": 1, "label": "Yes, I will make and publish a vocabulary or ontology for some of my data" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.2.2"}]
 	},
 	{
 	    "questionid": 10, "type": "option",
@@ -67,7 +66,8 @@
 		{   "id": 0, "label": "There is a closely related more generic and open format that I can specialize" },
 		{   "id": 1, "label": "I will use a Linked Data format" },
 		{   "id": 2, "label": "I will use a completely custom data format"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.2.3"}]
 	},
 	{
 	    "questionid": 11, "type": "option",
@@ -109,8 +109,7 @@
 	    [
 		{   "id": 0, "label": "No, I will just document the bare minimum" },
 		{   "id": 1, "label": "Yes, I will document more metadata than needed for reproducibility" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.1"}]
+	    ]
 	},
 	{
 	    "questionid": 14, "type": "option",
@@ -121,8 +120,7 @@
 		{   "id": 0, "label": "I will see what I can do" },
 		{   "id": 1, "label": "I will use preselected additional standard modules of metadata" },
 		{   "id": 2, "label": "I will collect all metadata I can gather and document the data set beyond minimal standards" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.1.1"}]
+	    ]
 	},
 	{
 	    "questionid": 15, "type": "option",
@@ -132,8 +130,7 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.1.2"}]
+	    ]
 	},
 	{
 	    "questionid": 16, "type": "option",
@@ -145,7 +142,7 @@
 		{   "id": 0, "label": "Skip" },
 		{   "id": 1, "label": "Explore" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.3.1"}]
 	},
 	{
 	    "questionid": 17, "type": "option",
@@ -189,7 +186,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.3"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.3.2"}]
 	},
 	{
 	    "questionid": 21, "type": "option",
@@ -255,17 +252,19 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.5.1.1"}]
 	},
  	{
 	    "questionid": 27, "type": "option",
 	    "precondition": { "questionid": 26, "answerid": 0 },
-	    "title": "Can the original data be recreated?",
+	    "title": "Can the original data be regenerated?",
 	    "answers":
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.5.1.2"}]	    
 	},
  	{
 	    "questionid": 30, "type": "option",
@@ -286,7 +285,8 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.5.1.3"}]	    
 	},
 	{
 	    "questionid": 29, "type": "option",
@@ -378,7 +378,8 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.5.3"}]	    
 	},
 	{
 	    "questionid": 39, "type": "option",
@@ -449,7 +450,8 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.5.5"}]	    
 	},
 	{
 	    "questionid": 45, "type": "option",
@@ -460,7 +462,8 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],	
+	    "references": [{"type": "dmpbook", "chapter": "2.5.6"}]    
 	},
 	{
 	    "questionid": 46, "type": "option",
@@ -497,7 +500,8 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [ {"type": "xref", "chapterid": 2, "questionid": 6 } ]
+	    "references": [ {"type": "xref", "chapterid": 2, "questionid": 6 },
+			    {"type": "dmpbook", "chapter": "2.7"}]
 	},
 	{
 	    "questionid": 50, "type": "option",
@@ -707,7 +711,8 @@
 		{   "id": 0, "label": "There is no software" },
 		{   "id": 1, "label": "Software in the work space is only a copy" },
 		{   "id": 2, "label": "Special care will be taken for the software and configurations" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "2.6"}]	    
 	},
 	{
 	    "questionid": 68, "type": "option",

@@ -153,7 +153,8 @@
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "3.2.1"}]
 	},
 	{
 	    "questionid": 18, "type": "option",
@@ -173,7 +174,8 @@
 	    [
 		{    "id": 0, "label": "No"},
 		{    "id": 1, "label": "Yes"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "3.2.1.1"}]	    
 	},
 	{
 	    "questionid": 20, "type": "option",

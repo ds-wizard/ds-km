@@ -235,7 +235,8 @@
 	    [
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes, I will make sure to make this data available with my results." }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "1.11.1"}]
 	},
 	{
 	    "questionid": 29, "type": "option",
@@ -252,13 +253,15 @@
 	    "questionid": 30, "type": "text",
 	    "precondition": { "questionid": 29, "answerid": 1 },
 	    "title": "What will the Intellectual Property be like?",
-	    "text": "Who will own the rights to the reference data set? Who will be able to use it?"
+	    "text": "Who will own the rights to the reference data set? Who will be able to use it?",
+	    "references": [{"type": "dmpbook", "chapter": "1.12.1"}]
 	},
 	{
 	    "questionid": 31, "type": "text",
 	    "precondition": { "questionid": 29, "answerid": 1 },
 	    "title": "How will you maintain it?",
-	    "text": "How will maintenance be paid for in the long run? Will you host it yourself or deposit it with a repository? How will you deal with requests for help? And with requests for adding data?"
+	    "text": "How will maintenance be paid for in the long run? Will you host it yourself or deposit it with a repository? How will you deal with requests for help? And with requests for adding data?",
+	    "references": [{"type": "dmpbook", "chapter": "1.12.2"}]
 	},
 	{
 	    "questionid": 32, "type": "text",

@@ -25,7 +25,8 @@
 		{   "id": 0, "label": "We will be exploring options" },
 		{   "id": 1, "label": "We will be running in bulk" },
 		{   "id": 2, "label": "A bit of both"}
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.1.1"}]	    
 	},
 	{
 	    "questionid": 6, "type": "option",
@@ -172,7 +173,8 @@
 		{   "id": 1, "label": "Yes, we have selected one based on what features we need" },
 		{   "id": 2, "label": "Not yet, we will" },
 		{   "id": 3, "label": "Not yet, please guide the choice with more questions on this topic" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.2"}]
 	},
 	{
 	    "questionid": 22, "type": "option",
