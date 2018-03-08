@@ -38,7 +38,8 @@
 		{   "id": 0, "label": "They do not need data" },
 		{   "id": 1, "label": "They can use existing data from another project" },
 		{   "id": 2, "label": "They can use data from our project" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.2.1"}]
 	},
 	{
 	    "questionid": 7, "type": "option",
@@ -395,18 +396,20 @@
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.2.2"}]
 	},
 	{
 	    "questionid": 41, "type": "option",
 	    "precondition": {"questionid": 21, "answerid": 3},
-	    "title": "Is durability of work flows for you?",
+	    "title": "Is durability of work flows important for you?",
 	    "text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 	    "answers":
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.2.3"}]
 	},
 	{
 	    "questionid": 42, "type": "option",
@@ -681,7 +684,8 @@
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.2.4"}]
 	},	
 	{
 	    "questionid": 4, "type": "option",

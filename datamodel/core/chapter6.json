@@ -41,7 +41,8 @@
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes"}
-	    ]
+	    ],
+            "references": [{"type": "dmpbook", "chapter": "6.6" }]
 	}	
     ]
 }
