@@ -38,8 +38,7 @@
 		{   "id": 0, "label": "They do not need data" },
 		{   "id": 1, "label": "They can use existing data from another project" },
 		{   "id": 2, "label": "They can use data from our project" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "4.2.1"}]
+	    ]
 	},
 	{
 	    "questionid": 7, "type": "option",
@@ -374,7 +373,8 @@
 		{   "id": 0, "label": "Computer savvy operators" },
 		{   "id": 1, "label": "Subject matter experts with a strong computer knowledge" },
 		{   "id": 2, "label": "Subject matter experts with no affinity for computer solutions" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.2.1"}]
 	},
 	{
 	    "questionid": 39, "type": "option",
