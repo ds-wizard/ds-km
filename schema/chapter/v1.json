@@ -27,6 +27,12 @@
                 "minimum": 0
             }
         },
+        "uids": {
+            "shortuid": {
+                "type": "string",
+                "pattern": "^[a-z]{3,5}$"
+            }
+        },
         "questionpointer": {
             "type": "object",
             "properties": {
@@ -70,7 +76,7 @@
             "dmpbookreference": {
                 "type": "object",
                 "properties": {
-                    "type" : { "type": "string", "enum" : ["dmpbook"] },
+                    "type" : { "type": "string", "enum": ["dmpbook"] },
                     "chapter": { "type": "string" }
                 },
                 "required" : ["type", "chapter"],
@@ -79,7 +85,7 @@
             "urlreference": {
                 "type": "object",
                 "properties": {
-                    "type" : { "type": "string", "enum" : ["url"] },
+                    "type" : { "type": "string", "enum": ["url"] },
                     "weblink": { "type": "string", "format": "uri" },
                     "anchor": { "type": "string" }
                 },
@@ -89,17 +95,27 @@
             "crossreference": {
                 "type": "object",
                 "properties": {
-                    "type" : { "type": "string", "enum" : ["xref"] },
+                    "type" : { "type": "string", "enum": ["xref"] },
                     "chapterid": { "$ref": "#/common/ids/chapterid" },
                     "questionid": { "$ref": "#/common/ids/questionid" },
                     "namespace" : { "$ref": "#/common/namespace" }
                 },
-                "required": ["chapterid", "questionid"],
+                "required": ["type", "chapterid", "questionid"],
+                "additionalProperties": false
+            },
+            "resourcepagereference": {
+                "type": "object",
+                "properties": {
+                    "type": { "type": "string", "enum": ["resourcepage"] },
+                    "shortuid": { "$ref": "#/common/uids/shortuid" }
+                },
+                "required": ["type", "shortuid"],
                 "additionalProperties": false
             },
             "reference": {
                 "anyOf": [
                     { "$ref": "#/common/references/dmpbookreference" },
+                    { "$ref": "#/common/references/resourcepagereference" },
                     { "$ref": "#/common/references/urlreference" },
                     { "$ref": "#/common/references/crossreference" }
                 ]
@@ -198,6 +214,7 @@
                 "anyOf": [
                     { "$ref": "#/common/references/dmpbookreference" },
                     { "$ref": "#/common/references/urlreference" },
+                    { "$ref": "#/common/references/resourcepagereference" },
                     { "$ref": "#/core/references/crossreference" }
                 ]
             },

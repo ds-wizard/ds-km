@@ -26,7 +26,7 @@
 		{   "id": 1, "label": "We will be running in bulk" },
 		{   "id": 2, "label": "A bit of both"}
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "4.1.1"}]	    
+	    "references": [{"type": "dmpbook", "chapter": "4.1.1"}, {"type": "resourcepage", "shortuid": "qzt"}]
 	},
 	{
 	    "questionid": 6, "type": "option",
@@ -174,7 +174,7 @@
 		{   "id": 2, "label": "Not yet, we will" },
 		{   "id": 3, "label": "Not yet, please guide the choice with more questions on this topic" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "4.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "4.2"}, {"type": "resourcepage", "shortuid": "ydj"}]
 	},
 	{
 	    "questionid": 22, "type": "option",
@@ -374,7 +374,7 @@
 		{   "id": 1, "label": "Subject matter experts with a strong computer knowledge" },
 		{   "id": 2, "label": "Subject matter experts with no affinity for computer solutions" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "4.2.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "4.2.1"}, {"type": "resourcepage", "shortuid": "jrw"}]
 	},
 	{
 	    "questionid": 39, "type": "option",
@@ -397,7 +397,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "4.2.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "4.2.2"}, {"type": "resourcepage", "shortuid": "grt"}]
 	},
 	{
 	    "questionid": 41, "type": "option",
@@ -409,7 +409,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "4.2.3"}]
+	    "references": [{"type": "dmpbook", "chapter": "4.2.3"}, {"type": "resourcepage", "shortuid": "xyf"}]
 	},
 	{
 	    "questionid": 42, "type": "option",
@@ -598,7 +598,8 @@
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.4"}, {"type": "resourcepage", "shortuid": "pzq"}]
 	},	
 	{
 	    "questionid": 57, "type": "option",
@@ -609,7 +610,8 @@
 	    [ 
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+	    "references": [{"type": "dmpbook", "chapter": "4.4"}, {"type": "resourcepage", "shortuid": "pzq"}]
 	},	
 	{
 	    "questionid": 58, "type": "option",
@@ -685,7 +687,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "4.2.4"}]
+	    "references": [{"type": "dmpbook", "chapter": "4.2.4"}, {"type": "resourcepage", "shortuid": "egv"}]
 	},	
 	{
 	    "questionid": 4, "type": "option",

@@ -42,7 +42,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes"}
 	    ],
-            "references": [{"type": "dmpbook", "chapter": "6.6" }]
+            "references": [{"type": "dmpbook", "chapter": "6.6" }, {"type": "resourcepage", "shortuid": "bzu"}]
 	}	
     ]
 }

@@ -13,7 +13,7 @@
 		{   "id": 0, "label": "No", "advice": "You will need to explain!" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-            "references": [{"type": "dmpbook", "chapter": "7.1" }]
+            "references": [{"type": "dmpbook", "chapter": "7.1" }, {"type": "resourcepage", "shortuid": "jvm"}]
 	},
 	{
 	    "questionid": 25, "type": "option",
@@ -301,7 +301,7 @@
 		{   "id": 1, "label": "A search and access interface" },
 		{   "id": 2, "label": "A processing service", "advice": "Make sure to budget sufficient compute resources for the users" }
 	    ],
-            "references": [{"type": "dmpbook", "chapter": "7.4.1" }]
+            "references": [{"type": "dmpbook", "chapter": "7.4.1" }, {"type": "resourcepage", "shortuid": "ivg"}]
 	},
 	{
 	    "questionid": 39, "type": "option",
@@ -393,7 +393,7 @@
 		{   "id": 1, "label": "Yes, this is budgeted in the project" },
 		{   "id": 2, "label": "Yes, our department/institute will pay for open access publishing" }
 	    ],
-            "references": [{"type": "dmpbook", "chapter": "7.2" }]
+            "references": [{"type": "dmpbook", "chapter": "7.2" }, {"type": "resourcepage", "shortuid": "mjf"}]
 	},
 	{
 	    "questionid": 43, "type": "option",
@@ -414,7 +414,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-            "references": [{"type": "dmpbook", "chapter": "7.4.4" }]
+            "references": [{"type": "dmpbook", "chapter": "7.4.4" }, {"type": "resourcepage", "shortuid": "fxe"}]
 	},
 	{
 	    "questionid": 45, "type": "option",

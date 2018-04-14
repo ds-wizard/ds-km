@@ -18,7 +18,7 @@
 		},
 		{   "id": 1, "label": "Yes"}
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.1"}, {"type": "resourcepage", "shortuid": "atq"}]
 	},
 	{
 	    "questionid": 2, "type": "option",
@@ -31,14 +31,14 @@
 		    "advice": "Did you research all the data that exists? You may not be aware of all existing data that could be available. Although using and/or integrating existing data sets may pose a challenge, it will normally be cheaper than collecting everything yourself. Even if you decide not to use an existing data set, it is better to do this as a conscious decision." },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.2"}, {"type": "resourcepage", "shortuid": "ezi"}]
 	},
 	{
 	    "questionid": 3, "type": "list",
 	    "precondition": { "questionid": 2, "answerid": 1 },
 	    "title": "What reference data will you use?",
 	    "text": "Much of todays data is used in comparison with reference data. A genome for instance is compared with a reference genome to identify genomic variants. If you use reference data, there are several other issues that you should consider. What are the reference data sets that you will use?",
-	    "references": [{"type": "dmpbook", "chapter": "1.3"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.3"}, {"type": "resourcepage", "shortuid": "quc"}]
 	},
 	{
 	    "questionid": 4, "type": "option",
@@ -50,7 +50,7 @@
 		{    "id": 0, "label": "No", "advice": "Figure this out quickly!" },
 		{    "id": 1, "label": "Yes" } 
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.4"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.4"}, {"type": "resourcepage", "shortuid": "ckt"}]
 	},
 	{
 	    "questionid": 5, "type": "option",
@@ -62,7 +62,7 @@
 		{    "id": 0, "label": "I can directly use it" },
 		{    "id": 1, "label": "I need to convert it before using" } 
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.5"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.5"}, {"type": "resourcepage", "shortuid": "jxb"}]
 	},
 	{
 	    "questionid": 6, "type": "option",
@@ -74,7 +74,7 @@
 		{    "id": 0, "label": "No" },
 		{    "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.6"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.6"}, {"type": "resourcepage", "shortuid": "rgy"}]
 	},
 	{
 	    "questionid": 7, "type": "text",
@@ -122,7 +122,7 @@
 	    "precondition": { "questionid": 2, "answerid": 1 },
 	    "title": "What existing non-reference data sets will you use?",
 	    "text": "Even if you will be producing your own data, you often will also be relying on existing data sets (e.g. from earlier . You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?",
-	    "references": [{"type": "dmpbook", "chapter": "1.7"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.7"}, {"type": "resourcepage", "shortuid": "wya"}]
 	},
 	{
 	    "questionid": 11, "type": "option",
@@ -134,7 +134,7 @@
 		{   "id": 1, "label": "Yes" },
 		{   "id": 2, "label": "We are the owners" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.8"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.8"}, {"type": "resourcepage", "shortuid": "dcy"}]
 	},
 	{
 	    "questionid": 10, "type": "option",
@@ -167,7 +167,7 @@
 		{   "id": 1, "label": "Existing consent applies" },
 		{   "id": 2, "label": "New consent needed" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.9"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.9"}, {"type": "resourcepage", "shortuid": "bqy"}]
 	},
 	{
 	    "questionid": 14, "type": "option",
@@ -224,7 +224,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.10"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.10"}, {"type": "resourcepage", "shortuid": "wht"}]
 	},
 	{
 	    "questionid": 81, "type": "option",
@@ -236,7 +236,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes, I will make sure to make this data available with my results." }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.11.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.11.1"}, {"type": "resourcepage", "shortuid": "pth"}]
 	},
 	{
 	    "questionid": 29, "type": "option",
@@ -247,21 +247,21 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.12"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.12"}, {"type": "resourcepage", "shortuid": "rbz"}]
 	},
 	{
 	    "questionid": 30, "type": "text",
 	    "precondition": { "questionid": 29, "answerid": 1 },
 	    "title": "What will the Intellectual Property be like?",
 	    "text": "Who will own the rights to the reference data set? Who will be able to use it?",
-	    "references": [{"type": "dmpbook", "chapter": "1.12.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.12.1"}, {"type": "resourcepage", "shortuid": "hct"}]
 	},
 	{
 	    "questionid": 31, "type": "text",
 	    "precondition": { "questionid": 29, "answerid": 1 },
 	    "title": "How will you maintain it?",
 	    "text": "How will maintenance be paid for in the long run? Will you host it yourself or deposit it with a repository? How will you deal with requests for help? And with requests for adding data?",
-	    "references": [{"type": "dmpbook", "chapter": "1.12.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.12.2"}, {"type": "resourcepage", "shortuid": "usx"}]
 	},
 	{
 	    "questionid": 32, "type": "text",
@@ -277,7 +277,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.13"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.13"}, {"type": "resourcepage", "shortuid": "kuz"}]
 	},
 	{
 	    "questionid": 38, "type": "option",
@@ -287,7 +287,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "1.14"}]
+	    "references": [{"type": "dmpbook", "chapter": "1.14"}, {"type": "resourcepage", "shortuid": "csx"}]
 	}
     ]
 }

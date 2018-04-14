@@ -43,7 +43,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-            "references": [{ "type": "dmpbook", "chapter": "5.3" }]
+            "references": [{ "type": "dmpbook", "chapter": "5.3" }, {"type": "resourcepage", "shortuid": "qqb"}]
 	},
 	{
 	    "questionid": 9, "type": "option",
@@ -75,7 +75,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-            "references": [{ "type": "dmpbook", "chapter": "5.2" }]
+            "references": [{ "type": "dmpbook", "chapter": "5.2" }, {"type": "resourcepage", "shortuid": "fxm"}]
 	},
 	{
 	    "questionid": 2, "type": "option",

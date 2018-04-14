@@ -15,7 +15,7 @@
 		{   "id": 0, "label": "No, I am not using any common data types" },
 		{   "id": 1, "label": "Yes, I will make sure to use common formats for common data types" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.1"}, {"type": "resourcepage", "shortuid": "njy"}]
 	},
 	{
 	    "questionid": 2, "type": "option",
@@ -26,7 +26,7 @@
 		{   "id": 0, "label": "No, all of my data will fit in common formats" },
 		{   "id": 1, "label": "Yes, I will need to use custom formats for some of my data" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.2"}, {"type": "resourcepage", "shortuid": "ikk"}]
 	},
 	{
 	    "questionid": 7, "type": "option",
@@ -55,7 +55,7 @@
 		{   "id": 0, "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types" },
 		{   "id": 1, "label": "Yes, I will make and publish a vocabulary or ontology for some of my data" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.2.2"}, {"type": "resourcepage", "shortuid": "ske"}]
 	},
 	{
 	    "questionid": 10, "type": "option",
@@ -67,7 +67,7 @@
 		{   "id": 1, "label": "I will use a Linked Data format" },
 		{   "id": 2, "label": "I will use a completely custom data format"}
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2.3"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.2.3"}, {"type": "resourcepage", "shortuid": "jwg"}]
 	},
 	{
 	    "questionid": 11, "type": "option",
@@ -88,7 +88,7 @@
 		{   "id": 0, "label": "Skip" },
 		{   "id": 1, "label": "Explore" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.3"}, {"type": "resourcepage", "shortuid": "rhm"}]
 	},
 	{
 	    "questionid": 12, "type": "option",
@@ -142,7 +142,7 @@
 		{   "id": 0, "label": "Skip" },
 		{   "id": 1, "label": "Explore" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.3.1"}, {"type": "resourcepage", "shortuid": "spg"}]
 	},
 	{
 	    "questionid": 17, "type": "option",
@@ -186,7 +186,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.2"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.3.2"}, {"type": "resourcepage", "shortuid": "atw"}]
 	},
 	{
 	    "questionid": 21, "type": "option",
@@ -253,7 +253,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.1.1"}]
+	    "references": [{"type": "dmpbook", "chapter": "2.5.1.1"}, {"type": "resourcepage", "shortuid": "kjp"}]
 	},
  	{
 	    "questionid": 27, "type": "option",
@@ -264,7 +264,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.1.2"}]	    
+	    "references": [{"type": "dmpbook", "chapter": "2.5.1.2"}, {"type": "resourcepage", "shortuid": "ixr"}]	    
 	},
  	{
 	    "questionid": 30, "type": "option",
@@ -286,7 +286,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.1.3"}]	    
+	    "references": [{"type": "dmpbook", "chapter": "2.5.1.3"}, {"type": "resourcepage", "shortuid": "tgk"}]	    
 	},
 	{
 	    "questionid": 29, "type": "option",
@@ -379,7 +379,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.3"}]	    
+	    "references": [{"type": "dmpbook", "chapter": "2.5.3"}, {"type": "resourcepage", "shortuid": "ybd"}]	    
 	},
 	{
 	    "questionid": 39, "type": "option",
@@ -451,7 +451,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.5"}]	    
+	    "references": [{"type": "dmpbook", "chapter": "2.5.5"}, {"type": "resourcepage", "shortuid": "kdp"}]	    
 	},
 	{
 	    "questionid": 45, "type": "option",
@@ -463,7 +463,7 @@
 		{   "id": 0, "label": "No" },
 		{   "id": 1, "label": "Yes" }
 	    ],	
-	    "references": [{"type": "dmpbook", "chapter": "2.5.6"}]    
+	    "references": [{"type": "dmpbook", "chapter": "2.5.6"}, {"type": "resourcepage", "shortuid": "zmu"}]    
 	},
 	{
 	    "questionid": 46, "type": "option",
@@ -501,7 +501,7 @@
 		{   "id": 1, "label": "Yes" }
 	    ],
 	    "references": [ {"type": "xref", "chapterid": 2, "questionid": 6 },
-			    {"type": "dmpbook", "chapter": "2.7"}]
+			    {"type": "dmpbook", "chapter": "2.7"}, {"type": "resourcepage", "shortuid": "wia"}]
 	},
 	{
 	    "questionid": 50, "type": "option",
@@ -712,7 +712,7 @@
 		{   "id": 1, "label": "Software in the work space is only a copy" },
 		{   "id": 2, "label": "Special care will be taken for the software and configurations" }
 	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.6"}]	    
+	    "references": [{"type": "dmpbook", "chapter": "2.6"}, {"type": "resourcepage", "shortuid": "cbq"}]	    
 	},
 	{
 	    "questionid": 68, "type": "option",
