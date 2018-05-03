@@ -7,16 +7,42 @@
     "questions" :
     [
 	{
-	    "questionid": 1, "type": "option",
-	    "title": "Have you identified types of data that you will use that are used by others too?",
-	    "text": "Some types of data (e.g. genetic variants in the life sciences) are used by many different projects. For such data, often common standards exist that help to make these data reusable. Are you using such common data formats?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, I am not using any common data types" },
-		{   "id": 1, "label": "Yes, I will make sure to use common formats for common data types" }
-	    ],
+	    "questionid": 1, "type": "list",
+	    "title": "What data formats/types will you be using?",
+            "text": "Have you identified types of data that you will use that are used by others too? Some types of data (e.g. genetic variants in the life sciences) are used by many different projects. For such data, often common standards exist that help to make these data reusable. Are you using such common data formats?",
 	    "references": [{"type": "dmpbook", "chapter": "2.1"}, {"type": "resourcepage", "shortuid": "njy"}]
 	},
+	{
+	    "questionid": 95, "type": "option",
+            "precondition": { "questionid": 1 },
+	    "title": "Is this a standard data format used by others too?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+        },
+	{
+	    "questionid": 96, "type": "option",
+            "precondition": { "questionid": 1 },
+	    "title": "Does this data format enable sharing and long term archiving?",
+            "text": "Complicated (binary) file formats tend to change over time, and software may not stay compatible with older versions. Also, some formats hamper long term usability by making use of patents or being hampered by restrictive licensing",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ]
+        },
+	{
+	    "questionid": 97, "type": "option",
+            "precondition": { "questionid": 96, "answerid": 0 },
+	    "title": "Will you convert to a file format more suitable for archiving later?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes", "advice": "You may need to reserve time and budget for this" }
+	    ]
+        },
 	{
 	    "questionid": 2, "type": "option",
 	    "title": "Will you be using new types of data?",
