@@ -14,26 +14,182 @@
 		{   "id": 1, "label": "Explore this with additional questions" }
 	    ]
 	},
+        {
+            "questionid": 19, "type": "list",
+	    "precondition": { "questionid": 1, "answerid": 1 },
+            "title": "List the data formats you will be using for data integration",
+            "text": "Answer some questions for each"
+        },
 	{
 	    "questionid": 6, "type": "option",
-	    "precondition": { "questionid": 1, "answerid": 1 },
-	    "title": "What kind of framework will you use?",
+	    "precondition": { "questionid": 19 },
+	    "title": "How is the data structured?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "Spreadsheets like Microsoft Excel" },
-		{   "id": 1, "label": "A regular tabular database" },
-		{   "id": 2, "label": "A graph database" },
-		{   "id": 3, "label": "RDF" },
 		{   "id": 4, "label": "(meta)data fields in a domain specific file" },
-		{   "id": 98, "label": "A combination of the above" },
 		{   "id": 99, "label": "We have made other arrangements" }
+		{   "id": 0, "label": "A table or set of tables (consisting of 'data records')" },
+		{   "id": 2, "label": "Complex data, like a graph" },
+		{   "id": 99, "label": "Differently" }
 	    ]
 	},
 	{
 	    "questionid": 7, "type": "text",
 	    "precondition": {"questionid": 6, "answerid": 99},
-	    "title": "What other arrangements?"
+	    "title": "Describe how?"
 	},
+        {
+            "questionid": 20, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 4},
+            "title": "Can all of the data you want to couple be captured in that format?",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 21, "type": "option",
+            "precondition": {"questionid": 20, "answerid": 1},
+            "title" : "Will you be doing it that way?",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 22, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 4},
+            "title": "Does the domain specific format come with its own suite of integration tools that you will use??",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 23, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 0},
+            "title": "Does each column have a header?",
+            "text": "In a table, the data items are arranged in columns. Is there a header for each of these describing what is in there?",
+            "answers": 
+            [
+              { "id": 0, "label": "No", "advice": "You will need to have a header in order to make the data interoperable and reusable" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 24, "type": "option",
+            "precondition": {"questionid": 23, "answerid": 1},
+            "title": "Are all column headers unambiguous?",
+            "text": "A human being quickly 'understands' data items and their relations. For good data reusability, it is necessary that computers can understand your data too.",
+            "answers": 
+            [
+              { "id": 0, "label": "No", "advice": "Check whether you can find an ontology for each of your data items" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 25, "type": "option",
+            "precondition": {"questionid": 23, "answerid": 1},
+            "title": "Do all columns/headers have a data type?",
+            "text": "A label like 'temperature' only makes sense to a computer if it is also clear what the units are and what temperature has been measured. In many cases, it is also important how it was measured.",
+            "answers": 
+            [
+              { "id": 0, "label": "No", "advice": "Check whether you can find a data type (potentially in a data type registry) for each of your data items" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 26, "type": "option",
+            "precondition": {"questionid": 23, "answerid": 1},
+            "title": "Are the limitations to allowed data values in each column explicit?",
+            "text": "If there are reasonable limitations to the values in a column, or even a limited set of allowed values, it is very good for data vvalidation and reusability if these limitations are explicit, and e.g. software used for data entry and editing will not allow anything else.",
+            "answers": 
+            [
+              { "id": 0, "label": "No", "advice": "Check whether there is a way to explicitly limit data values." },
+              { "id": 1, "label": "Yes" }
+            ],
+            "references":
+            [
+              { "type": "url", "weblink": "rightfield.org.uk", "anchor": "Rightfield: Template fields in Microsoft Excel" }
+            ]
+        },
+        {
+            "questionid": 27, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 0},
+            "title": "Is it clear what a row in the table represents?",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 28, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 0},
+            "title": "Does each row have an identifier?",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 29, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 0},
+            "title": "Is there a distinguishing way a missing value in the table can be recognized?",
+            "text": "Sometimes, and empty field or a zero is indicating a missing value. But is that really unique? Could there be valid empty or zero fields? Has the convention for missing values been made explicit somewhere?",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 30, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 0},
+            "title": "Is the relation between each of the columns and the record identifier clear?",
+            "text": "It may appear that in a table with 'patients' as rows, a column labeled 'disease' coupled to an ontology has a clear meaning. But that is not always explicit enough! A 'disease' could e.g. be the disease that the patient is suffering from, but it could also be an earlier diagnose, a suspected diagnose, or the disease a family member recently died of.",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 31, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 0},
+            "title": "Are all the relations between the column headers explicit?",
+            "text": "For a good understanding of tabular data, you need to make the relationship between each pair of columns explicit. E.g. if one column is 'disease' and another is 'treatment', you want to make sure that this is the chosen treatment that this person is undergoing for the given disease.",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 32, "type": "option",
+            "precondition": {"questionid": 6, "answerid": 2},
+            "title": "Are you representing the graph in RDF?",
+            "text": "RDF is the graph representation used in the 'semantic web'",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
+        {
+            "questionid": 33, "type": "option",
+            "precondition": {"questionid": 32, "answerid": 1},
+            "title": "Are all the URLs resolving to common ontologies?",
+            "answers": 
+            [
+              { "id": 0, "label": "No" },
+              { "id": 1, "label": "Yes" }
+            ]
+        },
 	{
 	    "questionid": 8, "type": "option",
 	    "precondition": { "questionid": 1, "answerid": 1 },
