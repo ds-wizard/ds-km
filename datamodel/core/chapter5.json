@@ -27,7 +27,6 @@
 	    "answers": 
 	    [ 
 		{   "id": 4, "label": "(meta)data fields in a domain specific file" },
-		{   "id": 99, "label": "We have made other arrangements" }
 		{   "id": 0, "label": "A table or set of tables (consisting of 'data records')" },
 		{   "id": 2, "label": "Complex data, like a graph" },
 		{   "id": 99, "label": "Differently" }
