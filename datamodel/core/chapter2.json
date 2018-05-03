@@ -139,6 +139,18 @@
             "references": [{"type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
 	},
 	{
+	    "questionid": 99, "type": "option",
+	    "precondition": { "questionid": 3, "answerid": 1 },
+	    "title": "Do you know how and when you will be collecting the necessary metadata?",
+            "text": "Often it is easiest to make sure you collect the metadata as early as possible.",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ],
+            "references": [{"type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
+	},
+	{
 	    "questionid": 13, "type": "option",
 	    "precondition": { "questionid": 3, "answerid": 1 },
 	    "title": "Will you consider re-usability of your data beyond your original purpose?",
