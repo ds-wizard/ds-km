@@ -124,7 +124,19 @@
 	    [
 		{   "id": 0, "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?" },
 		{   "id": 1, "label": "Yes" }
-	    ]
+	    ],
+            "references": [{"type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
+	},
+	{
+	    "questionid": 98, "type": "option",
+	    "precondition": { "questionid": 12, "answerid": 0 },
+	    "title": "Do you have a good idea of what metadata is needed to make it possible for others to read and interpret your data in the future?",
+	    "answers":
+	    [
+		{   "id": 0, "label": "No" },
+		{   "id": 1, "label": "Yes" }
+	    ],
+            "references": [{"type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
 	},
 	{
 	    "questionid": 13, "type": "option",
