@@ -17,7 +17,7 @@
 	},
 	{
 	    "questionid": 25, "type": "option",
-	    "title": "Cal all of your data become completely open immediately?",
+	    "title": "Can all of your data become completely open immediately?",
 	    "answers": 
 	    [ 
 		{   "id": 0, "label": "No" },
@@ -380,7 +380,7 @@
 	    "title": "Did you work out the financial aspects of making the data available?",
 	    "answers": 
 	    [ 
-		{   "id": 0, "label": "This as been taken care of" },
+		{   "id": 0, "label": "This has been taken care of" },
 		{   "id": 1, "label": "Explore this with additional questions" }
 	    ]
 	},
