@@ -1,52 +1,52 @@
 {
-    "chapterid": 6,
-    "namespace": "core",
-    "formatversion": 1,
-    "title": "Data interpretation",
-    "questions" :
-    [
+	"uuid": "d5b27482-b598-4b8c-b534-417d4ad27394",
+	"namespace": "core",
+	"formatversion": 1,
+	"title": "Data interpretation",
+	"questions" :
+	[
 	{
-	    "questionid": 1, "type": "option",
-	    "title": "Will data interpretation and modeling require significant compute infrastructure capacity?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes", "advice": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
-	    ],
-	    "references":
-	    [
-		{ "type": "xref", "chapterid": 2, "questionid": 6 }
-	    ]
+		"uuid": "c8e35b21-9911-43f4-bb5e-0df3de1cd727", "type": "option",
+		"title": "Will data interpretation and modeling require significant compute infrastructure capacity?",
+		"answers":
+		[
+			{ "uuid": "5905c733-5113-401f-9343-24911af54e05", "label": "No" },
+			{ "uuid": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f", "label": "Yes", "advice": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
+		],
+		"references":
+		[
+			{ "uuid": "a981b60d-2870-4a40-83ad-436395876f06", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref" }
+		]
 	},
 	{
-	    "questionid": 2, "type": "option",
-	    "title": "How will you be making sure there is good provenance of the data analysis?",
-	    "text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "We use lab notebooks", "advice": "Make sure to make the notes available in electronic form along with your data" },
-		{   "id": 1, "label": "We use an electronic lab notebook" },
-		{   "id": 99, "label": "We use other arrangements" }
-	    ]
+		"uuid": "948b5fd8-c1bd-457d-8f81-ea2fd093f541", "type": "option",
+		"title": "How will you be making sure there is good provenance of the data analysis?",
+		"text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
+		"answers":
+		[
+			{ "uuid": "7b450ee7-8783-4adc-9955-fd667fac5a56", "label": "We use lab notebooks", "advice": "Make sure to make the notes available in electronic form along with your data" },
+			{ "uuid": "a1e67aee-77dd-486f-ab51-e5a6f39a32cc", "label": "We use an electronic lab notebook" },
+			{ "uuid": "ccdb5296-919c-44ac-89df-351fd2e564ae", "label": "We use other arrangements" }
+		]
 	},
 	{
-	    "questionid": 4, "type": "text",
-	    "precondition": {"questionid": 2, "answerid": 99},
-	    "title": "What other arrangements?"
+		"uuid": "b73b8310-3b4f-49c8-a5c0-4208883754ac", "type": "text",
+		"precondition": "ccdb5296-919c-44ac-89df-351fd2e564ae",
+		"title": "What other arrangements?"
 	},
 	{
-	    "questionid": 3, "type": "option",
-	    "title": "Will you be doing (automated) knowledge discovery?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes"}
-	    ],
-            "references": [{"type": "dmpbook", "chapter": "6.6" }, {"type": "resourcepage", "shortuid": "bzu"}]
-	}	
-    ]
+		"uuid": "460803f2-cc23-4c57-b50e-c5177a3c11d5", "type": "option",
+		"title": "Will you be doing (automated) knowledge discovery?",
+		"answers":
+		[
+			{ "uuid": "8592fc25-fd0f-438c-b0e9-2b0ad81475c7", "label": "No" },
+			{ "uuid": "8d4640c2-25c2-4c1d-a1f2-6fb47a560b96", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "10f24580-e6a1-45a1-b1b1-c8664057f4ec", "type": "dmpbook", "chapter": "6.6" },
+			{ "uuid": "c392c250-2848-4f53-8492-c8d8081fa517", "type": "resourcepage", "shortuid": "bzu" }
+		]
+	}
+	]
 }
-
-	
-	
-

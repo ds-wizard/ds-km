@@ -1,312 +1,319 @@
 {
-    "chapterid": 3,
-    "namespace": "core",
-    "formatversion": 1,
-    "title": "Data Capture/Measurement",
-    "questions" :
-    [
+	"uuid": "c4eda690-066f-495a-8c29-8e8a258ac487",
+	"namespace": "core",
+	"formatversion": 1,
+	"title": "Data Capture/Measurement",
+	"questions" :
+	[
 	{
-	    "questionid": 16, "type": "list",
-	    "title": "Please specify what data sets you will acquire using measurement equipment"
+		"uuid": "f5fef09d-ade5-4019-b089-f05bd89c34bc", "type": "list",
+		"title": "Please specify what data sets you will acquire using measurement equipment"
 	},
 	{
-	    "questionid": 1, "type": "option",
-	    "precondition": {"questionid": 16},
-	    "title": "Who will do the measurements? And where?",
-	    "text": "Are there easily accessible specialized service providers for data capture?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "Experts in the project, with our own equipment" },
-		{   "id": 1, "label": "Experts in the project, at a specialized infrastructure" },
-		{   "id": 2, "label": "External party", "advice": "consider making them partner in the project" }
-	    ]
+		"uuid": "ee59664e-4026-4796-a42a-e8003df6dadf", "type": "option",
+		"precondition": "f5fef09d-ade5-4019-b089-f05bd89c34bc",
+		"title": "Who will do the measurements? And where?",
+		"text": "Are there easily accessible specialized service providers for data capture?",
+		"answers":
+		[
+			{ "uuid": "44ef09a4-5a78-439d-9fb4-940d3d84bfab", "label": "Experts in the project, with our own equipment" },
+			{ "uuid": "eb0b9a82-0379-47c3-967f-b35b40129af2", "label": "Experts in the project, at a specialized infrastructure" },
+			{ "uuid": "f2784b7e-b0ed-4973-9d68-954c5c24e8bb", "label": "External party", "advice": "consider making them partner in the project" }
+		]
 	},
 	{
-	    "questionid": 12, "type": "option",
-	    "precondition": {"questionid": 1, "answerid": 2},
-	    "title": "Has formal ownership of the data been established?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "The party measuring the data owns it" },
-		{   "id": 1, "label": "The project partners acquire full ownership"},
-		{   "id": 2, "label": "We have made other arrangements" },
-		{   "id": 3, "label": "This still needs to be decided" }
-	    ]
+		"uuid": "aa27852a-00f4-44a4-a85c-0e0fd3ac20d1", "type": "option",
+		"precondition": "f2784b7e-b0ed-4973-9d68-954c5c24e8bb",
+		"title": "Has formal ownership of the data been established?",
+		"answers":
+		[
+			{ "uuid": "786edd0d-ae07-489c-b078-423c18e02043", "label": "The party measuring the data owns it" },
+			{ "uuid": "306f7ef4-97fd-47b0-84de-f192cb94ea3a", "label": "The project partners acquire full ownership"},
+			{ "uuid": "399245d4-7988-461c-b940-ee813a1c99b1", "label": "We have made other arrangements" },
+			{ "uuid": "840b561f-3e8f-435e-a1f2-68dc75dc4f22", "label": "This still needs to be decided" }
+		]
 	},
 	{
-	    "questionid": 14, "type": "text",
-	    "precondition": {"questionid": 12, "answerid": 2},
-	    "title": "What other arrangements?"
+		"uuid": "227f056a-ada1-473b-af71-bb63d48b4940", "type": "text",
+		"precondition": "399245d4-7988-461c-b940-ee813a1c99b1",
+		"title": "What other arrangements?"
 	},
 	{
-	    "questionid": 13, "type": "option",
-	    "precondition": {"questionid": 1, "answerid": 2},
-	    "title": "Has responsibility for long term safe keeping of the raw data been established? Who will deal with data publication?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "The measuring party will publish it after a fixed embargo period" },
-		{   "id": 1, "label": "The measuring party will publish it when the project tells them to" },
-		{   "id": 2, "label": "The measuring party will delete the data, the project partners will deal with data publication"},
-		{   "id": 3, "label": "We have made other arrangements" },
-		{   "id": 4, "label": "This still needs to be decided" }
-	    ]
+		"uuid": "f0a474ac-21b5-4b6a-9fd5-b9c3f8882055", "type": "option",
+		"precondition": "f2784b7e-b0ed-4973-9d68-954c5c24e8bb",
+		"title": "Has responsibility for long term safe keeping of the raw data been established? Who will deal with data publication?",
+		"answers":
+		[
+			{ "uuid": "b10cd3bf-ecd6-4fa1-a9c4-d8d974de714c", "label": "The measuring party will publish it after a fixed embargo period" },
+			{ "uuid": "a3393cc1-3393-45ba-ba91-e447bf755eb7", "label": "The measuring party will publish it when the project tells them to" },
+			{ "uuid": "350fa8cc-ecc8-40cc-a50e-1d87405970b1", "label": "The measuring party will delete the data, the project partners will deal with data publication"},
+			{ "uuid": "8197cf1c-999a-43ae-9e29-bb5d0452052b", "label": "We have made other arrangements" },
+			{ "uuid": "2fa2df9a-5dee-496c-9aa3-24dba3bf2b80", "label": "This still needs to be decided" }
+		]
 	},
 	{
-	    "questionid": 15, "type": "text",
-	    "precondition": {"questionid": 13, "answerid": 3},
-	    "title": "What other arrangements?"
+		"uuid": "e576471a-40dd-453d-ba59-d3f4e1c30cc4", "type": "text",
+		"precondition": "8197cf1c-999a-43ae-9e29-bb5d0452052b",
+		"title": "What other arrangements?"
 	},
 	{
-	    "questionid": 5, "type": "option",
-	    "precondition": {"questionid": 16},
-	    "title": "Is the equipment completely standard and well described?",
-	    "text": "If the technology is very much under development, you may want to come back later to understand exactly how the measurements have been made. Is the measurement equipment and protocol sufficiently standard that you will be able to explain how it is done or refer to a standard explanation?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Very well described and known"},
-		{   "id": 1, "label": "Less well described or not completely standard",
-		    "advice": "Take pictures of the instruments for documentation, and keep copies of any documentation."}
-	    ]
+		"uuid": "bce52f7f-2256-4afc-9801-2e4da8111470", "type": "option",
+		"precondition": "f5fef09d-ade5-4019-b089-f05bd89c34bc",
+		"title": "Is the equipment completely standard and well described?",
+		"text": "If the technology is very much under development, you may want to come back later to understand exactly how the measurements have been made. Is the measurement equipment and protocol sufficiently standard that you will be able to explain how it is done or refer to a standard explanation?",
+		"answers":
+		[
+			{ "uuid": "cba473be-2489-4387-8877-ce49cf95a304", "label": "Very well described and known"},
+			{ "uuid": "526db9ec-a5a1-4431-9cc3-751fc6625217", "label": "Less well described or not completely standard", "advice": "Take pictures of the instruments for documentation, and keep copies of any documentation."}
+		]
 	},
 	{
-	    "questionid": 2, "type": "option",
-	    "precondition": {"questionid": 16},
-	    "title": "Is special care needed to get the raw data ready for processing?",
-	    "text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion or transport of the primary data may take special planning. You also need to make sure that data is secure and that data integrity is guaranteed.",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No, this is all fine" },
-		{   "id": 1, "label": "Yes, lets explore this" }
-	    ]
+		"uuid": "28b99b8e-3a0c-45c5-8d2b-b778a7d43323", "type": "option",
+		"precondition": "f5fef09d-ade5-4019-b089-f05bd89c34bc",
+		"title": "Is special care needed to get the raw data ready for processing?",
+		"text": "Where does the data come from? And who will need it? Sometimes the raw data is measured somewhere else than where the primary processing is taking place. In such cases the ingestion or transport of the primary data may take special planning. You also need to make sure that data is secure and that data integrity is guaranteed.",
+		"answers":
+		[
+			{ "uuid": "b541e78e-3300-4e7d-ac36-93d7b5ebf031", "label": "No, this is all fine" },
+			{ "uuid": "065a500b-53c0-487f-9096-00fd6f7234a6", "label": "Yes, lets explore this" }
+		]
 	},
 	{
-	    "questionid": 6, "type": "option",
-	    "precondition": {"questionid": 2, "answerid": 1},
-	    "title": "Is the data format established?",
-	    "text": "Has the storage and transport format of the primary data been established between the people responsible for the measurement and the people responsible for the processing?",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},	    
-	{
-	    "questionid": 7, "type": "option",
-	    "precondition": {"questionid": 2, "answerid": 1},
-	    "title": "How will the raw data be transported?",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "No transport is needed, analysis is done where it is obtained" },
-		{   "id": 1, "label": "On physical media" },
-		{   "id": 2, "label": "Via the network" }
-	    ]
-	},	    
-	{
-	    "questionid": 8, "type": "option",
-	    "precondition": {"questionid": 7, "answerid": 1},
-	    "title": "Is sufficient writing and reading capacity available for the physical media?",
-	    "text": "Has time been reserved on any tape/disk reading and writing stations?",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "Not yet" },
-		{   "id": 1, "label": "Yes, has been taken care of" }
-	    ]
-	},	    
-	{
-	    "questionid": 9, "type": "option",
-	    "precondition": {"questionid": 7, "answerid": 2},
-	    "title": "Is sufficient network capacity available?",
-	    "text": "Can the volume of data be accommodated by the standard network connection? Has a special network connection (e.g. light path) that is needed been reserved?",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "Not yet" },
-		{   "id": 1, "label": "Yes, has been taken care of" }
-	    ]
-	},	    
-	{
-	    "questionid": 10, "type": "option",
-	    "precondition": {"questionid": 2, "answerid": 1},
-	    "title": "Is data integrity guaranteed during this stage?",
-	    "text": "Do you have any means of identifying whether the raw data has been transferred error free and has not been tampered with?",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},	    
-	{
-	    "questionid": 11, "type": "option",
-	    "precondition": {"questionid": 2, "answerid": 1},
-	    "title": "Is data security guaranteed during this stage?",
-	    "text": "Are the raw data encrypted or otherwise protected from theft or leaks at either site or during transport? You could e.g. use a light path or a virtual private network if you transport the data over the net.",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "No, not needed" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "2c5fd209-1ff5-4c34-b6e4-2bf1228e97de", "type": "option",
+		"precondition": "065a500b-53c0-487f-9096-00fd6f7234a6",
+		"title": "Is the data format established?",
+		"text": "Has the storage and transport format of the primary data been established between the people responsible for the measurement and the people responsible for the processing?",
+		"answers":
+		[
+			{ "uuid": "856438ef-024b-4e82-b8ba-0010beb39f61", "label": "No" },
+			{ "uuid": "abc6b715-2d2b-4ee8-81c5-ac2c55d1cac2", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 3, "type": "option",
-	    "title": "Do you have any non-equipment data capture?",
-	    "text": "Does the data you collect contain non-equipment captured data such as questionnaires, case report forms, electronic patient records?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "3.2.1"}, {"type": "resourcepage", "shortuid": "ybw"}]
+		"uuid": "2e8d6e55-36ea-46eb-a921-65e550bce5dc", "type": "option",
+		"precondition": "065a500b-53c0-487f-9096-00fd6f7234a6",
+		"title": "How will the raw data be transported?",
+		"answers":
+		[
+			{ "uuid": "489c3813-c010-4197-b54a-41e742aa8f35", "label": "No transport is needed, analysis is done where it is obtained" },
+			{ "uuid": "8c9c3d59-cd51-4303-9202-519e30998e1a", "label": "On physical media" },
+			{ "uuid": "ca02196a-aae3-42aa-b6cb-aeb1b86f752a", "label": "Via the network" }
+		]
 	},
 	{
-	    "questionid": 18, "type": "option",
-	    "precondition": {"questionid": 3, "answerid": 1},
-	    "title": "Will you be collecting questionnaires?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "No"},
-		{    "id": 1, "label": "Yes"}
-	    ]
+		"uuid": "31da89a7-4d04-4345-a414-ea1226377df7", "type": "option",
+		"precondition": "8c9c3d59-cd51-4303-9202-519e30998e1a",
+		"title": "Is sufficient writing and reading capacity available for the physical media?",
+		"text": "Has time been reserved on any tape/disk reading and writing stations?",
+		"answers":
+		[
+			{ "uuid": "5c3c64b1-fdbd-4267-9b24-dc59456a3828", "label": "Not yet" },
+			{ "uuid": "be674d81-cadb-470a-acf9-7365175b533d", "label": "Yes, has been taken care of" }
+		]
 	},
 	{
-	    "questionid": 19, "type": "option",
-	    "precondition": {"questionid": 3, "answerid": 1},
-	    "title": "Will you be collecting case report forms?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "No"},
-		{    "id": 1, "label": "Yes"}
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "3.2.1.1"}, {"type": "resourcepage", "shortuid": "hfg"}]
+		"uuid": "3d942d91-39a2-4d2f-a27a-6fe57deb87ff", "type": "option",
+		"precondition": "ca02196a-aae3-42aa-b6cb-aeb1b86f752a",
+		"title": "Is sufficient network capacity available?",
+		"text": "Can the volume of data be accommodated by the standard network connection? Has a special network connection (e.g. light path) that is needed been reserved?",
+		"answers":
+		[
+			{ "uuid": "b7a228a3-7555-4572-b753-6383ddb5fd1a", "label": "Not yet" },
+			{ "uuid": "44dfd6cb-b3ce-41a4-bca8-9689be8df67c", "label": "Yes, has been taken care of" }
+		]
 	},
 	{
-	    "questionid": 20, "type": "option",
-	    "precondition": {"questionid": 3, "answerid": 1},
-	    "title": "Will you be collecting data from electronic patient records?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "No"},
-		{    "id": 1, "label": "Yes"}
-	    ]
+		"uuid": "129f74a4-dc91-4cc7-aee3-b384c8ea30dd", "type": "option",
+		"precondition": "065a500b-53c0-487f-9096-00fd6f7234a6",
+		"title": "Is data integrity guaranteed during this stage?",
+		"text": "Do you have any means of identifying whether the raw data has been transferred error free and has not been tampered with?",
+		"answers":
+		[
+			{ "uuid": "faafb22b-bebe-4dc1-adf7-2d398d5d52de", "label": "No" },
+			{ "uuid": "5935eebc-017c-4b4c-b44f-02ba0e614eca", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 21, "type": "option",
-	    "precondition": {"questionid": 20, "answerid": 1},
-	    "title": "Has access to the electronic patient records been arranged?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "Not yet"},
-		{    "id": 1, "label": "Yes"}
-	    ]
+		"uuid": "0ebd660b-364a-4357-9044-c4dc0293a9ba", "type": "option",
+		"precondition": "065a500b-53c0-487f-9096-00fd6f7234a6",
+		"title": "Is data security guaranteed during this stage?",
+		"text": "Are the raw data encrypted or otherwise protected from theft or leaks at either site or during transport? You could e.g. use a light path or a virtual private network if you transport the data over the net.",
+		"answers":
+		[
+			{ "uuid": "c30318bd-f2ca-4328-ae27-a14870916543", "label": "No, not needed" },
+			{ "uuid": "a87f2a11-94c5-43cf-acc4-30dc54a1a41b", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 17, "type": "list",
-	    "precondition": {"questionid": 3, "answerid": 1},
-	    "title": "Please list all non-equipment data sets you will collect"
+		"uuid": "f038bd46-ee4e-4f53-b7ea-482381c2c855", "type": "option",
+		"title": "Do you have any non-equipment data capture?",
+		"text": "Does the data you collect contain non-equipment captured data such as questionnaires, case report forms, electronic patient records?",
+		"answers":
+		[
+			{ "uuid": "514befe5-76b0-4e4e-bdf5-2bc164e38d7f", "label": "No" },
+			{ "uuid": "4fd89b13-f33c-4858-8b25-ab6da271efc6", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "a18889af-00d0-40ff-8f4a-a2ae19664687", "type": "dmpbook", "chapter": "3.2.1"},
+			{ "uuid": "a338b156-3c43-4b26-8b10-bc6e485b80b5", "type": "resourcepage", "shortuid": "ybw"}
+		]
 	},
 	{
-	    "questionid": 22, "type": "option",
-	    "precondition": {"questionid": 17},
-	    "title": "How will the data be captured?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "All immediately in digital form"},
-		{    "id": 1, "label": "Data will first be on paper"}
-	    ]
+		"uuid": "85079340-7b80-4dc7-86ae-cc5f599ec737", "type": "option",
+		"precondition": "4fd89b13-f33c-4858-8b25-ab6da271efc6",
+		"title": "Will you be collecting questionnaires?",
+		"answers":
+		[
+			{ "uuid": "000f21de-fdf6-4c9d-9bfb-847db544613b", "label": "No"},
+			{ "uuid": "81baba8e-d43c-48f9-b39a-c0adfad08f64", "label": "Yes"}
+		]
 	},
 	{
-	    "questionid": 23, "type": "option",
-	    "precondition": {"questionid": 22, "answerid": 1},
-	    "title": "Who will do the data entry?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "A specialized team"},
-		{    "id": 1, "label": "One of the members of the project team"},
-		{    "id": 2, "label": "We have made other arrangements"},
-		{    "id": 3, "label": "This is not yet clear"}
-	    ]
+		"uuid": "36a5ed1e-ecd5-4b86-a719-f1196e376a52", "type": "option",
+		"precondition": "4fd89b13-f33c-4858-8b25-ab6da271efc6",
+		"title": "Will you be collecting case report forms?",
+		"answers":
+		[
+			{ "uuid": "3e3d559c-5fbf-4c43-b1f5-763e84fc9c78", "label": "No"},
+			{ "uuid": "7fcce8f6-e52b-444e-88f6-74ba3e4ee37b", "label": "Yes"}
+		],
+		"references":
+		[
+			{ "uuid": "a1f33a26-8caa-4b68-b3f7-0b5d5a659e68", "type": "dmpbook", "chapter": "3.2.1.1"},
+			{ "uuid": "c696fabf-9073-4254-a5c9-6db320d92e69", "type": "resourcepage", "shortuid": "hfg"}
+		]
 	},
 	{
-	    "questionid": 24, "type": "text",
-	    "precondition": {"questionid": 23, "answerid": 2},
-	    "title": "What other arrangements?"
+		"uuid": "7e456b72-72a1-427d-8e75-9da096bc9806", "type": "option",
+		"precondition": "4fd89b13-f33c-4858-8b25-ab6da271efc6",
+		"title": "Will you be collecting data from electronic patient records?",
+		"answers":
+		[
+			{ "uuid": "1e097cb9-7d94-4bc6-a261-f78f8208f9f3", "label": "No"},
+			{ "uuid": "2d3d08b8-7d63-4645-9499-f465caa06204", "label": "Yes"}
+		]
 	},
 	{
-	    "questionid": 25, "type": "option",
-	    "precondition": {"questionid": 22, "answerid": 1},
-	    "title": "Did you arrange who will make the data digitally available to you?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "Not yet"},
-		{    "id": 1, "label": "Yes"}
-	    ]
+		"uuid": "4eb1bd6f-5d10-4b0a-aab1-715facc29cbb", "type": "option",
+		"precondition": "2d3d08b8-7d63-4645-9499-f465caa06204",
+		"title": "Has access to the electronic patient records been arranged?",
+		"answers":
+		[
+			{ "uuid": "03f16c20-4299-4511-a893-79da17a16b50", "label": "Not yet"},
+			{ "uuid": "5af68c53-0156-4290-972f-a86a09d36232", "label": "Yes"}
+		]
 	},
 	{
-	    "questionid": 26, "type": "option",
-	    "precondition": {"questionid": 17},
-	    "title": "Will all data be collected by a single person?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "This data will be collected by one person"},
-		{    "id": 1, "label": "More people will capture data"}
-	    ]
+		"uuid": "b642c31d-a512-4ca7-8743-a2e0254006fa", "type": "list",
+		"precondition": "4fd89b13-f33c-4858-8b25-ab6da271efc6",
+		"title": "Please list all non-equipment data sets you will collect"
 	},
 	{
-	    "questionid": 27, "type": "option",
-	    "precondition": {"questionid": 26, "answerid": 1},
-	    "title": "Is there a risk of different interpretations? Subjectivity?",
-	    "answers":
-	    [
-		{    "id": 0, "label": "The data capture is objective"},
-		{    "id": 1, "label": "There are internal controls to deal with interperation differences"},
-		{    "id": 2, "label": "We accept the risk of different interpretations"},
-		{    "id": 3, "label": "We do validation afterwards"},
-		{    "id": 4, "label": "We have made other arrangements"}
-	    ]
+		"uuid": "4e84a44f-e66b-42f5-bb42-7e6c4bd3b79b", "type": "option",
+		"precondition": "b642c31d-a512-4ca7-8743-a2e0254006fa",
+		"title": "How will the data be captured?",
+		"answers":
+		[
+			{ "uuid": "407560bc-705a-4885-85d6-4f61fe58eeed", "label": "All immediately in digital form"},
+			{ "uuid": "374974a6-2c51-4508-aa93-9ef8f1ef65fd", "label": "Data will first be on paper"}
+		]
 	},
 	{
-	    "questionid": 28, "type": "text",
-	    "precondition": {"questionid": 27, "answerid": 4},
-	    "title": "What other arrangements?"
+		"uuid": "32f5bc5c-6bc6-4df0-849f-1619951c5b98", "type": "option",
+		"precondition": "374974a6-2c51-4508-aa93-9ef8f1ef65fd",
+		"title": "Who will do the data entry?",
+		"answers":
+		[
+			{ "uuid": "9d51aae1-ca1b-4267-b0df-d43dc85f5bc6", "label": "A specialized team"},
+			{ "uuid": "9660950a-41d7-4c3b-a6fd-97e58c8fa412", "label": "One of the members of the project team"},
+			{ "uuid": "82ef3ee8-461e-4f5b-a66a-2d4aaccbe68b", "label": "We have made other arrangements"},
+			{ "uuid": "aebe403b-e350-474e-94fb-d210d15e8b4d", "label": "This is not yet clear"}
+		]
 	},
 	{
-	    "questionid": 4, "type": "option",
-	    "title": "Is there a data integration tool that can handle and combine all the data types you are dealing with in your project?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "f0e57014-79ad-4f2d-becd-e00f50ed1770", "type": "text",
+		"precondition": "82ef3ee8-461e-4f5b-a66a-2d4aaccbe68b",
+		"title": "What other arrangements?"
 	},
 	{
-	    "questionid": 29, "type": "option",
-	    "precondition": {"questionid": 4, "answerid": 0},
-	    "title": "Can all data be brought into the same format, e.g. RDF?",
-	    "answers":
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "a205f751-cbb6-4f58-a692-2ba450e1e133", "type": "option",
+		"precondition": "374974a6-2c51-4508-aa93-9ef8f1ef65fd",
+		"title": "Did you arrange who will make the data digitally available to you?",
+		"answers":
+		[
+			{ "uuid": "1c6da256-72d5-45b1-842e-c1458e6d2e21", "label": "Not yet"},
+			{ "uuid": "83d23b9f-4b91-4444-8e38-f1c7982e41aa", "label": "Yes"}
+		]
 	},
 	{
-	    "questionid": 30, "type": "option",
-	    "precondition": {"questionid": 4, "answerid": 1},
-	    "title": "What software will you be using to collect all data?",
-	    "answers":
-	    [ 
-  		{   "id": 0, "label": "We will not use a data warehouse" },
-  		{   "id": 1, "label": "TranSMART" },
-		{   "id": 98, "label": "Software not listed here" },
-		{   "id": 99, "label": "We will develop our own" }
-	    ]
-	},	    
+		"uuid": "36d40d39-894b-4c1a-9e9c-feaddef09df3", "type": "option",
+		"precondition": "b642c31d-a512-4ca7-8743-a2e0254006fa",
+		"title": "Will all data be collected by a single person?",
+		"answers":
+		[
+			{ "uuid": "4ea74c15-c1d2-46c1-9bd6-8fe251648a4e", "label": "This data will be collected by one person"},
+			{ "uuid": "d988687b-41e9-4be4-8472-031938d13c37", "label": "More people will capture data"}
+		]
+	},
 	{
-	    "questionid": 31, "type": "option",
-	    "precondition": {"questionid": 30, "answerid": 99},
-	    "title": "Why will you develop your own software?",
-	    "answers":
-	    [ 
-  		{   "id": 0, "label": "Nothing like this has ever been done before" },
-  		{   "id": 1, "label": "Existing solutions are not suitable", "advice": "Did you consider collaborating to improve an existing solution?" }
-	    ]
-	}	    
-    ]
+		"uuid": "68956a97-6138-4538-9968-e7a925f299cc", "type": "option",
+		"precondition": "d988687b-41e9-4be4-8472-031938d13c37",
+		"title": "Is there a risk of different interpretations? Subjectivity?",
+		"answers":
+		[
+			{ "uuid": "2a1261d5-6678-4181-8ab9-b9671546a02a", "label": "The data capture is objective"},
+			{ "uuid": "c4443193-11f5-4a9e-9444-fabf575d9246", "label": "There are internal controls to deal with interperation differences"},
+			{ "uuid": "2dc09f04-0613-45e5-bba9-18ffe4db8a82", "label": "We accept the risk of different interpretations"},
+			{ "uuid": "8bf15202-b0dc-4be7-8093-72349c7b65c9", "label": "We do validation afterwards"},
+			{ "uuid": "17443e43-bc5a-49ce-8197-6997e9cf3d41", "label": "We have made other arrangements"}
+		]
+	},
+	{
+		"uuid": "ef139df4-fb76-442e-a617-58a638c428f9", "type": "text",
+		"precondition": "17443e43-bc5a-49ce-8197-6997e9cf3d41",
+		"title": "What other arrangements?"
+	},
+	{
+		"uuid": "ab4b3f39-dfab-45a5-9489-2d46ceacbb73", "type": "option",
+		"title": "Is there a data integration tool that can handle and combine all the data types you are dealing with in your project?",
+		"answers":
+		[
+			{ "uuid": "9e5abf02-c19d-4826-a1f2-6db5acf471a6", "label": "No" },
+			{ "uuid": "b24b7cbe-2209-47e9-87d6-401fbfb3cdec", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "20a9685a-5560-43dc-bb13-73c434f8d666", "type": "option",
+		"precondition": "9e5abf02-c19d-4826-a1f2-6db5acf471a6",
+		"title": "Can all data be brought into the same format, e.g. RDF?",
+		"answers":
+		[
+			{ "uuid": "6c382760-fc18-47e5-9bd3-91747a24bd83", "label": "No" },
+			{ "uuid": "2d5c8925-3b78-4cdf-be9a-e66351b123fc", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "2e394765-d87d-4c1e-9f90-d8d2a06826e3", "type": "option",
+		"precondition": "b24b7cbe-2209-47e9-87d6-401fbfb3cdec",
+		"title": "What software will you be using to collect all data?",
+		"answers":
+		[
+			{ "uuid": "ffcb476b-8321-42d6-84fb-8347fcff1011", "label": "We will not use a data warehouse" },
+			{ "uuid": "cce63dc5-5ac7-4706-ab5a-4a204ef380e3", "label": "TranSMART" },
+			{ "uuid": "aa23e0c5-45ca-4061-9e81-04fc9d56c97c", "label": "Software not listed here" },
+			{ "uuid": "2be7a50f-f044-4649-a163-2197a13e5edc", "label": "We will develop our own" }
+		]
+	},
+	{
+		"uuid": "677c07f0-a709-4d77-946f-78735a88c858", "type": "option",
+		"precondition": "2be7a50f-f044-4649-a163-2197a13e5edc",
+		"title": "Why will you develop your own software?",
+		"answers":
+		[
+			{ "uuid": "2bfd3b78-6013-42b3-ba13-51041aac5618", "label": "Nothing like this has ever been done before" },
+			{ "uuid": "62028d39-f35d-4b09-ad7a-a0772d45573e", "label": "Existing solutions are not suitable", "advice": "Did you consider collaborating to improve an existing solution?" }
+		]
+	}
+	]
 }

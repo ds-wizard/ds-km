@@ -1,124 +1,123 @@
 {
-    "chapterid": 6,
-    "namespace": "lifesciences",
-    "formatversion": 1,
-    "questions" :
-    [
+	"uuid": "d5b27482-b598-4b8c-b534-417d4ad27394",
+	"namespace": "lifesciences",
+	"formatversion": 1,
+	"questions" :
+	[
 	{
-	    "questionid": 1, "type": "option",
-	    "title": "Will you do systems biology modeling?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "c8e35b21-9911-43f4-bb5e-0df3de1cd727", "type": "option",
+		"title": "Will you do systems biology modeling?",
+		"answers":
+		[
+			{ "uuid": "5905c733-5113-401f-9343-24911af54e05", "label": "No" },
+			{ "uuid": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 3, "type": "string",
-	    "precondition": {"questionid": 1, "answerid": 1},
-	    "title": "What knowledge model will you be using?"
+		"uuid": "460803f2-cc23-4c57-b50e-c5177a3c11d5", "type": "string",
+		"precondition": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f",
+		"title": "What knowledge model will you be using?"
 	},
 	{
-	    "questionid": 4, "type": "option",
-	    "precondition": {"questionid": 1, "answerid": 1},
-	    "title": "How detailed will you be modeling?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "Organ level" },
-		{   "id": 1, "label": "Cell level" },
-		{   "id": 2, "label": "Pathway level" },
-		{   "id": 3, "label": "Metabolome level" }
-	    ]
+		"uuid": "b73b8310-3b4f-49c8-a5c0-4208883754ac", "type": "option",
+		"precondition": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f",
+		"title": "How detailed will you be modeling?",
+		"answers":
+		[
+			{ "uuid": "cfc7fac6-531c-45dc-87b2-5fdd5d40688b", "label": "Organ level" },
+			{ "uuid": "a0b218b7-bc3f-4b70-8c61-3c4bbb82880e", "label": "Cell level" },
+			{ "uuid": "f389c7ac-6d4a-4202-ace0-bcef6a4620b4", "label": "Pathway level" },
+			{ "uuid": "eb3a799f-a246-4403-8136-d60d3becdd51", "label": "Metabolome level" }
+		]
 	},
 	{
-	    "questionid": 5, "type": "option",
-	    "precondition": {"questionid": 1, "answerid": 1},
-	    "title": "Will you be building pathways?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "6f3c5ba6-e546-422d-ba03-2f381dba06e5", "type": "option",
+		"precondition": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f",
+		"title": "Will you be building pathways?",
+		"answers":
+		[
+			{ "uuid": "ee445340-f8e9-4532-bf31-d310b628c03b", "label": "No" },
+			{ "uuid": "7ffd96db-f85a-4c07-bee2-5b845f39a784", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 6, "type": "option",
-	    "precondition": {"questionid": 5, "answerid": 1},
-	    "title": "Will you be building new pathways?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "f0bd0f5b-9ec9-47a7-9786-d71a2981763b", "type": "option",
+		"precondition": "7ffd96db-f85a-4c07-bee2-5b845f39a784",
+		"title": "Will you be building new pathways?",
+		"answers":
+		[
+			{ "uuid": "fcf2b8ac-5850-4ebc-8af5-d485f4e8e8dc", "label": "No" },
+			{ "uuid": "9a04f9cd-f6b0-47b2-9811-54f2866ea581", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 7, "type": "option",
-	    "precondition": {"questionid": 5, "answerid": 1},
-	    "title": "Will you be extending existing pathways?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "1de4d08a-be6f-4c42-8514-b8da761283ef", "type": "option",
+		"precondition": "7ffd96db-f85a-4c07-bee2-5b845f39a784",
+		"title": "Will you be extending existing pathways?",
+		"answers":
+		[
+			{ "uuid": "abdf63b1-5618-4828-ba8d-d77534306ff7", "label": "No" },
+			{ "uuid": "01f65b93-debd-4a92-9e63-d53866161e67", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 8, "type": "option",
-	    "precondition": {"questionid": 1, "answerid": 1},
-	    "title": "Will you be using statistical modeling?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "7b08e6e3-2985-4983-8a35-34399f31ae5c", "type": "option",
+		"precondition": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f",
+		"title": "Will you be using statistical modeling?",
+		"answers":
+		[
+			{ "uuid": "67451f0a-091e-4704-980b-22b57e889478", "label": "No" },
+			{ "uuid": "c5ae2d79-b8b9-4418-951f-582ad6cbce1c", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 9, "type": "option",
-	    "precondition": {"questionid": 1, "answerid": 1},
-	    "title": "Will you be building kinetic models?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "3afd1d15-bb0c-43a9-ba8d-c108330073ca", "type": "option",
+		"precondition": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f",
+		"title": "Will you be building kinetic models?",
+		"answers":
+		[
+			{ "uuid": "457a0b84-d0fd-4d8a-a073-19af07f96eb1", "label": "No" },
+			{ "uuid": "5875dd4a-4092-4807-afd3-3517b7a86169", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 2, "type": "option",
-	    "title": "Will you do structural modeling?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "9390d18e-8d68-4758-9f81-d69151ec8a46", "type": "option",
+		"title": "Will you do structural modeling?",
+		"answers":
+		[
+			{ "uuid": "3b3d9d67-c0ae-4b33-acde-c2ea4a7211ca", "label": "No" },
+			{ "uuid": "7f216a49-9a76-466a-a651-543010d18184", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 10, "type": "option",
-	    "precondition": {"questionid": 2, "answerid": 1},
-	    "title": "Will you use model building by homology?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "a5219108-2f64-4dca-83e2-59c66859ad95", "type": "option",
+		"precondition": "7f216a49-9a76-466a-a651-543010d18184",
+		"title": "Will you use model building by homology?",
+		"answers":
+		[
+			{ "uuid": "8e37f91c-38ac-4bef-a54b-1810a15ba84c", "label": "No" },
+			{ "uuid": "45bebc8d-d7ad-49b0-93f7-b025b547673c", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 11, "type": "option",
-	    "precondition": {"questionid": 2, "answerid": 1},
-	    "title": "Will you use enzyme activity models?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "abf8beaf-3dd3-416c-b15e-45388053726c", "type": "option",
+		"precondition": "7f216a49-9a76-466a-a651-543010d18184",
+		"title": "Will you use enzyme activity models?",
+		"answers":
+		[
+			{ "uuid": "e5cf74d5-63f5-44b1-8c22-0737d7ed8403", "label": "No" },
+			{ "uuid": "53e837fb-5786-4ec4-bd06-f667cb43ae1c", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 12, "type": "option",
-	    "precondition": {"questionid": 2, "answerid": 1},
-	    "title": "Will you use molecular dynamics?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "b54356a9-c34e-453c-bf88-efa2de970ef0", "type": "option",
+		"precondition": "7f216a49-9a76-466a-a651-543010d18184",
+		"title": "Will you use molecular dynamics?",
+		"answers":
+		[
+			{ "uuid": "fe0d5d25-c37b-4e18-952e-133b98b0fc88", "label": "No" },
+			{ "uuid": "9d4c80c0-f927-4abc-b6b4-60bff2362904", "label": "Yes" }
+		]
 	}
-    ]
+	]
 }
-

@@ -20,13 +20,3 @@ def test_folders_namespaces_local(kmfs, chapters):
     for ns in kmfs['dirs']['local']['dirs']:
         for ch in kmfs['dirs']['local']['dirs'][ns]['files']:
             check_folder_namespace(chapters, ch, ns)
-
-
-# Test if ID in chapter file name == ID in chapter file
-def test_filenames_chapterid(chapters):
-    for ch in chapters:
-        in_name = extract_chapterid(ch)
-        in_file = chapters[ch]['chapterid']
-        assert in_name == in_file,\
-               'Chapter ID not matching ("{}" in filename, "{}" inside) in {}'.\
-               format(in_name, in_file, ch)

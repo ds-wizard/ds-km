@@ -1,15 +1,15 @@
 {
-    "chapterid": 1,
-    "namespace": "elixir-nl",
-    "formatversion": 1,
-    "questions":
-    [
+	"uuid": "82fd0cce-2b41-423f-92ad-636d0872045c",
+	"namespace": "elixir-nl",
+	"formatversion": 1,
+	"questions":
+	[
 	{
-	    "questionid" : 1, "namespace": "core",
-	    "experts" : [
-		{ "name": "Barend Mons",
-		  "email": "barend.mons@dtls.nl"}]
+		"uuid": "efc80cc8-8318-4f8c-acb7-dc1c60e491c1", "namespace": "core",
+		"experts" :
+		[
+			{ "uuid": "cd01a7b3-bf56-4aea-99bb-ae5d27adcaa4", "name": "Barend Mons", "email": "barend.mons@dtls.nl"}
+		]
 	}
-    ]
+	]
 }
- 

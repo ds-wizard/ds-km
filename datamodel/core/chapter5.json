@@ -1,342 +1,350 @@
 {
-    "chapterid": 5,
-    "namespace": "core",
-    "formatversion": 1,
-    "title": "Data integration",
-    "questions" :
-    [
+	"uuid": "83438863-0aa0-4458-b14b-2b2c0d4f811d",
+	"namespace": "core",
+	"formatversion": 1,
+	"title": "Data integration",
+	"questions" :
+	[
 	{
-	    "questionid": 1, "type": "option",
-	    "title": "How will you be doing the integration of different data sources?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "This as been taken care of" },
-		{   "id": 1, "label": "Explore this with additional questions" }
-	    ]
-	},
-        {
-            "questionid": 19, "type": "list",
-	    "precondition": { "questionid": 1, "answerid": 1 },
-            "title": "List the data formats you will be using for data integration",
-            "text": "Answer some questions for each"
-        },
-	{
-	    "questionid": 6, "type": "option",
-	    "precondition": { "questionid": 19 },
-	    "title": "How is the data structured?",
-	    "answers": 
-	    [ 
-		{   "id": 4, "label": "(meta)data fields in a domain specific file" },
-		{   "id": 0, "label": "A table or set of tables (consisting of 'data records')" },
-		{   "id": 2, "label": "Complex data, like a graph" },
-		{   "id": 99, "label": "Differently" }
-	    ]
+		"uuid": "109ed7ea-ef1d-4719-b2b4-eb4f7202c65c", "type": "option",
+		"title": "How will you be doing the integration of different data sources?",
+		"answers":
+		[
+			{ "uuid": "3b573e6c-67a5-442e-937e-33074a14fb96", "label": "This as been taken care of" },
+			{ "uuid": "238ace4b-22bb-4a9d-a312-e30d82d4382d", "label": "Explore this with additional questions" }
+		]
 	},
 	{
-	    "questionid": 7, "type": "text",
-	    "precondition": {"questionid": 6, "answerid": 99},
-	    "title": "Describe how?"
-	},
-        {
-            "questionid": 20, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 4},
-            "title": "Can all of the data you want to couple be captured in that format?",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 21, "type": "option",
-            "precondition": {"questionid": 20, "answerid": 1},
-            "title" : "Will you be doing it that way?",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 22, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 4},
-            "title": "Does the domain specific format come with its own suite of integration tools that you will use??",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 23, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 0},
-            "title": "Does each column have a header?",
-            "text": "In a table, the data items are arranged in columns. Is there a header for each of these describing what is in there?",
-            "answers": 
-            [
-              { "id": 0, "label": "No", "advice": "You will need to have a header in order to make the data interoperable and reusable" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 24, "type": "option",
-            "precondition": {"questionid": 23, "answerid": 1},
-            "title": "Are all column headers unambiguous?",
-            "text": "A human being quickly 'understands' data items and their relations. For good data reusability, it is necessary that computers can understand your data too.",
-            "answers": 
-            [
-              { "id": 0, "label": "No", "advice": "Check whether you can find an ontology for each of your data items" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 25, "type": "option",
-            "precondition": {"questionid": 23, "answerid": 1},
-            "title": "Do all columns/headers have a data type?",
-            "text": "A label like 'temperature' only makes sense to a computer if it is also clear what the units are and what temperature has been measured. In many cases, it is also important how it was measured.",
-            "answers": 
-            [
-              { "id": 0, "label": "No", "advice": "Check whether you can find a data type (potentially in a data type registry) for each of your data items" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 26, "type": "option",
-            "precondition": {"questionid": 23, "answerid": 1},
-            "title": "Are the limitations to allowed data values in each column explicit?",
-            "text": "If there are reasonable limitations to the values in a column, or even a limited set of allowed values, it is very good for data vvalidation and reusability if these limitations are explicit, and e.g. software used for data entry and editing will not allow anything else.",
-            "answers": 
-            [
-              { "id": 0, "label": "No", "advice": "Check whether there is a way to explicitly limit data values." },
-              { "id": 1, "label": "Yes" }
-            ],
-            "references":
-            [
-              { "type": "url", "weblink": "rightfield.org.uk", "anchor": "Rightfield: Template fields in Microsoft Excel" }
-            ]
-        },
-        {
-            "questionid": 27, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 0},
-            "title": "Is it clear what a row in the table represents?",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 28, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 0},
-            "title": "Does each row have an identifier?",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 29, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 0},
-            "title": "Is there a distinguishing way a missing value in the table can be recognized?",
-            "text": "Sometimes, and empty field or a zero is indicating a missing value. But is that really unique? Could there be valid empty or zero fields? Has the convention for missing values been made explicit somewhere?",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 30, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 0},
-            "title": "Is the relation between each of the columns and the record identifier clear?",
-            "text": "It may appear that in a table with 'patients' as rows, a column labeled 'disease' coupled to an ontology has a clear meaning. But that is not always explicit enough! A 'disease' could e.g. be the disease that the patient is suffering from, but it could also be an earlier diagnose, a suspected diagnose, or the disease a family member recently died of.",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 31, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 0},
-            "title": "Are all the relations between the column headers explicit?",
-            "text": "For a good understanding of tabular data, you need to make the relationship between each pair of columns explicit. E.g. if one column is 'disease' and another is 'treatment', you want to make sure that this is the chosen treatment that this person is undergoing for the given disease.",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 32, "type": "option",
-            "precondition": {"questionid": 6, "answerid": 2},
-            "title": "Are you representing the graph in RDF?",
-            "text": "RDF is the graph representation used in the 'semantic web'",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-        {
-            "questionid": 33, "type": "option",
-            "precondition": {"questionid": 32, "answerid": 1},
-            "title": "Are all the URLs resolving to common ontologies?",
-            "answers": 
-            [
-              { "id": 0, "label": "No" },
-              { "id": 1, "label": "Yes" }
-            ]
-        },
-	{
-	    "questionid": 8, "type": "option",
-	    "precondition": { "questionid": 1, "answerid": 1 },
-	    "title": "Will you be using a workflow for data integration, e.g. with tools for database access or conversion?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-            "references": [{ "type": "dmpbook", "chapter": "5.3" }, {"type": "resourcepage", "shortuid": "qqb"}]
+		"uuid": "a797cab9-0829-4787-a096-1b5cedc9147f", "type": "list",
+		"precondition": "238ace4b-22bb-4a9d-a312-e30d82d4382d",
+		"title": "List the data formats you will be using for data integration",
+		"text": "Answer some questions for each"
 	},
 	{
-	    "questionid": 9, "type": "option",
-	    "precondition": { "questionid": 1, "answerid": 1 },
-	    "title": "Will you use a 'linked data' approach?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "87fe7235-0a0f-4788-8f44-04523461655f", "type": "option",
+		"precondition": "a797cab9-0829-4787-a096-1b5cedc9147f",
+		"title": "How is the data structured?",
+		"answers":
+		[
+			{ "uuid": "b308b8bb-83ed-4599-ae28-39c5c1218cbf", "label": "(meta)data fields in a domain specific file" },
+			{ "uuid": "e8334918-27f8-4e1c-aa9f-5e8191b7fabb", "label": "A table or set of tables (consisting of 'data records')" },
+			{ "uuid": "d7911ab4-d3cc-4dc2-95cc-4aba7b0d010a", "label": "Complex data, like a graph" },
+			{ "uuid": "4e6d2cb0-1901-41dd-9902-6066739c9ab5", "label": "We have made other arrangements" }
+		]
 	},
 	{
-	    "questionid": 10, "type": "option",
-	    "precondition": { "questionid": 9, "answerid": 1 },
-	    "title": "Are your data sources using linked data?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Partly" },
-		{   "id": 2, "label": "Yes" }
-	    ]
+		"uuid": "024bb661-70d4-4da6-a938-934a3935b16a", "type": "text",
+		"precondition": "4e6d2cb0-1901-41dd-9902-6066739c9ab5",
+		"title": "Describe how?"
 	},
 	{
-	    "questionid": 11, "type": "option",
-	    "precondition": { "questionid": 9, "answerid": 1 },
-	    "title": "Will you provide your results as semantically interoperable linked data?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-            "references": [{ "type": "dmpbook", "chapter": "5.2" }, {"type": "resourcepage", "shortuid": "fxm"}]
+		"uuid": "37531bec-1488-4204-807d-762794b538e9", "type": "option",
+		"precondition": "b308b8bb-83ed-4599-ae28-39c5c1218cbf",
+		"title": "Can all of the data you want to couple be captured in that format?",
+		"answers":
+		[
+			{ "uuid": "5313e765-56a9-4c22-8ecf-b55253f17366", "label": "No" },
+			{ "uuid": "f2c24899-477f-492f-a979-c7586b9593b0", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 2, "type": "option",
-	    "title": "Will you be using common or exchangeable units?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "45efdccf-761e-4414-b6a8-1d28ddaeafec", "type": "option",
+		"precondition": "f2c24899-477f-492f-a979-c7586b9593b0",
+		"title" : "Will you be doing it that way?",
+		"answers":
+		[
+			{ "uuid": "2d37695e-a212-4a92-9b19-70693cbfd4d6", "label": "No" },
+			{ "uuid": "9dd082ed-e29f-43c6-bb8c-d29daebfa629", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 3, "type": "option",
-	    "title": "Will you be using common ontologies?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes", "advice": "Choose the ontologies before you start" }
-	    ]
+		"uuid": "8018e15f-6c7e-433a-8686-ae0d695c7fc7", "type": "option",
+		"precondition": "b308b8bb-83ed-4599-ae28-39c5c1218cbf",
+		"title": "Does the domain specific format come with its own suite of integration tools that you will use??",
+		"answers":
+		[
+			{ "uuid": "fa12de49-cf29-4bcd-acf9-85eb39957d95", "label": "No" },
+			{ "uuid": "231524b8-9133-4319-b633-f0c96871211d", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 4, "type": "option",
-	    "title": "Will there be potential issues with statistical normalization?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "6bfde30e-90e7-4422-b984-d571196194e0", "type": "option",
+		"precondition": "e8334918-27f8-4e1c-aa9f-5e8191b7fabb",
+		"title": "Does each column have a header?",
+		"text": "In a table, the data items are arranged in columns. Is there a header for each of these describing what is in there?",
+		"answers":
+		[
+			{ "uuid": "595acdbc-f0d7-4550-9c56-9177f3c5695b", "label": "No", "advice": "You will need to have a header in order to make the data interoperable and reusable" },
+			{ "uuid": "53d43c6a-d12e-4bfd-b70d-233bf62c7f5b", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 12, "type": "option",
-	    "title": "Will you be integrating different data sources to get more samples or more data points?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "cacee0fd-7de5-4e07-aa94-1661cb853558", "type": "option",
+		"precondition": "53d43c6a-d12e-4bfd-b70d-233bf62c7f5b",
+		"title": "Are all column headers unambiguous?",
+		"text": "A human being quickly 'understands' data items and their relations. For good data reusability, it is necessary that computers can understand your data too.",
+		"answers":
+		[
+			{ "uuid": "1485ec8b-094c-49bb-8de1-ce214c83790f", "label": "No", "advice": "Check whether you can find an ontology for each of your data items" },
+			{ "uuid": "02b2c93a-5956-4c75-8797-d3803d4344e8", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 14, "type": "option",
-	    "precondition": { "questionid": 12, "answerid": 1 },
-	    "title": "Have these been collected with sufficiently identical protocols?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "6ab36a2a-23ca-484d-b3d7-0c1a4eea821a", "type": "option",
+		"precondition": "53d43c6a-d12e-4bfd-b70d-233bf62c7f5b",
+		"title": "Do all columns/headers have a data type?",
+		"text": "A label like 'temperature' only makes sense to a computer if it is also clear what the units are and what temperature has been measured. In many cases, it is also important how it was measured.",
+		"answers":
+		[
+			{ "uuid": "7108a5e7-f804-4410-b40d-cabed6b3da15", "label": "No", "advice": "Check whether you can find a data type (potentially in a data type registry) for each of your data items" },
+			{ "uuid": "d4a545a3-0981-461b-9762-7073e5750ea9", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 13, "type": "option",
-	    "title": "Will you be integrating different data sources in order to get more information for each sample or data point?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "c47d330a-2eb4-472e-be48-d06b3ec9b8e8", "type": "option",
+		"precondition": "53d43c6a-d12e-4bfd-b70d-233bf62c7f5b",
+		"title": "Are the limitations to allowed data values in each column explicit?",
+		"text": "If there are reasonable limitations to the values in a column, or even a limited set of allowed values, it is very good for data vvalidation and reusability if these limitations are explicit, and e.g. software used for data entry and editing will not allow anything else.",
+		"answers":
+		[
+			{ "uuid": "6bda04d8-1f32-4ace-ab8b-1121ea7c526e", "label": "No", "advice": "Check whether there is a way to explicitly limit data values." },
+			{ "uuid": "2376500a-34cb-4535-868e-b7b126321f34", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "03640bc5-605b-4a3a-a5de-2dae66542b66", "type": "url", "weblink": "rightfield.org.uk", "anchor": "Rightfield: Template fields in Microsoft Excel" }
+		]
 	},
 	{
-	    "questionid": 15, "type": "option",
-	    "precondition": { "questionid": 13, "answerid": 1 },
-	    "title": "Did you already select the variables on which you will join the data sets?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "0259866a-50b2-4f77-858f-982c9e16091d", "type": "option",
+		"precondition": "e8334918-27f8-4e1c-aa9f-5e8191b7fabb",
+		"title": "Is it clear what a row in the table represents?",
+		"answers":
+		[
+			{ "uuid": "b75a4215-357e-48d2-bb66-436da069bb00", "label": "No" },
+			{ "uuid": "7341ed8c-c4d6-4562-808f-068bc47ec418", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 16, "type": "option",
-	    "precondition": { "questionid": 13, "answerid": 1 },
-	    "title": "Will you make sure that you do not inadvertently create a biased subset?",
-	    "text": "Some parameters you select on may have been collected only for a subset of the subjects or data points. An obvious example is if you match on secondary education type, you will bias to people over 18 years old because younger people do not have this field. In many cases the selection bias may be a lot less obvious and special measures exist to verify that the diversity of the sample is not reduced by the integration step.",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "ccaaf562-ebed-4d94-b168-b8398ed25546", "type": "option",
+		"precondition": "e8334918-27f8-4e1c-aa9f-5e8191b7fabb",
+		"title": "Does each row have an identifier?",
+		"answers":
+		[
+			{ "uuid": "435f76fe-feff-436f-b987-61d65a73f22b", "label": "No" },
+			{ "uuid": "b904da82-6aae-4f2e-8b5d-5359cf48939e", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 17, "type": "option",
-	    "precondition": { "questionid": 13, "answerid": 1 },
-	    "title": "Could the coupling of data create a danger of re-identification of anonymized privacy sensitive data?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes", "advice": "Plan either preventative or corrective measures" }
-	    ]
+		"uuid": "f90914d8-2731-4cd1-bbf8-2710a5e08c43", "type": "option",
+		"precondition": "e8334918-27f8-4e1c-aa9f-5e8191b7fabb",
+		"title": "Is there a distinguishing way a missing value in the table can be recognized?",
+		"text": "Sometimes, and empty field or a zero is indicating a missing value. But is that really unique? Could there be valid empty or zero fields? Has the convention for missing values been made explicit somewhere?",
+		"answers":
+		[
+			{ "uuid": "3cb15eb1-dfdc-4a1d-b208-42fe7264d5bd", "label": "No" },
+			{ "uuid": "6daf9964-6a2a-46aa-8a87-c918391f8625", "label": "Yes" }
+		]
 	},
 	{
-	    "questionid": 18, "type": "option",
-	    "precondition": { "questionid": 13, "answerid": 1 },
-	    "title": "Did you make a conscious decision to be either accurate or complete?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "0451d421-4c97-452e-b399-4fe278b97147", "type": "option",
+		"precondition": "e8334918-27f8-4e1c-aa9f-5e8191b7fabb",
+		"title": "Is the relation between each of the columns and the record identifier clear?",
+		"text": "It may appear that in a table with 'patients' as rows, a column labeled 'disease' coupled to an ontology has a clear meaning. But that is not always explicit enough! A 'disease' could e.g. be the disease that the patient is suffering from, but it could also be an earlier diagnose, a suspected diagnose, or the disease a family member recently died of.",
+		"answers":
+		[
+			{ "uuid": "3ab6d840-fd16-4ff4-bd2b-77139384b54e", "label": "No" },
+			{ "uuid": "a2aa695e-4ea9-4dc6-81f3-cb8c9605bf98", "label": "Yes" }
+		]
 	},
-	
 	{
-	    "questionid": 5, "type": "option",
-	    "title": "Do you have all tools to couple the necessary data types?",
-	    "answers": 
-	    [ 
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+		"uuid": "bdaba73c-02e0-4ff1-acb3-a68df891c36a", "type": "option",
+		"precondition": "e8334918-27f8-4e1c-aa9f-5e8191b7fabb",
+		"title": "Are all the relations between the column headers explicit?",
+		"text": "For a good understanding of tabular data, you need to make the relationship between each pair of columns explicit. E.g. if one column is 'disease' and another is 'treatment', you want to make sure that this is the chosen treatment that this person is undergoing for the given disease.",
+		"answers":
+		[
+			{ "uuid": "b7118fba-770a-42cb-abe1-d243d0b624b4", "label": "No" },
+			{ "uuid": "7dcc6fb0-e591-4f87-87fa-166ae839193a", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "46e07a92-2070-4212-96ea-8b98da488292", "type": "option",
+		"precondition": "d7911ab4-d3cc-4dc2-95cc-4aba7b0d010a",
+		"title": "Are you representing the graph in RDF?",
+		"text": "RDF is the graph representation used in the 'semantic web'",
+		"answers":
+		[
+			{ "uuid": "2662b7d3-b2ff-4944-b2ad-574cd92a97b5", "label": "No" },
+			{ "uuid": "3525f6f9-4c0b-4560-a572-c9fe2e0a0d94", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "3196c225-2842-4766-9768-381fd6ee1e05", "type": "option",
+		"precondition": "3525f6f9-4c0b-4560-a572-c9fe2e0a0d94",
+		"title": "Are all the URLs resolving to common ontologies?",
+		"answers":
+		[
+			{ "uuid": "945aae79-4eed-4115-ac19-d295158a19f6", "label": "No" },
+			{ "uuid": "88f9fb7b-12a9-481a-9239-cbf43206056e", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "b98c7dbd-de67-4ee4-8d86-45989511b1d6", "type": "option",
+		"precondition": "238ace4b-22bb-4a9d-a312-e30d82d4382d",
+		"title": "Will you be using a workflow for data integration, e.g. with tools for database access or conversion?",
+		"answers":
+		[
+			{ "uuid": "7623d103-5bd6-4407-81b0-aa6c7f0cbc48", "label": "No" },
+			{ "uuid": "eade1627-7100-413e-8330-32b186d70fd7", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "d3d63615-17d5-4eb4-9587-9e47d18fe2fd", "type": "dmpbook", "chapter": "5.3" },
+			{ "uuid": "6b66bb08-19a3-473c-9014-492bf0b42251", "type": "resourcepage", "shortuid": "qqb" }
+		]
+	},
+	{
+		"uuid": "ff85db18-565c-4177-a397-9a8cf4c7b374", "type": "option",
+		"precondition": "238ace4b-22bb-4a9d-a312-e30d82d4382d",
+		"title": "Will you use a 'linked data' approach?",
+		"answers":
+		[
+			{ "uuid": "01aaaf8a-ee94-4cd0-8e36-adcb7ac9d18d", "label": "No" },
+			{ "uuid": "9cea7792-3e4c-42a6-b7e0-1abbdc9e2a5b", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "811965f0-b1b7-4b4b-92a6-01cd83b08fa2", "type": "option",
+		"precondition": "9cea7792-3e4c-42a6-b7e0-1abbdc9e2a5b",
+		"title": "Are your data sources using linked data?",
+		"answers":
+		[
+			{ "uuid": "d2ae9b5f-db3f-4b9e-8e06-723f82ca4c2e", "label": "No" },
+			{ "uuid": "395c9651-9d92-48f7-b1fc-cdccbd681f57", "label": "Partly" },
+			{ "uuid": "054125ff-7968-4c48-9359-0192042037a5", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "fad678c7-99e4-48e2-a708-fe0dfa1381b8", "type": "option",
+		"precondition": "9cea7792-3e4c-42a6-b7e0-1abbdc9e2a5b",
+		"title": "Will you provide your results as semantically interoperable linked data?",
+		"answers":
+		[
+			{ "uuid": "fb400dcd-28f2-4577-ba3e-e588d8307e07", "label": "No" },
+			{ "uuid": "d17db5ee-275f-4783-8340-c89bc130c86f", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "8946bf81-5eec-44fe-9e36-f2163ae43c2f", "type": "dmpbook", "chapter": "5.2" },
+			{ "uuid": "257cb8f8-b931-49dd-a6ab-f54e223fb8c6", "type": "resourcepage", "shortuid": "fxm" }
+		]
+	},
+	{
+		"uuid": "7733494c-fd84-4cd0-8463-5806f321f2c9", "type": "option",
+		"title": "Will you be using common or exchangeable units?",
+		"answers":
+		[
+			{ "uuid": "83883ae4-6c04-44af-a1a0-db5ee5a1b412", "label": "No" },
+			{ "uuid": "e2759b73-a0c6-4b49-b628-52a3e87605f0", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "f67e1539-5c7d-4df7-8259-e4f2edfa2685", "type": "option",
+		"title": "Will you be using common ontologies?",
+		"answers":
+		[
+			{ "uuid": "b497f330-91a0-44c9-990d-3d3e02d380b4", "label": "No" },
+			{ "uuid": "3e5ef321-76f3-4c65-a49f-4e03f6a23def", "label": "Yes", "advice": "Choose the ontologies before you start" }
+		]
+	},
+	{
+		"uuid": "d0306914-c253-472c-869f-19a60578c087", "type": "option",
+		"title": "Will there be potential issues with statistical normalization?",
+		"answers":
+		[
+			{ "uuid": "6332fd3a-6b3b-4db6-a5bf-f108f5c19801", "label": "No" },
+			{ "uuid": "49ad2eca-b88d-4fd8-b210-5bec6fffb283", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "dbb6dcdf-dd2e-4829-8c03-16b2339ebd5a", "type": "option",
+		"title": "Will you be integrating different data sources to get more samples or more data points?",
+		"answers":
+		[
+			{ "uuid": "d59b9031-78e7-4d37-a667-1aeb94522213", "label": "No" },
+			{ "uuid": "493b4264-185d-413e-83f8-d424c50768b9", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "18f9b8ec-bf1b-4035-8eac-3fd329613a7c", "type": "option",
+		"precondition": "493b4264-185d-413e-83f8-d424c50768b9",
+		"title": "Have these been collected with sufficiently identical protocols?",
+		"answers":
+		[
+			{ "uuid": "e902668c-d033-4720-a3a7-a7694731bff0", "label": "No" },
+			{ "uuid": "cce50ae0-08ff-43f3-835c-a494d5a56222", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "d5d21ad3-720c-4a6a-bd5a-09f14b15666f", "type": "option",
+		"title": "Will you be integrating different data sources in order to get more information for each sample or data point?",
+		"answers":
+		[
+			{ "uuid": "4ba2c122-b948-4e41-9e48-6e052e2dc77e", "label": "No" },
+			{ "uuid": "61d05101-2eaa-4ebb-8be7-2fcac50f2fb2", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "63b020de-664a-4271-807c-a6f4361d6439", "type": "option",
+		"precondition": "61d05101-2eaa-4ebb-8be7-2fcac50f2fb2",
+		"title": "Did you already select the variables on which you will join the data sets?",
+		"answers":
+		[
+			{ "uuid": "176cf769-81db-4298-bfae-c1e96e8bbecf", "label": "No" },
+			{ "uuid": "f8f49bdc-670b-495f-9a4b-5300db71cfe2", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "c6fdeacb-4a1f-4948-988a-0c6458cdf7b9", "type": "option",
+		"precondition": "61d05101-2eaa-4ebb-8be7-2fcac50f2fb2",
+		"title": "Will you make sure that you do not inadvertently create a biased subset?",
+		"text": "Some parameters you select on may have been collected only for a subset of the subjects or data points. An obvious example is if you match on secondary education type, you will bias to people over 18 years old because younger people do not have this field. In many cases the selection bias may be a lot less obvious and special measures exist to verify that the diversity of the sample is not reduced by the integration step.",
+		"answers":
+		[
+			{ "uuid": "0cf3e92f-4cdf-4446-b2c6-1801338ec432", "label": "No" },
+			{ "uuid": "26f64599-467a-4339-a971-74ac638f4c37", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "6b3d62a5-1d4d-49e1-aaf1-0a8b398a7ac3", "type": "option",
+		"precondition": "61d05101-2eaa-4ebb-8be7-2fcac50f2fb2",
+		"title": "Could the coupling of data create a danger of re-identification of anonymized privacy sensitive data?",
+		"answers":
+		[
+			{ "uuid": "04fe8749-82a5-4b06-a7f8-58e634e5cd86", "label": "No" },
+			{ "uuid": "aad55658-91c1-4fb8-8869-c0dc1b02b96d", "label": "Yes", "advice": "Plan either preventative or corrective measures" }
+		]
+	},
+	{
+		"uuid": "15eb6fe6-7b21-493b-a5a0-09ac63212ab6", "type": "option",
+		"precondition": "61d05101-2eaa-4ebb-8be7-2fcac50f2fb2",
+		"title": "Did you make a conscious decision to be either accurate or complete?",
+		"answers":
+		[
+			{ "uuid": "46ec2d2b-d1c2-44cd-8a99-2866f65349d2", "label": "No" },
+			{ "uuid": "ff4b9f47-39f4-436f-89bf-910dda950380", "label": "Yes" }
+		]
+	},
+
+	{
+		"uuid": "dc4f1dc7-4608-45f9-8503-aa05536f4d97", "type": "option",
+		"title": "Do you have all tools to couple the necessary data types?",
+		"answers":
+		[
+			{ "uuid": "45169011-2336-4eb4-8026-fa7fa9ca9649", "label": "No" },
+			{ "uuid": "fa0f8ecf-9cd5-4395-9228-0aeca4339ea4", "label": "Yes" }
+		]
 	}
-    ]
+	]
 }

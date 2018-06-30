@@ -1,1061 +1,1134 @@
 {
-    "chapterid": 2,
-    "namespace": "core",
-    "formatversion": 1,
-    "title": "Data design and planning",
-    "text": "In the data design and planning phase, we will make sure that we know what data comes when, that we have enough storage space and compute power to deal with it, and that all the responsibilities have been taken care of.",
-    "questions" :
-    [
-	{
-	    "questionid": 1, "type": "list",
-	    "title": "What data formats/types will you be using?",
-            "text": "Have you identified types of data that you will use that are used by others too? Some types of data (e.g. genetic variants in the life sciences) are used by many different projects. For such data, often common standards exist that help to make these data reusable. Are you using such common data formats?",
-	    "references": [{"type": "dmpbook", "chapter": "2.1"}, {"type": "resourcepage", "shortuid": "njy"}]
-	},
-	{
-	    "questionid": 95, "type": "option",
-            "precondition": { "questionid": 1 },
-	    "title": "Is this a standard data format used by others too?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-        },
-	{
-	    "questionid": 96, "type": "option",
-            "precondition": { "questionid": 1 },
-	    "title": "Does this data format enable sharing and long term archiving?",
-            "text": "Complicated (binary) file formats tend to change over time, and software may not stay compatible with older versions. Also, some formats hamper long term usability by making use of patents or being hampered by restrictive licensing",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-        },
-	{
-	    "questionid": 97, "type": "option",
-            "precondition": { "questionid": 96, "answerid": 0 },
-	    "title": "Will you convert to a file format more suitable for archiving later?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes", "advice": "You may need to reserve time and budget for this" }
-	    ]
-        },
-	{
-	    "questionid": 2, "type": "option",
-	    "title": "Will you be using new types of data?",
-	    "text": "Sometimes the type of data you collect can not be stored in a commonly used data format. In such cases you may need to make your own, keeping interoperability as high as possible.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, all of my data will fit in common formats" },
-		{   "id": 1, "label": "Yes, I will need to use custom formats for some of my data" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2"}, {"type": "resourcepage", "shortuid": "ikk"}]
-	},
-	{
-	    "questionid": 7, "type": "option",
-	    "precondition": { "questionid": 2, "answerid": 1 },
-	    "title": "Will you need to add fields in your data format to a data type registry?",
-	    "text": "Even if the data format you are using is unique to your project, the discrete data items should be reused or reusable as much as possible. Data type registries can help with that.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, all of my data types are described in a data type registry already" },
-		{   "id": 1, "label": "Yes, I will add new types to an existing data type registry" },
-		{   "id": 2, "label": "Yes, I will create my own data type registry" }
-	    ]
-	},
-	{
-	    "questionid": 9, "type": "text",
-	    "precondition": { "questionid": 2, "answerid": 1 },
-	    "title": "Which data type registries will you use?"
-	},
-	{
-	    "questionid": 8, "type": "option",
-	    "precondition": { "questionid": 2, "answerid": 1 },
-	    "title": "Do you need to create vocabularies or ontologies for any of your data items?",
-	    "text": "For good interoperability the use of controlled vocabularies for each discrete data item is advisable. If such vocabularies exist, it is best to reuse those.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types" },
-		{   "id": 1, "label": "Yes, I will make and publish a vocabulary or ontology for some of my data" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2.2"}, {"type": "resourcepage", "shortuid": "ske"}]
-	},
-	{
-	    "questionid": 10, "type": "option",
-	    "precondition": { "questionid": 2, "answerid": 1 },
-	    "title": "How will you design your new data format?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "There is a closely related more generic and open format that I can specialize" },
-		{   "id": 1, "label": "I will use a Linked Data format" },
-		{   "id": 2, "label": "I will use a completely custom data format"}
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.2.3"}, {"type": "resourcepage", "shortuid": "jwg"}]
-	},
-	{
-	    "questionid": 11, "type": "option",
-	    "precondition": { "questionid": 2, "answerid": 1 },
-	    "title": "Will you describe your new data format for others?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, this is not needed" },
-		{   "id": 1, "label": "Yes, I will register my standards at a data standards registry" }
-	    ]
-	},
-	{
-	    "questionid": 3, "type": "option",
-	    "title": "How will you be storing metadata?",
-	    "text": "For the re-usability of your data by yourself or others at a later stage, a lot of information about the data, how it was collected and how it can be used should be stored with the data. Such data about the data is called metadata, and this set of questions are about this metadata",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Skip" },
-		{   "id": 1, "label": "Explore" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3"}, {"type": "resourcepage", "shortuid": "rhm"}]
-	},
-	{
-	    "questionid": 12, "type": "option",
-	    "precondition": { "questionid": 3, "answerid": 1 },
-	    "title": "Do suitable 'Minimal Metadata About ...' (MIA...) standards exist for your experiments?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-            "references": [{"type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
-	},
-	{
-	    "questionid": 98, "type": "option",
-	    "precondition": { "questionid": 12, "answerid": 0 },
-	    "title": "Do you have a good idea of what metadata is needed to make it possible for others to read and interpret your data in the future?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-            "references": [{"type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
-	},
-	{
-	    "questionid": 99, "type": "option",
-	    "precondition": { "questionid": 3, "answerid": 1 },
-	    "title": "Do you know how and when you will be collecting the necessary metadata?",
-            "text": "Often it is easiest to make sure you collect the metadata as early as possible.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-            "references": [{"type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
-	},
-	{
-	    "questionid": 13, "type": "option",
-	    "precondition": { "questionid": 3, "answerid": 1 },
-	    "title": "Will you consider re-usability of your data beyond your original purpose?",
-	    "text": "Adding more than the strict minimum metadata about your experiment will possibly allow more wide re-use of your data, with associated higher data citation rates. Please note that it is not easy for yourself to see all other ways in which others could be reusing your data.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, I will just document the bare minimum" },
-		{   "id": 1, "label": "Yes, I will document more metadata than needed for reproducibility" }
-	    ]
-	},
-	{
-	    "questionid": 14, "type": "option",
-	    "precondition": { "questionid": 13, "answerid": 1 },
-	    "title": "How will you balance the extra efforts with the potential for added reusability?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "I will see what I can do" },
-		{   "id": 1, "label": "I will use preselected additional standard modules of metadata" },
-		{   "id": 2, "label": "I will collect all metadata I can gather and document the data set beyond minimal standards" }
-	    ]
-	},
-	{
-	    "questionid": 15, "type": "option",
-	    "precondition": { "questionid": 13, "answerid": 1 },
-	    "title": "Do you need to exchange your data with others?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 16, "type": "option",
-	    "precondition": { "questionid": 3, "answerid": 1 },
-	    "title": "Did you consider how to monitor data integrity?",
-	    "text": "Working with large amounts of heterogenous data in a larger research group has implications for the data integrity. How do you make sure every step of the workflow is done with the right version of the data? How do you handle the situation when a mistake is uncovered? Will you be able to redo the strict minimum data handling?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Skip" },
-		{   "id": 1, "label": "Explore" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.1"}, {"type": "resourcepage", "shortuid": "spg"}]
-	},
-	{
-	    "questionid": 17, "type": "option",
-	    "precondition": { "questionid": 16, "answerid": 1 },
-	    "title": "Will you be keeping a master list with checksums of certified/correct/canonical/verified data?",
-	    "text": "Data corruption or mistakes can happen with large amounts of files or large files. Keeping a master list with data checksums can be helpful to prevent expensive mistakes. It can also be helpful to keep the sample list under version control forcing that all changes are well documented.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 18, "type": "option",
-	    "precondition": { "questionid": 16, "answerid": 1 },
-	    "title": "Will you define a way to detect file or sample swaps, e.g. by measuring something independently?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 20, "type": "option",
-	    "precondition": { "questionid": 3, "answerid": 1 },
-	    "title": "Do all datasets you work with have a license?",
-	    "text": "It is not always clear to everyone in the project (ad outside) what can and can not be done with a data set. It is helpful to associate each data set with a license as early as possible in the project. A data license should ideally be as free as possible: any restriction like 'only for non-commercial use' or 'attribution required' may reduce the reusability and thereby the number of citations. If possible, use a computer-readable and computer actionable license.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 19, "type": "option",
-	    "precondition": { "questionid": 20, "answerid": 1 },
-	    "title": "Will you store the licenses with the data at all time?",
-	    "text": "It is very likely that data will be moved and copied. At some point people may lose track of the origins. It can be helpful to have the licenses (of coarse as open as possible) stored in close association with the data.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.3.2"}, {"type": "resourcepage", "shortuid": "atw"}]
-	},
-	{
-	    "questionid": 21, "type": "option",
-	    "precondition": { "questionid": 3, "answerid": 1 },
-	    "title": "How will you keep provenance?",
-	    "text": "To make your experiments reproducible, all steps in the data processing must be documented in detail. The software you used, including version number, all options and parameters. This information together for every step of the analysis is part of the so-called data provenance. There are more questions regarding this in the chapter on data processing and curation.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "All steps will be documented in an (electronic) lab notebook" },
-		{   "id": 1, "label": "Our work flow system documents the provenance automatically and completely" }
-	    ],
-	    "references": [{"type": "xref", "chapterid": 4, "questionid": 2}]
-	},
-	{
-	    "questionid": 22, "type": "option",
-	    "precondition": { "questionid": 3, "answerid": 1 },
-	    "title": "How will you do file naming and file organization?",
-	    "text": "Putting some thoughts into file naming can save a lot of trouble later.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Skip" },
-		{   "id": 1, "label": "Explore" }
-	    ]
-	},
-	{
-	    "questionid": 23, "type": "option",
-	    "precondition": { "questionid": 22, "answerid": 1 },
-	    "title": "Did you make a SOP (Standard Operating Procedure) for file naming?",
-	    "text": "It can help if everyone in the project uses the same naming scheme.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 24, "type": "option",
-	    "precondition": { "questionid": 22, "answerid": 1 },
-	    "title": "Will you be keeping the relationships between data clear in the file names?",
-	    "text": "Advice: Use the same identifiers for sample IDs etc throughout the entire project.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 25, "type": "option",
-	    "precondition": { "questionid": 22, "answerid": 1 },
-	    "title": "Will all the metadata in the file names also be available in the proper metadata?",
-	    "text": "The file names are very useful as metadata for people involved in the project, but to computers they are just identifiers. To prevent accidents with e.g. renamed files metadata information should always also be available elsewhere and not only through the file name.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, the file names in the project are an essential part of the metadata" },
-		{   "id": 1, "label": "Yes, all metadata is also explicitly available elsewhere" }
-	    ]
-	},
- 	{
-	    "questionid": 26, "type": "option",
-	    "title": "Will you be archiving data (using so-called 'cold storage') for long term preservation?",
-	    "text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication; questions related to data publication will follow later.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.1.1"}, {"type": "resourcepage", "shortuid": "kjp"}]
-	},
- 	{
-	    "questionid": 27, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 0 },
-	    "title": "Can the original data be regenerated?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.1.2"}, {"type": "resourcepage", "shortuid": "ixr"}]	    
-	},
- 	{
-	    "questionid": 30, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 0 },
-	    "title": "When is the raw data archived?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "As soon as it comes in, in chunks" },
-		{   "id": 1, "label": "As soon as it has all arrived, in one session" },
-		{   "id": 2, "label": "All at once with the results at the end of the project" }
-	    ]
-	},
-	{
-	    "questionid": 28, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Is the archived data changing over time, needing re-archival?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.1.3"}, {"type": "resourcepage", "shortuid": "tgk"}]	    
-	},
-	{
-	    "questionid": 29, "type": "option",
-	    "precondition": { "questionid": 28, "answerid": 1 },
-	    "title": "Do you need frequent backups?",
-	    "text": "The general term 'backup' is used for protection against two different kinds of problems: equipment failure and human error. Protections against these two may need different solutions. Both are considered backup for this and subsequent questions.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, data changes infrequently" },
-		{   "id": 1, "label": "Yes, data changes frequently" }
-	    ]
-	},
-	{
-	    "questionid": 31, "type": "option",
-	    "precondition": { "questionid": 28, "answerid": 1 },
-	    "title": "Will you be relying on these backups to recover from human error (accidental changes or deletions)?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 32, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Will the archive be stored on disk or on tape?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Disk" },
-		{   "id": 1, "label": "Tape" },
-		{   "id": 2, "label": "Other" }
-	    ]
-	},
-	{
-	    "questionid": 33, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Will the archive be stored in a remote location, protecting the data against disasters?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 34, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Will the archive need to be protected against loss or theft?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 35, "type": "option",
-	    "precondition": { "questionid": 34, "answerid": 1 },
-	    "title": "Will the archive be encrypted?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 36, "type": "option",
-	    "precondition": { "questionid": 35, "answerid": 1 },
-	    "title": "Is it clear who has access to the key? Also in case of a required data restore?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 37, "type": "option",
-	    "precondition": { "questionid": 34, "answerid": 1 },
-	    "title": "Is it clear who has physical access to the archives?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 38, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Will your project require the archives to be available on-line?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.3"}, {"type": "resourcepage", "shortuid": "ybd"}]	    
-	},
-	{
-	    "questionid": 39, "type": "option",
-	    "precondition": { "questionid": 38, "answerid": 1 },
-	    "title": "Will data integrity be guaranteed?",
-	    "text": "If the 'master copy' of the data is available on line, it should probably be protected against being tampered with.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 94, "type": "option",
-	    "precondition": { "questionid": 38, "answerid": 1 },
-	    "title": "Is there an interface and a defined process for people to request access to the data?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 40, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Has it been established who has access to the archive, and how fast?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 41, "type": "option",
-	    "precondition": { "questionid": 40, "answerid": 1 },
-	    "title": "Has it been established who can ask for a restore during the project?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 42, "type": "option",
-	    "precondition": { "questionid": 40, "answerid": 1 },
-	    "title": "If the data is voluminous, will the project be able to cope with the time needed for a restore?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 43, "type": "option",
-	    "precondition": { "questionid": 40, "answerid": 1 },
-	    "title": "has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 44, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Has it been established how long the archived data need to be kept? For each of the different parts of the archive (raw data / results)?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.5.5"}, {"type": "resourcepage", "shortuid": "kdp"}]	    
-	},
-	{
-	    "questionid": 45, "type": "option",
-	    "precondition": { "questionid": 26, "answerid": 1 },
-	    "title": "Will the data still be understandable after a long time?",
-	    "text": "See also all questions about keeping metadata and data formats. Make sure the metadata is kept close to the data in the archive, and that community supported data formats are used for all long term archiving.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],	
-	    "references": [{"type": "dmpbook", "chapter": "2.5.6"}, {"type": "resourcepage", "shortuid": "zmu"}]    
-	},
-	{
-	    "questionid": 46, "type": "option",
-	    "title": "Will you need a shared working space to work with your data?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 47, "type": "option",
-	    "precondition": { "questionid": 46, "answerid": 1 },
-	    "title": "How will you work with your data?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Skip" },
-		{   "id": 1, "label": "Explore" }
-	    ]
-	},
-	{
-	    "questionid": 48, "type": "text",
-	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "What kind of data will you have in your work space?",
-	    "text": "When making the work space, it helps to know whether you expect to work with very many small files, a few very large files, whether you will use a (SQL) database to store most of the data. Maybe your data is suitable for a system like Hadoop? Such information can be collected here."
-	},
-	{
-	    "questionid": 49, "type": "option",
-	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "Do you need the work space to be close to the compute capacity?",
-	    "text": "If you have large volumes of data that are intensely and repeatedly used by the computing work flow, it may be needed to keep the storage in the same place as where the computing takes place.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [ {"type": "xref", "chapterid": 2, "questionid": 6 },
-			    {"type": "dmpbook", "chapter": "2.7"}, {"type": "resourcepage", "shortuid": "wia"}]
-	},
-	{
-	    "questionid": 50, "type": "option",
-	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "Will you be working with your data in another form than the way it will be archived?",
-	    "text": "Archival and working with data have different requirements. You want archived information to be in a form that others could read and in a format that is also understandable in a number of years. When working with the data, you need to be able to address it efficiently. If the two differ, you need to plan for conversions.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, data format will be archived in the same way we work with it" },
-		{   "id": 1, "label": "Yes, archival will require a conversion step" }
-	    ]
-	},
-	{
-	    "questionid": 51, "type": "option",
-	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "How does the storage need change over time?",
-	    "text": "To perform capacity planning, it is important to know what the need for storage capacity at the beginning and the end of the project will be.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Storage needs will be the same during the whole project" },
-		{   "id": 1, "label": "Storage needs are large at the beginning and will be reduced later" },
-		{   "id": 2, "label": "Storage needs are small at the beginning and will grow later" },
-		{   "id": 3, "label": "Storage needs are largest in the middle of the project" },
-		{   "id": 4, "label": "Explore" }
-	    ]
-	},
-	{
-	    "questionid": 52, "type": "option",
-	    "precondition": { "questionid": 51, "answerid": 4 },
-	    "title": "When will your raw data become available?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Raw data will come in right at the start" },
-		{   "id": 1, "label": "Raw data will come in during the project" }
-	    ]
-	},
-	{
-	    "questionid": 53, "type": "option",
-	    "precondition": { "questionid": 51, "answerid": 4 },
-	    "title": "How much of the raw data do you need to keep in the work space?",
-	    "text": "Sometimes the raw data is relatively large, and it pays of to clean it quickly.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Raw data will need to stay in the work space" },
-		{   "id": 1, "label": "Raw data can be cleaned out or archived quickly" },
-		{   "id": 2, "label": "Raw data do not form a major part of the storage needs" },
-		{   "id": 3, "label": "Raw data will only be loaded in the work space on demand from the primary archives" }
-	    ]
-	},
-	{
-	    "questionid": 54, "type": "option",
-	    "precondition": { "questionid": 53, "answerid": 1 },
-	    "title": "Do your raw data need to be archived?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, it is also stored elsewhere can be recovered easily" },
-		{   "id": 1, "label": "No, it can be remeasured easily and more cheaply than archiving" },
-		{   "id": 2, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 55, "type": "option",
-	    "precondition": { "questionid": 51, "answerid": 4 },
-	    "title": "Did you plan how much intermediate data you will get during analysis and how long each step needs to be kept?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "The volume of intermediate data will not be significant" },
-		{   "id": 1, "label": "A large volume of intermediate data will be in the work space" }
-	    ]
-	},
-	{
-	    "questionid": 56, "type": "option",
-	    "precondition": { "questionid": 55, "answerid": 1 },
-	    "title": "Is it possible to store intermediate temporary data on a separate (scratch) file system that is not backed up?",
-	    "text": "If the intermediate results are in your main work space, a restore in case of a problem could take much more time. It may be faster to recover it by re-running computations",
-	    "answers":
-	    [
-		{   "id": 0, "label": "We will use the main work space for temporary data" },
-		{   "id": 1, "label": "We can offload intermediate results to a scratch file system that is not backed up" }
-	    ]
-	},
-	{
-	    "questionid": 71, "type": "option",
-	    "precondition": { "questionid": 56, "answerid": 1 },
-	    "title": "Are you sure you will not need a backup of the data stored on the scratch file systems (any scratch you use)?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
- 		{   "id": 1, "label": "Yes" }
-	    ],
-	    "references": [ {"type": "url", "weblink": "https://www.csc.fi/web/blog/post/-/blogs/the-largest-unplanned-outage-in-years-and-how-we-survived-it",
-			     "anchor": "How CSC restored 850 million temporary files" } ]
-	},
-	{
-	    "questionid": 57, "type": "option",
-	    "precondition": { "questionid": 51, "answerid": 4 },
-	    "title": "Will you have different versions of intermediate data that need to be kept?",
-	    "text": "Consider storing only the workflow parameters if the data itself could be reproduced quickly",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 58, "type": "option",
-	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "Will you need to temporarily archive data sets (e.g. to tape)?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 59, "type": "option",
-	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "How will your first data come in?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No special planning is needed for the initial data" },
-		{   "id": 1, "label": "Initial data will need to be made available through a local network copy" },
-		{   "id": 2, "label": "We will need a high-speed network connection to copy the initial data" },
-		{   "id": 3, "label": "Initial data will arrive on separate media and will need to be copied to the work space" }
-	    ]
-	},
-	{
-	    "questionid": 60, "type": "option",
-	    "precondition": { "questionid": 47, "answerid": 1 },
-	    "title": "How will project partners access the work space?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Skip" },
-		{   "id": 1, "label": "Explore" }
-	    ]
-	},
-	{
-	    "questionid": 61, "type": "option",
-	    "precondition": { "questionid": 60, "answerid": 1 },
-	    "title": "Who will arrange access control?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No special provisions are needed" },
-		{   "id": 1, "label": "Project management will need to be able to give people access" },
-		{   "id": 2, "label": "The work space should be connected to a single-sign-on system" }
-	    ]
-	},
-	{
-	    "questionid": 62, "type": "option",
-	    "precondition": { "questionid": 60, "answerid": 1 },
-	    "title": "Will the work space storage need to be remote mounted?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes, for occasional exploration" },
-		{   "id": 2, "label": "Yes, for actual computations, requiring high performance" }
-	    ]
-	},
-	{
-	    "questionid": 63, "type": "option",
-	    "precondition": { "questionid": 60, "answerid": 1 },
-	    "title": "Will data be copied out and in to the workspace storage by remote users?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No, this should not be allowed" },
-		{   "id": 1, "label": "Yes, occasionally" },
-		{   "id": 2, "label": "Yes, for actual computations, requiring high performance" }
-	    ]
-	},
-	{
-	    "questionid": 64, "type": "option",
-	    "precondition": { "questionid": 63, "answerid": 2 },
-	    "title": "Are data integrity and reliability requirements also met by the other storage spaces used in the project?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "This is not needed" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 65, "type": "option",
-	    "precondition": { "questionid": 46, "answerid": 1 },
-	    "title": "How available/reliable should must the work space be?",
-	    "text": "There are a number of questions that can help you to decide whether your work space will be reliable enough for your project. Do you want to skip those questions now, or go through them?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Skip this section" },
-		{   "id": 1, "label": "Explore this with more questions" }
-	    ]
-	},
-	{
-	    "questionid": 66, "type": "option",
-	    "precondition": { "questionid": 65, "answerid": 1 },
-	    "title": "What is the acceptable risk for a total loss?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "This is unacceptable" },
-		{   "id": 1, "label": "All essential data is also stored elsewhere" }
-	    ]
-	},
-	{
-	    "questionid": 67, "type": "option",
-	    "precondition": { "questionid": 66, "answerid": 1 },
-	    "title": "Is there software in the work space? Can it also be restored quickly?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "There is no software" },
-		{   "id": 1, "label": "Software in the work space is only a copy" },
-		{   "id": 2, "label": "Special care will be taken for the software and configurations" }
-	    ],
-	    "references": [{"type": "dmpbook", "chapter": "2.6"}, {"type": "resourcepage", "shortuid": "cbq"}]	    
-	},
-	{
-	    "questionid": 68, "type": "option",
-	    "precondition": { "questionid": 65, "answerid": 1 },
-	    "title": "Can you handle it when the work space is off line for a while?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "We could handle a few days of offline time per year" },
- 		{   "id": 1, "label": "We can only miss the work space for a few hours during work hours" },
- 		{   "id": 2, "label": "Problems during the evenings and weekends can not wait for work hours to be repaired" }
-	    ]
-	},
-	{
-	    "questionid": 69, "type": "option",
-	    "precondition": { "questionid": 65, "answerid": 1 },
-	    "title": "How long can you wait for a restore if the storage fails?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "We can wait for repair and a restore" },
- 		{   "id": 1, "label": "A spare copy needs to be deployed quickly" },
- 		{   "id": 2, "label": "No waiting is possible, a hot copy must be ready to take over" }
-	    ]
-	},
-	{
-	    "questionid": 70, "type": "option",
-	    "precondition": { "questionid": 65, "answerid": 1 },
-	    "title": "How long can you wait for a restore if you accidentally damage a file?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Days" },
- 		{   "id": 1, "label": "Hours" },
- 		{   "id": 2, "label": "Any user needs to be able to restore an old copy instantaneously" }
-	    ]
-	},
-	{
-	    "questionid": 72, "type": "option",
-	    "precondition": { "questionid": 65, "answerid": 1 },
-	    "title": "Do you need to make copies of project data that is not in the work space?",
-	    "text": "Are there any data files e.g. on laptops of project members? Also: supercomputing centers and other high performance computer centers often write in their terms of use that you need to take care of your own backups",
-	    "answers":
-	    [
-		{   "id": 0, "label": "There is no data elsewhere" },
- 		{   "id": 1, "label": "All data elsewhere is adequately backed up" },
- 		{   "id": 2, "label": "We make (automated) backups of all data stored outside of the working area" }
-	    ]
-	},
-	{
-	    "questionid": 73, "type": "option",
-	    "precondition": { "questionid": 46, "answerid": 0 },
-	    "title": "Are data all project members store adequately backed up and traceable?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
- 		{   "id": 1, "label": "Yes, protected against both equipment failure and human error" }
-	    ]
-	},
- 	{
-	    "questionid": 5, "type": "option",
-	    "title": "Is the risk of information loss, leaks and vandalism acceptably low?",
-	    "text": "There are many factors that can contribute to the risk of information loss or information leaks. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
-	    "answers":
-	    [
-		{   "id": 0, "label": "Skip this set of questions" },
-		{   "id": 1, "label": "Explore the factors" }
-	    ]
-	},
-  	{
-	    "questionid": 74, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Do project members store data or software on computers in the lab or external hard drives connected to those computers?",
-	    "text": "When assessing the risk, take into account who has access to the lab, who has (physical) access to the computer hardware itself. Also consider whether data on those systems is properly backed up",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-  	{
-	    "questionid": 75, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Do project members carry data with them?",
-	    "text": "Does anyone carry project data on laptops, USB sticks or other external media?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-  	{
-	    "questionid": 76, "type": "option",
-	    "precondition": { "questionid": 75, "answerid": 1 },
-	    "title": "Are all data carriers encrypted? Are accounts on the laptop password protected?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-   	{
-	    "questionid": 77, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Do project members store project data in cloud accounts?",
-	    "text": "Think about services like Dropbox, but also about Google Drive, Apple iCloud accounts, or Microsoft's Office365",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-   	{
-	    "questionid": 78, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Do project members send project data or reports per e-mail or other messaging services?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-   	{
-	    "questionid": 79, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Do all data centers where project data is stored carry sufficient certifications?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-   	{
-	    "questionid": 80, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Are all project web services addressed via secure http (https://)?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-   	{
-	    "questionid": 81, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Have project members been instructed about the risks (generic and specific to the project)?",
-	    "text": "Project members may need to know about passwords (not sharing accounts, using different passwords for each service, and two factor authentication), about security for data they carry (encryption, backups), data stored in their own labs and in personal cloud accounts, and about the use of open WiFi and https",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
- 	{
-	    "questionid": 82, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Did you consider the possible impact to the project or organization if information is lost?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes; the effect is small" },
-		{   "id": 2, "label": "Yes; the risk is acceptably low" },
-		{   "id": 3, "label": "Yes; we will need to work on this." }
-	    ]
-	},
- 	{
-	    "questionid": 83, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Did you consider the possible impact to the project or organization if information leaks?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes; the effect is small" },
-		{   "id": 2, "label": "Yes; the risk is acceptably low" },
-		{   "id": 3, "label": "Yes; we will need to work on this." }
-	    ]
-	},
- 	{
-	    "questionid": 84, "type": "option",
-	    "precondition": { "questionid": 5, "answerid": 1 },
-	    "title": "Did you consider the possible impact to the project or organization if information is vandalized?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes; the effect is small" },
-		{   "id": 2, "label": "Yes; the risk is acceptably low" },
-		{   "id": 3, "label": "Yes; we will need to work on this." }
-	    ]
-	},
-	{
-	    "questionid": 6, "type": "option",
-	    "title": "Do you need to do compute capacity planning?",
-	    "text": "If you require substantial amounts of compute power, amounts that are not trivially absorbed in what you usually have abailable, some planning is necessary. Do you think you need to do compute capacity planning?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 85, "type": "option",
-	    "precondition": { "questionid": 6, "answerid": 1 },
-	    "title": "Do you know how much CPU power, memory and I/O band width a typical analysis will take?",
-	    "text": "Did you run pilot jobs? Do you know this information from comparable projects? Did you test whether the work scales up as you expected if you run more than one job?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 86, "type": "option",
-	    "precondition": { "questionid": 6, "answerid": 1 },
-	    "title": "What type of compute architecture is most suitable for your work? Will you have that available?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "We will use a compute cluster" },
-		{   "id": 1, "label": "We will use grid computing" },
-		{   "id": 2, "label": "We will use cloud computing" },
-		{   "id": 3, "label": "We will use a mix of computing architectures for different parts of the work" }
-	    ]
-	},
-	{
-	    "questionid": 93, "type": "option",
-	    "precondition": { "questionid": 6, "answerid": 1 },
-	    "title": "Is there sufficient experience with the chosen computer in the project, and sufficient time to support the project partners?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "We will recruit" },
-		{   "id": 1, "label": "Training has been arranged" },
-		{   "id": 2, "label": "Our people will be able to call for help" },
-		{   "id": 3, "label": "We have sufficient knowledge in the project" }
-	    ]
-	},
-	{
-	    "questionid": 87, "type": "option",
-	    "precondition": { "questionid": 6, "answerid": 1 },
-	    "title": "Have you established with the provider when will you need the compute capacity?",
-	    "text": "Do you need the compute capacity also for development? Can you start developing locally and start with a deployment test later?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 88, "type": "option",
-	    "precondition": { "questionid": 6, "answerid": 1 },
-	    "title": "Is all required compute capacity available close to the project working storage area?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 89, "type": "option",
-	    "precondition": { "questionid": 88, "answerid": 0 },
-	    "title": "Did you plan the required network capacity between storage and compute services?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "There are no special networking requirements" },
-		{   "id": 1, "label": "Copying or network delays are considered to be acceptable" },
-		{   "id": 2, "label": "We will be able to use a dedicated network connection" }
-	    ]
-	},
-	{
-	    "questionid": 90, "type": "option",
-	    "precondition": { "questionid": 88, "answerid": 0 },
-	    "title": "Can all data be legally transported and processed at the computing site?",
-	    "text": "Are the risks of data leaks covered?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
-	},
-	{
-	    "questionid": 91, "type": "option",
-	    "precondition": { "questionid": 6, "answerid": 1 },
-	    "title": "Will different groups work on different parts of the workflow? Will parts of the computing be done on 'local' infrastructure to the group?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "All steps of the workflow will be performed at central computing locations" },
-		{   "id": 1, "label": "Some steps may be performed at local computing locations" }
-	    ]
-	},
-	{
-	    "questionid": 92, "type": "option",
-	    "precondition": { "questionid": 91, "answerid": 1 },
-	    "title": "Is there sufficient network capacity to the other computing locations?",
-	    "answers":
-	    [
-		{   "id": 0, "label": "No" },
-		{   "id": 1, "label": "Yes" }
-	    ]
+	"uuid": "b1df3c74-0b1f-4574-81c4-4cc2d780c1af",
+	"namespace": "core",
+	"formatversion": 1,
+	"title": "Data design and planning",
+	"text": "In the data design and planning phase, we will make sure that we know what data comes when, that we have enough storage space and compute power to deal with it, and that all the responsibilities have been taken care of.",
+	"questions" :
+	[
+	{
+		"uuid": "b08fe063-33f8-4380-b3a9-ba1e586dedf2", "type": "list",
+		"title": "What data formats/types will you be using?",
+		"text": "Have you identified types of data that you will use that are used by others too? Some types of data (e.g. genetic variants in the life sciences) are used by many different projects. For such data, often common standards exist that help to make these data reusable. Are you using such common data formats?",
+		"references":
+		[
+			{ "uuid": "ee5c094c-6a70-4e32-9a51-f1af339f180f", "type": "dmpbook", "chapter": "2.1" },
+			{ "uuid": "6ef479ac-8aa7-44d2-88a7-76dc7efa1b91", "type": "resourcepage", "shortuid": "njy" }
+		]
+	},
+	{
+		"uuid": "ecff019a-d4e6-44c6-a8fe-c84eb15ed8b7", "type": "option",
+		"precondition": "b08fe063-33f8-4380-b3a9-ba1e586dedf2",
+		"title": "Is this a standard data format used by others too?",
+		"answers":
+		[
+			{ "uuid": "52b7aba3-d809-4a30-b3f8-90caa7a32a10", "label": "No" },
+			{ "uuid": "d4ce2c56-b3df-4013-9220-289b28f922de", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "ced5a7c2-4034-4763-a1d5-3cb815cdfddb", "type": "option",
+		"precondition": "b08fe063-33f8-4380-b3a9-ba1e586dedf2",
+		"title": "Does this data format enable sharing and long term archiving?",
+		"text": "Complicated (binary) file formats tend to change over time, and software may not stay compatible with older versions. Also, some formats hamper long term usability by making use of patents or being hampered by restrictive licensing",
+		"answers":
+		[
+			{ "uuid": "86e547b8-e3ae-44b2-89ad-3a0d67decc56", "label": "No" },
+			{ "uuid": "985e488d-257f-479d-8113-5dcbe105a08e", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "bf32374c-b24e-4b03-9898-a753cff56fcf", "type": "option",
+		"precondition": "86e547b8-e3ae-44b2-89ad-3a0d67decc56",
+		"title": "Will you convert to a file format more suitable for archiving later?",
+		"answers":
+		[
+			{ "uuid": "3159d107-d322-4126-958f-900fc011eeae", "label": "No" },
+			{ "uuid": "7d8dc2f5-2699-4fb3-8bf6-e620868a0583", "label": "Yes", "advice": "You may need to reserve time and budget for this" }
+		]
+	},
+	{
+		"uuid": "5ba53879-eb48-47f2-a73b-f7f7d83bf030", "type": "option",
+		"title": "Will you be using new types of data?",
+		"text": "Sometimes the type of data you collect can not be stored in a commonly used data format. In such cases you may need to make your own, keeping interoperability as high as possible.",
+		"answers":
+		[
+			{ "uuid": "c470de83-0a9b-4d7d-a2cd-903bfbedc8d1", "label": "No, all of my data will fit in common formats" },
+			{ "uuid": "bf76127e-0497-46eb-8b5d-e4cfcb84f622", "label": "Yes, I will need to use custom formats for some of my data" }
+		],
+		"references":
+		[
+			{ "uuid": "fd42abc4-5567-456b-b5b5-0ef90ab6415f", "type": "dmpbook", "chapter": "2.2" },
+			{ "uuid": "359feab2-a7ee-4d16-8ef4-6b86a7177c05", "type": "resourcepage", "shortuid": "ikk" }
+		]
+	},
+	{
+		"uuid": "ae235844-e3b6-461c-8c1d-668148dbf53b", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Will you need to add fields in your data format to a data type registry?",
+		"text": "Even if the data format you are using is unique to your project, the discrete data items should be reused or reusable as much as possible. Data type registries can help with that.",
+		"answers":
+		[
+			{ "uuid": "48ed91ec-5dbc-497a-9f84-f26daa60c0bd", "label": "No, all of my data types are described in a data type registry already" },
+			{ "uuid": "e4fdba2a-f6e6-4087-99a6-0e00c1bcd5f7", "label": "Yes, I will add new types to an existing data type registry" },
+			{ "uuid": "28c5197f-a3fe-4b96-b0fb-83e271155a95", "label": "Yes, I will create my own data type registry" }
+		]
+	},
+	{
+		"uuid": "7fe217e0-9af0-422f-a45b-6873f0344bcd", "type": "text",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Which data type registries will you use?"
+	},
+	{
+		"uuid": "b211f896-b363-4978-9423-212644ff5d72", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Do you need to create vocabularies or ontologies for any of your data items?",
+		"text": "For good interoperability the use of controlled vocabularies for each discrete data item is advisable. If such vocabularies exist, it is best to reuse those.",
+		"answers":
+		[
+			{ "uuid": "efe50d9c-4dc2-49c5-ae61-1dc8ff0d7655", "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types" },
+			{ "uuid": "668ecd34-4413-4aa9-8921-616325766ec0", "label": "Yes, I will make and publish a vocabulary or ontology for some of my data" }
+		],
+		"references":
+		[
+			{ "uuid": "79c3b4ff-e265-412f-9c6d-8be6310094d1", "type": "dmpbook", "chapter": "2.2.2" },
+			{ "uuid": "d5005824-b8f2-4eb5-b3bb-d5021e1c36d8", "type": "resourcepage", "shortuid": "ske" }
+		]
+	},
+	{
+		"uuid": "a9103296-915a-4bdf-b259-116775d5e676", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "How will you design your new data format?",
+		"answers":
+		[
+			{ "uuid": "bda912f3-14a7-4242-b293-025f1b19892d", "label": "There is a closely related more generic and open format that I can specialize" },
+			{ "uuid": "b4334e27-3e6c-4215-b4cb-f60eabd9c61e", "label": "I will use a Linked Data format" },
+			{ "uuid": "974fa3ea-4047-4006-a49c-f7972bf9c961", "label": "I will use a completely custom data format"}
+		],
+		"references":
+		[
+			{ "uuid": "88001c99-0082-4291-8c54-140f2ddc5112", "type": "dmpbook", "chapter": "2.2.3" },
+			{ "uuid": "3881e36b-e722-40a8-b79c-b150daa685bc", "type": "resourcepage", "shortuid": "jwg" }
+		]
+	},
+	{
+		"uuid": "caba60b1-57b3-4288-8d3e-aa3542c28027", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Will you describe your new data format for others?",
+		"answers":
+		[
+			{ "uuid": "057e84be-3329-4fa2-9cc8-d37f53a44cd0", "label": "No, this is not needed" },
+			{ "uuid": "252757f4-e4ed-4c3f-8c13-b14f55133dfe", "label": "Yes, I will register my standards at a data standards registry" }
+		]
+	},
+	{
+		"uuid": "8c962e6f-17ee-4b22-8ebb-9f06f779e3b3", "type": "option",
+		"title": "How will you be storing metadata?",
+		"text": "For the re-usability of your data by yourself or others at a later stage, a lot of information about the data, how it was collected and how it can be used should be stored with the data. Such data about the data is called metadata, and this set of questions are about this metadata",
+		"answers":
+		[
+			{ "uuid": "f9dd59ef-6af1-4b48-be9d-97102b25f0c8", "label": "Skip" },
+			{ "uuid": "6d18bfff-0f53-469b-934e-9806dda9d4fb", "label": "Explore" }
+		],
+		"references":
+		[
+			{ "uuid": "27e5a2b0-7512-47b0-bc82-2c097eb2f623", "type": "dmpbook", "chapter": "2.3" },
+			{ "uuid": "326cc8df-1902-493e-84e1-4f2a4bf93074", "type": "resourcepage", "shortuid": "rhm" }
+		]
+	},
+	{
+		"uuid": "6226d7f2-565f-4991-94b3-c00be6aca20e", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Do suitable 'Minimal Metadata About ...' (MIA...) standards exist for your experiments?",
+		"answers":
+		[
+			{ "uuid": "a23664b1-a17c-41fe-855c-db274984b355", "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?" },
+			{ "uuid": "08bd1365-7f0e-4b78-aeb1-3c0e85e84cb6", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "2bdad98e-ef5f-4645-9ec7-bf5101e0b4c1", "type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
+	},
+	{
+		"uuid": "44a9d6c0-f96c-47d2-8c7a-902a9c222067", "type": "option",
+		"precondition": "a23664b1-a17c-41fe-855c-db274984b355",
+		"title": "Do you have a good idea of what metadata is needed to make it possible for others to read and interpret your data in the future?",
+		"answers":
+		[
+			{ "uuid": "49e35bb1-6145-4b44-b390-9e1fe896415e", "label": "No" },
+			{ "uuid": "b3acec51-6385-43f1-a28a-123ab28b798f", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "67a39c34-fe6f-415e-93d1-998fc2911748", "type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}
+		]
+	},
+	{
+		"uuid": "ed872b74-6bf7-4cba-8f36-4da4509e4a4f", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Do you know how and when you will be collecting the necessary metadata?",
+		"text": "Often it is easiest to make sure you collect the metadata as early as possible.",
+		"answers":
+		[
+			{ "uuid": "bc41fb1c-e64b-44cd-b0d6-45aebc3a9b84", "label": "No" },
+			{ "uuid": "2fb268e0-2c25-475a-b7e1-7794a05a3091", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "cab1617b-adf5-46c0-9e55-66348e35961f", "type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards" }
+		]
+	},
+	{
+		"uuid": "15573266-7ddf-4c6b-962e-45691d34cf61", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Will you consider re-usability of your data beyond your original purpose?",
+		"text": "Adding more than the strict minimum metadata about your experiment will possibly allow more wide re-use of your data, with associated higher data citation rates. Please note that it is not easy for yourself to see all other ways in which others could be reusing your data.",
+		"answers":
+		[
+			{ "uuid": "b2ca0d26-7fdd-44f1-b064-bc4cd4c45661", "label": "No, I will just document the bare minimum" },
+			{ "uuid": "cb765913-50c9-482e-bf10-5f5f91d0e473", "label": "Yes, I will document more metadata than needed for reproducibility" }
+		]
+	},
+	{
+		"uuid": "73bf7531-3490-4c0f-b6a2-a9f4f2bc3e1a", "type": "option",
+		"precondition": "cb765913-50c9-482e-bf10-5f5f91d0e473",
+		"title": "How will you balance the extra efforts with the potential for added reusability?",
+		"answers":
+		[
+			{ "uuid": "3002eaed-c31f-4bdd-83ed-49262ae79165", "label": "I will see what I can do" },
+			{ "uuid": "7ef32aea-b6a7-4297-92bd-0869a13276ad", "label": "I will use preselected additional standard modules of metadata" },
+			{ "uuid": "018fc8a0-c51e-48f4-99d5-77e8c9dcf51f", "label": "I will collect all metadata I can gather and document the data set beyond minimal standards" }
+		]
+	},
+	{
+		"uuid": "c961b59a-b635-4a77-87ba-bc1b449bb012", "type": "option",
+		"precondition": "cb765913-50c9-482e-bf10-5f5f91d0e473",
+		"title": "Do you need to exchange your data with others?",
+		"answers":
+		[
+			{ "uuid": "c0d4739d-2694-4fe2-a6d6-d7cc073fc9eb", "label": "No" },
+			{ "uuid": "fb7addc1-c3ba-4eeb-973c-109aeef11ced", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "02b3fed1-0b50-4a80-b8b6-a225a1107022", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Did you consider how to monitor data integrity?",
+		"text": "Working with large amounts of heterogenous data in a larger research group has implications for the data integrity. How do you make sure every step of the workflow is done with the right version of the data? How do you handle the situation when a mistake is uncovered? Will you be able to redo the strict minimum data handling?",
+		"answers":
+		[
+			{ "uuid": "e36f5a68-860e-41fa-9158-b785317610ff", "label": "Skip" },
+			{ "uuid": "8608d3df-7d7f-4893-8f80-e5297167b213", "label": "Explore" }
+		],
+		"references":
+		[
+			{ "uuid": "2eda3f51-e6f5-40a3-b8d0-8059973320b6", "type": "dmpbook", "chapter": "2.3.1" },
+			{ "uuid": "fc0d8147-e363-44c1-ae7d-204da22f2675", "type": "resourcepage", "shortuid": "spg" }
+		]
+	},
+	{
+		"uuid": "e0759fdc-7ce9-4020-816d-73119f634c7e", "type": "option",
+		"precondition": "8608d3df-7d7f-4893-8f80-e5297167b213",
+		"title": "Will you be keeping a master list with checksums of certified/correct/canonical/verified data?",
+		"text": "Data corruption or mistakes can happen with large amounts of files or large files. Keeping a master list with data checksums can be helpful to prevent expensive mistakes. It can also be helpful to keep the sample list under version control forcing that all changes are well documented.",
+		"answers":
+		[
+			{ "uuid": "637f4603-0a24-47d1-a2f7-96958b4841fd", "label": "No" },
+			{ "uuid": "e7a8b914-54f3-4a72-9136-74a99db73926", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "acb86509-e93a-4d87-a958-74def0678e10", "type": "option",
+		"precondition": "8608d3df-7d7f-4893-8f80-e5297167b213",
+		"title": "Will you define a way to detect file or sample swaps, e.g. by measuring something independently?",
+		"answers":
+		[
+			{ "uuid": "4bd98e96-3d02-4967-b56b-d94a7b0079c6", "label": "No" },
+			{ "uuid": "ec3718dd-c8f4-417d-91ca-93408fa89953", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "ae28a862-5020-44c2-8c78-3abc185b190f", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Do all datasets you work with have a license?",
+		"text": "It is not always clear to everyone in the project (ad outside) what can and can not be done with a data set. It is helpful to associate each data set with a license as early as possible in the project. A data license should ideally be as free as possible: any restriction like 'only for non-commercial use' or 'attribution required' may reduce the reusability and thereby the number of citations. If possible, use a computer-readable and computer actionable license.",
+		"answers":
+		[
+			{ "uuid": "0b0e1e89-3b7b-4d9e-95f6-d96397b28c3b", "label": "No" },
+			{ "uuid": "6110d79f-1cf0-4a89-8a6d-84a472388fd8", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "0551adc9-7faa-4ddc-a07b-08fbde2a247b", "type": "option",
+		"precondition": "6110d79f-1cf0-4a89-8a6d-84a472388fd8",
+		"title": "Will you store the licenses with the data at all time?",
+		"text": "It is very likely that data will be moved and copied. At some point people may lose track of the origins. It can be helpful to have the licenses (of coarse as open as possible) stored in close association with the data.",
+		"answers":
+		[
+			{ "uuid": "e95aca23-fa1b-4e91-b6f3-748aed0d0925", "label": "No" },
+			{ "uuid": "245e5ab0-baa7-48b3-97b8-55d2af5e4fa8", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "6b372aca-a25b-4cf6-b67f-21d03d8516f0", "type": "dmpbook", "chapter": "2.3.2" },
+			{ "uuid": "a72f329d-00bc-44a1-bfb5-f4009c548858", "type": "resourcepage", "shortuid": "atw" }
+		]
+	},
+	{
+		"uuid": "daa06d1a-6314-4c6d-93a8-69954c7f5c54", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "How will you keep provenance?",
+		"text": "To make your experiments reproducible, all steps in the data processing must be documented in detail. The software you used, including version number, all options and parameters. This information together for every step of the analysis is part of the so-called data provenance. There are more questions regarding this in the chapter on data processing and curation.",
+		"answers":
+		[
+			{ "uuid": "5480e0b8-8e0b-4b66-929f-eef3b89e6113", "label": "All steps will be documented in an (electronic) lab notebook" },
+			{ "uuid": "32a1e3ef-6aa8-4eae-a517-b1dcf866d118", "label": "Our work flow system documents the provenance automatically and completely" }
+		],
+		"references":
+		[
+			{ "uuid": "7d7b817f-9f82-4cdf-96a9-565bc67f3129", "target": "1991077f-04ae-4808-90a5-e4b2f82e30bf", "type": "xref" }
+		]
+	},
+	{
+		"uuid": "8e886b55-3287-48e7-b353-daf6ab40f7d8", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "How will you do file naming and file organization?",
+		"text": "Putting some thoughts into file naming can save a lot of trouble later.",
+		"answers":
+		[
+			{ "uuid": "1ff5080d-ffdc-4eda-8ad8-4e6b69f01a07", "label": "Skip" },
+			{ "uuid": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "d4fe0b55-4aee-4d05-88d4-a3f4cad2cfa9", "type": "option",
+		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
+		"title": "Did you make a SOP (Standard Operating Procedure) for file naming?",
+		"text": "It can help if everyone in the project uses the same naming scheme.",
+		"answers":
+		[
+			{ "uuid": "f449e055-8f13-495c-aea9-7440800f6a45", "label": "No" },
+			{ "uuid": "8b13234e-879b-4221-be12-4df24e6de00e", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "37d0367b-3b69-4b3e-9303-71e628b1f360", "type": "option",
+		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
+		"title": "Will you be keeping the relationships between data clear in the file names?",
+		"text": "Advice: Use the same identifiers for sample IDs etc throughout the entire project.",
+		"answers":
+		[
+			{ "uuid": "9beb6069-5477-4b99-b28c-921cf38e8470", "label": "No" },
+			{ "uuid": "8032494b-e0cb-4fe5-94e7-d8a203292537", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "7dfd022e-6d6e-4923-a81a-ca1f11024b57", "type": "option",
+		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
+		"title": "Will all the metadata in the file names also be available in the proper metadata?",
+		"text": "The file names are very useful as metadata for people involved in the project, but to computers they are just identifiers. To prevent accidents with e.g. renamed files metadata information should always also be available elsewhere and not only through the file name.",
+		"answers":
+		[
+			{ "uuid": "df53b7a2-1b1e-4f5d-99df-b9a7a1da91e9", "label": "No, the file names in the project are an essential part of the metadata" },
+			{ "uuid": "2f695e7c-0661-4b43-ba55-1a82a2c706ef", "label": "Yes, all metadata is also explicitly available elsewhere" }
+		]
+	},
+	{
+		"uuid": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "option",
+		"title": "Will you be archiving data (using so-called 'cold storage') for long term preservation?",
+		"text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication; questions related to data publication will follow later.",
+		"answers":
+		[
+			{ "uuid": "a547dc69-a3e8-46e4-bb4b-21fd104231f9", "label": "No" },
+			{ "uuid": "e81599af-4519-4987-b74e-9545428ed0e3", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "c6e67e46-6f79-402b-adba-3d5a56346534", "type": "dmpbook", "chapter": "2.5.1.1" },
+			{ "uuid": "769a924d-a683-44ac-b85d-e5f3c8adaf49", "type": "resourcepage", "shortuid": "kjp" }
+		]
+	},
+	{
+		"uuid": "b16e76a9-34a8-4ba5-9420-b58bebaeac8d", "type": "option",
+		"precondition": "a547dc69-a3e8-46e4-bb4b-21fd104231f9",
+		"title": "Can the original data be regenerated?",
+		"answers":
+		[
+			{ "uuid": "5e55c2ce-614a-4af8-ab92-972e8f5baea7", "label": "No" },
+			{ "uuid": "8d1f370f-6e4f-46ae-a169-1f7e969335e1", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "fd49ed4f-4e3a-4cf7-9857-8ff20fe1fbcf", "type": "dmpbook", "chapter": "2.5.1.2" },
+			{ "uuid": "b95d3cbb-3698-442e-b036-9fc84e889219", "type": "resourcepage", "shortuid": "ixr" }
+		]
+	},
+	{
+		"uuid": "7f8ff791-8593-4e00-93f9-e31c5dff5ffb", "type": "option",
+		"precondition": "a547dc69-a3e8-46e4-bb4b-21fd104231f9",
+		"title": "When is the raw data archived?",
+		"answers":
+		[
+			{ "uuid": "fbe7ef0d-3199-47de-ad28-1b9299200156", "label": "As soon as it comes in, in chunks" },
+			{ "uuid": "92dc2ba0-2cac-4710-8dc7-c1cf6e573235", "label": "As soon as it has all arrived, in one session" },
+			{ "uuid": "c861d005-a681-4a3a-a54b-7a229b6662ee", "label": "All at once with the results at the end of the project" }
+		]
+	},
+	{
+		"uuid": "c659c36f-d142-4453-8d8b-db7c05f31371", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Is the archived data changing over time, needing re-archival?",
+		"answers":
+		[
+			{ "uuid": "86e40411-deee-4dc0-88dc-a257c7f4a3ad", "label": "No" },
+			{ "uuid": "48d7128a-a237-4d32-8fc6-464089b46892", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "a4278d17-062e-42c2-affc-911baee339d4", "type": "dmpbook", "chapter": "2.5.1.3" },
+			{ "uuid": "01798396-0a1b-430b-9275-ada0679d4b3f", "type": "resourcepage", "shortuid": "tgk" }
+		]
+	},
+	{
+		"uuid": "1147485f-b9a9-486c-8341-27e05718c508", "type": "option",
+		"precondition": "48d7128a-a237-4d32-8fc6-464089b46892",
+		"title": "Do you need frequent backups?",
+		"text": "The general term 'backup' is used for protection against two different kinds of problems: equipment failure and human error. Protections against these two may need different solutions. Both are considered backup for this and subsequent questions.",
+		"answers":
+		[
+			{ "uuid": "e2ad7b2b-cc9a-445b-8a94-c41032a7e787", "label": "No, data changes infrequently" },
+			{ "uuid": "67d52405-a902-4661-8158-91ab1d268832", "label": "Yes, data changes frequently" }
+		]
+	},
+	{
+		"uuid": "f6476ea3-1ec5-447b-a776-4f0bfca38f8f", "type": "option",
+		"precondition": "48d7128a-a237-4d32-8fc6-464089b46892",
+		"title": "Will you be relying on these backups to recover from human error (accidental changes or deletions)?",
+		"answers":
+		[
+			{ "uuid": "6f307c89-c1b2-4dcc-8315-585a65f08a87", "label": "No" },
+			{ "uuid": "899b6dc9-59fa-4246-b152-915d4864f771", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "c2a38110-f7a3-432f-ae98-4e448e496b44", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the archive be stored on disk or on tape?",
+		"answers":
+		[
+			{ "uuid": "18f50141-094d-426b-8a75-4c4fce59389b", "label": "Disk" },
+			{ "uuid": "ebbe4ef1-ec2a-44b8-bbc9-f15a743c438f", "label": "Tape" },
+			{ "uuid": "45ad8d8d-4efc-47b1-946d-2de59aa1fcb4", "label": "Other" }
+		]
+	},
+	{
+		"uuid": "41a8d19b-2468-4c60-9f5e-7a8fee26eedb", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the archive be stored in a remote location, protecting the data against disasters?",
+		"answers":
+		[
+			{ "uuid": "a15afda5-9e5a-40bd-a802-fc811fa39d20", "label": "No" },
+			{ "uuid": "4bc5017e-2808-4fc1-95b9-77bd2e755bb6", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "ed3d43ad-d2b5-4194-8b05-08c95da0a7f2", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the archive need to be protected against loss or theft?",
+		"answers":
+		[
+			{ "uuid": "f312f518-69cb-442b-95a4-9523a25770db", "label": "No" },
+			{ "uuid": "29498f8c-ea29-4855-82db-5b1228dc09ba", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "2c797727-559d-4bcf-a4a1-713accfcd602", "type": "option",
+		"precondition": "29498f8c-ea29-4855-82db-5b1228dc09ba",
+		"title": "Will the archive be encrypted?",
+		"answers":
+		[
+			{ "uuid": "5e4bb06c-01ff-4964-890f-6f56bc4b819a", "label": "No" },
+			{ "uuid": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "905d4cda-afa1-4cc0-8df6-3d989c7b8b2e", "type": "option",
+		"precondition": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98",
+		"title": "Is it clear who has access to the key? Also in case of a required data restore?",
+		"answers":
+		[
+			{ "uuid": "68a83934-190b-4e33-9ac0-138e34e5a206", "label": "No" },
+			{ "uuid": "05e2cbc6-fdac-4f74-b6e6-733012da2657", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "7458c3bc-60aa-44ba-8d59-a0672dc8de63", "type": "option",
+		"precondition": "29498f8c-ea29-4855-82db-5b1228dc09ba",
+		"title": "Is it clear who has physical access to the archives?",
+		"answers":
+		[
+			{ "uuid": "e9ab764f-e3fa-4704-9200-4d527a54f754", "label": "No" },
+			{ "uuid": "7658b228-018a-4eba-9970-f5bb2c4de70a", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "87abded2-1edb-4f69-bd6c-8b90f7706206", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will your project require the archives to be available on-line?",
+		"answers":
+		[
+			{ "uuid": "bb1ba41d-9b1b-45dd-bdc7-c7b8ea451ab5", "label": "No" },
+			{ "uuid": "25b31312-053b-4ef8-ae37-c44b7182634d", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "5365f996-a83c-4e0c-b554-e7ac276c6a19", "type": "dmpbook", "chapter": "2.5.3" },
+			{ "uuid": "7e2d5781-283c-448d-91b5-ed57c4a133e8", "type": "resourcepage", "shortuid": "ybd" }
+		]
+	},
+	{
+		"uuid": "b3caa015-cdd5-4812-84b5-596855a30545", "type": "option",
+		"precondition": "25b31312-053b-4ef8-ae37-c44b7182634d",
+		"title": "Will data integrity be guaranteed?",
+		"text": "If the 'master copy' of the data is available on line, it should probably be protected against being tampered with.",
+		"answers":
+		[
+			{ "uuid": "60ea11ca-2179-4f7d-9587-bd22c22e4daa", "label": "No" },
+			{ "uuid": "c5a2baff-b326-483f-834c-7f2b39979ea2", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "86459c42-89ee-4874-bb54-fec0881332e0", "type": "option",
+		"precondition": "25b31312-053b-4ef8-ae37-c44b7182634d",
+		"title": "Is there an interface and a defined process for people to request access to the data?",
+		"answers":
+		[
+			{ "uuid": "1ec0c5b1-b905-4bb4-aa56-45f7321258c1", "label": "No" },
+			{ "uuid": "01322e43-a6ae-458c-9a01-5b70bd3b9be9", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "b7d9008e-9691-44f0-a026-0f63d808db39", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Has it been established who has access to the archive, and how fast?",
+		"answers":
+		[
+			{ "uuid": "dc7c7529-58c6-4414-84cc-7a19325cb73b", "label": "No" },
+			{ "uuid": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "47559455-2969-41f4-aee8-e9ce558ab2f0", "type": "option",
+		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
+		"title": "Has it been established who can ask for a restore during the project?",
+		"answers":
+		[
+			{ "uuid": "0591c012-e567-4383-b39f-22b0abfe0847", "label": "No" },
+			{ "uuid": "c406aebf-a807-4bda-bcdf-5066d0b1c17b", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "3d837696-3a99-4362-86a3-f460dd878b75", "type": "option",
+		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
+		"title": "If the data is voluminous, will the project be able to cope with the time needed for a restore?",
+		"answers":
+		[
+			{ "uuid": "acf31ff1-9d81-4671-89fb-fa4c60c5845a", "label": "No" },
+			{ "uuid": "dfb89c83-afc2-481e-895c-bff5468d6daf", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "feb954c1-c38e-4615-addd-4c714a06809a", "type": "option",
+		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
+		"title": "has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
+		"answers":
+		[
+			{ "uuid": "79bf552f-4230-4026-9976-984ecdb8d889", "label": "No" },
+			{ "uuid": "aad68118-2159-4871-8d35-aeab6e66314e", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "2dd94cbc-42f3-4077-b6da-83e0275290c5", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Has it been established how long the archived data need to be kept? For each of the different parts of the archive (raw data / results)?",
+		"answers":
+		[
+			{ "uuid": "1d8e9897-3713-4480-98ba-9b1c71f41eaf", "label": "No" },
+			{ "uuid": "07fdfbfb-9c7c-4e9c-83fa-bccf85094fb6", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "bd56375c-4b3a-40d0-af06-7dfb66025150", "type": "dmpbook", "chapter": "2.5.5" },
+			{ "uuid": "e6d881c0-a80c-45b7-9d62-eca9330af09f", "type": "resourcepage", "shortuid": "kdp" }
+		]
+	},
+	{
+		"uuid": "e23201aa-df56-4ade-9406-baa1fb6b1c0c", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the data still be understandable after a long time?",
+		"text": "See also all questions about keeping metadata and data formats. Make sure the metadata is kept close to the data in the archive, and that community supported data formats are used for all long term archiving.",
+		"answers":
+		[
+			{ "uuid": "2e2460d5-5233-434b-9229-7cd775cb13b2", "label": "No" },
+			{ "uuid": "31de7c36-5d2c-469a-82b8-af870cb3560c", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "6171537c-de59-4ce7-8042-387bad700619", "type": "dmpbook", "chapter": "2.5.6" },
+			{ "uuid": "00cf7418-99f5-494b-b77a-bc34a1ce77c5", "type": "resourcepage", "shortuid": "zmu" }
+		]
+	},
+	{
+		"uuid": "72099c46-16e7-47a2-a320-cc768b7085fe", "type": "option",
+		"title": "Will you need a shared working space to work with your data?",
+		"answers":
+		[
+			{ "uuid": "1d6ba101-fd62-43c8-ab53-76bc31847f58", "label": "No" },
+			{ "uuid": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "df36fb68-131c-4f31-a42b-684abf523bbc", "type": "option",
+		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
+		"title": "How will you work with your data?",
+		"answers":
+		[
+			{ "uuid": "9ad3ed65-7215-465a-b31a-f5a11fc6abdc", "label": "Skip" },
+			{ "uuid": "5af813b7-cb41-4eb9-afe7-ca364771b74e", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "73bfcfcf-a619-4f6a-a901-2e8ce01d039a", "type": "text",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "What kind of data will you have in your work space?",
+		"text": "When making the work space, it helps to know whether you expect to work with very many small files, a few very large files, whether you will use a (SQL) database to store most of the data. Maybe your data is suitable for a system like Hadoop? Such information can be collected here."
+	},
+	{
+		"uuid": "f6e66f4f-7b11-420f-a4b6-5fc972bc66d9", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "Do you need the work space to be close to the compute capacity?",
+		"text": "If you have large volumes of data that are intensely and repeatedly used by the computing work flow, it may be needed to keep the storage in the same place as where the computing takes place.",
+		"answers":
+		[
+			{ "uuid": "12f3cb44-db3c-4ea8-b4fb-2834a11da6a7", "label": "No" },
+			{ "uuid": "4cf287dd-6a24-4768-93b4-dd4a7767afb8", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "83081d6a-7e18-4ccf-97cd-f89193e73382", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref" },
+			{ "uuid": "afc5ae15-69ef-4dd9-b701-eaa5dbb8fddb", "type": "dmpbook", "chapter": "2.7" },
+			{ "uuid": "cec4d69c-0a8b-4e0c-98c7-309d0c57d692", "type": "resourcepage", "shortuid": "wia" }
+		]
+	},
+	{
+		"uuid": "50f9d580-3e62-434b-81ff-86daed56aca8", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "Will you be working with your data in another form than the way it will be archived?",
+		"text": "Archival and working with data have different requirements. You want archived information to be in a form that others could read and in a format that is also understandable in a number of years. When working with the data, you need to be able to address it efficiently. If the two differ, you need to plan for conversions.",
+		"answers":
+		[
+			{ "uuid": "df08a7fa-61af-418f-9eb8-965ba50efcc8", "label": "No, data format will be archived in the same way we work with it" },
+			{ "uuid": "02b8d129-3300-47cb-811a-e86a40c5d8bd", "label": "Yes, archival will require a conversion step" }
+		]
+	},
+	{
+		"uuid": "4ee4d67d-62c5-47f0-a741-f2629b65cf8a", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "How does the storage need change over time?",
+		"text": "To perform capacity planning, it is important to know what the need for storage capacity at the beginning and the end of the project will be.",
+		"answers":
+		[
+			{ "uuid": "eef277cb-1032-401e-b242-e74afde575dc", "label": "Storage needs will be the same during the whole project" },
+			{ "uuid": "014d23a8-93a8-4fd2-ba1c-8656177f37b2", "label": "Storage needs are large at the beginning and will be reduced later" },
+			{ "uuid": "ab40db7f-ea89-4830-b507-4f2f08a9453e", "label": "Storage needs are small at the beginning and will grow later" },
+			{ "uuid": "51a8248e-8659-47fd-a8e3-112eed64f65b", "label": "Storage needs are largest in the middle of the project" },
+			{ "uuid": "aca843cd-e38e-4174-8ce1-477c2b405fdf", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "8526a988-9561-42c6-8af4-7c96aa4c536d", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "When will your raw data become available?",
+		"answers":
+		[
+			{ "uuid": "adfc7ca3-c8e3-465b-8eb2-4327b8780684", "label": "Raw data will come in right at the start" },
+			{ "uuid": "19755f9d-8ec2-4fd9-8bdf-b25d5889d7ee", "label": "Raw data will come in during the project" }
+		]
+	},
+	{
+		"uuid": "01cd836b-915e-4751-b543-b326bf812594", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "How much of the raw data do you need to keep in the work space?",
+		"text": "Sometimes the raw data is relatively large, and it pays of to clean it quickly.",
+		"answers":
+		[
+			{ "uuid": "fe62c9a0-a621-46b6-bc42-881d0c3d8719", "label": "Raw data will need to stay in the work space" },
+			{ "uuid": "aad7d438-a8af-4462-9728-77e2493bcacc", "label": "Raw data can be cleaned out or archived quickly" },
+			{ "uuid": "93555e7b-d17c-4341-9ad9-9f2f833a3193", "label": "Raw data do not form a major part of the storage needs" },
+			{ "uuid": "0ddd0082-eae1-4c48-ba4a-30912f0643e7", "label": "Raw data will only be loaded in the work space on demand from the primary archives" }
+		]
+	},
+	{
+		"uuid": "ba381732-f499-419f-8744-e13807af83e3", "type": "option",
+		"precondition": "aad7d438-a8af-4462-9728-77e2493bcacc",
+		"title": "Do your raw data need to be archived?",
+		"answers":
+		[
+			{ "uuid": "904859c4-b9bf-44b6-9a64-933e489089e6", "label": "No, it is also stored elsewhere can be recovered easily" },
+			{ "uuid": "e4da5030-9de8-4fe9-81d9-28a75edc09d9", "label": "No, it can be remeasured easily and more cheaply than archiving" },
+			{ "uuid": "44cad909-ea78-454b-aede-794503da9401", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "c0944ac9-f286-48f2-b864-4641d0fcdd55", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "Did you plan how much intermediate data you will get during analysis and how long each step needs to be kept?",
+		"answers":
+		[
+			{ "uuid": "96b1aa0f-56db-4613-b424-3fe33349386b", "label": "The volume of intermediate data will not be significant" },
+			{ "uuid": "9a0cfd22-adce-46e6-b7ec-8ed581ac95be", "label": "A large volume of intermediate data will be in the work space" }
+		]
+	},
+	{
+		"uuid": "deb647ec-a001-4370-87b8-a5b1e2479f87", "type": "option",
+		"precondition": "9a0cfd22-adce-46e6-b7ec-8ed581ac95be",
+		"title": "Is it possible to store intermediate temporary data on a separate (scratch) file system that is not backed up?",
+		"text": "If the intermediate results are in your main work space, a restore in case of a problem could take much more time. It may be faster to recover it by re-running computations",
+		"answers":
+		[
+			{ "uuid": "55bab6f7-6ab9-4eb7-ae2b-1947cce2da84", "label": "We will use the main work space for temporary data" },
+			{ "uuid": "5cbefa56-bc0c-4704-a9a4-3535ec513057", "label": "We can offload intermediate results to a scratch file system that is not backed up" }
+		]
+	},
+	{
+		"uuid": "3a076e83-73b0-4cdd-bb71-c5d41469a191", "type": "option",
+		"precondition": "5cbefa56-bc0c-4704-a9a4-3535ec513057",
+		"title": "Are you sure you will not need a backup of the data stored on the scratch file systems (any scratch you use)?",
+		"answers":
+		[
+			{ "uuid": "fe80319d-f761-49ac-9faf-d4c5a9b349da", "label": "No" },
+			{ "uuid": "f4bf87cf-f5e6-4f06-adcf-0dcf9bb37e2a", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "94544b24-90e3-4d95-a0c0-bfed45cbdac9", "type": "url", "weblink": "https://www.csc.fi/web/blog/post/-/blogs/the-largest-unplanned-outage-in-years-and-how-we-survived-it", "anchor": "How CSC restored 850 million temporary files" }
+		]
+	},
+	{
+		"uuid": "89f78871-68bd-4190-9ee7-57ec3b4c2356", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "Will you have different versions of intermediate data that need to be kept?",
+		"text": "Consider storing only the workflow parameters if the data itself could be reproduced quickly",
+		"answers":
+		[
+			{ "uuid": "28452352-0aea-43ee-9b22-f0131d7eba51", "label": "No" },
+			{ "uuid": "ee686b11-0a50-4845-baae-d3ed3b3f5fcc", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "50a9c060-91e9-4e34-8cb2-2d41fa493f9e", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "Will you need to temporarily archive data sets (e.g. to tape)?",
+		"answers":
+		[
+			{ "uuid": "09ac9b88-4350-441b-97f4-5f85ced2ddf2", "label": "No" },
+			{ "uuid": "9797dc5a-afc9-418e-a456-0d555a52424a", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "f4065e54-d27a-45de-be4c-10384feacd0d", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "How will your first data come in?",
+		"answers":
+		[
+			{ "uuid": "2271d2cd-de50-460b-85a1-dddf9d28776c", "label": "No special planning is needed for the initial data" },
+			{ "uuid": "9ad1d4fd-997d-45a8-8cc4-f594a8e4fdf8", "label": "Initial data will need to be made available through a local network copy" },
+			{ "uuid": "202c1232-9f5e-4a68-b0e0-3986a7bc96fa", "label": "We will need a high-speed network connection to copy the initial data" },
+			{ "uuid": "94aa40a4-9b14-4923-a26a-3523566329e3", "label": "Initial data will arrive on separate media and will need to be copied to the work space" }
+		]
+	},
+	{
+		"uuid": "2ed7b5c7-2452-4087-b4ed-d15ca31a4e65", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "How will project partners access the work space?",
+		"answers":
+		[
+			{ "uuid": "fe6bacd4-f8dd-4940-b5c7-1a335e116531", "label": "Skip" },
+			{ "uuid": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "b1faddd1-2f9f-48a8-b9a7-d8f6f8c02470", "type": "option",
+		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
+		"title": "Who will arrange access control?",
+		"answers":
+		[
+			{ "uuid": "d45f521d-f541-4f40-a3d8-d4a9ecdc65e3", "label": "No special provisions are needed" },
+			{ "uuid": "9b723841-1bd4-487c-b45c-f0a369330b3a", "label": "Project management will need to be able to give people access" },
+			{ "uuid": "4bb35a94-e387-4460-bcf3-d638f248e52c", "label": "The work space should be connected to a single-sign-on system" }
+		]
+	},
+	{
+		"uuid": "f99580d5-b3ea-498c-86ac-f7326bd999c2", "type": "option",
+		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
+		"title": "Will the work space storage need to be remote mounted?",
+		"answers":
+		[
+			{ "uuid": "68be7c83-54ed-46d4-a77f-b99488665f1c", "label": "No" },
+			{ "uuid": "6baa53fe-c657-4da3-bb65-9b71f7141c6d", "label": "Yes, for occasional exploration" },
+			{ "uuid": "5ab6d069-f46c-4514-8114-79c9fe01a93f", "label": "Yes, for actual computations, requiring high performance" }
+		]
+	},
+	{
+		"uuid": "f14750e9-3a39-4aae-b2c8-845583934c1d", "type": "option",
+		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
+		"title": "Will data be copied out and in to the workspace storage by remote users?",
+		"answers":
+		[
+			{ "uuid": "2c2cd046-89e0-4f55-bafa-92eb5f77c3a8", "label": "No, this should not be allowed" },
+			{ "uuid": "8fa969a0-7477-41be-aefc-a54a8045c954", "label": "Yes, occasionally" },
+			{ "uuid": "06a34c86-3c48-4fa4-8888-0ae6b613068f", "label": "Yes, for actual computations, requiring high performance" }
+		]
+	},
+	{
+		"uuid": "6b3f13db-407a-44e0-9d23-e6dd6a20ad59", "type": "option",
+		"precondition": "06a34c86-3c48-4fa4-8888-0ae6b613068f",
+		"title": "Are data integrity and reliability requirements also met by the other storage spaces used in the project?",
+		"answers":
+		[
+			{ "uuid": "c7a0181c-1921-4b21-9481-f4274d48876c", "label": "This is not needed" },
+			{ "uuid": "a1c5e3e9-d286-4e5b-8223-c7e6bbc6e333", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "b171ec17-d7b5-4726-ae22-0d892b106cf8", "type": "option",
+		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
+		"title": "How available/reliable should must the work space be?",
+		"text": "There are a number of questions that can help you to decide whether your work space will be reliable enough for your project. Do you want to skip those questions now, or go through them?",
+		"answers":
+		[
+			{ "uuid": "c4f91550-c713-4066-b9e1-0419513820ba", "label": "Skip this section" },
+			{ "uuid": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45", "label": "Explore this with more questions" }
+		]
+	},
+	{
+		"uuid": "25e06912-08a2-40e4-af76-cfbc5ada9925", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "What is the acceptable risk for a total loss?",
+		"answers":
+		[
+			{ "uuid": "44810299-8618-4a79-a732-13cc2ff21903", "label": "This is unacceptable" },
+			{ "uuid": "766e16e4-21c7-4030-9eda-1973f51061d4", "label": "All essential data is also stored elsewhere" }
+		]
+	},
+	{
+		"uuid": "19640692-1c97-4574-8b3d-f4f6e1e6b564", "type": "option",
+		"precondition": "766e16e4-21c7-4030-9eda-1973f51061d4",
+		"title": "Is there software in the work space? Can it also be restored quickly?",
+		"answers":
+		[
+			{ "uuid": "7b572fda-9d67-44e9-b1c3-6dfc42c34d89", "label": "There is no software" },
+			{ "uuid": "1217ef1b-01fd-48e6-900d-60edb99b4621", "label": "Software in the work space is only a copy" },
+			{ "uuid": "af2e1ca5-9a21-4c3b-a973-e9f41fd613da", "label": "Special care will be taken for the software and configurations" }
+		],
+		"references":
+		[
+			{ "uuid": "7184e426-c352-4ace-8448-e3bc8bbe17af", "type": "dmpbook", "chapter": "2.6" },
+			{ "uuid": "4b9261db-1a1d-42c1-a147-f3951338be36", "type": "resourcepage", "shortuid": "cbq" }
+		]
+	},
+	{
+		"uuid": "0548db0c-bd34-40ce-be73-7a13a5e8eb7d", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "Can you handle it when the work space is off line for a while?",
+		"answers":
+		[
+			{ "uuid": "ef611a20-d5f9-4ea6-bb02-a7122bfd7eed", "label": "We could handle a few days of offline time per year" },
+			{ "uuid": "d96d5e47-aec8-4576-9e3a-734ab58dfe62", "label": "We can only miss the work space for a few hours during work hours" },
+			{ "uuid": "b6da4858-f72c-498b-a827-d4632a458098", "label": "Problems during the evenings and weekends can not wait for work hours to be repaired" }
+		]
+	},
+	{
+		"uuid": "6531dd45-f628-4aa7-a2c5-82c639b79ab8", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "How long can you wait for a restore if the storage fails?",
+		"answers":
+		[
+			{ "uuid": "c9d8c9ed-ba2d-4108-b798-493cdf9225df", "label": "We can wait for repair and a restore" },
+			{ "uuid": "27db87e3-46b2-4705-b98c-47ddf4b4cd56", "label": "A spare copy needs to be deployed quickly" },
+			{ "uuid": "5797b252-0550-46e1-bf13-c65edd2df45e", "label": "No waiting is possible, a hot copy must be ready to take over" }
+		]
+	},
+	{
+		"uuid": "aacf28a0-aab9-4436-8b2b-95ef755ae32a", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "How long can you wait for a restore if you accidentally damage a file?",
+		"answers":
+		[
+			{ "uuid": "42fb53ea-76ed-494b-8582-f080d952a3ed", "label": "Days" },
+			{ "uuid": "91463928-1cf4-43e0-bb4e-d1fc7b077ac8", "label": "Hours" },
+			{ "uuid": "a639ec31-e226-404e-97fb-567d2f52e321", "label": "Any user needs to be able to restore an old copy instantaneously" }
+		]
+	},
+	{
+		"uuid": "98d9789b-32fc-4e2f-876a-47760ad7c7ec", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "Do you need to make copies of project data that is not in the work space?",
+		"text": "Are there any data files e.g. on laptops of project members? Also: supercomputing centers and other high performance computer centers often write in their terms of use that you need to take care of your own backups",
+		"answers":
+		[
+			{ "uuid": "a1ead63a-1bc8-42e6-8bdc-3e1e8a901307", "label": "There is no data elsewhere" },
+			{ "uuid": "278810f9-6396-4203-9fa6-6cd3a003159c", "label": "All data elsewhere is adequately backed up" },
+			{ "uuid": "0884ac19-9bde-4bf1-afdd-0794c2c69092", "label": "We make (automated) backups of all data stored outside of the working area" }
+		]
+	},
+	{
+		"uuid": "c1e83bdf-5914-44c2-8414-0a4e7fbaf272", "type": "option",
+		"precondition": "1d6ba101-fd62-43c8-ab53-76bc31847f58",
+		"title": "Are data all project members store adequately backed up and traceable?",
+		"answers":
+		[
+			{ "uuid": "0c93a407-b04a-4c89-a8e4-299a4d77c21e", "label": "No" },
+			{ "uuid": "ec92df2d-f6db-4cc8-8317-ae24ab4fa08a", "label": "Yes, protected against both equipment failure and human error" }
+		]
+	},
+	{
+		"uuid": "614ab69d-55a6-4214-b384-00ba21ce92a1", "type": "option",
+		"title": "Is the risk of information loss, leaks and vandalism acceptably low?",
+		"text": "There are many factors that can contribute to the risk of information loss or information leaks. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
+		"answers":
+		[
+			{ "uuid": "875ec70a-5169-43b6-8fa2-b6de51c26575", "label": "Skip this set of questions" },
+			{ "uuid": "b2f76c0a-847a-403c-9ed6-09cad10e625e", "label": "Explore the factors" }
+		]
+	},
+	{
+		"uuid": "90324a7b-f3c9-4ed8-b301-edc9869cb7b3", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members store data or software on computers in the lab or external hard drives connected to those computers?",
+		"text": "When assessing the risk, take into account who has access to the lab, who has (physical) access to the computer hardware itself. Also consider whether data on those systems is properly backed up",
+		"answers":
+		[
+			{ "uuid": "17172079-ddce-40a7-b93a-f86dc6611452", "label": "No" },
+			{ "uuid": "7134876a-bd96-44dd-b483-a0089bb1e5be", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "abaf4a70-17d4-449c-9b95-5b3bcfed7e9b", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members carry data with them?",
+		"text": "Does anyone carry project data on laptops, USB sticks or other external media?",
+		"answers":
+		[
+			{ "uuid": "3c8f999d-c962-42a4-a7c3-05b21a4029ab", "label": "No" },
+			{ "uuid": "c9fc7d94-0f37-40af-9d12-7c828d1252fc", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "6aff9a57-acea-4f6d-ac98-9a067e03cc8e", "type": "option",
+		"precondition": "c9fc7d94-0f37-40af-9d12-7c828d1252fc",
+		"title": "Are all data carriers encrypted? Are accounts on the laptop password protected?",
+		"answers":
+		[
+			{ "uuid": "546d6e41-80ea-417b-b0e3-a1d9d75a3794", "label": "No" },
+			{ "uuid": "dda8513e-431d-474e-b00d-107ae995e0ee", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "84ec46bd-e714-4d98-8525-cdd0d58777ef", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members store project data in cloud accounts?",
+		"text": "Think about services like Dropbox, but also about Google Drive, Apple iCloud accounts, or Microsoft's Office365",
+		"answers":
+		[
+			{ "uuid": "099bfaa6-157a-49e5-8ef7-dad0876654f7", "label": "No" },
+			{ "uuid": "b5e75eac-3db1-4736-8b22-7f8ed99218ab", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "2d57daa6-df2e-4bf9-b024-710e74781d88", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members send project data or reports per e-mail or other messaging services?",
+		"answers":
+		[
+			{ "uuid": "1846d736-7f9c-4177-9e36-308afde00a5a", "label": "No" },
+			{ "uuid": "eed11bd7-45b8-4ca7-8c46-95c3977f2c22", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "a454fffd-f4a4-426d-b758-6d70bc4ee96b", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do all data centers where project data is stored carry sufficient certifications?",
+		"answers":
+		[
+			{ "uuid": "9acf74b1-e045-477d-be96-695692bb22c3", "label": "No" },
+			{ "uuid": "a9629ff2-30b2-4295-ae35-98320cfdb254", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "39d8dad9-7666-405c-b35c-9e430c9691ed", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Are all project web services addressed via secure http (https://)?",
+		"answers":
+		[
+			{ "uuid": "2b934f9d-d849-4e22-8e0c-65dbf7b9dbeb", "label": "No" },
+			{ "uuid": "bb176104-3bf1-4bc8-b8e8-a4b09e14b88c", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "dc327e53-cf4f-44e7-8e66-40ddf1b4ae0a", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Have project members been instructed about the risks (generic and specific to the project)?",
+		"text": "Project members may need to know about passwords (not sharing accounts, using different passwords for each service, and two factor authentication), about security for data they carry (encryption, backups), data stored in their own labs and in personal cloud accounts, and about the use of open WiFi and https",
+		"answers":
+		[
+			{ "uuid": "d802675e-f76b-4714-87ee-1b328da826ab", "label": "No" },
+			{ "uuid": "4f86bb87-06f6-4d52-a9c0-52fc97bb441c", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "67c34ee1-2e71-423c-97a7-fe6aa3723465", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Did you consider the possible impact to the project or organization if information is lost?",
+		"answers":
+		[
+			{ "uuid": "4c5d329b-6e18-4f4e-92a9-f0298adf38fe", "label": "No" },
+			{ "uuid": "a8a4dc7d-bf8c-44e3-b8b2-3e04f206f460", "label": "Yes; the effect is small" },
+			{ "uuid": "a0ec7128-1c2d-4034-b621-211bd01a9839", "label": "Yes; the risk is acceptably low" },
+			{ "uuid": "928db5fa-e16f-4c28-a321-ad62e1849b90", "label": "Yes; we will need to work on this." }
+		]
+	},
+	{
+		"uuid": "a20ddc5d-e883-4bc4-9948-36a2cb477d10", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Did you consider the possible impact to the project or organization if information leaks?",
+		"answers":
+		[
+			{ "uuid": "04dd5577-367f-4c34-b90c-4bc25d80c819", "label": "No" },
+			{ "uuid": "7c9c8543-b8f8-47b0-8279-757dbc14922f", "label": "Yes; the effect is small" },
+			{ "uuid": "6306207c-7be6-4cdf-86c4-33e0d9898479", "label": "Yes; the risk is acceptably low" },
+			{ "uuid": "efec7b38-d9a9-4495-8ba7-625dd7da6a09", "label": "Yes; we will need to work on this." }
+		]
+	},
+	{
+		"uuid": "8cd49d8f-9af0-4ea9-985a-5d45142ac388", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Did you consider the possible impact to the project or organization if information is vandalized?",
+		"answers":
+		[
+			{ "uuid": "b4dbc287-8eed-4799-800e-5ce0ede13cd8", "label": "No" },
+			{ "uuid": "ae0c3b93-f054-4052-91c0-fa9c518f5ca8", "label": "Yes; the effect is small" },
+			{ "uuid": "b1e1861b-b55f-406f-b915-b440c64d8747", "label": "Yes; the risk is acceptably low" },
+			{ "uuid": "e8943baf-4c0c-4f30-8b57-88c06f3bc4ad", "label": "Yes; we will need to work on this." }
+		]
+	},
+	{
+		"uuid": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "option",
+		"title": "Do you need to do compute capacity planning?",
+		"text": "If you require substantial amounts of compute power, amounts that are not trivially absorbed in what you usually have abailable, some planning is necessary. Do you think you need to do compute capacity planning?",
+		"answers":
+		[
+			{ "uuid": "3cc05034-3c04-4f08-bd9b-c37e87fb9c81", "label": "No" },
+			{ "uuid": "ae82cfc8-6b5f-4f06-a969-d430db181ac5", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "30027b9a-2077-4c74-9048-f0532ada9b03", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Do you know how much CPU power, memory and I/O band width a typical analysis will take?",
+		"text": "Did you run pilot jobs? Do you know this information from comparable projects? Did you test whether the work scales up as you expected if you run more than one job?",
+		"answers":
+		[
+			{ "uuid": "ea6d837d-19b7-4203-8821-136ae24738c4", "label": "No" },
+			{ "uuid": "34954537-51c3-4592-9275-a504cdc3e587", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "dd918787-ffb1-499e-98f8-42050758c7ce", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "What type of compute architecture is most suitable for your work? Will you have that available?",
+		"answers":
+		[
+			{ "uuid": "75be8d48-34ba-4ac5-ba2c-b9fd435fe705", "label": "We will use a compute cluster" },
+			{ "uuid": "3a67d096-5028-48bf-8028-407db2cd3083", "label": "We will use grid computing" },
+			{ "uuid": "6ce8d928-2bb9-4df1-8d08-cbea2fc355fd", "label": "We will use cloud computing" },
+			{ "uuid": "3a79dfdf-be0c-4835-bb89-4e1bc899cfbc", "label": "We will use a mix of computing architectures for different parts of the work" }
+		]
+	},
+	{
+		"uuid": "851a72ac-9497-4d8a-ae1a-6509d021a20b", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Is there sufficient experience with the chosen computer in the project, and sufficient time to support the project partners?",
+		"answers":
+		[
+			{ "uuid": "b1bdced0-f4f2-48f4-907f-d5fed58e15a2", "label": "We will recruit" },
+			{ "uuid": "2756894c-fe93-47da-ba87-3a31a06a1b70", "label": "Training has been arranged" },
+			{ "uuid": "0fb8abbe-26fa-4756-a1e9-43476e5e1fd1", "label": "Our people will be able to call for help" },
+			{ "uuid": "23ce8320-0b90-4360-a9db-6001ad9e7582", "label": "We have sufficient knowledge in the project" }
+		]
+	},
+	{
+		"uuid": "d8150021-19d7-4e92-90c3-d9c3d62d188e", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Have you established with the provider when will you need the compute capacity?",
+		"text": "Do you need the compute capacity also for development? Can you start developing locally and start with a deployment test later?",
+		"answers":
+		[
+			{ "uuid": "a4e0eb91-aebf-4d5c-909c-b85029477939", "label": "No" },
+			{ "uuid": "9029ca4e-1e6b-450f-a7fd-9a9c7a7809e4", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "4c71d62c-3184-43d7-bdec-f762c682035e", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Is all required compute capacity available close to the project working storage area?",
+		"answers":
+		[
+			{ "uuid": "c536e726-722c-428a-b11b-25c763da1a54", "label": "No" },
+			{ "uuid": "d439ecac-d31f-45eb-a04f-42a326e383ca", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "a39fb276-8c46-49e7-bfb9-af8ba876726f", "type": "option",
+		"precondition": "c536e726-722c-428a-b11b-25c763da1a54",
+		"title": "Did you plan the required network capacity between storage and compute services?",
+		"answers":
+		[
+			{ "uuid": "010b4ce6-0f52-437d-9971-681acdf37524", "label": "There are no special networking requirements" },
+			{ "uuid": "acec64f8-f20b-4295-85d6-a8831ee6a1a3", "label": "Copying or network delays are considered to be acceptable" },
+			{ "uuid": "b477c114-fa99-41db-aa52-b63c36ce662d", "label": "We will be able to use a dedicated network connection" }
+		]
+	},
+	{
+		"uuid": "3788d53f-c79f-43d2-b67b-7479f05cddb0", "type": "option",
+		"precondition": "c536e726-722c-428a-b11b-25c763da1a54",
+		"title": "Can all data be legally transported and processed at the computing site?",
+		"text": "Are the risks of data leaks covered?",
+		"answers":
+		[
+			{ "uuid": "e208ad3c-97e0-45b3-93cf-646bde4b7b45", "label": "No" },
+			{ "uuid": "bd3c4a00-eeb5-4b8e-a3e3-a8f5c77e9745", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "410f3709-c283-4974-83c8-6c5d24899a68", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Will different groups work on different parts of the workflow? Will parts of the computing be done on 'local' infrastructure to the group?",
+		"answers":
+		[
+			{ "uuid": "be99bdcc-76f2-43c3-b277-064062360dc1", "label": "All steps of the workflow will be performed at central computing locations" },
+			{ "uuid": "a2c4514b-61e4-47cf-ae54-7006fea37ec2", "label": "Some steps may be performed at local computing locations" }
+		]
+	},
+	{
+		"uuid": "9e34d326-5f7b-494b-bc2e-2131eef6f844", "type": "option",
+		"precondition": "a2c4514b-61e4-47cf-ae54-7006fea37ec2",
+		"title": "Is there sufficient network capacity to the other computing locations?",
+		"answers":
+		[
+			{ "uuid": "310adf1a-1b9c-42df-94ee-dd82699a2672", "label": "No" },
+			{ "uuid": "d2ceec96-5471-4073-8a25-e5201ad41c68", "label": "Yes" }
+		]
 	}
-    ]
+	]
 }
