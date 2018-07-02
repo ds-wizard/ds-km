@@ -1,0 +1,333 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://dtls.nl/schemas/dmp-knowledge-model/alt/",
+    "description": "Alternative JSON file describing a single chapter in the knowledge model for DMP questionnaires. Schema is divided into common, core and local parts and tries to be as much restrictive as is possible and needed.",
+
+    "common": {
+        "formatversion": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1
+        },
+        "namespace": {
+            "type": "string"
+        },
+        "uids": {
+            "uuid": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            "shortuid": {
+                "type": "string",
+                "pattern": "^[a-z]{3,5}$"
+            }
+        },
+        "experts": {
+            "expert": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "name": { "type": "string" },
+                    "email": { "type": "string", "format": "email" },
+                    "class": {
+                        "type": "string",
+                        "enum": ["individual", "organisation"],
+                        "default": "organisation"
+                    }
+                },
+                "required": ["uuid", "name"]
+            },
+            "experts": {
+                "type": "array",
+                "items": { "$ref": "#/common/experts/expert" },
+                "default": []
+            }
+        },
+        "references": {
+            "dmpbookreference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "type" : { "type": "string", "enum": ["dmpbook"] },
+                    "chapter": { "type": "string" }
+                },
+                "required" : ["uuid", "type", "chapter"],
+                "additionalProperties": false
+            },
+            "urlreference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "type" : { "type": "string", "enum": ["url"] },
+                    "weblink": { "type": "string", "format": "uri" },
+                    "anchor": { "type": "string" }
+                },
+                "required" : ["uuid", "type", "weblink"],
+                "additionalProperties": false
+            },
+            "crossreference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "target": { "$ref": "#/common/uids/uuid" },
+                    "type" : { "type": "string", "enum": ["xref"] },
+                    "namespace" : { "$ref": "#/common/namespace" }
+                },
+                "required": ["uuid", "type"],
+                "additionalProperties": false
+            },
+            "resourcepagereference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "type": { "type": "string", "enum": ["resourcepage"] },
+                    "shortuid": { "$ref": "#/common/uids/shortuid" }
+                },
+                "required": ["uuid", "type", "shortuid"],
+                "additionalProperties": false
+            },
+            "reference": {
+                "anyOf": [
+                    { "$ref": "#/common/references/dmpbookreference" },
+                    { "$ref": "#/common/references/resourcepagereference" },
+                    { "$ref": "#/common/references/urlreference" },
+                    { "$ref": "#/common/references/crossreference" }
+                ]
+            },
+            "references": {
+                "type": "array",
+                "items": { "$ref": "#/common/references/reference" },
+                "default": []
+            }
+        },
+        "answers": {
+            "optionanswer": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "label": { "type": "string" },
+                    "advice": { "type": "string" }
+                },
+                "required": [ "uuid", "label"],
+                "additionalProperties": false
+            },
+            "optionanswers": {
+                "type": "array",
+                "items": { "$ref": "#/common/answers/optionanswer" },
+                "minItems": 2
+            }
+        },
+        "questions":{
+            "question": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "title": { "type": "string" },
+                    "text": { "type": "string" },
+                    "precondition": { "$ref": "#/common/uids/uuid" },
+                    "references": { "$ref": "#/common/references/references" },
+                    "experts": { "$ref": "#/common/experts/experts" }
+                },
+                "required": ["uuid"]
+            },
+            "optionquestion": {
+                "type": "object",
+                "properties": {
+                    "type": { "type": "string", "enum": ["option"] },
+                    "answers": { "$ref": "#/common/answers/optionanswers" }
+                },
+                "required": ["type", "answers"]
+            },
+            "fieldquestion": {
+                "type": "object",
+                "properties": {
+                    "type": { "type": "string", "enum": ["list", "number", "string", "text", "date"] }
+                },
+                "required": ["type"]
+            }
+        },
+        "chapter": {
+            "type": "object",
+            "properties": {
+                "uuid": { "$ref": "#/common/uids/uuid" },
+                "namespace": { "$ref": "#/common/namespace" },
+                "formatversion": { "$ref": "#/common/formatversion" },
+                "title": { "type": "string" },
+                "text": { "type": "string" }
+            },
+            "required": ["uuid", "namespace", "formatversion"]
+        }
+    },
+    "core": {
+        "namespace": {
+            "type": "string",
+            "enum": ["core"]
+        },
+        "references": {
+            "crossreference": {
+                "allOf": [
+                    { "$ref": "#/common/references/crossreference" },
+                    {
+                        "properties": {
+                            "namespace" : { "$ref": "#/core/namespace" }
+                        }
+                    }
+                ]
+            },
+            "reference": {
+                "anyOf": [
+                    { "$ref": "#/common/references/dmpbookreference" },
+                    { "$ref": "#/common/references/urlreference" },
+                    { "$ref": "#/common/references/resourcepagereference" },
+                    { "$ref": "#/core/references/crossreference" }
+                ]
+            },
+            "references": {
+                "type": "array",
+                "items": { "$ref": "#/core/references/reference" },
+                "default": []
+            }
+        },
+        "questions": {
+            "abstract_question": {
+                "allOf": [
+                    { "$ref": "#/common/questions/question" },
+                    {
+                        "properties": {
+                            "title": { "type": "string" },
+                            "references": { "$ref": "#/core/references/references" }
+                        },
+                        "required": ["uuid", "title"]
+                    }
+                ]
+            },
+            "optionquestion": {
+                "allOf": [
+                    { "$ref": "#/core/questions/abstract_question" },
+                    { "$ref": "#/common/questions/optionquestion" }
+                ]
+            },
+            "fieldquestion": {
+                "allOf": [
+                    { "$ref": "#/core/questions/abstract_question" },
+                    { "$ref": "#/common/questions/fieldquestion" }
+                ]
+            },
+            "question": {
+                "anyOf": [
+                    { "$ref": "#/core/questions/optionquestion" },
+                    { "$ref": "#/core/questions/fieldquestion" }
+                ]
+            },
+            "questions": {
+                "type": "array",
+                "items": { "$ref": "#/core/questions/question" },
+                "default": []
+            }
+        },
+        "chapter": {
+            "allOf": [
+                { "$ref": "#/common/chapter" },
+                {
+                    "properties": {
+                        "namespace": { "$ref": "#/core/namespace" },
+                        "title": { "type": "string" },
+                        "questions": { "$ref": "#/core/questions/questions" }
+                    },
+                    "required": ["questions", "title"]
+                }
+            ]
+        }
+    },
+    "local": {
+        "namespace": {
+          "allOf": [
+              { "not": { "$ref": "#/core/namespace" } },
+              { "type": "string" }
+          ]
+        },
+        "questions": {
+            "abstract_question": {
+                "allOf": [
+                    { "$ref": "#/common/questions/question" },
+                    {
+                        "properties": {
+                            "namespace": { "$ref": "#/common/namespace" },
+                            "insertBefore": { "$ref": "#/common/uids/uuid" },
+                            "addReferences": { "$ref": "#/common/references/references" },
+                            "addExperts": { "$ref": "#/common/experts/experts" }
+                        },
+                        "required": ["namespace"]
+                    }
+                ]
+            },
+            "optionquestionL": {
+                "allOf": [
+                    { "$ref": "#/local/questions/abstract_question" },
+                    {
+                        "properties": {
+                            "addAnswers": { "$ref": "#/common/answers/optionanswers" }
+                        }
+                    }
+                ]
+            },
+            "fieldquestionL": {
+                "allOf": [
+                    { "$ref": "#/local/questions/abstract_question" },
+                    { "$ref": "#/common/questions/fieldquestion" }
+                ]
+            },
+            "optionquestionC": {
+                "allOf": [
+                    { "$ref": "#/core/questions/abstract_question" },
+                    {
+                        "properties": {
+                            "insertBefore": { "$ref": "#/common/uids/uuid" }
+                        }
+                    },
+                    { "$ref": "#/common/questions/optionquestion" }
+                ]
+            },
+            "fieldquestionC": {
+                "allOf": [
+                    { "$ref": "#/core/questions/abstract_question" },
+                    {
+                        "properties": {
+                            "insertBefore": { "$ref": "#/common/uids/uuid" }
+                        }
+                    },
+                    { "$ref": "#/common/questions/fieldquestion" }
+                ]
+            },
+            "question": {
+                "anyOf": [
+                    { "$ref": "#/local/questions/optionquestionL" },
+                    { "$ref": "#/local/questions/fieldquestionL" },
+                    { "$ref": "#/local/questions/optionquestionC" },
+                    { "$ref": "#/local/questions/fieldquestionC" }
+                ]
+            },
+            "questions": {
+                "type": "array",
+                "items": { "$ref": "#/local/questions/question" },
+                "default": []
+            }
+        },
+        "chapter": {
+            "allOf": [
+                { "$ref": "#/common/chapter" },
+                {
+                    "properties": {
+                        "namespace": { "$ref": "#/local/namespace" },
+                        "questions": { "$ref": "#/local/questions/questions" }
+                    },
+                    "required": ["namespace", "questions"]
+                }
+            ]
+        }
+    },
+    "anyOf": [
+        { "$ref": "#/core/chapter" },
+        { "$ref": "#/local/chapter" }
+    ]
+}
