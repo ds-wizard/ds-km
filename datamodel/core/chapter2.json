@@ -22,8 +22,10 @@
 		"title": "Is this a standard data format used by others too?",
 		"answers":
 		[
-			{ "uuid": "52b7aba3-d809-4a30-b3f8-90caa7a32a10", "label": "No" },
-			{ "uuid": "d4ce2c56-b3df-4013-9220-289b28f922de", "label": "Yes" }
+			{ "uuid": "52b7aba3-d809-4a30-b3f8-90caa7a32a10", "label": "No",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] },
+			{ "uuid": "d4ce2c56-b3df-4013-9220-289b28f922de", "label": "Yes", 
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -34,7 +36,8 @@
 		"answers":
 		[
 			{ "uuid": "86e547b8-e3ae-44b2-89ad-3a0d67decc56", "label": "No" },
-			{ "uuid": "985e488d-257f-479d-8113-5dcbe105a08e", "label": "Yes" }
+			{ "uuid": "985e488d-257f-479d-8113-5dcbe105a08e", "label": "Yes",
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -43,8 +46,10 @@
 		"title": "Will you convert to a file format more suitable for archiving later?",
 		"answers":
 		[
-			{ "uuid": "3159d107-d322-4126-958f-900fc011eeae", "label": "No" },
-			{ "uuid": "7d8dc2f5-2699-4fb3-8bf6-e620868a0583", "label": "Yes", "advice": "You may need to reserve time and budget for this" }
+			{ "uuid": "3159d107-d322-4126-958f-900fc011eeae", "label": "No", 
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] },
+			{ "uuid": "7d8dc2f5-2699-4fb3-8bf6-e620868a0583", "label": "Yes", "advice": "You may need to reserve time and budget for this",
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
 		]
 	},
 	{

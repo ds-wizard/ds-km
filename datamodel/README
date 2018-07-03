@@ -49,7 +49,6 @@ question from the other namespace by its uuid.
    * a fixed number of selections are possible for the answer, presented as radio buttons to the user. The user selects one.
    * A set of radiobuttons is good because it explicitly shows wheter the user has answered a question or not.
    * The possible answers are given in the "answers" property of the question.
-   * The question can be assigned a "weight" for one or more "metrics"
    * Each answer has a "label"; often "Yes" and "No", in some cases "Skip" and
      "Drill deeper" or equivalent are used.
    * For binary questions, the answer that does not require followup is preferred to be the first, that is a "No" or "taken care of" answer.
@@ -58,8 +57,9 @@ question from the other namespace by its uuid.
    * [how to deal with refering to an expert?]
    * Each answer has a "responsetype" that is one of "ok", "followup" or "advice".
    * Answers of type "advice" have a "text" that will be shown if that answer is selected.
-   * For a question that was assigned a "weight" for a metric, each answer
-     should specify the "measure" for that metric.
+   * Answers can specify the "measure" for one or more metrics. Every metric
+     measure that is specified will default to a weight of one, other
+     "weight"s can be specified if desired.
 17 For questions of "list" type:
    * No possible answers are given in the data model.
    * The user can type short free text items. "Add another one"....
