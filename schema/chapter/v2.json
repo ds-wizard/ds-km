@@ -136,7 +136,7 @@
             "optionanswers": {
                 "type": "array",
                 "items": { "$ref": "#/common/answers/optionanswer" },
-                "minItems": 2
+                "minItems": 1
             }
         },
         "questions":{
