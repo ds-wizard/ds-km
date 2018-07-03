@@ -1,0 +1,10 @@
+{
+    "uuid": "4bbd6e6c-d87c-493a-82b7-fce34336cc91",
+    "namespace": "lifesciences",
+    "title": "Life sciences localization",
+    "description": "Data Stewardship Knowledge Model localization for life sciences",
+    "chapterFiles": [
+        "chapter1.json",
+        "chapter6.json"
+    ]
+}

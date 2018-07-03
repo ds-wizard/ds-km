@@ -1,7 +1,7 @@
 {
 	"uuid": "d5b27482-b598-4b8c-b534-417d4ad27394",
 	"namespace": "core",
-	"formatversion": 1,
+	"formatversion": 2,
 	"title": "Data interpretation",
 	"questions" :
 	[

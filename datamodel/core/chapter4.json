@@ -1,7 +1,7 @@
 {
 	"uuid": "10a10ffd-bfe1-4c6b-bbb6-3dfb1e63a5d5",
 	"namespace": "core",
-	"formatversion": 1,
+	"formatversion": 2,
 	"title": "Data processing and curation",
 	"questions" :
 	[

@@ -1,0 +1,100 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://dtls.nl/schemas/dmp-knowledge-model/package/",
+    "description": "Schema describing package information for multiple chapter of knowledge model.",
+
+    "common": {
+        "uids": {
+            "uuid": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            }
+        },
+        "references": {
+            "dmpbookreference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "type" : { "type": "string", "enum": ["dmpbook"] },
+                    "chapter": { "type": "string" }
+                },
+                "required" : ["uuid", "type", "chapter"],
+                "additionalProperties": false
+            },
+            "urlreference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "type" : { "type": "string", "enum": ["url"] },
+                    "weblink": { "type": "string", "format": "uri" },
+                    "anchor": { "type": "string" }
+                },
+                "required" : ["uuid", "type", "weblink"],
+                "additionalProperties": false
+            },
+            "crossreference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "target": { "$ref": "#/common/uids/uuid" },
+                    "type" : { "type": "string", "enum": ["xref"] },
+                    "namespace" : { "$ref": "#/common/namespace" }
+                },
+                "required": ["uuid", "type"],
+                "additionalProperties": false
+            },
+            "resourcepagereference": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "type": { "type": "string", "enum": ["resourcepage"] },
+                    "shortuid": { "$ref": "#/common/uids/shortuid" }
+                },
+                "required": ["uuid", "type", "shortuid"],
+                "additionalProperties": false
+            },
+            "reference": {
+                "anyOf": [
+                    { "$ref": "#/common/references/dmpbookreference" },
+                    { "$ref": "#/common/references/resourcepagereference" },
+                    { "$ref": "#/common/references/urlreference" },
+                    { "$ref": "#/common/references/crossreference" }
+                ]
+            },
+            "references": {
+                "type": "array",
+                "items": { "$ref": "#/common/references/reference" },
+                "default": []
+            }
+        },
+        "metric": {
+            "type": "object",
+            "properties": {
+                "uuid": { "$ref": "#/common/uids/uuid" },
+                "title": { "type": "string" },
+                "description": { "type": "string" },
+                "references": { "$ref": "#/common/references/references" }
+            },
+            "required": ["uuid", "title"]
+        }
+    },
+    "anyOf": [
+        {
+            "type": "object",
+            "properties": {
+                "uuid": { "$ref": "#/common/uids/uuid" },
+                "title": { "type": "string" },
+                "description": { "type": "string" },
+                "chapterFiles": {
+                  "type": "array",
+                  "items": { "type": "string", "pattern": "^chapter[0-9]+\\.json$" }
+                },
+                "metrics": {
+                  "type": "array",
+                  "items": { "$ref": "#/common/metric"}
+                }
+            },
+            "required": ["uuid", "title", "chapterFiles"]
+        }
+    ]
+}

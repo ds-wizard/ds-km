@@ -1,7 +1,7 @@
 {
 	"uuid": "82fd0cce-2b41-423f-92ad-636d0872045c",
 	"namespace": "core",
-	"formatversion": 1,
+	"formatversion": 2,
 	"title": "Design of experiment",
 	"text": "Before you decide to embark on any new study, it is nowadays good practice to consider all options to keep the data generation part of your study as limited as possible. It is not because we can generate massive amounts of data that we always need to do so. Creating data with public money is bringing with it the responsibility to treat those data well and (if potentially useful) make them available for re-use by others.",
 	"questions" :

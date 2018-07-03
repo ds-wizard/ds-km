@@ -1,7 +1,7 @@
 {
 	"uuid": "c4eda690-066f-495a-8c29-8e8a258ac487",
 	"namespace": "core",
-	"formatversion": 1,
+	"formatversion": 2,
 	"title": "Data Capture/Measurement",
 	"questions" :
 	[

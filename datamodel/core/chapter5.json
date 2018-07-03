@@ -1,7 +1,7 @@
 {
 	"uuid": "83438863-0aa0-4458-b14b-2b2c0d4f811d",
 	"namespace": "core",
-	"formatversion": 1,
+	"formatversion": 2,
 	"title": "Data integration",
 	"questions" :
 	[

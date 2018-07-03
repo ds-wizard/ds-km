@@ -1,7 +1,7 @@
 {
 	"uuid": "b1df3c74-0b1f-4574-81c4-4cc2d780c1af",
 	"namespace": "core",
-	"formatversion": 1,
+	"formatversion": 2,
 	"title": "Data design and planning",
 	"text": "In the data design and planning phase, we will make sure that we know what data comes when, that we have enough storage space and compute power to deal with it, and that all the responsibilities have been taken care of.",
 	"questions" :

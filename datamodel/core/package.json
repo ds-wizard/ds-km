@@ -1,0 +1,24 @@
+{
+    "uuid": "6f6241d9-136c-4770-9d58-8a3f39607052",
+    "namespace": "core",
+    "title": "Core DS Knowledge Model",
+    "description": "Data Stewardship Knowledge Model made from Rob Hooft's mind map",
+    "chapterFiles": [
+        "chapter1.json",
+        "chapter2.json",
+        "chapter3.json",
+        "chapter4.json",
+        "chapter5.json",
+        "chapter6.json",
+        "chapter7.json"
+    ],
+    "metrics": [
+        {
+           "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a",
+           "title": "Findability",
+           "abbreviation": "F",
+           "description": "...",
+           "references": []
+        }
+    ]
+}

@@ -1,13 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://dtls.nl/schemas/dmp-knowledge-model/alt/",
-    "description": "Alternative JSON file describing a single chapter in the knowledge model for DMP questionnaires. Schema is divided into common, core and local parts and tries to be as much restrictive as is possible and needed.",
+    "id": "http://dtls.nl/schemas/dmp-knowledge-model/chapter/",
+    "description": "JSON file describing a single chapter in the knowledge model for DMP questionnaires. Schema is divided into common, core and local parts and tries to be as much restrictive as is possible and needed.",
 
     "common": {
         "formatversion": {
             "type": "integer",
-            "minimum": 1,
-            "maximum": 1
+            "minimum": 2,
+            "maximum": 2
         },
         "namespace": {
             "type": "string"
@@ -100,16 +100,50 @@
                 "default": []
             }
         },
+        "metrics": {
+            "metric_measure": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "measure": { "type": "number", "minimum": 0, "maximum": 1}
+                },
+                "required": ["uuid", "value"]
+            },
+            "metric_measures": {
+                "type": "array",
+                "items": { "$ref": "#/common/metrics/metric_measure" },
+                "default": []
+            },
+            "metric_weight": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "weight": { "type": "number", "minimum": 0}
+                },
+                "required": ["uuid", "weight"]
+            },
+            "metric_weights": {
+                "type": "array",
+                "items": { "$ref": "#/common/metrics/metric_weights" },
+                "default": []
+            }
+        },
+        "project_phase": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4,
+            "default": 2
+        },
         "answers": {
             "optionanswer": {
                 "type": "object",
                 "properties": {
                     "uuid": { "$ref": "#/common/uids/uuid" },
                     "label": { "type": "string" },
-                    "advice": { "type": "string" }
+                    "advice": { "type": "string" },
+                    "metrics": { "$ref": "#/common/metrics/metric_measures"}
                 },
-                "required": [ "uuid", "label"],
-                "additionalProperties": false
+                "required": [ "uuid", "label"]
             },
             "optionanswers": {
                 "type": "array",
@@ -122,6 +156,7 @@
                 "type": "object",
                 "properties": {
                     "uuid": { "$ref": "#/common/uids/uuid" },
+                    "phase": { "$ref": "#/common/project_phase" },
                     "title": { "type": "string" },
                     "text": { "type": "string" },
                     "precondition": { "$ref": "#/common/uids/uuid" },
@@ -134,7 +169,8 @@
                 "type": "object",
                 "properties": {
                     "type": { "type": "string", "enum": ["option"] },
-                    "answers": { "$ref": "#/common/answers/optionanswers" }
+                    "answers": { "$ref": "#/common/answers/optionanswers" },
+                    "metrics": { "$ref": "#/common/metrics/metric_weights"}
                 },
                 "required": ["type", "answers"]
             },
@@ -246,6 +282,27 @@
               { "type": "string" }
           ]
         },
+        "answers": {
+            "optionanswer": {
+                "allOf": [
+                    { "$ref": "#/common/answers/optionanswer" },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "addMetricsValues": { "$ref": "#/common/metrics/metric_values" }
+                        }
+                    }
+                ]
+            },
+            "optionanswers": {
+                "type": "array",
+                "items": { "anyOf": [
+                  { "$ref": "#/common/answers/optionanswer" },
+                  { "$ref": "#/local/answers/optionanswer" }
+                ]},
+                "minItems": 2
+            }
+        },
         "questions": {
             "abstract_question": {
                 "allOf": [
@@ -255,7 +312,8 @@
                             "namespace": { "$ref": "#/common/namespace" },
                             "insertBefore": { "$ref": "#/common/uids/uuid" },
                             "addReferences": { "$ref": "#/common/references/references" },
-                            "addExperts": { "$ref": "#/common/experts/experts" }
+                            "addExperts": { "$ref": "#/common/experts/experts" },
+                            "addMetricsWeights": { "$ref": "#/common/metrics/metric_weights"}
                         },
                         "required": ["namespace"]
                     }
@@ -266,6 +324,7 @@
                     { "$ref": "#/local/questions/abstract_question" },
                     {
                         "properties": {
+                            "answers": { "$ref": "#/local/answers/optionanswers" },
                             "addAnswers": { "$ref": "#/common/answers/optionanswers" }
                         }
                     }

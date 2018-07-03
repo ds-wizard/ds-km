@@ -1,0 +1,9 @@
+{
+    "uuid": "3000345d-b785-46e1-b7cf-15b98a583320",
+    "namespace": "elixir-nl",
+    "title": "Core DS Knowledge Model",
+    "description": "Data Stewardship Knowledge Model localization for ELIXIR-NL",
+    "chapterFiles": [
+        "chapter1.json"
+    ]
+}
