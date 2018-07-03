@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     for root, dirs, files in os.walk('../datamodel'):
         for name in files:
-            if name.endswith('.json'):
+            if name.endswith('.json') and name.startswith('chapter'):
                 print (os.path.join(root, name))
                 with open(os.path.join(root, name)) as f:
                     instance = json.load(f)

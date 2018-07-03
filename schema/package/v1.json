@@ -72,6 +72,7 @@
             "properties": {
                 "uuid": { "$ref": "#/common/uids/uuid" },
                 "title": { "type": "string" },
+                "abbreviation": { "type": "string" },
                 "description": { "type": "string" },
                 "references": { "$ref": "#/common/references/references" }
             },
