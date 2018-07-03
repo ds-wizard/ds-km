@@ -107,7 +107,7 @@
                     "uuid": { "$ref": "#/common/uids/uuid" },
                     "measure": { "type": "number", "minimum": 0, "maximum": 1}
                 },
-                "required": ["uuid", "value"]
+                "required": ["uuid", "measure"]
             },
             "metric_measures": {
                 "type": "array",
