@@ -161,7 +161,8 @@
                     "text": { "type": "string" },
                     "precondition": { "$ref": "#/common/uids/uuid" },
                     "references": { "$ref": "#/common/references/references" },
-                    "experts": { "$ref": "#/common/experts/experts" }
+                    "experts": { "$ref": "#/common/experts/experts" },
+                    "comment": { "type": "string" }
                 },
                 "required": ["uuid"]
             },
