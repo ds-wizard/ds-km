@@ -129,8 +129,10 @@
 		"text": "Do you have any means of identifying whether the raw data has been transferred error free and has not been tampered with?",
 		"answers":
 		[
-			{ "uuid": "faafb22b-bebe-4dc1-adf7-2d398d5d52de", "label": "No" },
-			{ "uuid": "5935eebc-017c-4b4c-b44f-02ba0e614eca", "label": "Yes" }
+			{ "uuid": "faafb22b-bebe-4dc1-adf7-2d398d5d52de", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "5935eebc-017c-4b4c-b44f-02ba0e614eca", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -280,7 +282,8 @@
 		"answers":
 		[
 			{ "uuid": "9e5abf02-c19d-4826-a1f2-6db5acf471a6", "label": "No" },
-			{ "uuid": "b24b7cbe-2209-47e9-87d6-401fbfb3cdec", "label": "Yes" }
+			{ "uuid": "b24b7cbe-2209-47e9-87d6-401fbfb3cdec", "label": "Yes",
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -289,8 +292,10 @@
 		"title": "Can all data be brought into the same format, e.g. RDF?",
 		"answers":
 		[
-			{ "uuid": "6c382760-fc18-47e5-9bd3-91747a24bd83", "label": "No" },
-			{ "uuid": "2d5c8925-3b78-4cdf-be9a-e66351b123fc", "label": "Yes" }
+			{ "uuid": "6c382760-fc18-47e5-9bd3-91747a24bd83", "label": "No",
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] },
+			{ "uuid": "2d5c8925-3b78-4cdf-be9a-e66351b123fc", "label": "Yes",
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
 		]
 	},
 	{

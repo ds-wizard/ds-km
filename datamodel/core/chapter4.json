@@ -89,9 +89,12 @@
 		"title": "What version of this software will you use?",
 		"answers":
 		[
-			{ "uuid": "d707aef1-856d-4ab1-903a-2bccdd0c9a65", "label": "The exact version that we point to"},
-			{ "uuid": "6730b8b5-7abe-41e5-b97c-08e1f32fb523", "label": "The current version, and we will stick with that"},
-			{ "uuid": "e3e4240a-0785-4a76-9dd6-ce073abf643b", "label": "Whatever is the latest version at the time the analysis is run"}
+			{ "uuid": "d707aef1-856d-4ab1-903a-2bccdd0c9a65", "label": "The exact version that we point to",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] },
+			{ "uuid": "6730b8b5-7abe-41e5-b97c-08e1f32fb523", "label": "The current version, and we will stick with that",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.8 } ] },
+			{ "uuid": "e3e4240a-0785-4a76-9dd6-ce073abf643b", "label": "Whatever is the latest version at the time the analysis is run",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] }
 		]
 	},
 	{
@@ -148,10 +151,14 @@
 		"text": "Make sure the license is compatible with all components you use, and also make sure the license is made explicit in the repository.",
 		"answers":
 		[
-			{ "uuid": "8d3c3ffa-f194-4930-8cc5-ffa1f8f77fd7", "label": "Apache 2.0" },
-			{ "uuid": "7e87b33a-4ba9-494a-b2f0-62ac6ad62ae8", "label": "GPL 3.0 or later" },
-			{ "uuid": "5e5babe4-a37d-449e-9929-887614d55a3a", "label": "AGPL 3.0 or later" },
-			{ "uuid": "7785de46-4011-43b0-8b90-3a088c829d2c", "label": "LGPL 3.0 or later" },
+			{ "uuid": "8d3c3ffa-f194-4930-8cc5-ffa1f8f77fd7", "label": "Apache 2.0",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] },
+			{ "uuid": "7e87b33a-4ba9-494a-b2f0-62ac6ad62ae8", "label": "GPL 3.0 or later",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] },
+			{ "uuid": "5e5babe4-a37d-449e-9929-887614d55a3a", "label": "AGPL 3.0 or later",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] },
+			{ "uuid": "7785de46-4011-43b0-8b90-3a088c829d2c", "label": "LGPL 3.0 or later",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.8 } ] },
 			{ "uuid": "584339ee-b313-44ef-8aba-c0f252eb2ade", "label": "We are using a different license"}
 		]
 	},
@@ -167,8 +174,10 @@
 		"title": "Is this a recognised reusable open source license?",
 		"answers":
 		[
-			{ "uuid": "aefb5f4a-dd6e-44a1-8834-a064a4534196", "label": "No" },
-			{ "uuid": "d67fb3b1-3f11-481b-bf2c-ff4302bc5326", "label": "Yes" }
+			{ "uuid": "aefb5f4a-dd6e-44a1-8834-a064a4534196", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "d67fb3b1-3f11-481b-bf2c-ff4302bc5326", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.3 } ] }
 		]
 	},
 	{
@@ -515,8 +524,10 @@
 		"title": "Do you plan taking special measures to guaranty the integrity of tools in the workflow?",
 		"answers":
 		[
-			{ "uuid": "fe13a1d8-06be-430c-a486-7346b769b48f", "label": "No", "advice": "Consider changing this!" },
-			{ "uuid": "ebc3a870-5f89-43ad-9d90-de5c91528ea2", "label": "Yes" }
+			{ "uuid": "fe13a1d8-06be-430c-a486-7346b769b48f", "label": "No", "advice": "Consider changing this!",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "ebc3a870-5f89-43ad-9d90-de5c91528ea2", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -558,9 +569,12 @@
 		"title": "Will you test whether known correct results are obtained over time?",
 		"answers":
 		[
-			{ "uuid": "a547baf0-4638-4b38-97b9-9a4eafce20fa", "label": "No" },
-			{ "uuid": "4cc765a2-39b3-4790-bd7d-979361677a20", "label": "Yes, we will regularly make test runs on the same data" },
-			{ "uuid": "c9c66274-13b1-4ab8-8245-56ab7415d858", "label": "Yes, we will automatically make test runs on the same data" }
+			{ "uuid": "a547baf0-4638-4b38-97b9-9a4eafce20fa", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "4cc765a2-39b3-4790-bd7d-979361677a20", "label": "Yes, we will regularly make test runs on the same data",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.8 } ] },
+			{ "uuid": "c9c66274-13b1-4ab8-8245-56ab7415d858", "label": "Yes, we will automatically make test runs on the same data",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -589,8 +603,7 @@
 		"title": "How will you make sure to know what exactly has been run?",
 		"answers":
 		[
-			{ "uuid": "1f88f7ba-2912-489c-910d-df16540d797a", "label": "This has been arranged" },
-			{ "uuid": "12a85bf3-1407-4783-9e73-564d75e7c98a", "label": "More guidance is desired" }
+			{ "uuid": "12a85bf3-1407-4783-9e73-564d75e7c98a", "label": "Explore" }
 		]
 	},
 	{
@@ -599,8 +612,10 @@
 		"title": "Will you keep results together with all processing scripts or workflows including documentation of the versions of the tools that have been run?",
 		"answers":
 		[
-			{ "uuid": "f5518b1e-77c8-47f7-98e4-4be5ea58f9ab", "label": "No" },
-			{ "uuid": "0d9d77b1-bbcd-480e-b165-8bcb29bd4a67", "label": "Yes" }
+			{ "uuid": "f5518b1e-77c8-47f7-98e4-4be5ea58f9ab", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "0d9d77b1-bbcd-480e-b165-8bcb29bd4a67", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -610,8 +625,10 @@
 		"text": "File formats like VCF (for genetics) and TIFF (for images) have possibilities to document metadata in the file header. It is a good idea to use work flow tools that use these fields to document what was done to obtain the data.",
 		"answers":
 		[
-			{ "uuid": "a3031101-4077-4c5b-877f-bff865c1920c", "label": "No" },
-			{ "uuid": "2f4e30d6-6a43-4f52-b146-26f1f690549f", "label": "Yes" }
+			{ "uuid": "a3031101-4077-4c5b-877f-bff865c1920c", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "2f4e30d6-6a43-4f52-b146-26f1f690549f", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -621,8 +638,10 @@
 		"text": "Especially if analysis and processing of data in the project is done on multiple different computers by different people, it is a good idea to have your own repository of tools and their blessed versions.",
 		"answers":
 		[
-			{ "uuid": "45d40564-f470-4e56-9262-cfcb94b1bbef", "label": "No" },
-			{ "uuid": "a7b481ba-13cb-407d-896f-cc662160f4ee", "label": "Yes" }
+			{ "uuid": "45d40564-f470-4e56-9262-cfcb94b1bbef", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "a7b481ba-13cb-407d-896f-cc662160f4ee", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -637,8 +656,10 @@
 		"text": "Especially if analysis and processing of data in the project is done on multiple different computers by different people, it is a good idea to have your own repository of reference data versions.",
 		"answers":
 		[
-			{ "uuid": "67ba0ead-d482-48c8-965a-2472a99648f3", "label": "No" },
-			{ "uuid": "e8b48f96-d3d5-4e54-a215-4454d08e6b59", "label": "Yes" }
+			{ "uuid": "67ba0ead-d482-48c8-965a-2472a99648f3", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "e8b48f96-d3d5-4e54-a215-4454d08e6b59", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -653,8 +674,10 @@
 		"text": "It is much easier to guarantee consistency and reproducibility if all data processing is done using automated work flows, especially if the workflow engine automatically keeps adequate provenance data.",
 		"answers":
 		[
-			{ "uuid": "a9db9446-5bbc-431e-981d-d2f487ab28ae", "label": "No" },
-			{ "uuid": "ea0ab328-184c-40f2-a391-c89617b37fe9", "label": "Yes" }
+			{ "uuid": "a9db9446-5bbc-431e-981d-d2f487ab28ae", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "ea0ab328-184c-40f2-a391-c89617b37fe9", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -664,8 +687,10 @@
 		"text": "Will you be able to find and reproduce exactly which version was used for any analysis? Not only for the major tools in the workflows, but also for all 'glue' code and small tools you created especially for the project?",
 		"answers":
 		[
-			{ "uuid": "76d2327b-8ac0-44eb-9d42-2434182824a0", "label": "No" },
-			{ "uuid": "8afcd524-0916-4980-8bee-15b00bf5c335", "label": "Yes" }
+			{ "uuid": "76d2327b-8ac0-44eb-9d42-2434182824a0", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "8afcd524-0916-4980-8bee-15b00bf5c335", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -673,8 +698,7 @@
 		"title": "How will you validate the integrity of the results?",
 		"answers":
 		[
-			{ "uuid": "58851f0f-b3da-4694-9350-0055c072b9f6", "label": "This has been arranged" },
-			{ "uuid": "30d1e85c-0e3e-482f-97f9-22a7658b329e", "label": "More guidance is desired" }
+			{ "uuid": "30d1e85c-0e3e-482f-97f9-22a7658b329e", "label": "Explore" }
 		]
 	},
 	{
@@ -684,8 +708,10 @@
 		"text": "There are surprisingly many complications that can cause (slight) inconsistencies between results when workflows are run on different compute infrastructures. A good way to make sure this does not bite you is to run a subset of all jobs on all different infrastructure to check the consistency.",
 		"answers":
 		[
-			{ "uuid": "8d038086-a207-46f4-9e7c-180780d9c3a6", "label": "No" },
-			{ "uuid": "be0761b6-421a-4683-8ff9-de496868feea", "label": "Yes" }
+			{ "uuid": "8d038086-a207-46f4-9e7c-180780d9c3a6", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "be0761b6-421a-4683-8ff9-de496868feea", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -695,8 +721,10 @@
 		"text": "Surrounding all tools in your data processing and analysis workflows with the 'boilerplate' code necessary on the computer system you are using is tedious and error prone. Especially if you are using the same tools in multiple different work flows and/or on multiple different computer architectures. Automated instrumentation, e.g. by using a workflow management system, can prevent many mistakes.",
 		"answers":
 		[
-			{ "uuid": "9ffbb7f2-5eb8-455a-bd98-6547887e0eb6", "label": "No" },
-			{ "uuid": "4715c145-8e34-45b9-b7c1-77d835d3ade8", "label": "Yes" }
+			{ "uuid": "9ffbb7f2-5eb8-455a-bd98-6547887e0eb6", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "4715c145-8e34-45b9-b7c1-77d835d3ade8", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -706,8 +734,10 @@
 		"text": "Validation of results without a golden standard is very hard. One way of doing it is to develop two solutions for a problem (two independent workflows or two independently developed tools) to check whether the results are identical or comparable.",
 		"answers":
 		[
-			{ "uuid": "f14a3135-32d9-4520-bc09-45f50f0c6031", "label": "No" },
-			{ "uuid": "56c899c9-fb21-449c-a905-4b9f4fbf6458", "label": "Yes" }
+			{ "uuid": "f14a3135-32d9-4520-bc09-45f50f0c6031", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0, "weight": 0.5 } ] },
+			{ "uuid": "56c899c9-fb21-449c-a905-4b9f4fbf6458", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0, "weight": 0.5 } ] }
 		]
 	},
 	{
@@ -717,8 +747,10 @@
 		"text": "Running a small subset of the data repeatedly can be useful to catch unexpected problems that would otherwise be very hard to detect.",
 		"answers":
 		[
-			{ "uuid": "168ba2ce-e5aa-4dc5-a840-845a5c20058f", "label": "No" },
-			{ "uuid": "2c9f5097-34a8-4852-8e10-b26bd71ee1ba", "label": "Yes" }
+			{ "uuid": "168ba2ce-e5aa-4dc5-a840-845a5c20058f", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "2c9f5097-34a8-4852-8e10-b26bd71ee1ba", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
