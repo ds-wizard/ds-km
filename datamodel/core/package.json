@@ -19,6 +19,27 @@
            "abbreviation": "F",
            "description": "...",
            "references": []
+        },
+        {
+           "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63",
+           "title": "Accessibility",
+           "abbreviation": "A",
+           "description": "...",
+           "references": []
+        },
+        {
+           "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385",
+           "title": "Interoperability",
+           "abbreviation": "I",
+           "description": "...",
+           "references": []
+        },
+        {
+           "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7",
+           "title": "Reusability",
+           "abbreviation": "R",
+           "description": "...",
+           "references": []
         }
     ]
 }
