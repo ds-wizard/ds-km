@@ -58,7 +58,8 @@
 		"text": "Sometimes the type of data you collect can not be stored in a commonly used data format. In such cases you may need to make your own, keeping interoperability as high as possible.",
 		"answers":
 		[
-			{ "uuid": "c470de83-0a9b-4d7d-a2cd-903bfbedc8d1", "label": "No, all of my data will fit in common formats" },
+			{ "uuid": "c470de83-0a9b-4d7d-a2cd-903bfbedc8d1", "label": "No, all of my data will fit in common formats",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
 			{ "uuid": "bf76127e-0497-46eb-8b5d-e4cfcb84f622", "label": "Yes, I will need to use custom formats for some of my data" }
 		],
 		"references":
@@ -74,9 +75,12 @@
 		"text": "Even if the data format you are using is unique to your project, the discrete data items should be reused or reusable as much as possible. Data type registries can help with that.",
 		"answers":
 		[
-			{ "uuid": "48ed91ec-5dbc-497a-9f84-f26daa60c0bd", "label": "No, all of my data types are described in a data type registry already" },
-			{ "uuid": "e4fdba2a-f6e6-4087-99a6-0e00c1bcd5f7", "label": "Yes, I will add new types to an existing data type registry" },
-			{ "uuid": "28c5197f-a3fe-4b96-b0fb-83e271155a95", "label": "Yes, I will create my own data type registry" }
+			{ "uuid": "48ed91ec-5dbc-497a-9f84-f26daa60c0bd", "label": "No, all of my data types are described in a data type registry already",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
+			{ "uuid": "e4fdba2a-f6e6-4087-99a6-0e00c1bcd5f7", "label": "Yes, I will add new types to an existing data type registry",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
+			{ "uuid": "28c5197f-a3fe-4b96-b0fb-83e271155a95", "label": "Yes, I will create my own data type registry",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.5 } ] }
 		]
 	},
 	{
@@ -91,8 +95,10 @@
 		"text": "For good interoperability the use of controlled vocabularies for each discrete data item is advisable. If such vocabularies exist, it is best to reuse those.",
 		"answers":
 		[
-			{ "uuid": "efe50d9c-4dc2-49c5-ae61-1dc8ff0d7655", "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types" },
-			{ "uuid": "668ecd34-4413-4aa9-8921-616325766ec0", "label": "Yes, I will make and publish a vocabulary or ontology for some of my data" }
+			{ "uuid": "efe50d9c-4dc2-49c5-ae61-1dc8ff0d7655", "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
+			{ "uuid": "668ecd34-4413-4aa9-8921-616325766ec0", "label": "Yes, I will make and publish a vocabulary or ontology for some of my data",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.5 } ] }
 		],
 		"references":
 		[
@@ -106,9 +112,12 @@
 		"title": "How will you design your new data format?",
 		"answers":
 		[
-			{ "uuid": "bda912f3-14a7-4242-b293-025f1b19892d", "label": "There is a closely related more generic and open format that I can specialize" },
-			{ "uuid": "b4334e27-3e6c-4215-b4cb-f60eabd9c61e", "label": "I will use a Linked Data format" },
-			{ "uuid": "974fa3ea-4047-4006-a49c-f7972bf9c961", "label": "I will use a completely custom data format"}
+			{ "uuid": "bda912f3-14a7-4242-b293-025f1b19892d", "label": "There is a closely related more generic and open format that I can specialize",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.5 } ] },
+			{ "uuid": "b4334e27-3e6c-4215-b4cb-f60eabd9c61e", "label": "I will use a Linked Data format",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.8 } ] },
+			{ "uuid": "974fa3ea-4047-4006-a49c-f7972bf9c961", "label": "I will use a completely custom data format",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] }
 		],
 		"references":
 		[
@@ -122,8 +131,10 @@
 		"title": "Will you describe your new data format for others?",
 		"answers":
 		[
-			{ "uuid": "057e84be-3329-4fa2-9cc8-d37f53a44cd0", "label": "No, this is not needed" },
-			{ "uuid": "252757f4-e4ed-4c3f-8c13-b14f55133dfe", "label": "Yes, I will register my standards at a data standards registry" }
+			{ "uuid": "057e84be-3329-4fa2-9cc8-d37f53a44cd0", "label": "No, this is not needed",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] },
+			{ "uuid": "252757f4-e4ed-4c3f-8c13-b14f55133dfe", "label": "Yes, I will register my standards at a data standards registry",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -132,7 +143,6 @@
 		"text": "For the re-usability of your data by yourself or others at a later stage, a lot of information about the data, how it was collected and how it can be used should be stored with the data. Such data about the data is called metadata, and this set of questions are about this metadata",
 		"answers":
 		[
-			{ "uuid": "f9dd59ef-6af1-4b48-be9d-97102b25f0c8", "label": "Skip" },
 			{ "uuid": "6d18bfff-0f53-469b-934e-9806dda9d4fb", "label": "Explore" }
 		],
 		"references":
@@ -147,8 +157,10 @@
 		"title": "Do suitable 'Minimal Metadata About ...' (MIA...) standards exist for your experiments?",
 		"answers":
 		[
-			{ "uuid": "a23664b1-a17c-41fe-855c-db274984b355", "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?" },
-			{ "uuid": "08bd1365-7f0e-4b78-aeb1-3c0e85e84cb6", "label": "Yes" }
+			{ "uuid": "a23664b1-a17c-41fe-855c-db274984b355", "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "08bd1365-7f0e-4b78-aeb1-3c0e85e84cb6", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -160,8 +172,10 @@
 		"title": "Do you have a good idea of what metadata is needed to make it possible for others to read and interpret your data in the future?",
 		"answers":
 		[
-			{ "uuid": "49e35bb1-6145-4b44-b390-9e1fe896415e", "label": "No" },
-			{ "uuid": "b3acec51-6385-43f1-a28a-123ab28b798f", "label": "Yes" }
+			{ "uuid": "49e35bb1-6145-4b44-b390-9e1fe896415e", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "b3acec51-6385-43f1-a28a-123ab28b798f", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -175,8 +189,10 @@
 		"text": "Often it is easiest to make sure you collect the metadata as early as possible.",
 		"answers":
 		[
-			{ "uuid": "bc41fb1c-e64b-44cd-b0d6-45aebc3a9b84", "label": "No" },
-			{ "uuid": "2fb268e0-2c25-475a-b7e1-7794a05a3091", "label": "Yes" }
+			{ "uuid": "bc41fb1c-e64b-44cd-b0d6-45aebc3a9b84", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "2fb268e0-2c25-475a-b7e1-7794a05a3091", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -190,7 +206,8 @@
 		"text": "Adding more than the strict minimum metadata about your experiment will possibly allow more wide re-use of your data, with associated higher data citation rates. Please note that it is not easy for yourself to see all other ways in which others could be reusing your data.",
 		"answers":
 		[
-			{ "uuid": "b2ca0d26-7fdd-44f1-b064-bc4cd4c45661", "label": "No, I will just document the bare minimum" },
+			{ "uuid": "b2ca0d26-7fdd-44f1-b064-bc4cd4c45661", "label": "No, I will just document the bare minimum",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
 			{ "uuid": "cb765913-50c9-482e-bf10-5f5f91d0e473", "label": "Yes, I will document more metadata than needed for reproducibility" }
 		]
 	},
@@ -200,9 +217,12 @@
 		"title": "How will you balance the extra efforts with the potential for added reusability?",
 		"answers":
 		[
-			{ "uuid": "3002eaed-c31f-4bdd-83ed-49262ae79165", "label": "I will see what I can do" },
-			{ "uuid": "7ef32aea-b6a7-4297-92bd-0869a13276ad", "label": "I will use preselected additional standard modules of metadata" },
-			{ "uuid": "018fc8a0-c51e-48f4-99d5-77e8c9dcf51f", "label": "I will collect all metadata I can gather and document the data set beyond minimal standards" }
+			{ "uuid": "3002eaed-c31f-4bdd-83ed-49262ae79165", "label": "I will see what I can do",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] },
+			{ "uuid": "7ef32aea-b6a7-4297-92bd-0869a13276ad", "label": "I will use preselected additional standard modules of metadata",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.8 } ] },
+			{ "uuid": "018fc8a0-c51e-48f4-99d5-77e8c9dcf51f", "label": "I will collect all metadata I can gather and document the data set beyond minimal standards",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -222,7 +242,6 @@
 		"text": "Working with large amounts of heterogenous data in a larger research group has implications for the data integrity. How do you make sure every step of the workflow is done with the right version of the data? How do you handle the situation when a mistake is uncovered? Will you be able to redo the strict minimum data handling?",
 		"answers":
 		[
-			{ "uuid": "e36f5a68-860e-41fa-9158-b785317610ff", "label": "Skip" },
 			{ "uuid": "8608d3df-7d7f-4893-8f80-e5297167b213", "label": "Explore" }
 		],
 		"references":
@@ -238,8 +257,10 @@
 		"text": "Data corruption or mistakes can happen with large amounts of files or large files. Keeping a master list with data checksums can be helpful to prevent expensive mistakes. It can also be helpful to keep the sample list under version control forcing that all changes are well documented.",
 		"answers":
 		[
-			{ "uuid": "637f4603-0a24-47d1-a2f7-96958b4841fd", "label": "No" },
-			{ "uuid": "e7a8b914-54f3-4a72-9136-74a99db73926", "label": "Yes" }
+			{ "uuid": "637f4603-0a24-47d1-a2f7-96958b4841fd", "label": "No",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "e7a8b914-54f3-4a72-9136-74a99db73926", "label": "Yes",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -248,8 +269,10 @@
 		"title": "Will you define a way to detect file or sample swaps, e.g. by measuring something independently?",
 		"answers":
 		[
-			{ "uuid": "4bd98e96-3d02-4967-b56b-d94a7b0079c6", "label": "No" },
-			{ "uuid": "ec3718dd-c8f4-417d-91ca-93408fa89953", "label": "Yes" }
+			{ "uuid": "4bd98e96-3d02-4967-b56b-d94a7b0079c6", "label": "No",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "ec3718dd-c8f4-417d-91ca-93408fa89953", "label": "Yes",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -259,8 +282,10 @@
 		"text": "It is not always clear to everyone in the project (ad outside) what can and can not be done with a data set. It is helpful to associate each data set with a license as early as possible in the project. A data license should ideally be as free as possible: any restriction like 'only for non-commercial use' or 'attribution required' may reduce the reusability and thereby the number of citations. If possible, use a computer-readable and computer actionable license.",
 		"answers":
 		[
-			{ "uuid": "0b0e1e89-3b7b-4d9e-95f6-d96397b28c3b", "label": "No" },
-			{ "uuid": "6110d79f-1cf0-4a89-8a6d-84a472388fd8", "label": "Yes" }
+			{ "uuid": "0b0e1e89-3b7b-4d9e-95f6-d96397b28c3b", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "6110d79f-1cf0-4a89-8a6d-84a472388fd8", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -270,8 +295,10 @@
 		"text": "It is very likely that data will be moved and copied. At some point people may lose track of the origins. It can be helpful to have the licenses (of coarse as open as possible) stored in close association with the data.",
 		"answers":
 		[
-			{ "uuid": "e95aca23-fa1b-4e91-b6f3-748aed0d0925", "label": "No" },
-			{ "uuid": "245e5ab0-baa7-48b3-97b8-55d2af5e4fa8", "label": "Yes" }
+			{ "uuid": "e95aca23-fa1b-4e91-b6f3-748aed0d0925", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "245e5ab0-baa7-48b3-97b8-55d2af5e4fa8", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -286,8 +313,10 @@
 		"text": "To make your experiments reproducible, all steps in the data processing must be documented in detail. The software you used, including version number, all options and parameters. This information together for every step of the analysis is part of the so-called data provenance. There are more questions regarding this in the chapter on data processing and curation.",
 		"answers":
 		[
-			{ "uuid": "5480e0b8-8e0b-4b66-929f-eef3b89e6113", "label": "All steps will be documented in an (electronic) lab notebook" },
-			{ "uuid": "32a1e3ef-6aa8-4eae-a517-b1dcf866d118", "label": "Our work flow system documents the provenance automatically and completely" }
+			{ "uuid": "5480e0b8-8e0b-4b66-929f-eef3b89e6113", "label": "All steps will be documented in an (electronic) lab notebook",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] },
+			{ "uuid": "32a1e3ef-6aa8-4eae-a517-b1dcf866d118", "label": "Our work flow system documents the provenance automatically and completely",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -301,7 +330,6 @@
 		"text": "Putting some thoughts into file naming can save a lot of trouble later.",
 		"answers":
 		[
-			{ "uuid": "1ff5080d-ffdc-4eda-8ad8-4e6b69f01a07", "label": "Skip" },
 			{ "uuid": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c", "label": "Explore" }
 		]
 	},
@@ -312,8 +340,10 @@
 		"text": "It can help if everyone in the project uses the same naming scheme.",
 		"answers":
 		[
-			{ "uuid": "f449e055-8f13-495c-aea9-7440800f6a45", "label": "No" },
-			{ "uuid": "8b13234e-879b-4221-be12-4df24e6de00e", "label": "Yes" }
+			{ "uuid": "f449e055-8f13-495c-aea9-7440800f6a45", "label": "No",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "8b13234e-879b-4221-be12-4df24e6de00e", "label": "Yes",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -323,8 +353,10 @@
 		"text": "Advice: Use the same identifiers for sample IDs etc throughout the entire project.",
 		"answers":
 		[
-			{ "uuid": "9beb6069-5477-4b99-b28c-921cf38e8470", "label": "No" },
-			{ "uuid": "8032494b-e0cb-4fe5-94e7-d8a203292537", "label": "Yes" }
+			{ "uuid": "9beb6069-5477-4b99-b28c-921cf38e8470", "label": "No",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "8032494b-e0cb-4fe5-94e7-d8a203292537", "label": "Yes",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -334,8 +366,10 @@
 		"text": "The file names are very useful as metadata for people involved in the project, but to computers they are just identifiers. To prevent accidents with e.g. renamed files metadata information should always also be available elsewhere and not only through the file name.",
 		"answers":
 		[
-			{ "uuid": "df53b7a2-1b1e-4f5d-99df-b9a7a1da91e9", "label": "No, the file names in the project are an essential part of the metadata" },
-			{ "uuid": "2f695e7c-0661-4b43-ba55-1a82a2c706ef", "label": "Yes, all metadata is also explicitly available elsewhere" }
+			{ "uuid": "df53b7a2-1b1e-4f5d-99df-b9a7a1da91e9", "label": "No, the file names in the project are an essential part of the metadata",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "2f695e7c-0661-4b43-ba55-1a82a2c706ef", "label": "Yes, all metadata is also explicitly available elsewhere",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -432,8 +466,10 @@
 		"title": "Will the archive be stored in a remote location, protecting the data against disasters?",
 		"answers":
 		[
-			{ "uuid": "a15afda5-9e5a-40bd-a802-fc811fa39d20", "label": "No" },
-			{ "uuid": "4bc5017e-2808-4fc1-95b9-77bd2e755bb6", "label": "Yes" }
+			{ "uuid": "a15afda5-9e5a-40bd-a802-fc811fa39d20", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "4bc5017e-2808-4fc1-95b9-77bd2e755bb6", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -442,8 +478,10 @@
 		"title": "Will the archive need to be protected against loss or theft?",
 		"answers":
 		[
-			{ "uuid": "f312f518-69cb-442b-95a4-9523a25770db", "label": "No" },
-			{ "uuid": "29498f8c-ea29-4855-82db-5b1228dc09ba", "label": "Yes" }
+			{ "uuid": "f312f518-69cb-442b-95a4-9523a25770db", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "29498f8c-ea29-4855-82db-5b1228dc09ba", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -452,8 +490,12 @@
 		"title": "Will the archive be encrypted?",
 		"answers":
 		[
-			{ "uuid": "5e4bb06c-01ff-4964-890f-6f56bc4b819a", "label": "No" },
-			{ "uuid": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98", "label": "Yes" }
+			{ "uuid": "5e4bb06c-01ff-4964-890f-6f56bc4b819a", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "ad3ab129-dab0-421c-9840-e35b53931768", "label": "No, the data does not need protection",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.8 } ] },
+			{ "uuid": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -462,8 +504,10 @@
 		"title": "Is it clear who has access to the key? Also in case of a required data restore?",
 		"answers":
 		[
-			{ "uuid": "68a83934-190b-4e33-9ac0-138e34e5a206", "label": "No" },
-			{ "uuid": "05e2cbc6-fdac-4f74-b6e6-733012da2657", "label": "Yes" }
+			{ "uuid": "68a83934-190b-4e33-9ac0-138e34e5a206", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "05e2cbc6-fdac-4f74-b6e6-733012da2657", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -498,8 +542,10 @@
 		"text": "If the 'master copy' of the data is available on line, it should probably be protected against being tampered with.",
 		"answers":
 		[
-			{ "uuid": "60ea11ca-2179-4f7d-9587-bd22c22e4daa", "label": "No" },
-			{ "uuid": "c5a2baff-b326-483f-834c-7f2b39979ea2", "label": "Yes" }
+			{ "uuid": "60ea11ca-2179-4f7d-9587-bd22c22e4daa", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "c5a2baff-b326-483f-834c-7f2b39979ea2", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -508,8 +554,10 @@
 		"title": "Is there an interface and a defined process for people to request access to the data?",
 		"answers":
 		[
-			{ "uuid": "1ec0c5b1-b905-4bb4-aa56-45f7321258c1", "label": "No" },
-			{ "uuid": "01322e43-a6ae-458c-9a01-5b70bd3b9be9", "label": "Yes" }
+			{ "uuid": "1ec0c5b1-b905-4bb4-aa56-45f7321258c1", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "01322e43-a6ae-458c-9a01-5b70bd3b9be9", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -518,8 +566,10 @@
 		"title": "Has it been established who has access to the archive, and how fast?",
 		"answers":
 		[
-			{ "uuid": "dc7c7529-58c6-4414-84cc-7a19325cb73b", "label": "No" },
-			{ "uuid": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441", "label": "Yes" }
+			{ "uuid": "dc7c7529-58c6-4414-84cc-7a19325cb73b", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -528,8 +578,10 @@
 		"title": "Has it been established who can ask for a restore during the project?",
 		"answers":
 		[
-			{ "uuid": "0591c012-e567-4383-b39f-22b0abfe0847", "label": "No" },
-			{ "uuid": "c406aebf-a807-4bda-bcdf-5066d0b1c17b", "label": "Yes" }
+			{ "uuid": "0591c012-e567-4383-b39f-22b0abfe0847", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "c406aebf-a807-4bda-bcdf-5066d0b1c17b", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -538,8 +590,10 @@
 		"title": "If the data is voluminous, will the project be able to cope with the time needed for a restore?",
 		"answers":
 		[
-			{ "uuid": "acf31ff1-9d81-4671-89fb-fa4c60c5845a", "label": "No" },
-			{ "uuid": "dfb89c83-afc2-481e-895c-bff5468d6daf", "label": "Yes" }
+			{ "uuid": "acf31ff1-9d81-4671-89fb-fa4c60c5845a", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "dfb89c83-afc2-481e-895c-bff5468d6daf", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -548,8 +602,10 @@
 		"title": "has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
 		"answers":
 		[
-			{ "uuid": "79bf552f-4230-4026-9976-984ecdb8d889", "label": "No" },
-			{ "uuid": "aad68118-2159-4871-8d35-aeab6e66314e", "label": "Yes" }
+			{ "uuid": "79bf552f-4230-4026-9976-984ecdb8d889", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "aad68118-2159-4871-8d35-aeab6e66314e", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -558,8 +614,10 @@
 		"title": "Has it been established how long the archived data need to be kept? For each of the different parts of the archive (raw data / results)?",
 		"answers":
 		[
-			{ "uuid": "1d8e9897-3713-4480-98ba-9b1c71f41eaf", "label": "No" },
-			{ "uuid": "07fdfbfb-9c7c-4e9c-83fa-bccf85094fb6", "label": "Yes" }
+			{ "uuid": "1d8e9897-3713-4480-98ba-9b1c71f41eaf", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "07fdfbfb-9c7c-4e9c-83fa-bccf85094fb6", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -574,8 +632,10 @@
 		"text": "See also all questions about keeping metadata and data formats. Make sure the metadata is kept close to the data in the archive, and that community supported data formats are used for all long term archiving.",
 		"answers":
 		[
-			{ "uuid": "2e2460d5-5233-434b-9229-7cd775cb13b2", "label": "No" },
-			{ "uuid": "31de7c36-5d2c-469a-82b8-af870cb3560c", "label": "Yes" }
+			{ "uuid": "2e2460d5-5233-434b-9229-7cd775cb13b2", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "31de7c36-5d2c-469a-82b8-af870cb3560c", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -596,9 +656,9 @@
 		"uuid": "df36fb68-131c-4f31-a42b-684abf523bbc", "type": "option",
 		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
 		"title": "How will you work with your data?",
+                "text": "There are several questions regarding the dynamics of the data in the working area, who works with it, the software that is run on it, etc.",
 		"answers":
 		[
-			{ "uuid": "9ad3ed65-7215-465a-b31a-f5a11fc6abdc", "label": "Skip" },
 			{ "uuid": "5af813b7-cb41-4eb9-afe7-ca364771b74e", "label": "Explore" }
 		]
 	},
@@ -758,7 +818,6 @@
 		"title": "How will project partners access the work space?",
 		"answers":
 		[
-			{ "uuid": "fe6bacd4-f8dd-4940-b5c7-1a335e116531", "label": "Skip" },
 			{ "uuid": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d", "label": "Explore" }
 		]
 	},
@@ -809,11 +868,10 @@
 		"uuid": "b171ec17-d7b5-4726-ae22-0d892b106cf8", "type": "option",
 		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
 		"title": "How available/reliable should must the work space be?",
-		"text": "There are a number of questions that can help you to decide whether your work space will be reliable enough for your project. Do you want to skip those questions now, or go through them?",
+		"text": "There are a number of questions that can help you to decide whether your work space will be reliable enough for your project.",
 		"answers":
 		[
-			{ "uuid": "c4f91550-c713-4066-b9e1-0419513820ba", "label": "Skip this section" },
-			{ "uuid": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45", "label": "Explore this with more questions" }
+			{ "uuid": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45", "label": "Explore" }
 		]
 	},
 	{
@@ -903,8 +961,7 @@
 		"text": "There are many factors that can contribute to the risk of information loss or information leaks. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
 		"answers":
 		[
-			{ "uuid": "875ec70a-5169-43b6-8fa2-b6de51c26575", "label": "Skip this set of questions" },
-			{ "uuid": "b2f76c0a-847a-403c-9ed6-09cad10e625e", "label": "Explore the factors" }
+			{ "uuid": "b2f76c0a-847a-403c-9ed6-09cad10e625e", "label": "Explore" }
 		]
 	},
 	{
@@ -914,8 +971,10 @@
 		"text": "When assessing the risk, take into account who has access to the lab, who has (physical) access to the computer hardware itself. Also consider whether data on those systems is properly backed up",
 		"answers":
 		[
-			{ "uuid": "17172079-ddce-40a7-b93a-f86dc6611452", "label": "No" },
-			{ "uuid": "7134876a-bd96-44dd-b483-a0089bb1e5be", "label": "Yes" }
+			{ "uuid": "17172079-ddce-40a7-b93a-f86dc6611452", "label": "No",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0} ] },
+			{ "uuid": "7134876a-bd96-44dd-b483-a0089bb1e5be", "label": "Yes",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0} ] }
 		]
 	},
 	{
@@ -966,8 +1025,10 @@
 		"title": "Do all data centers where project data is stored carry sufficient certifications?",
 		"answers":
 		[
-			{ "uuid": "9acf74b1-e045-477d-be96-695692bb22c3", "label": "No" },
-			{ "uuid": "a9629ff2-30b2-4295-ae35-98320cfdb254", "label": "Yes" }
+			{ "uuid": "9acf74b1-e045-477d-be96-695692bb22c3", "label": "No",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0} ] },
+			{ "uuid": "a9629ff2-30b2-4295-ae35-98320cfdb254", "label": "Yes",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0} ] }
 		]
 	},
 	{
