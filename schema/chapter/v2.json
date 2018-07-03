@@ -124,7 +124,7 @@
             },
             "metric_weights": {
                 "type": "array",
-                "items": { "$ref": "#/common/metrics/metric_weights" },
+                "items": { "$ref": "#/common/metrics/metric_weight" },
                 "default": []
             }
         },
