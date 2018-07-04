@@ -29,8 +29,7 @@
 		[
 			{ "uuid": "786edd0d-ae07-489c-b078-423c18e02043", "label": "The party measuring the data owns it" },
 			{ "uuid": "306f7ef4-97fd-47b0-84de-f192cb94ea3a", "label": "The project partners acquire full ownership"},
-			{ "uuid": "399245d4-7988-461c-b940-ee813a1c99b1", "label": "We have made other arrangements" },
-			{ "uuid": "840b561f-3e8f-435e-a1f2-68dc75dc4f22", "label": "This still needs to be decided" }
+			{ "uuid": "399245d4-7988-461c-b940-ee813a1c99b1", "label": "We have made other arrangements" }
 		]
 	},
 	{
@@ -47,8 +46,7 @@
 			{ "uuid": "b10cd3bf-ecd6-4fa1-a9c4-d8d974de714c", "label": "The measuring party will publish it after a fixed embargo period" },
 			{ "uuid": "a3393cc1-3393-45ba-ba91-e447bf755eb7", "label": "The measuring party will publish it when the project tells them to" },
 			{ "uuid": "350fa8cc-ecc8-40cc-a50e-1d87405970b1", "label": "The measuring party will delete the data, the project partners will deal with data publication"},
-			{ "uuid": "8197cf1c-999a-43ae-9e29-bb5d0452052b", "label": "We have made other arrangements" },
-			{ "uuid": "2fa2df9a-5dee-496c-9aa3-24dba3bf2b80", "label": "This still needs to be decided" }
+			{ "uuid": "8197cf1c-999a-43ae-9e29-bb5d0452052b", "label": "We have made other arrangements" }
 		]
 	},
 	{
@@ -85,8 +83,10 @@
 		"text": "Has the storage and transport format of the primary data been established between the people responsible for the measurement and the people responsible for the processing?",
 		"answers":
 		[
-			{ "uuid": "856438ef-024b-4e82-b8ba-0010beb39f61", "label": "No" },
-			{ "uuid": "abc6b715-2d2b-4ee8-81c5-ac2c55d1cac2", "label": "Yes" }
+			{ "uuid": "856438ef-024b-4e82-b8ba-0010beb39f61", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "abc6b715-2d2b-4ee8-81c5-ac2c55d1cac2", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -107,7 +107,6 @@
 		"text": "Has time been reserved on any tape/disk reading and writing stations?",
 		"answers":
 		[
-			{ "uuid": "5c3c64b1-fdbd-4267-9b24-dc59456a3828", "label": "Not yet" },
 			{ "uuid": "be674d81-cadb-470a-acf9-7365175b533d", "label": "Yes, has been taken care of" }
 		]
 	},
@@ -118,7 +117,6 @@
 		"text": "Can the volume of data be accommodated by the standard network connection? Has a special network connection (e.g. light path) that is needed been reserved?",
 		"answers":
 		[
-			{ "uuid": "b7a228a3-7555-4572-b753-6383ddb5fd1a", "label": "Not yet" },
 			{ "uuid": "44dfd6cb-b3ce-41a4-bca8-9689be8df67c", "label": "Yes, has been taken care of" }
 		]
 	},
@@ -217,8 +215,10 @@
 		"title": "How will the data be captured?",
 		"answers":
 		[
-			{ "uuid": "407560bc-705a-4885-85d6-4f61fe58eeed", "label": "All immediately in digital form"},
-			{ "uuid": "374974a6-2c51-4508-aa93-9ef8f1ef65fd", "label": "Data will first be on paper"}
+			{ "uuid": "407560bc-705a-4885-85d6-4f61fe58eeed", "label": "All immediately in digital form",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "374974a6-2c51-4508-aa93-9ef8f1ef65fd", "label": "Data will first be on paper",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] }
 		]
 	},
 	{
@@ -229,8 +229,7 @@
 		[
 			{ "uuid": "9d51aae1-ca1b-4267-b0df-d43dc85f5bc6", "label": "A specialized team"},
 			{ "uuid": "9660950a-41d7-4c3b-a6fd-97e58c8fa412", "label": "One of the members of the project team"},
-			{ "uuid": "82ef3ee8-461e-4f5b-a66a-2d4aaccbe68b", "label": "We have made other arrangements"},
-			{ "uuid": "aebe403b-e350-474e-94fb-d210d15e8b4d", "label": "This is not yet clear"}
+			{ "uuid": "82ef3ee8-461e-4f5b-a66a-2d4aaccbe68b", "label": "We have made other arrangements"}
 		]
 	},
 	{
@@ -264,10 +263,14 @@
 		"title": "Is there a risk of different interpretations? Subjectivity?",
 		"answers":
 		[
-			{ "uuid": "2a1261d5-6678-4181-8ab9-b9671546a02a", "label": "The data capture is objective"},
-			{ "uuid": "c4443193-11f5-4a9e-9444-fabf575d9246", "label": "There are internal controls to deal with interperation differences"},
-			{ "uuid": "2dc09f04-0613-45e5-bba9-18ffe4db8a82", "label": "We accept the risk of different interpretations"},
-			{ "uuid": "8bf15202-b0dc-4be7-8093-72349c7b65c9", "label": "We do validation afterwards"},
+			{ "uuid": "2a1261d5-6678-4181-8ab9-b9671546a02a", "label": "The data capture is objective",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "c4443193-11f5-4a9e-9444-fabf575d9246", "label": "There are internal controls to deal with interperation differences",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "2dc09f04-0613-45e5-bba9-18ffe4db8a82", "label": "We accept the risk of different interpretations",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "8bf15202-b0dc-4be7-8093-72349c7b65c9", "label": "We do validation afterwards",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
 			{ "uuid": "17443e43-bc5a-49ce-8197-6997e9cf3d41", "label": "We have made other arrangements"}
 		]
 	},
