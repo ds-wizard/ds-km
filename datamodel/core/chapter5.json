@@ -240,7 +240,7 @@
 		],
                 "references":
                 [
-                    { "uuid": "e9c41e81-ec67-43e2-aa9c-01e8c8841b12", "type": "weblink", "url": "https://en.wikipedia.org/wiki/Linked_data", "anchor": "Linked data (wikipedia)" }
+                    { "uuid": "e9c41e81-ec67-43e2-aa9c-01e8c8841b12", "type": "url", "weblink": "https://en.wikipedia.org/wiki/Linked_data", "anchor": "Linked data (wikipedia)" }
                 ]
 	},
 	{
