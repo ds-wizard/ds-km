@@ -18,11 +18,11 @@
 	{
 		"uuid": "13c2a033-423c-4bb3-b596-840de2f6c9c9", "type": "option",
 		"precondition": "bb00eb32-e1c2-4288-a874-02264f757cb3",
-		"title": "Will you be exploring options, or run in bulk?",
+		"title": "Will you be exploring parameters to the workflow, or run in bulk?",
 		"text": "What will be the operational mode for your workflows? Will you be exploring options by changing tools and tweaking parameters? Of will you be running the same exact workflow on a large number of data files?",
 		"answers":
 		[
-			{ "uuid": "ec5b49f0-2a91-47fa-aee2-9636b8f9f2d0", "label": "We will be exploring options" },
+			{ "uuid": "ec5b49f0-2a91-47fa-aee2-9636b8f9f2d0", "label": "We will be exploring parameters to the workflow" },
 			{ "uuid": "a91af528-0ab7-4b23-8b27-b131a7731dce", "label": "We will be running in bulk" },
 			{ "uuid": "f357ae1a-6563-48dd-add2-580e1f1a565d", "label": "A bit of both"}
 		],
@@ -52,13 +52,13 @@
 		[
 			{ "uuid": "94f0f330-54fd-425f-a644-b8a7c674026f", "label": "Data will be available at the start of the project, no waiting needed"},
 			{ "uuid": "4844d32a-be6a-490a-b12e-3a31503d7bd1", "label": "They can start with a subset as soon as our first data comes" },
-			{ "uuid": "e5bc08e1-815f-44f6-94ea-3a32e1808d51", "label": "Workflow development will commence as soon as our data is available" }
+			{ "uuid": "e5bc08e1-815f-44f6-94ea-3a32e1808d51", "label": "Workflow development will commence as soon as our data is available", "advice": "Take this into account when doing the time planning for the critical path" }
 		]
 	},
 	{
 		"uuid": "d206fcaf-a238-48ef-925e-6f006d39f2af", "type": "option",
 		"precondition": "3996826a-b67a-42e7-9223-f2a438fddbe6",
-		"title": "How will data serurity be dealt with?",
+		"title": "How will data security be dealt with?",
 		"answers":
 		[
 			{ "uuid": "01a9f738-7950-4ee0-b9d0-ecd0df8fa7f2", "label": "Data security is not an issue"},
@@ -138,10 +138,14 @@
 		"title": "Did you consider existing options?",
 		"answers":
 		[
-			{ "uuid": "1f53a431-ec8d-4a16-875a-c2f7843a2294", "label": "Nothing like this exists" },
-			{ "uuid": "37f92ce2-48e9-4437-bb34-b034b69ad4a2", "label": "Authors of similar alternatives are not willing to work with us" },
-			{ "uuid": "45aa7af4-137a-4db6-abd7-2260e32f40a5", "label": "Alternatives exist, but we prefer to develop our own" },
-			{ "uuid": "f43fbe42-2e6c-4c96-a66d-a717c68e63ec", "label": "This will be one of the prime distinctive outcomes of our project"}
+			{ "uuid": "1f53a431-ec8d-4a16-875a-c2f7843a2294", "label": "Nothing like this exists", "advice": "really?",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "37f92ce2-48e9-4437-bb34-b034b69ad4a2", "label": "Authors of similar alternatives are not willing to work with us",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.5 } ] },
+			{ "uuid": "45aa7af4-137a-4db6-abd7-2260e32f40a5", "label": "Alternatives exist, but we prefer to develop our own",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "f43fbe42-2e6c-4c96-a66d-a717c68e63ec", "label": "This will be one of the prime distinctive outcomes of our project",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -186,10 +190,13 @@
 		"title": "Did you choose the workflow engine you will be using?",
 		"answers":
 		[
-			{ "uuid": "e856c626-bf9e-4550-997c-c6d0f66205e4", "label": "Yes, we will be using what we always use", "advice": "Make sure that you are not missing out on alternatives that would have better properties for the project"},
-			{ "uuid": "7626c84b-1b2a-4809-99d1-da4ad42f3c9b", "label": "Yes, we have selected one based on what features we need" },
-			{ "uuid": "e9e91c82-a5b5-4766-a643-b00a68c37d10", "label": "Not yet, we will" },
-			{ "uuid": "00842b33-a854-4e25-8bed-05e2462fecf1", "label": "Not yet, please guide the choice with more questions on this topic" }
+                        { "uuid": "9e30350e-5d5b-4ecc-992c-3dd16f8638b3", "label": "Workflows will be run from a computer command line",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "e856c626-bf9e-4550-997c-c6d0f66205e4", "label": "Yes, we will be using what we always use", "advice": "Make sure that you are not missing out on alternatives that would have better properties for the project",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.5 } ] },
+			{ "uuid": "7626c84b-1b2a-4809-99d1-da4ad42f3c9b", "label": "Yes, we have selected one based on what features we need",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "00842b33-a854-4e25-8bed-05e2462fecf1", "label": "Explore" }
 		],
 		"references":
 		[
@@ -204,8 +211,10 @@
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
-			{ "uuid": "25b6c0b3-b957-45d9-b657-7b1ccbbfbbb0", "label": "No" },
-			{ "uuid": "1693bb64-b047-4464-ae45-c5e8aca12263", "label": "Yes" }
+			{ "uuid": "25b6c0b3-b957-45d9-b657-7b1ccbbfbbb0", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "1693bb64-b047-4464-ae45-c5e8aca12263", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -226,8 +235,10 @@
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
-			{ "uuid": "e3241ef2-9716-46f7-a1f4-4ae3c3446c6f", "label": "No" },
-			{ "uuid": "fadd9cac-c327-447f-b490-c9c295dd18b5", "label": "Yes" }
+			{ "uuid": "e3241ef2-9716-46f7-a1f4-4ae3c3446c6f", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "fadd9cac-c327-447f-b490-c9c295dd18b5", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -314,8 +325,10 @@
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
-			{ "uuid": "c3c74172-5030-44e0-9c04-6c29479ccfdc", "label": "No" },
-			{ "uuid": "3d891703-defa-4c47-aeb6-e52b6afbdcb6", "label": "Yes" }
+			{ "uuid": "c3c74172-5030-44e0-9c04-6c29479ccfdc", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "3d891703-defa-4c47-aeb6-e52b6afbdcb6", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -435,8 +448,10 @@
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
-			{ "uuid": "b863299e-94c3-4a17-ad66-748f7cba80d6", "label": "No" },
-			{ "uuid": "5a54c4c2-b1c4-4e51-87e8-102a6af3d961", "label": "Yes" }
+			{ "uuid": "b863299e-94c3-4a17-ad66-748f7cba80d6", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "5a54c4c2-b1c4-4e51-87e8-102a6af3d961", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -494,7 +509,6 @@
 		"title": "Can you make a decision for the workflow engine based on the criteria deemed important?",
 		"answers":
 		[
-			{ "uuid": "80164f45-1925-4b3f-b977-e6a1c59f8760", "label": "No selection can be made at this point" },
 			{ "uuid": "eb286cc2-f632-4c77-9a4d-8f3e8d734516", "label": "We will use 'make'" },
 			{ "uuid": "d827db55-b0c7-4ba0-a692-5a334e29f0a0", "label": "We will use 'snakemake'" },
 			{ "uuid": "d508ff6c-fbce-45b5-918c-0322a4687f2e", "label": "We will use 'taverna'" },
@@ -556,11 +570,16 @@
 		"title": "How will you handle upgrades to tools?",
 		"answers":
 		[
-			{ "uuid": "805ed3e6-a9c0-4f57-b62b-c82c42b4761b", "label": "We will trust a new release and deploy" },
-			{ "uuid": "272626a8-90f7-4339-9f9b-a3fc7f1c8968", "label": "We will offer multiple versions of tools for the end user to choose" },
-			{ "uuid": "9437d4c6-46e3-4f59-88e0-a1eea71d912f", "label": "We will only deploy selected stable upgrades to tools" },
-			{ "uuid": "b585a5f5-accf-43c1-9ccf-4e88e08ca132", "label": "We will test all tool changes on a subset of our own data before deployment" },
-			{ "uuid": "67bf1b45-722b-44ed-877f-37eaf66dc41b", "label": "We will not change tool versions after the initial selection", "advice": "Please consider how you will be solving issues/problems you find yourself and that are fixed in a new release" }
+			{ "uuid": "805ed3e6-a9c0-4f57-b62b-c82c42b4761b", "label": "We will trust a new release and deploy",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "272626a8-90f7-4339-9f9b-a3fc7f1c8968", "label": "We will offer multiple versions of tools for the end user to choose",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "9437d4c6-46e3-4f59-88e0-a1eea71d912f", "label": "We will only deploy selected stable upgrades to tools",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "b585a5f5-accf-43c1-9ccf-4e88e08ca132", "label": "We will test all tool changes on a subset of our own data before deployment",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "67bf1b45-722b-44ed-877f-37eaf66dc41b", "label": "We will not change tool versions after the initial selection", "advice": "Please consider how you will be solving issues/problems you find yourself and that are fixed in a new release",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] }
 		]
 	},
 	{
@@ -593,9 +612,12 @@
 		"title": "How will you deal with the situation where support for a tool is dropped?",
 		"answers":
 		[
-			{ "uuid": "d3fe6de8-b411-41c7-a336-c49e37d4b9d1", "label": "We will keep running it unchanged" },
-			{ "uuid": "8e9bcaec-cc3a-45e3-a430-3cbf1488a2a3", "label": "We will start to do necessary maintenance ourselves" },
-			{ "uuid": "523531e2-b2ae-4fbd-90a3-c2c007a9f04e", "label": "We will look for alternatives" }
+			{ "uuid": "d3fe6de8-b411-41c7-a336-c49e37d4b9d1", "label": "We will keep running it unchanged",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "8e9bcaec-cc3a-45e3-a430-3cbf1488a2a3", "label": "We will start to do necessary maintenance ourselves",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "523531e2-b2ae-4fbd-90a3-c2c007a9f04e", "label": "We will look for alternatives",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
