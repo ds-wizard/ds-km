@@ -268,6 +268,19 @@
 		]
 	},
 	{
+		"uuid": "1d1ac8bb-66c8-4b9e-bfc9-4c26f3598062", "type": "option",
+		"precondition": "a62a452b-dfed-478c-ad94-0e433277da94",
+		"title": "Will you be making your harmonization results available to others?",
+		"text": "By publishing either exactly what you did or (better) make sure that the harmonized data is available for reuse, you may save others the effort ",
+		"answers":
+		[
+			{ "uuid": "a0665f70-e1c1-4cd5-b079-2b270a3d3a4b", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "ba788639-5816-4f1f-9e28-5bbc0c85401f", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		]
+        },
+	{
 		"uuid": "7e77ee02-ce26-4cd9-b07d-3eea03bc35c9", "type": "option",
 		"precondition": "59efe0c4-fc18-4082-a656-6d0c1db45899",
 		"title": "Will you be using data that needs to be (re-)made computer readable first?",
@@ -275,7 +288,7 @@
 		"answers":
 		[
 			{ "uuid": "d613ee29-a81b-44aa-83b5-2bf21ba43d22", "label": "No" },
-			{ "uuid": "4a3e9d91-240b-4eae-bc90-02c12a2a4744", "label": "Yes, I will make sure to make this data available with my results." }
+			{ "uuid": "4a3e9d91-240b-4eae-bc90-02c12a2a4744", "label": "Yes" }
 		],
 		"references":
 		[
@@ -284,6 +297,18 @@
 		]
 	},
 	{
+		"uuid": "530124a4-c7e9-4821-b26d-32a8ecd0d978", "type": "option",
+		"precondition": "4a3e9d91-240b-4eae-bc90-02c12a2a4744",
+		"title": "Will you be making this data available in computer readable form to others?",
+		"answers":
+		[
+			{ "uuid": "14c64eb2-d270-49b8-ac89-3ca42d52977f", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "dce00426-ea06-4aac-979e-ccefb9ba01f9", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		]
+        },
+        {
 		"uuid": "588ad032-56ba-4d52-b29c-6a5b56aa6569", "type": "option",
 		"title": "Will reference data be created?",
 		"text": "Will any of the data that you will be creating form a reference data set for future research (by others)?",
