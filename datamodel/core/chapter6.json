@@ -24,8 +24,10 @@
 		"text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
 		"answers":
 		[
-			{ "uuid": "7b450ee7-8783-4adc-9955-fd667fac5a56", "label": "We use lab notebooks", "advice": "Make sure to make the notes available in electronic form along with your data" },
-			{ "uuid": "a1e67aee-77dd-486f-ab51-e5a6f39a32cc", "label": "We use an electronic lab notebook" },
+			{ "uuid": "7b450ee7-8783-4adc-9955-fd667fac5a56", "label": "We use lab notebooks", "advice": "Make sure to make the notes available in electronic form along with your data",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] },
+			{ "uuid": "a1e67aee-77dd-486f-ab51-e5a6f39a32cc", "label": "We use an electronic lab notebook",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] },
 			{ "uuid": "ccdb5296-919c-44ac-89df-351fd2e564ae", "label": "We use other arrangements" }
 		]
 	},
