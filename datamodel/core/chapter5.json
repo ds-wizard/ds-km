@@ -119,7 +119,7 @@
 		],
 		"references":
 		[
-			{ "uuid": "03640bc5-605b-4a3a-a5de-2dae66542b66", "type": "url", "weblink": "rightfield.org.uk", "anchor": "Rightfield: Template fields in Microsoft Excel" }
+			{ "uuid": "03640bc5-605b-4a3a-a5de-2dae66542b66", "type": "url", "weblink": "http://rightfield.org.uk/", "anchor": "Rightfield: Template fields in Microsoft Excel" }
 		]
 	},
 	{
@@ -216,8 +216,10 @@
 		"title": "Will you be using a workflow for data integration, e.g. with tools for database access or conversion?",
 		"answers":
 		[
-			{ "uuid": "7623d103-5bd6-4407-81b0-aa6c7f0cbc48", "label": "No" },
-			{ "uuid": "eade1627-7100-413e-8330-32b186d70fd7", "label": "Yes" }
+			{ "uuid": "7623d103-5bd6-4407-81b0-aa6c7f0cbc48", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "eade1627-7100-413e-8330-32b186d70fd7", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -231,9 +233,15 @@
 		"title": "Will you use a 'linked data' approach?",
 		"answers":
 		[
-			{ "uuid": "01aaaf8a-ee94-4cd0-8e36-adcb7ac9d18d", "label": "No" },
-			{ "uuid": "9cea7792-3e4c-42a6-b7e0-1abbdc9e2a5b", "label": "Yes" }
-		]
+			{ "uuid": "01aaaf8a-ee94-4cd0-8e36-adcb7ac9d18d", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "9cea7792-3e4c-42a6-b7e0-1abbdc9e2a5b", "label": "Yes",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		],
+                "references":
+                [
+                    { "uuid": "e9c41e81-ec67-43e2-aa9c-01e8c8841b12", "type": "weblink", "url": "https://en.wikipedia.org/wiki/Linked_data", "anchor": "Linked data (wikipedia)" }
+                ]
 	},
 	{
 		"uuid": "811965f0-b1b7-4b4b-92a6-01cd83b08fa2", "type": "option",
@@ -339,8 +347,10 @@
 		"text": "Some parameters you select on may have been collected only for a subset of the subjects or data points. An obvious example is if you match on secondary education type, you will bias to people over 18 years old because younger people do not have this field. In many cases the selection bias may be a lot less obvious and special measures exist to verify that the diversity of the sample is not reduced by the integration step.",
 		"answers":
 		[
-			{ "uuid": "0cf3e92f-4cdf-4446-b2c6-1801338ec432", "label": "No" },
-			{ "uuid": "26f64599-467a-4339-a971-74ac638f4c37", "label": "Yes" }
+			{ "uuid": "0cf3e92f-4cdf-4446-b2c6-1801338ec432", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "26f64599-467a-4339-a971-74ac638f4c37", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -357,10 +367,12 @@
 		"uuid": "15eb6fe6-7b21-493b-a5a0-09ac63212ab6", "type": "option",
 		"precondition": "61d05101-2eaa-4ebb-8be7-2fcac50f2fb2",
 		"title": "Did you make a conscious decision to be either accurate or complete?",
+                "text": "If the coupling parameters are lenient, you will find more connections than when they are strict. But you may find that they are less accurate. This is a balance.",
 		"answers":
 		[
-			{ "uuid": "46ec2d2b-d1c2-44cd-8a99-2866f65349d2", "label": "No" },
-			{ "uuid": "ff4b9f47-39f4-436f-89bf-910dda950380", "label": "Yes" }
+			{ "uuid": "d12bd4e1-2fed-4ea0-b428-fe6f735d740a", "label": "Accurate is more important" },
+                        { "uuid": "ced5f19d-eaa9-4576-82d4-7ef97741a7e0", "label": "We can balance the two" },
+			{ "uuid": "626fd6e7-8f74-4675-a097-5416f40685e2", "label": "Completeness of the mapping is most important" }
 		]
 	},
 
