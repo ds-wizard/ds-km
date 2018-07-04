@@ -40,6 +40,20 @@
            "abbreviation": "R",
            "description": "...",
            "references": []
+        },
+        {
+           "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249",
+           "title": "Good DMP Practice",
+           "abbreviation": "G",
+           "description": "...",
+           "references": []
+        },
+        {
+           "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0",
+           "title": "Openness",
+           "abbreviation": "O",
+           "description": "...",
+           "references": []
         }
     ]
 }
