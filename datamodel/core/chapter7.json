@@ -10,8 +10,10 @@
 		"title": "Will you be working with the philosophy 'as open as possible' for your data?",
 		"answers":
 		[
-			{ "uuid": "ca5c002d-fb3f-4873-bede-a8f304a3934f", "label": "No", "advice": "You will need to explain!" },
-			{ "uuid": "67a8f6e1-50db-4b04-b1fa-d52941f4e535", "label": "Yes" }
+			{ "uuid": "ca5c002d-fb3f-4873-bede-a8f304a3934f", "label": "No", "advice": "You will need to explain!",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
+			{ "uuid": "67a8f6e1-50db-4b04-b1fa-d52941f4e535", "label": "Yes",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -24,8 +26,10 @@
 		"title": "Can all of your data become completely open immediately?",
 		"answers":
 		[
-			{ "uuid": "b3739ebd-2d8e-42d3-9425-a7d6d1b26c79", "label": "No" },
-			{ "uuid": "8c33553c-9603-4156-82d7-85ab3d7de090", "label": "Yes" }
+			{ "uuid": "b3739ebd-2d8e-42d3-9425-a7d6d1b26c79", "label": "No",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
+			{ "uuid": "8c33553c-9603-4156-82d7-85ab3d7de090", "label": "Yes",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -78,8 +82,10 @@
 		"text": "Making use of the same pseudonymization for different studies makes it possible to integrate information later. Obviously it also raises the risk of re-identification",
 		"answers":
 		[
-			{ "uuid": "40be8b9d-0e4d-400f-a982-c0b53bc64b61", "label": "No" },
-			{ "uuid": "041db1a8-e263-4df0-aea6-337063008b37", "label": "Yes"}
+			{ "uuid": "40be8b9d-0e4d-400f-a982-c0b53bc64b61", "label": "No",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
+			{ "uuid": "041db1a8-e263-4df0-aea6-337063008b37", "label": "Yes",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -120,8 +126,10 @@
 		"title": "Is it clear who owns data and documents?",
 		"answers":
 		[
-			{ "uuid": "3de2edc2-c05f-49a7-8d1b-699cdaa98350", "label": "No" },
-			{ "uuid": "fc008273-7382-422b-8735-1b75dfb5ba4c", "label": "Yes"}
+			{ "uuid": "3de2edc2-c05f-49a7-8d1b-699cdaa98350", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "fc008273-7382-422b-8735-1b75dfb5ba4c", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -131,8 +139,10 @@
 		"text": "In one case in the past, all documents that had been assembled by a project in a documentation system had to be deleted because not a single person could decide to move them to a new platform when the documentation system was going off-line.",
 		"answers":
 		[
-			{ "uuid": "46f96ea2-3a3c-43d1-b6a2-394a49034ae2", "label": "No" },
-			{ "uuid": "8eff4cfd-65c1-435f-b27c-e805b3d72c5c", "label": "Yes"}
+			{ "uuid": "46f96ea2-3a3c-43d1-b6a2-394a49034ae2", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "8eff4cfd-65c1-435f-b27c-e805b3d72c5c", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -151,9 +161,12 @@
 		"title": "Where will the data be stored?",
 		"answers":
 		[
-			{ "uuid": "09f8f08d-04ae-463a-bbe0-f5ce05595777", "label": "In a domain repository (like EBI's EGA) that arranges restricted access" },
-			{ "uuid": "46a96e04-4d2a-41e8-90e7-b6afa3f318fd", "label": "In a national or institutional repository that arranges restricted access" },
-			{ "uuid": "00e67874-dbe8-41a4-b9fc-0a4429765fce", "label": "In a dedicated repository", "advice": "make sure you can guarantee longevity of this repository!" }
+			{ "uuid": "09f8f08d-04ae-463a-bbe0-f5ce05595777", "label": "In a domain repository (like EBI's EGA) that arranges restricted access",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] },
+			{ "uuid": "46a96e04-4d2a-41e8-90e7-b6afa3f318fd", "label": "In a national or institutional repository that arranges restricted access",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.3 } ] },
+			{ "uuid": "00e67874-dbe8-41a4-b9fc-0a4429765fce", "label": "In a dedicated repository", "advice": "make sure you can guarantee longevity of this repository!",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] }
 		]
 	},
 	{
@@ -162,8 +175,10 @@
 		"title": "Who will take care of authentication of potential users?",
 		"answers":
 		[
-			{ "uuid": "dc4e23fd-5477-41c8-919d-74df342f2d33", "label": "We will use username/password authentication, possibly augmented with two-factor security" },
-			{ "uuid": "0c05f134-b694-4697-9d72-750374da423c", "label": "We will use a single sign-on system such as edugain" },
+			{ "uuid": "dc4e23fd-5477-41c8-919d-74df342f2d33", "label": "We will use username/password authentication, possibly augmented with two-factor security",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.5 } ] },
+			{ "uuid": "0c05f134-b694-4697-9d72-750374da423c", "label": "We will use a single sign-on system such as edugain",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
 			{ "uuid": "109e8083-1eb6-4b69-b7ae-32dab8b6a5f6", "label": "We will make other arrangements" }
 		]
 	},
@@ -178,9 +193,12 @@
 		"title": "Who will take care of authorization of potential users?",
 		"answers":
 		[
-			{ "uuid": "ed47c9b7-9c2b-48ab-bdf4-efd8913f673e", "label": "One of the project members will authorize", "advice" : "It is not a good idea to tie this to a person" },
-			{ "uuid": "ca3b6db3-cd6c-4139-8d24-e5ded15c2796", "label": "We will set up a data access committee" },
-			{ "uuid": "d010e09e-8ce8-47c6-a1f9-f281519ba936", "label": "We will make use of an existing data access committee" },
+			{ "uuid": "ed47c9b7-9c2b-48ab-bdf4-efd8913f673e", "label": "One of the project members will authorize", "advice" : "It is not a good idea to tie this to a person",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "ca3b6db3-cd6c-4139-8d24-e5ded15c2796", "label": "We will set up a data access committee",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.8 } ] },
+			{ "uuid": "d010e09e-8ce8-47c6-a1f9-f281519ba936", "label": "We will make use of an existing data access committee",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] },
 			{ "uuid": "f57960de-3cfb-47da-a30b-da7c5d27a38e", "label": "We will make other arrangements" }
 		]
 	},
@@ -200,8 +218,10 @@
 		"title": "Are the criteria for application to access the data openly available?",
 		"answers":
 		[
-			{ "uuid": "b3d0fe1f-6ffd-4c29-9e67-22fcad6fb00b", "label": "No" },
-			{ "uuid": "c9509a79-9c56-44eb-8508-dc1c18dfec8d", "label": "Yes" }
+			{ "uuid": "b3d0fe1f-6ffd-4c29-9e67-22fcad6fb00b", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "c9509a79-9c56-44eb-8508-dc1c18dfec8d", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -210,8 +230,10 @@
 		"title": "Has auditing for the re-use been arranged?",
 		"answers":
 		[
-			{ "uuid": "651f3154-1f37-4367-9651-ba5dfdf09783", "label": "No" },
-			{ "uuid": "0f2324d2-73c7-46e3-83b4-f38e78b3f0ac", "label": "Yes" }
+			{ "uuid": "651f3154-1f37-4367-9651-ba5dfdf09783", "label": "No",
+                        "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0, "weight": 0.5 } ] },
+			{ "uuid": "0f2324d2-73c7-46e3-83b4-f38e78b3f0ac", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0, "weight": 0.5 } ] }
 		]
 	},
 	{
@@ -220,9 +242,12 @@
 		"title": "Are there business reasons why (some of your) data can not be completely open?",
 		"answers":
 		[
-			{ "uuid": "c87ef228-d9e5-4387-8ff6-5b6a05402a95", "label": "No" },
-			{ "uuid": "1c377b4c-bd6f-457e-8e7e-06efcd1b6444", "label": "Yes, patents still need to be applied for" },
-			{ "uuid": "0cfc22ec-5551-4a37-84ec-308c85440af5", "label": "Yes, other business reasons" }
+			{ "uuid": "c87ef228-d9e5-4387-8ff6-5b6a05402a95", "label": "No",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] },
+			{ "uuid": "1c377b4c-bd6f-457e-8e7e-06efcd1b6444", "label": "Yes, patents still need to be applied for",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.8 } ] },
+			{ "uuid": "0cfc22ec-5551-4a37-84ec-308c85440af5", "label": "Yes, other business reasons",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] }
 		]
 	},
 	{
@@ -236,9 +261,12 @@
 		"title": "Are there other reasons why (some of your) data can not be completely open?",
 		"answers":
 		[
-			{ "uuid": "0eeabfdc-d62a-4868-bece-b696bccecc3a", "label": "No" },
-			{ "uuid": "cb052963-c573-4567-a462-4a5444a87808", "label": "Yes, papers need to be submitted first" },
-			{ "uuid": "2b755a90-8a43-41c0-9020-5e2b9ca8f88e", "label": "Yes, other reasons" }
+			{ "uuid": "0eeabfdc-d62a-4868-bece-b696bccecc3a", "label": "No",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] },
+			{ "uuid": "cb052963-c573-4567-a462-4a5444a87808", "label": "Yes, papers need to be submitted first",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.5 } ] },
+			{ "uuid": "2b755a90-8a43-41c0-9020-5e2b9ca8f88e", "label": "Yes, other reasons",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] }
 		]
 	},
 	{
@@ -252,9 +280,12 @@
 		"title": "Will you use a limited embargo?",
 		"answers":
 		[
-			{ "uuid": "3da39a55-18e5-4b0a-8da1-5b7fc5260ad1", "label": "No, some restricted data will be embargoed indefinitely" },
-			{ "uuid": "82f84d7e-338c-46bc-9785-42df560c01ed", "label": "No, data will be released only as soon as restrictions are falling away" },
-			{ "uuid": "1b120967-803b-458b-b565-dbee6a785509", "label": "Yes, data that is not legally restrained will be released after a fixed time period, unconditionally" }
+			{ "uuid": "3da39a55-18e5-4b0a-8da1-5b7fc5260ad1", "label": "No, some restricted data will be embargoed indefinitely",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
+			{ "uuid": "82f84d7e-338c-46bc-9785-42df560c01ed", "label": "No, data will be released only as soon as restrictions are falling away",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.5 } ] },
+			{ "uuid": "1b120967-803b-458b-b565-dbee6a785509", "label": "Yes, data that is not legally restrained will be released after a fixed time period, unconditionally",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -274,14 +305,19 @@
 		"text": "Domain repositories often have the best functionality to make the data findable and reusable. Many of them are listed in https://fairsharing,org/",
 		"answers":
 		[
-			{ "uuid": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff", "label": "A domain-specific repository" },
-			{ "uuid": "fb96d008-f31a-4a1a-b203-b3f9bb32fcc8", "label": "Our national repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability" },
-			{ "uuid": "df0b2ee3-8e4d-42a1-9bb2-c69228074406", "label": "Our institutional repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability" },
-			{ "uuid": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0", "label": "A special-purpose repository for the project" }
+			{ "uuid": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff", "label": "A domain-specific repository",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] },
+			{ "uuid": "fb96d008-f31a-4a1a-b203-b3f9bb32fcc8", "label": "Our national repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.5 } ] },
+			{ "uuid": "df0b2ee3-8e4d-42a1-9bb2-c69228074406", "label": "Our institutional repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.5 } ] },
+			{ "uuid": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0", "label": "A special-purpose repository for the project",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] }
 		],
 		"references":
 		[
-			{ "uuid": "2e0ed21b-2180-4497-8c41-fd2609904400", "type": "url", "weblink": "https://fairsharing.org/", "anchor": "FAIRSharing" }
+			{ "uuid": "2e0ed21b-2180-4497-8c41-fd2609904400", "type": "url", "weblink": "https://fairsharing.org/", "anchor": "FAIRSharing" },
+			{ "uuid": "e83b0c27-e218-447b-bc0d-7041521e01a1", "type": "url", "weblink": "https://re3data.org/", "anchor": "Registry of Research data Repositories" }
 		]
 	},
 	{
@@ -291,8 +327,10 @@
 		"text": "Maintaining a repository is a long term commitment that can most of the time not be funded from project money. Think about who will be doing the system maintenance, hardware maintenance, and who will make necessary code changes to accommodate future (safe) versions of the system",
 		"answers":
 		[
-			{ "uuid": "dc921fac-cf77-4d3d-bb9c-907d37f838ef", "label": "No" },
-			{ "uuid": "714e0a22-c059-4f80-9780-6f7f2e2ce53b", "label": "Yes" }
+			{ "uuid": "dc921fac-cf77-4d3d-bb9c-907d37f838ef", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "714e0a22-c059-4f80-9780-6f7f2e2ce53b", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -317,8 +355,10 @@
 		"title": "Did you arrange for system administration (at least security updates) and hardware maintenance for the server(s)?",
 		"answers":
 		[
-			{ "uuid": "4dd69e44-097b-42fc-98a4-4ce379453d46", "label": "No" },
-			{ "uuid": "d2c01a84-fc1d-4108-95c4-9e9e9198f93e", "label": "Yes" }
+			{ "uuid": "4dd69e44-097b-42fc-98a4-4ce379453d46", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "d2c01a84-fc1d-4108-95c4-9e9e9198f93e", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -363,8 +403,10 @@
 		"text": "Data is sometimes difficult to locate, especially if it is not in a domain-specific repository. Data catalogues may increase findability.",
 		"answers":
 		[
-			{ "uuid": "0224af28-8272-4360-b8b2-0fcc835832e9", "label": "No" },
-			{ "uuid": "9e39ea26-cdaf-483b-9502-d47fc4f69bab", "label": "Yes" }
+			{ "uuid": "0224af28-8272-4360-b8b2-0fcc835832e9", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "9e39ea26-cdaf-483b-9502-d47fc4f69bab", "label": "Yes",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -372,9 +414,12 @@
 		"title": "Will you be making sure that blocks of data deposited in different repositories can be recognized as belonging to the same study?",
 		"answers":
 		[
-			{ "uuid": "2f7e45cd-0f00-4228-865e-62f64ccde1b1", "label": "No" },
-			{ "uuid": "0e748d3d-fd83-470f-918a-0321b1fc9f11", "label": "Yes, all data sets will have links to the related data" },
-			{ "uuid": "18ca5e47-464d-40c5-881b-c15e54bd2bff", "label": "Yes, all data sets will be linked from a single catalog entry" },
+			{ "uuid": "2f7e45cd-0f00-4228-865e-62f64ccde1b1", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "0e748d3d-fd83-470f-918a-0321b1fc9f11", "label": "Yes, all data sets will have links to the related data",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] },
+			{ "uuid": "18ca5e47-464d-40c5-881b-c15e54bd2bff", "label": "Yes, all data sets will be linked from a single catalog entry",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] },
 			{ "uuid": "6445c352-5685-4e23-ac52-ebcabe353bd0", "label": "Yes, we have made other arrangements" }
 		]
 	},
@@ -388,8 +433,7 @@
 		"title": "Did you work out the financial aspects of making the data available?",
 		"answers":
 		[
-			{ "uuid": "902cf40c-cb46-4f3f-811a-b36faa612fa6", "label": "This has been taken care of" },
-			{ "uuid": "e1f2f5cb-2e70-4d0d-b00c-c1f4792b6f49", "label": "Explore this with additional questions" }
+			{ "uuid": "e1f2f5cb-2e70-4d0d-b00c-c1f4792b6f49", "label": "Explore" }
 		]
 	},
 	{
@@ -397,9 +441,12 @@
 		"title": "Will your publications be open access?",
 		"answers":
 		[
-			{ "uuid": "9e292e79-343e-4c87-8121-2ff19fc2e8d8", "label": "No" },
-			{ "uuid": "5b5d1c59-2e3a-4e1a-aafa-c2451c8e11da", "label": "Yes, this is budgeted in the project" },
-			{ "uuid": "ef5e44f4-4902-4117-b783-59270cb327c9", "label": "Yes, our department/institute will pay for open access publishing" }
+			{ "uuid": "9e292e79-343e-4c87-8121-2ff19fc2e8d8", "label": "No",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
+			{ "uuid": "5b5d1c59-2e3a-4e1a-aafa-c2451c8e11da", "label": "Yes, this is budgeted in the project",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] },
+			{ "uuid": "ef5e44f4-4902-4117-b783-59270cb327c9", "label": "Yes, our department/institute will pay for open access publishing",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -423,8 +470,10 @@
 		"text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended? Possibly as a continuation of archival as part of data storage strategy during the project?",
 		"answers":
 		[
-			{ "uuid": "b6890d88-88e4-4667-8b28-82bc73c728be", "label": "No" },
-			{ "uuid": "562a4823-3e58-44da-ba65-db522c4bbbd9", "label": "Yes" }
+			{ "uuid": "b6890d88-88e4-4667-8b28-82bc73c728be", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "562a4823-3e58-44da-ba65-db522c4bbbd9", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -438,8 +487,10 @@
 		"title": "Will data formats of data in cold storage be upgraded if they become obsolete?",
 		"answers":
 		[
-			{ "uuid": "24782dc1-c7f9-4b9f-868e-09f6f6e5a0ed", "label": "No" },
-			{ "uuid": "522019ce-14d8-4f74-b4a5-79b05a2abac1", "label": "Yes" }
+			{ "uuid": "24782dc1-c7f9-4b9f-868e-09f6f6e5a0ed", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "522019ce-14d8-4f74-b4a5-79b05a2abac1", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -448,8 +499,10 @@
 		"title": "Will data be migrated regularly to more modern storage media (e.g. newer tapes)?",
 		"answers":
 		[
-			{ "uuid": "2bb32b88-b374-4090-82e4-64f5eab44850", "label": "No" },
-			{ "uuid": "6a1acee5-200a-449f-8200-4b294c8bc5f0", "label": "Yes" }
+			{ "uuid": "2bb32b88-b374-4090-82e4-64f5eab44850", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "6a1acee5-200a-449f-8200-4b294c8bc5f0", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -458,8 +511,10 @@
 		"text": "Even if you do not obtain the results you had foreseen from your own study, the data can still be valuable for reuse in another context. Also, publishing the data can avoid that someone else collects a similar data set with a similar negative result.",
 		"answers":
 		[
-			{ "uuid": "2eec960b-5033-4fcd-9d7e-219873762acc", "label": "No" },
-			{ "uuid": "a19404c9-94ae-4b3a-a728-2457084a5b31", "label": "Yes" }
+			{ "uuid": "2eec960b-5033-4fcd-9d7e-219873762acc", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "a19404c9-94ae-4b3a-a728-2457084a5b31", "label": "Yes",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -473,9 +528,12 @@
 		"title": "Will you be adding a proper open-source license?",
 		"answers":
 		[
-			{ "uuid": "d675443d-3581-4b7e-bfeb-9b06349fec1a", "label": "No" },
-			{ "uuid": "0a779591-6b8e-4e65-96b6-e3782f71532c", "label": "Yes, we have decided on an open source license" },
-			{ "uuid": "6d887b51-696e-41ee-947f-d0022d7c6aee", "label": "Yes, we will decide on an open source license" }
+			{ "uuid": "d675443d-3581-4b7e-bfeb-9b06349fec1a", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "0a779591-6b8e-4e65-96b6-e3782f71532c", "label": "Yes, we have decided on an open source license",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] },
+			{ "uuid": "6d887b51-696e-41ee-947f-d0022d7c6aee", "label": "Yes, we will decide on an open source license",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.3 } ] }
 		]
 	},
 	{
@@ -494,8 +552,10 @@
 		"title": "Will this software be listed in a catalogue?",
 		"answers":
 		[
-			{ "uuid": "89e5e0fe-2066-4fc1-b872-be6b317a213b", "label": "No" },
-			{ "uuid": "3a417eea-0b1d-4dc8-b5f5-f109d7513eb4", "label": "Yes" }
+			{ "uuid": "89e5e0fe-2066-4fc1-b872-be6b317a213b", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "3a417eea-0b1d-4dc8-b5f5-f109d7513eb4", "label": "Yes",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
 		]
 	},
 	{
