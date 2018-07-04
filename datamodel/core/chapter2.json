@@ -379,7 +379,8 @@
 		"answers":
 		[
 			{ "uuid": "a547dc69-a3e8-46e4-bb4b-21fd104231f9", "label": "No" },
-			{ "uuid": "e81599af-4519-4987-b74e-9545428ed0e3", "label": "Yes" }
+			{ "uuid": "e81599af-4519-4987-b74e-9545428ed0e3", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -393,8 +394,10 @@
 		"title": "Can the original data be regenerated?",
 		"answers":
 		[
-			{ "uuid": "5e55c2ce-614a-4af8-ab92-972e8f5baea7", "label": "No" },
-			{ "uuid": "8d1f370f-6e4f-46ae-a169-1f7e969335e1", "label": "Yes" }
+			{ "uuid": "5e55c2ce-614a-4af8-ab92-972e8f5baea7", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "8d1f370f-6e4f-46ae-a169-1f7e969335e1", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -446,7 +449,7 @@
 		"answers":
 		[
 			{ "uuid": "6f307c89-c1b2-4dcc-8315-585a65f08a87", "label": "No" },
-			{ "uuid": "899b6dc9-59fa-4246-b152-915d4864f771", "label": "Yes" }
+			{ "uuid": "899b6dc9-59fa-4246-b152-915d4864f771", "label": "Yes", "advice": "This puts other demands on the possibility to restore files. Make sure this is covered" }
 		]
 	},
 	{
@@ -516,8 +519,10 @@
 		"title": "Is it clear who has physical access to the archives?",
 		"answers":
 		[
-			{ "uuid": "e9ab764f-e3fa-4704-9200-4d527a54f754", "label": "No" },
-			{ "uuid": "7658b228-018a-4eba-9970-f5bb2c4de70a", "label": "Yes" }
+			{ "uuid": "e9ab764f-e3fa-4704-9200-4d527a54f754", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "7658b228-018a-4eba-9970-f5bb2c4de70a", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -757,12 +762,12 @@
 	{
 		"uuid": "deb647ec-a001-4370-87b8-a5b1e2479f87", "type": "option",
 		"precondition": "9a0cfd22-adce-46e6-b7ec-8ed581ac95be",
-		"title": "Is it possible to store intermediate temporary data on a separate (scratch) file system that is not backed up?",
+		"title": "Is it possible to store intermediate temporary data on a separate (scratch) area that is not backed up?",
 		"text": "If the intermediate results are in your main work space, a restore in case of a problem could take much more time. It may be faster to recover it by re-running computations",
 		"answers":
 		[
 			{ "uuid": "55bab6f7-6ab9-4eb7-ae2b-1947cce2da84", "label": "We will use the main work space for temporary data" },
-			{ "uuid": "5cbefa56-bc0c-4704-a9a4-3535ec513057", "label": "We can offload intermediate results to a scratch file system that is not backed up" }
+			{ "uuid": "5cbefa56-bc0c-4704-a9a4-3535ec513057", "label": "We can offload intermediate results to a scratch area that is not backed up" }
 		]
 	},
 	{
@@ -936,13 +941,17 @@
 	{
 		"uuid": "98d9789b-32fc-4e2f-876a-47760ad7c7ec", "type": "option",
 		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
-		"title": "Do you need to make copies of project data that is not in the work space?",
+		"title": "Will you make backup copies of project data that is not in the work space?",
 		"text": "Are there any data files e.g. on laptops of project members? Also: supercomputing centers and other high performance computer centers often write in their terms of use that you need to take care of your own backups",
 		"answers":
 		[
+                        { "uuid": "7c732053-6df4-466b-8732-0db2bd1e1ffc", "label": "This is left to the project participants",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
 			{ "uuid": "a1ead63a-1bc8-42e6-8bdc-3e1e8a901307", "label": "There is no data elsewhere" },
-			{ "uuid": "278810f9-6396-4203-9fa6-6cd3a003159c", "label": "All data elsewhere is adequately backed up" },
-			{ "uuid": "0884ac19-9bde-4bf1-afdd-0794c2c69092", "label": "We make (automated) backups of all data stored outside of the working area" }
+			{ "uuid": "278810f9-6396-4203-9fa6-6cd3a003159c", "label": "All data elsewhere is adequately backed up",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "0884ac19-9bde-4bf1-afdd-0794c2c69092", "label": "We make (automated) backups of all data stored outside of the working area",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -951,8 +960,10 @@
 		"title": "Are data all project members store adequately backed up and traceable?",
 		"answers":
 		[
-			{ "uuid": "0c93a407-b04a-4c89-a8e4-299a4d77c21e", "label": "No" },
-			{ "uuid": "ec92df2d-f6db-4cc8-8317-ae24ab4fa08a", "label": "Yes, protected against both equipment failure and human error" }
+			{ "uuid": "0c93a407-b04a-4c89-a8e4-299a4d77c21e", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "ec92df2d-f6db-4cc8-8317-ae24ab4fa08a", "label": "Yes, protected against both equipment failure and human error",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -984,7 +995,8 @@
 		"text": "Does anyone carry project data on laptops, USB sticks or other external media?",
 		"answers":
 		[
-			{ "uuid": "3c8f999d-c962-42a4-a7c3-05b21a4029ab", "label": "No" },
+			{ "uuid": "3c8f999d-c962-42a4-a7c3-05b21a4029ab", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
 			{ "uuid": "c9fc7d94-0f37-40af-9d12-7c828d1252fc", "label": "Yes" }
 		]
 	},
@@ -994,8 +1006,10 @@
 		"title": "Are all data carriers encrypted? Are accounts on the laptop password protected?",
 		"answers":
 		[
-			{ "uuid": "546d6e41-80ea-417b-b0e3-a1d9d75a3794", "label": "No" },
-			{ "uuid": "dda8513e-431d-474e-b00d-107ae995e0ee", "label": "Yes" }
+			{ "uuid": "546d6e41-80ea-417b-b0e3-a1d9d75a3794", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "dda8513e-431d-474e-b00d-107ae995e0ee", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.5 } ] }
 		]
 	},
 	{
@@ -1037,8 +1051,10 @@
 		"title": "Are all project web services addressed via secure http (https://)?",
 		"answers":
 		[
-			{ "uuid": "2b934f9d-d849-4e22-8e0c-65dbf7b9dbeb", "label": "No" },
-			{ "uuid": "bb176104-3bf1-4bc8-b8e8-a4b09e14b88c", "label": "Yes" }
+			{ "uuid": "2b934f9d-d849-4e22-8e0c-65dbf7b9dbeb", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "bb176104-3bf1-4bc8-b8e8-a4b09e14b88c", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -1048,8 +1064,10 @@
 		"text": "Project members may need to know about passwords (not sharing accounts, using different passwords for each service, and two factor authentication), about security for data they carry (encryption, backups), data stored in their own labs and in personal cloud accounts, and about the use of open WiFi and https",
 		"answers":
 		[
-			{ "uuid": "d802675e-f76b-4714-87ee-1b328da826ab", "label": "No" },
-			{ "uuid": "4f86bb87-06f6-4d52-a9c0-52fc97bb441c", "label": "Yes" }
+			{ "uuid": "d802675e-f76b-4714-87ee-1b328da826ab", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "4f86bb87-06f6-4d52-a9c0-52fc97bb441c", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -1058,10 +1076,14 @@
 		"title": "Did you consider the possible impact to the project or organization if information is lost?",
 		"answers":
 		[
-			{ "uuid": "4c5d329b-6e18-4f4e-92a9-f0298adf38fe", "label": "No" },
-			{ "uuid": "a8a4dc7d-bf8c-44e3-b8b2-3e04f206f460", "label": "Yes; the effect is small" },
-			{ "uuid": "a0ec7128-1c2d-4034-b621-211bd01a9839", "label": "Yes; the risk is acceptably low" },
-			{ "uuid": "928db5fa-e16f-4c28-a321-ad62e1849b90", "label": "Yes; we will need to work on this." }
+			{ "uuid": "4c5d329b-6e18-4f4e-92a9-f0298adf38fe", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "a8a4dc7d-bf8c-44e3-b8b2-3e04f206f460", "label": "Yes; the effect is small",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "a0ec7128-1c2d-4034-b621-211bd01a9839", "label": "Yes; the risk is acceptably low",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "928db5fa-e16f-4c28-a321-ad62e1849b90", "label": "Yes; we will need to work on this.",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.2 } ] }
 		]
 	},
 	{
@@ -1070,10 +1092,14 @@
 		"title": "Did you consider the possible impact to the project or organization if information leaks?",
 		"answers":
 		[
-			{ "uuid": "04dd5577-367f-4c34-b90c-4bc25d80c819", "label": "No" },
-			{ "uuid": "7c9c8543-b8f8-47b0-8279-757dbc14922f", "label": "Yes; the effect is small" },
-			{ "uuid": "6306207c-7be6-4cdf-86c4-33e0d9898479", "label": "Yes; the risk is acceptably low" },
-			{ "uuid": "efec7b38-d9a9-4495-8ba7-625dd7da6a09", "label": "Yes; we will need to work on this." }
+			{ "uuid": "04dd5577-367f-4c34-b90c-4bc25d80c819", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "7c9c8543-b8f8-47b0-8279-757dbc14922f", "label": "Yes; the effect is small",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "6306207c-7be6-4cdf-86c4-33e0d9898479", "label": "Yes; the risk is acceptably low",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "efec7b38-d9a9-4495-8ba7-625dd7da6a09", "label": "Yes; we will need to work on this.",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.2 } ] }
 		]
 	},
 	{
@@ -1082,10 +1108,14 @@
 		"title": "Did you consider the possible impact to the project or organization if information is vandalized?",
 		"answers":
 		[
-			{ "uuid": "b4dbc287-8eed-4799-800e-5ce0ede13cd8", "label": "No" },
-			{ "uuid": "ae0c3b93-f054-4052-91c0-fa9c518f5ca8", "label": "Yes; the effect is small" },
-			{ "uuid": "b1e1861b-b55f-406f-b915-b440c64d8747", "label": "Yes; the risk is acceptably low" },
-			{ "uuid": "e8943baf-4c0c-4f30-8b57-88c06f3bc4ad", "label": "Yes; we will need to work on this." }
+			{ "uuid": "b4dbc287-8eed-4799-800e-5ce0ede13cd8", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "ae0c3b93-f054-4052-91c0-fa9c518f5ca8", "label": "Yes; the effect is small",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "b1e1861b-b55f-406f-b915-b440c64d8747", "label": "Yes; the risk is acceptably low",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "e8943baf-4c0c-4f30-8b57-88c06f3bc4ad", "label": "Yes; we will need to work on this.",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -1192,8 +1222,10 @@
 		"title": "Is there sufficient network capacity to the other computing locations?",
 		"answers":
 		[
-			{ "uuid": "310adf1a-1b9c-42df-94ee-dd82699a2672", "label": "No" },
-			{ "uuid": "d2ceec96-5471-4073-8a25-e5201ad41c68", "label": "Yes" }
+			{ "uuid": "310adf1a-1b9c-42df-94ee-dd82699a2672", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "d2ceec96-5471-4073-8a25-e5201ad41c68", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	}
 	]
