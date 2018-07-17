@@ -336,12 +336,13 @@
 	{
 		"uuid": "cbbfb0da-caf1-4c04-b72f-de39c4a8fb33", "type": "option",
 		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
-		"title": "What is the service level you will be offering to users of the data?",
+		"title": "What is the service level you will be offering to users of the data/repository?",
+		"text": "The amount of funding needed to maintain a repository is strongly dependent on the services offered",
 		"answers":
 		[
 			{ "uuid": "dc1082fd-1c90-492c-833c-3e0909c643bb", "label": "Download only", "advice": "That functionality level can surely be found in another place too!" },
-			{ "uuid": "da6725a2-62bb-4fe7-a76f-a4e396646b19", "label": "A search and access interface" },
-			{ "uuid": "d65ddfda-9b08-4ab6-90e5-07df748d7929", "label": "A processing service", "advice": "Make sure to budget sufficient compute resources for the users" }
+			{ "uuid": "da6725a2-62bb-4fe7-a76f-a4e396646b19", "label": "A search and simple access interface" },
+			{ "uuid": "d65ddfda-9b08-4ab6-90e5-07df748d7929", "label": "An advanced processing service", "advice": "Make sure to budget sufficient compute resources for the users" }
 		],
 		"references":
 		[
@@ -383,18 +384,6 @@
 		"uuid": "fc0857c1-e4d2-47f5-86b1-0292bfc7eecf", "type": "text",
 		"precondition": "620b1090-2a57-4f3c-b336-97c9e95da637",
 		"title": "What other arrangements?"
-	},
-	{
-		"uuid": "f606bc7e-8505-4a5d-90aa-684f2fb666cf", "type": "option",
-		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
-		"title": "What kind of service will your repository offer to users?",
-		"text": "The amount of funding needed to maintain a repository is strongly dependent on the services offered",
-		"answers":
-		[
-			{ "uuid": "069a6978-7771-418e-8f1a-1ce5f62347ca", "label": "Find and download only" },
-			{ "uuid": "f4fa7d05-ba8e-4095-918c-50c34ba54284", "label": "Search and advanced access" },
-			{ "uuid": "6de13f14-8f2a-422c-8cb8-1e68aaeeb7c4", "label": "Anything including some data processing" }
-		]
 	},
 	{
 		"uuid": "46039bea-87e6-4c61-8567-4e819404b4d0", "type": "option",

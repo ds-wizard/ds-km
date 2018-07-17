@@ -604,7 +604,7 @@
 	{
 		"uuid": "feb954c1-c38e-4615-addd-4c714a06809a", "type": "option",
 		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
-		"title": "has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
+		"title": "Has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
 		"answers":
 		[
 			{ "uuid": "79bf552f-4230-4026-9976-984ecdb8d889", "label": "No",
