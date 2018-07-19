@@ -320,7 +320,7 @@
 		],
 		"references":
 		[
-			{ "uuid": "7d7b817f-9f82-4cdf-96a9-565bc67f3129", "target": "1991077f-04ae-4808-90a5-e4b2f82e30bf", "type": "xref" }
+			{ "uuid": "7d7b817f-9f82-4cdf-96a9-565bc67f3129", "description": "Keeping a log of every step in the analysis workflow that has been run", "target": "1991077f-04ae-4808-90a5-e4b2f82e30bf", "type": "xref" }
 		]
 	},
 	{
@@ -685,7 +685,7 @@
 		],
 		"references":
 		[
-			{ "uuid": "83081d6a-7e18-4ccf-97cd-f89193e73382", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref" },
+			{ "uuid": "83081d6a-7e18-4ccf-97cd-f89193e73382", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref", "description": "Compute capacity planning" },
 			{ "uuid": "afc5ae15-69ef-4dd9-b701-eaa5dbb8fddb", "type": "dmpbook", "chapter": "2.7" },
 			{ "uuid": "cec4d69c-0a8b-4e0c-98c7-309d0c57d692", "type": "resourcepage", "shortuid": "wia" }
 		]

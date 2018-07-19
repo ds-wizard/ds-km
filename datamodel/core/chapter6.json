@@ -15,7 +15,7 @@
 		],
 		"references":
 		[
-			{ "uuid": "a981b60d-2870-4a40-83ad-436395876f06", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref" }
+			{ "uuid": "a981b60d-2870-4a40-83ad-436395876f06", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref", "description": "Compute capacity planning" }
 		]
 	},
 	{

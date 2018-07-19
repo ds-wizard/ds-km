@@ -626,7 +626,11 @@
 		"answers":
 		[
 			{ "uuid": "12a85bf3-1407-4783-9e73-564d75e7c98a", "label": "Explore" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "0c4383ec-211b-4937-9e63-31eb3a2bea8b", "description": "Keeping provenance metadata", "target": "daa06d1a-6314-4c6d-93a8-69954c7f5c54", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "5e111fc1-9d17-4ec8-aafb-1694a538a3aa", "type": "option",
