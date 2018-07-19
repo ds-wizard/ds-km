@@ -237,7 +237,7 @@
 		"answers":
 		[
 			{ "uuid": "aff2edcd-4d18-4311-9a03-3b6b676c9277", "label": "It is a fixed data set, this will not influence reproducibility of my results" },
-			{ "uuid": "d700715e-4ae0-45ed-a1d3-4d79bb32155f", "label": "It may change", "advice": "Make sure a copy of the version you use will be available with my results" }
+			{ "uuid": "d700715e-4ae0-45ed-a1d3-4d79bb32155f", "label": "It may change", "advice": "Make sure a copy of the version of the input data you use will be available with the results" }
 		]
 	},
 	{
