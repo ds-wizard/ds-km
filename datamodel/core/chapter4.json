@@ -215,7 +215,11 @@
                           "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
 			{ "uuid": "1693bb64-b047-4464-ae45-c5e8aca12263", "label": "Yes",
                           "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "b238d832-8418-4a92-9429-3c79f690bef4", "description": "Workflow reproducibility", "target": "49199b05-73d7-4912-a5ca-bc1e14a09468", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "15e6148f-f4e0-4bbc-93c5-6fdf4fe47608", "type": "option",
@@ -473,13 +477,17 @@
 	{
 		"uuid": "655180dc-1cb9-41f6-8a36-7c6ecf02009a", "type": "option",
 		"precondition": "5a54c4c2-b1c4-4e51-87e8-102a6af3d961",
-		"title": "Are all versions of all tools under total control of the project?",
+		"title": "Are all versions of all tools, including built-in tools, under total control of the project?",
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
 			{ "uuid": "d48d7df6-78f2-4d0a-a129-fb59aa4f9cee", "label": "No" },
 			{ "uuid": "29cf1c35-6c17-4d45-890d-dc79f371dac8", "label": "Yes" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "d8f2ac46-06e7-405a-bcec-907cde71b596", "description": "Workflow durability", "target": "df3aff84-acf9-4614-996b-e69f7ddb96de", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "92cab7ad-92ff-44ec-9678-8e5c95d66816", "type": "option",
@@ -594,7 +602,11 @@
                           "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.8 } ] },
 			{ "uuid": "c9c66274-13b1-4ab8-8245-56ab7415d858", "label": "Yes, we will automatically make test runs on the same data",
                           "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "908be822-51b8-4f6b-9e61-7036f73dd0d3", "description": "Validation input data", "target": "faf72b3d-ac29-41d1-97f2-5223b199a086", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "df3aff84-acf9-4614-996b-e69f7ddb96de", "type": "option",
@@ -604,7 +616,11 @@
 		[
 			{ "uuid": "af507b8a-824b-4198-9adf-c54f984f4fb5", "label": "No, we use tools maintained by others" },
 			{ "uuid": "614310a5-9bfd-49ae-9bec-5ec45cacad22", "label": "Yes, we only use tools that we can maintain ourselves" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "df070071-38a9-4250-a035-445c12f95af3", "description": "Control over tools in the workflow engine", "target": "655180dc-1cb9-41f6-8a36-7c6ecf02009a", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "94898b30-877d-4776-a03a-c57c93a725ac", "type": "option",
@@ -704,7 +720,11 @@
                           "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
 			{ "uuid": "ea0ab328-184c-40f2-a391-c89617b37fe9", "label": "Yes",
                           "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "d522881a-9f3e-45fc-a420-f444e4da3ad0", "description": "Provenance as selection criterion for workflow engine", "target": "28b10fd8-28a6-49b8-822d-f3d47780ab20", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "56bc8ebb-aba5-4745-8034-17ed3fe4fe07", "type": "option",
@@ -781,7 +801,8 @@
 		"references":
 		[
 			{ "uuid": "199d32a0-b997-4570-ac83-8d6ded27dd3a", "type": "dmpbook", "chapter": "4.2.4"},
-			{ "uuid": "12145f57-2bf5-456b-b35c-66f533b316bc", "type": "resourcepage", "shortuid": "egv"}
+			{ "uuid": "12145f57-2bf5-456b-b35c-66f533b316bc", "type": "resourcepage", "shortuid": "egv"},
+                        { "uuid": "fbe68369-30cb-422b-b5c1-fd871bb16331", "description": "Validation of tools updates", "target": "099902bd-1637-4e32-a744-b95031030c6c", "type": "xref" }
 		]
 	},
 	{

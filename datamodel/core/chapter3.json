@@ -287,7 +287,11 @@
 			{ "uuid": "9e5abf02-c19d-4826-a1f2-6db5acf471a6", "label": "No" },
 			{ "uuid": "b24b7cbe-2209-47e9-87d6-401fbfb3cdec", "label": "Yes",
                           "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "6c8abc44-e975-4e0e-882d-d231f1c45315", "description": "Planning data integration processes", "target": "109ed7ea-ef1d-4719-b2b4-eb4f7202c65c", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "20a9685a-5560-43dc-bb13-73c434f8d666", "type": "option",

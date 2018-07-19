@@ -11,7 +11,11 @@
 		"answers":
 		[
 			{ "uuid": "238ace4b-22bb-4a9d-a312-e30d82d4382d", "label": "Explore" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "b289c48c-b586-419f-8099-db94ce323398", "description": "Data warehousing tools", "target": "ab4b3f39-dfab-45a5-9489-2d46ceacbb73", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "a797cab9-0829-4787-a096-1b5cedc9147f", "type": "list",
