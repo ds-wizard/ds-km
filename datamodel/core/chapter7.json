@@ -456,7 +456,7 @@
 	{
 		"uuid": "f9d84278-b61d-4314-94e9-12644bfa1d00", "type": "option",
 		"title": "Will you be archiving your data after the project in 'cold storage'?",
-		"text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended? Possibly as a continuation of archival as part of data storage strategy during the project?",
+		"text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended? Possibly as a continuation of archival as part of data storage strategy during the project? Data archival is distinct from data publishing, an archive is usually limited in who can access the data.",
 		"answers":
 		[
 			{ "uuid": "b6890d88-88e4-4667-8b28-82bc73c728be", "label": "No",
@@ -467,7 +467,8 @@
 		"references":
 		[
 			{ "uuid": "f9e87496-28a0-41ee-a95f-f23c01baecf4", "type": "dmpbook", "chapter": "7.4.4" },
-			{ "uuid": "658723a8-b622-4d11-bfa3-ac3ecfb6fc1b", "type": "resourcepage", "shortuid": "fxe" }
+			{ "uuid": "658723a8-b622-4d11-bfa3-ac3ecfb6fc1b", "type": "resourcepage", "shortuid": "fxe" },
+                        { "uuid": "4edaeeb8-0e4d-4ae7-b1c6-2e324bebdfd6", "description": "Archival during the project", "target": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "xref" }
 		]
 	},
 	{

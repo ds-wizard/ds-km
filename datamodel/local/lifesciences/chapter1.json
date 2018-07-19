@@ -12,7 +12,12 @@
 		[
 			{ "uuid": "5fb807b5-d126-42e9-a604-413db8c69c25", "label": "No" },
 			{ "uuid": "1b11b154-d08a-49d6-b08d-b4861cca2306", "label": "Yes" }
-		]
+		],
+                "references":
+                [
+                     { "uuid": "827a58fa-90fc-481e-935b-191e28031406", "description": "Data Integration phase", "target": "109ed7ea-ef1d-4719-b2b4-eb4f7202c65c", "type": "xref" }
+                ]
+
 	},
 	{
 		"uuid": "1a0f988b-6f16-4070-92a7-7bff31f57e31", "type": "option",

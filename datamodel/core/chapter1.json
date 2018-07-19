@@ -51,7 +51,8 @@
 		"references":
 		[
 			{ "uuid": "b04d8e87-9374-4581-b244-464c6721c38d", "type": "dmpbook", "chapter": "1.3" },
-			{ "uuid": "916487d3-cd03-4248-994a-6ff850680189", "type": "resourcepage", "shortuid": "quc" }
+			{ "uuid": "916487d3-cd03-4248-994a-6ff850680189", "type": "resourcepage", "shortuid": "quc" },
+                        { "uuid": "37fcb07e-a791-40ef-934b-33dedece5b0c", "description": "Creating reference data", "target": "588ad032-56ba-4d52-b29c-6a5b56aa6569", "type": "xref" }
 		]
 	},
 	{
@@ -320,7 +321,8 @@
 		"references":
 		[
 			{ "uuid": "b4c4132e-23e2-4302-aa6d-bf29804899e7", "type": "dmpbook", "chapter": "1.12"},
-			{ "uuid": "fa42d193-2513-48eb-9e1e-766f53a49e1e", "type": "resourcepage", "shortuid": "rbz"}
+			{ "uuid": "fa42d193-2513-48eb-9e1e-766f53a49e1e", "type": "resourcepage", "shortuid": "rbz"},
+                        { "uuid": "75f0120d-b3a8-4042-8249-dfe2de83a3d5", "description": "Reuse of existing reference data", "target": "fcc51962-08df-4f4c-85ad-6bb932107010", "type": "xref" }
 		]
 	},
 	{

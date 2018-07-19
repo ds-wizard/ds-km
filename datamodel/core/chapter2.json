@@ -374,8 +374,8 @@
 	},
 	{
 		"uuid": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "option",
-		"title": "Will you be archiving data (using so-called 'cold storage') for long term preservation?",
-		"text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication; questions related to data publication will follow later.",
+		"title": "During the project, will you be archiving data (using so-called 'cold storage') for long term preservation?",
+		"text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication.",
 		"answers":
 		[
 			{ "uuid": "a547dc69-a3e8-46e4-bb4b-21fd104231f9", "label": "No" },
@@ -385,7 +385,8 @@
 		"references":
 		[
 			{ "uuid": "c6e67e46-6f79-402b-adba-3d5a56346534", "type": "dmpbook", "chapter": "2.5.1.1" },
-			{ "uuid": "769a924d-a683-44ac-b85d-e5f3c8adaf49", "type": "resourcepage", "shortuid": "kjp" }
+			{ "uuid": "769a924d-a683-44ac-b85d-e5f3c8adaf49", "type": "resourcepage", "shortuid": "kjp" },
+                        { "uuid": "7d1b6960-92db-4074-b908-74132bce1444", "description": "Archiving data when the project is finished", "target": "f9d84278-b61d-4314-94e9-12644bfa1d00", "type": "xref" }
 		]
 	},
 	{
@@ -414,7 +415,11 @@
 			{ "uuid": "fbe7ef0d-3199-47de-ad28-1b9299200156", "label": "As soon as it comes in, in chunks" },
 			{ "uuid": "92dc2ba0-2cac-4710-8dc7-c1cf6e573235", "label": "As soon as it has all arrived, in one session" },
 			{ "uuid": "c861d005-a681-4a3a-a54b-7a229b6662ee", "label": "All at once with the results at the end of the project" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "3575556d-82dd-43bd-b9f1-5f1f28dbee86", "description": "Archiving raw data from the working area", "target": "ba381732-f499-419f-8744-e13807af83e3", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "c659c36f-d142-4453-8d8b-db7c05f31371", "type": "option",
@@ -499,7 +504,11 @@
                           "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.8 } ] },
 			{ "uuid": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98", "label": "Yes",
                           "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "decf61b1-7afa-447d-aeae-0b8e55d87abd", "description": "Access rights to the archive", "target": "b7d9008e-9691-44f0-a026-0f63d808db39", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "905d4cda-afa1-4cc0-8df6-3d989c7b8b2e", "type": "option",
@@ -575,7 +584,11 @@
                           "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
 			{ "uuid": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441", "label": "Yes",
                           "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "b0430030-df3e-4d67-897f-335fa6185858", "description": "Archive encryption", "target": "2c797727-559d-4bcf-a4a1-713accfcd602", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "47559455-2969-41f4-aee8-e9ce558ab2f0", "type": "option",
@@ -747,7 +760,12 @@
 			{ "uuid": "904859c4-b9bf-44b6-9a64-933e489089e6", "label": "No, it is also stored elsewhere can be recovered easily" },
 			{ "uuid": "e4da5030-9de8-4fe9-81d9-28a75edc09d9", "label": "No, it can be remeasured easily and more cheaply than archiving" },
 			{ "uuid": "44cad909-ea78-454b-aede-794503da9401", "label": "Yes" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "e4e53d85-6774-4472-b7cb-0f9eaad04a15", "description": "Timing archival of raw data", "target": "7f8ff791-8593-4e00-93f9-e31c5dff5ffb", "type": "xref" }
+                ]
+
 	},
 	{
 		"uuid": "c0944ac9-f286-48f2-b864-4641d0fcdd55", "type": "option",
@@ -799,11 +817,16 @@
 		"uuid": "50a9c060-91e9-4e34-8cb2-2d41fa493f9e", "type": "option",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "Will you need to temporarily archive data sets (e.g. to tape)?",
+                "text": "Usually, data sets will be archived if it is unlikely you need them in the short term, but it would be hard to create them again, and/or they are essential for reproducing your work. Archival storage of large volumes can be significantly cheaper than keeping it in the working area for an extensive period.",
 		"answers":
 		[
 			{ "uuid": "09ac9b88-4350-441b-97f4-5f85ced2ddf2", "label": "No" },
 			{ "uuid": "9797dc5a-afc9-418e-a456-0d555a52424a", "label": "Yes" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "1fa0cc82-65e6-492f-b982-19ea2636ed95", "description": "Data archive setup", "target": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "f4065e54-d27a-45de-be4c-10384feacd0d", "type": "option",
@@ -844,6 +867,8 @@
 		"answers":
 		[
 			{ "uuid": "68be7c83-54ed-46d4-a77f-b99488665f1c", "label": "No" },
+                        { "uuid": "f848f3ec-08c8-4197-bd4f-6d438bac4d70", "label": "No, data will be copied if it needs to be processed elsewhere" },
+                        { "uuid": "bdf255fd-6dd6-4f1e-a9e2-d6aec9d01678", "label": "No, all data processing will be done in the same environment (virtual research environment)" },
 			{ "uuid": "6baa53fe-c657-4da3-bb65-9b71f7141c6d", "label": "Yes, for occasional exploration" },
 			{ "uuid": "5ab6d069-f46c-4514-8114-79c9fe01a93f", "label": "Yes, for actual computations, requiring high performance" }
 		]
@@ -855,9 +880,14 @@
 		"answers":
 		[
 			{ "uuid": "2c2cd046-89e0-4f55-bafa-92eb5f77c3a8", "label": "No, this should not be allowed" },
+                        { "uuid": "8fee76df-9eef-4912-9b11-31ebad574ced", "label": "No, all data processing will be done in the same environment (virtual research environment)" },
 			{ "uuid": "8fa969a0-7477-41be-aefc-a54a8045c954", "label": "Yes, occasionally" },
 			{ "uuid": "06a34c86-3c48-4fa4-8888-0ae6b613068f", "label": "Yes, for actual computations, requiring high performance" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "5b22075d-c62f-4e7f-8a57-79c930d81094", "description": "Workflow that is split over multiple work locations", "target": "410f3709-c283-4974-83c8-6c5d24899a68", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "6b3f13db-407a-44e0-9d23-e6dd6a20ad59", "type": "option",
@@ -1214,7 +1244,11 @@
 		[
 			{ "uuid": "be99bdcc-76f2-43c3-b277-064062360dc1", "label": "All steps of the workflow will be performed at central computing locations" },
 			{ "uuid": "a2c4514b-61e4-47cf-ae54-7006fea37ec2", "label": "Some steps may be performed at local computing locations" }
-		]
+		],
+                "references":
+                [
+                        { "uuid": "468bad94-ef86-4d24-8e97-d635fb1f68b0", "description": "Copying data into and out of the main working area of the project", "target": "f14750e9-3a39-4aae-b2c8-845583934c1d", "type": "xref" }
+                ]
 	},
 	{
 		"uuid": "9e34d326-5f7b-494b-bc2e-2131eef6f844", "type": "option",
