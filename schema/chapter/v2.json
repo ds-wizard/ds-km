@@ -70,10 +70,11 @@
                 "properties": {
                     "uuid": { "$ref": "#/common/uids/uuid" },
                     "target": { "$ref": "#/common/uids/uuid" },
+                    "description": { "type": "string" },
                     "type" : { "type": "string", "enum": ["xref"] },
                     "namespace" : { "$ref": "#/common/namespace" }
                 },
-                "required": ["uuid", "type"],
+                "required": ["uuid", "type", "target", "description"],
                 "additionalProperties": false
             },
             "resourcepagereference": {
