@@ -158,7 +158,7 @@
 	{
 		"uuid": "39e0cc7c-17fe-4991-88d8-1280c3fe7923", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
-		"title": "Will the owners of this data set work with you on this study",
+		"title": "Will the owners of this data set work with you on this study?",
 		"answers":
 		[
 			{ "uuid": "08fab0f9-20a7-4c22-9e7b-3a9fa81e49e9", "label": "No" },
