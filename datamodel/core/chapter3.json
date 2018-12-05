@@ -7,7 +7,8 @@
 	[
 	{
 		"uuid": "f5fef09d-ade5-4019-b089-f05bd89c34bc", "type": "list",
-		"title": "Please specify what data sets you will acquire using measurement equipment"
+		"title": "Please specify what data sets you will acquire using measurement equipment",
+                "text": "You can use any name for the data set, make sure that it identifies the data set to yourself"
 	},
 	{
 		"uuid": "ee59664e-4026-4796-a42a-e8003df6dadf", "type": "option",
@@ -207,7 +208,8 @@
 	{
 		"uuid": "b642c31d-a512-4ca7-8743-a2e0254006fa", "type": "list",
 		"precondition": "4fd89b13-f33c-4858-8b25-ab6da271efc6",
-		"title": "Please list all non-equipment data sets you will collect"
+		"title": "Please list all non-equipment data sets you will collect",
+                "text": "You can use any name for the data set, make sure that it identifies the data set to yourself"
 	},
 	{
 		"uuid": "4e84a44f-e66b-42f5-bb42-7e6c4bd3b79b", "type": "option",
