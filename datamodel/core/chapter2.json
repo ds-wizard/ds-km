@@ -9,6 +9,7 @@
 	{
 		"uuid": "b08fe063-33f8-4380-b3a9-ba1e586dedf2", "type": "list",
 		"title": "What data formats/types will you be using?",
+		"phase": 1,
 		"text": "Have you identified types of data that you will use that are used by others too? Some types of data (e.g. genetic variants in the life sciences) are used by many different projects. For such data, often common standards exist that help to make these data reusable. Are you using such common data formats?",
 		"references":
 		[
@@ -20,6 +21,7 @@
 		"uuid": "ecff019a-d4e6-44c6-a8fe-c84eb15ed8b7", "type": "option",
 		"precondition": "b08fe063-33f8-4380-b3a9-ba1e586dedf2",
 		"title": "Is this a standard data format used by others too?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "52b7aba3-d809-4a30-b3f8-90caa7a32a10", "label": "No",
@@ -32,6 +34,7 @@
 		"uuid": "ced5a7c2-4034-4763-a1d5-3cb815cdfddb", "type": "option",
 		"precondition": "b08fe063-33f8-4380-b3a9-ba1e586dedf2",
 		"title": "Does this data format enable sharing and long term archiving?",
+		"phase": 1,
 		"text": "Complicated (binary) file formats tend to change over time, and software may not stay compatible with older versions. Also, some formats hamper long term usability by making use of patents or being hampered by restrictive licensing",
 		"answers":
 		[
@@ -44,6 +47,7 @@
 		"uuid": "bf32374c-b24e-4b03-9898-a753cff56fcf", "type": "option",
 		"precondition": "86e547b8-e3ae-44b2-89ad-3a0d67decc56",
 		"title": "Will you convert to a file format more suitable for archiving later?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "3159d107-d322-4126-958f-900fc011eeae", "label": "No", 
@@ -55,6 +59,7 @@
 	{
 		"uuid": "5ba53879-eb48-47f2-a73b-f7f7d83bf030", "type": "option",
 		"title": "Will you be using new types of data?",
+		"phase": 1,
 		"text": "Sometimes the type of data you collect can not be stored in a commonly used data format. In such cases you may need to make your own, keeping interoperability as high as possible.",
 		"answers":
 		[
@@ -72,6 +77,7 @@
 		"uuid": "ae235844-e3b6-461c-8c1d-668148dbf53b", "type": "option",
 		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
 		"title": "Will you need to add fields in your data format to a data type registry?",
+		"phase": 1,
 		"text": "Even if the data format you are using is unique to your project, the discrete data items should be reused or reusable as much as possible. Data type registries can help with that.",
 		"answers":
 		[
@@ -86,12 +92,14 @@
 	{
 		"uuid": "7fe217e0-9af0-422f-a45b-6873f0344bcd", "type": "text",
 		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
-		"title": "Which data type registries will you use?"
+		"title": "Which data type registries will you use?",
+		"phase": 1
 	},
 	{
 		"uuid": "b211f896-b363-4978-9423-212644ff5d72", "type": "option",
 		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
 		"title": "Do you need to create vocabularies or ontologies for any of your data items?",
+		"phase": 1,
 		"text": "For good interoperability the use of controlled vocabularies for each discrete data item is advisable. If such vocabularies exist, it is best to reuse those.",
 		"answers":
 		[
@@ -110,6 +118,7 @@
 		"uuid": "a9103296-915a-4bdf-b259-116775d5e676", "type": "option",
 		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
 		"title": "How will you design your new data format?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "bda912f3-14a7-4242-b293-025f1b19892d", "label": "There is a closely related more generic and open format that I can specialize",
@@ -129,6 +138,7 @@
 		"uuid": "caba60b1-57b3-4288-8d3e-aa3542c28027", "type": "option",
 		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
 		"title": "Will you describe your new data format for others?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "057e84be-3329-4fa2-9cc8-d37f53a44cd0", "label": "No, this is not needed",
@@ -140,6 +150,7 @@
 	{
 		"uuid": "8c962e6f-17ee-4b22-8ebb-9f06f779e3b3", "type": "option",
 		"title": "How will you be storing metadata?",
+		"phase": 2,
 		"text": "For the re-usability of your data by yourself or others at a later stage, a lot of information about the data, how it was collected and how it can be used should be stored with the data. Such data about the data is called metadata, and this set of questions are about this metadata",
 		"answers":
 		[
@@ -155,6 +166,7 @@
 		"uuid": "6226d7f2-565f-4991-94b3-c00be6aca20e", "type": "option",
 		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
 		"title": "Do suitable 'Minimal Metadata About ...' (MIA...) standards exist for your experiments?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "a23664b1-a17c-41fe-855c-db274984b355", "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?",
@@ -170,6 +182,7 @@
 		"uuid": "44a9d6c0-f96c-47d2-8c7a-902a9c222067", "type": "option",
 		"precondition": "a23664b1-a17c-41fe-855c-db274984b355",
 		"title": "Do you have a good idea of what metadata is needed to make it possible for others to read and interpret your data in the future?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "49e35bb1-6145-4b44-b390-9e1fe896415e", "label": "No",
@@ -186,6 +199,7 @@
 		"uuid": "ed872b74-6bf7-4cba-8f36-4da4509e4a4f", "type": "option",
 		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
 		"title": "Do you know how and when you will be collecting the necessary metadata?",
+		"phase": 2,
 		"text": "Often it is easiest to make sure you collect the metadata as early as possible.",
 		"answers":
 		[
@@ -203,6 +217,7 @@
 		"uuid": "15573266-7ddf-4c6b-962e-45691d34cf61", "type": "option",
 		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
 		"title": "Will you consider re-usability of your data beyond your original purpose?",
+		"phase": 2,
 		"text": "Adding more than the strict minimum metadata about your experiment will possibly allow more wide re-use of your data, with associated higher data citation rates. Please note that it is not easy for yourself to see all other ways in which others could be reusing your data.",
 		"answers":
 		[
@@ -215,6 +230,7 @@
 		"uuid": "73bf7531-3490-4c0f-b6a2-a9f4f2bc3e1a", "type": "option",
 		"precondition": "cb765913-50c9-482e-bf10-5f5f91d0e473",
 		"title": "How will you balance the extra efforts with the potential for added reusability?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "3002eaed-c31f-4bdd-83ed-49262ae79165", "label": "I will see what I can do",
@@ -229,6 +245,7 @@
 		"uuid": "c961b59a-b635-4a77-87ba-bc1b449bb012", "type": "option",
 		"precondition": "cb765913-50c9-482e-bf10-5f5f91d0e473",
 		"title": "Do you need to exchange your data with others?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "c0d4739d-2694-4fe2-a6d6-d7cc073fc9eb", "label": "No" },
@@ -239,6 +256,7 @@
 		"uuid": "02b3fed1-0b50-4a80-b8b6-a225a1107022", "type": "option",
 		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
 		"title": "Did you consider how to monitor data integrity?",
+		"phase": 2,
 		"text": "Working with large amounts of heterogenous data in a larger research group has implications for the data integrity. How do you make sure every step of the workflow is done with the right version of the data? How do you handle the situation when a mistake is uncovered? Will you be able to redo the strict minimum data handling?",
 		"answers":
 		[
@@ -254,6 +272,7 @@
 		"uuid": "e0759fdc-7ce9-4020-816d-73119f634c7e", "type": "option",
 		"precondition": "8608d3df-7d7f-4893-8f80-e5297167b213",
 		"title": "Will you be keeping a master list with checksums of certified/correct/canonical/verified data?",
+		"phase": 2,
 		"text": "Data corruption or mistakes can happen with large amounts of files or large files. Keeping a master list with data checksums can be helpful to prevent expensive mistakes. It can also be helpful to keep the sample list under version control forcing that all changes are well documented.",
 		"answers":
 		[
@@ -267,6 +286,7 @@
 		"uuid": "acb86509-e93a-4d87-a958-74def0678e10", "type": "option",
 		"precondition": "8608d3df-7d7f-4893-8f80-e5297167b213",
 		"title": "Will you define a way to detect file or sample swaps, e.g. by measuring something independently?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "4bd98e96-3d02-4967-b56b-d94a7b0079c6", "label": "No",
@@ -279,6 +299,7 @@
 		"uuid": "ae28a862-5020-44c2-8c78-3abc185b190f", "type": "option",
 		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
 		"title": "Do all datasets you work with have a license?",
+		"phase": 1,
 		"text": "It is not always clear to everyone in the project (ad outside) what can and can not be done with a data set. It is helpful to associate each data set with a license as early as possible in the project. A data license should ideally be as free as possible: any restriction like 'only for non-commercial use' or 'attribution required' may reduce the reusability and thereby the number of citations. If possible, use a computer-readable and computer actionable license.",
 		"answers":
 		[
@@ -292,6 +313,7 @@
 		"uuid": "0551adc9-7faa-4ddc-a07b-08fbde2a247b", "type": "option",
 		"precondition": "6110d79f-1cf0-4a89-8a6d-84a472388fd8",
 		"title": "Will you store the licenses with the data at all time?",
+		"phase": 2,
 		"text": "It is very likely that data will be moved and copied. At some point people may lose track of the origins. It can be helpful to have the licenses (of coarse as open as possible) stored in close association with the data.",
 		"answers":
 		[
@@ -310,6 +332,7 @@
 		"uuid": "daa06d1a-6314-4c6d-93a8-69954c7f5c54", "type": "option",
 		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
 		"title": "How will you keep provenance?",
+		"phase": 2,
 		"text": "To make your experiments reproducible, all steps in the data processing must be documented in detail. The software you used, including version number, all options and parameters. This information together for every step of the analysis is part of the so-called data provenance. There are more questions regarding this in the chapter on data processing and curation.",
 		"answers":
 		[
@@ -327,6 +350,7 @@
 		"uuid": "8e886b55-3287-48e7-b353-daf6ab40f7d8", "type": "option",
 		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
 		"title": "How will you do file naming and file organization?",
+		"phase": 2,
 		"text": "Putting some thoughts into file naming can save a lot of trouble later.",
 		"answers":
 		[
@@ -337,6 +361,7 @@
 		"uuid": "d4fe0b55-4aee-4d05-88d4-a3f4cad2cfa9", "type": "option",
 		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
 		"title": "Did you make a SOP (Standard Operating Procedure) for file naming?",
+		"phase": 2,
 		"text": "It can help if everyone in the project uses the same naming scheme.",
 		"answers":
 		[
@@ -350,6 +375,7 @@
 		"uuid": "37d0367b-3b69-4b3e-9303-71e628b1f360", "type": "option",
 		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
 		"title": "Will you be keeping the relationships between data clear in the file names?",
+		"phase": 2,
 		"text": "Advice: Use the same identifiers for sample IDs etc throughout the entire project.",
 		"answers":
 		[
@@ -363,6 +389,7 @@
 		"uuid": "7dfd022e-6d6e-4923-a81a-ca1f11024b57", "type": "option",
 		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
 		"title": "Will all the metadata in the file names also be available in the proper metadata?",
+		"phase": 2,
 		"text": "The file names are very useful as metadata for people involved in the project, but to computers they are just identifiers. To prevent accidents with e.g. renamed files metadata information should always also be available elsewhere and not only through the file name.",
 		"answers":
 		[
@@ -375,6 +402,7 @@
 	{
 		"uuid": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "option",
 		"title": "During the project, will you be archiving data (using so-called 'cold storage') for long term preservation?",
+		"phase": 1,
 		"text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication.",
 		"answers":
 		[
@@ -393,6 +421,7 @@
 		"uuid": "b16e76a9-34a8-4ba5-9420-b58bebaeac8d", "type": "option",
 		"precondition": "a547dc69-a3e8-46e4-bb4b-21fd104231f9",
 		"title": "Can the original data be regenerated?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "5e55c2ce-614a-4af8-ab92-972e8f5baea7", "label": "No",
@@ -410,6 +439,7 @@
 		"uuid": "7f8ff791-8593-4e00-93f9-e31c5dff5ffb", "type": "option",
 		"precondition": "a547dc69-a3e8-46e4-bb4b-21fd104231f9",
 		"title": "When is the raw data archived?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "fbe7ef0d-3199-47de-ad28-1b9299200156", "label": "As soon as it comes in, in chunks" },
@@ -425,6 +455,7 @@
 		"uuid": "c659c36f-d142-4453-8d8b-db7c05f31371", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Is the archived data changing over time, needing re-archival?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "86e40411-deee-4dc0-88dc-a257c7f4a3ad", "label": "No" },
@@ -440,6 +471,7 @@
 		"uuid": "1147485f-b9a9-486c-8341-27e05718c508", "type": "option",
 		"precondition": "48d7128a-a237-4d32-8fc6-464089b46892",
 		"title": "Do you need frequent backups?",
+		"phase": 1,
 		"text": "The general term 'backup' is used for protection against two different kinds of problems: equipment failure and human error. Protections against these two may need different solutions. Both are considered backup for this and subsequent questions.",
 		"answers":
 		[
@@ -451,6 +483,7 @@
 		"uuid": "f6476ea3-1ec5-447b-a776-4f0bfca38f8f", "type": "option",
 		"precondition": "48d7128a-a237-4d32-8fc6-464089b46892",
 		"title": "Will you be relying on these backups to recover from human error (accidental changes or deletions)?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "6f307c89-c1b2-4dcc-8315-585a65f08a87", "label": "No" },
@@ -461,6 +494,7 @@
 		"uuid": "c2a38110-f7a3-432f-ae98-4e448e496b44", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Will the archive be stored on disk or on tape?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "18f50141-094d-426b-8a75-4c4fce59389b", "label": "Disk" },
@@ -472,6 +506,7 @@
 		"uuid": "41a8d19b-2468-4c60-9f5e-7a8fee26eedb", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Will the archive be stored in a remote location, protecting the data against disasters?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "a15afda5-9e5a-40bd-a802-fc811fa39d20", "label": "No",
@@ -484,6 +519,7 @@
 		"uuid": "ed3d43ad-d2b5-4194-8b05-08c95da0a7f2", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Will the archive need to be protected against loss or theft?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "f312f518-69cb-442b-95a4-9523a25770db", "label": "No",
@@ -496,6 +532,7 @@
 		"uuid": "2c797727-559d-4bcf-a4a1-713accfcd602", "type": "option",
 		"precondition": "29498f8c-ea29-4855-82db-5b1228dc09ba",
 		"title": "Will the archive be encrypted?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "5e4bb06c-01ff-4964-890f-6f56bc4b819a", "label": "No",
@@ -514,6 +551,7 @@
 		"uuid": "905d4cda-afa1-4cc0-8df6-3d989c7b8b2e", "type": "option",
 		"precondition": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98",
 		"title": "Is it clear who has access to the key? Also in case of a required data restore?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "68a83934-190b-4e33-9ac0-138e34e5a206", "label": "No",
@@ -526,6 +564,7 @@
 		"uuid": "7458c3bc-60aa-44ba-8d59-a0672dc8de63", "type": "option",
 		"precondition": "29498f8c-ea29-4855-82db-5b1228dc09ba",
 		"title": "Is it clear who has physical access to the archives?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "e9ab764f-e3fa-4704-9200-4d527a54f754", "label": "No",
@@ -538,6 +577,7 @@
 		"uuid": "87abded2-1edb-4f69-bd6c-8b90f7706206", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Will your project require the archives to be available on-line?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "bb1ba41d-9b1b-45dd-bdc7-c7b8ea451ab5", "label": "No" },
@@ -553,6 +593,7 @@
 		"uuid": "b3caa015-cdd5-4812-84b5-596855a30545", "type": "option",
 		"precondition": "25b31312-053b-4ef8-ae37-c44b7182634d",
 		"title": "Will data integrity be guaranteed?",
+		"phase": 2,
 		"text": "If the 'master copy' of the data is available on line, it should probably be protected against being tampered with.",
 		"answers":
 		[
@@ -566,6 +607,7 @@
 		"uuid": "86459c42-89ee-4874-bb54-fec0881332e0", "type": "option",
 		"precondition": "25b31312-053b-4ef8-ae37-c44b7182634d",
 		"title": "Is there an interface and a defined process for people to request access to the data?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "1ec0c5b1-b905-4bb4-aa56-45f7321258c1", "label": "No",
@@ -578,6 +620,7 @@
 		"uuid": "b7d9008e-9691-44f0-a026-0f63d808db39", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Has it been established who has access to the archive, and how fast?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "dc7c7529-58c6-4414-84cc-7a19325cb73b", "label": "No",
@@ -594,6 +637,7 @@
 		"uuid": "47559455-2969-41f4-aee8-e9ce558ab2f0", "type": "option",
 		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
 		"title": "Has it been established who can ask for a restore during the project?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "0591c012-e567-4383-b39f-22b0abfe0847", "label": "No",
@@ -606,6 +650,7 @@
 		"uuid": "3d837696-3a99-4362-86a3-f460dd878b75", "type": "option",
 		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
 		"title": "If the data is voluminous, will the project be able to cope with the time needed for a restore?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "acf31ff1-9d81-4671-89fb-fa4c60c5845a", "label": "No",
@@ -618,6 +663,7 @@
 		"uuid": "feb954c1-c38e-4615-addd-4c714a06809a", "type": "option",
 		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
 		"title": "Has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "79bf552f-4230-4026-9976-984ecdb8d889", "label": "No",
@@ -630,6 +676,7 @@
 		"uuid": "2dd94cbc-42f3-4077-b6da-83e0275290c5", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Has it been established how long the archived data need to be kept? For each of the different parts of the archive (raw data / results)?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "1d8e9897-3713-4480-98ba-9b1c71f41eaf", "label": "No",
@@ -647,13 +694,14 @@
 		"uuid": "e23201aa-df56-4ade-9406-baa1fb6b1c0c", "type": "option",
 		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
 		"title": "Will the data still be understandable after a long time?",
+		"phase": 2,
 		"text": "See also all questions about keeping metadata and data formats. Make sure the metadata is kept close to the data in the archive, and that community supported data formats are used for all long term archiving.",
 		"answers":
 		[
 			{ "uuid": "2e2460d5-5233-434b-9229-7cd775cb13b2", "label": "No",
-                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			  "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
 			{ "uuid": "31de7c36-5d2c-469a-82b8-af870cb3560c", "label": "Yes",
-                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+			  "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -664,6 +712,7 @@
 	{
 		"uuid": "72099c46-16e7-47a2-a320-cc768b7085fe", "type": "option",
 		"title": "Will you need a shared working space to work with your data?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "1d6ba101-fd62-43c8-ab53-76bc31847f58", "label": "No" },
@@ -674,7 +723,8 @@
 		"uuid": "df36fb68-131c-4f31-a42b-684abf523bbc", "type": "option",
 		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
 		"title": "How will you work with your data?",
-                "text": "There are several questions regarding the dynamics of the data in the working area, who works with it, the software that is run on it, etc.",
+		"phase": 1,
+		"text": "There are several questions regarding the dynamics of the data in the working area, who works with it, the software that is run on it, etc.",
 		"answers":
 		[
 			{ "uuid": "5af813b7-cb41-4eb9-afe7-ca364771b74e", "label": "Explore" }
@@ -684,12 +734,14 @@
 		"uuid": "73bfcfcf-a619-4f6a-a901-2e8ce01d039a", "type": "text",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "What kind of data will you have in your work space?",
+		"phase": 1,
 		"text": "When making the work space, it helps to know whether you expect to work with very many small files, a few very large files, whether you will use a (SQL) database to store most of the data. Maybe your data is suitable for a system like Hadoop? Such information can be collected here."
 	},
 	{
 		"uuid": "f6e66f4f-7b11-420f-a4b6-5fc972bc66d9", "type": "option",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "Do you need the work space to be close to the compute capacity?",
+		"phase": 1,
 		"text": "If you have large volumes of data that are intensely and repeatedly used by the computing work flow, it may be needed to keep the storage in the same place as where the computing takes place.",
 		"answers":
 		[
@@ -707,6 +759,7 @@
 		"uuid": "50f9d580-3e62-434b-81ff-86daed56aca8", "type": "option",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "Will you be working with your data in another form than the way it will be archived?",
+		"phase": 1,
 		"text": "Archival and working with data have different requirements. You want archived information to be in a form that others could read and in a format that is also understandable in a number of years. When working with the data, you need to be able to address it efficiently. If the two differ, you need to plan for conversions.",
 		"answers":
 		[
@@ -718,6 +771,7 @@
 		"uuid": "4ee4d67d-62c5-47f0-a741-f2629b65cf8a", "type": "option",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "How does the storage need change over time?",
+		"phase": 1,
 		"text": "To perform capacity planning, it is important to know what the need for storage capacity at the beginning and the end of the project will be.",
 		"answers":
 		[
@@ -732,6 +786,7 @@
 		"uuid": "8526a988-9561-42c6-8af4-7c96aa4c536d", "type": "option",
 		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
 		"title": "When will your raw data become available?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "adfc7ca3-c8e3-465b-8eb2-4327b8780684", "label": "Raw data will come in right at the start" },
@@ -742,6 +797,7 @@
 		"uuid": "01cd836b-915e-4751-b543-b326bf812594", "type": "option",
 		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
 		"title": "How much of the raw data do you need to keep in the work space?",
+		"phase": 1,
 		"text": "Sometimes the raw data is relatively large, and it pays of to clean it quickly.",
 		"answers":
 		[
@@ -755,6 +811,7 @@
 		"uuid": "ba381732-f499-419f-8744-e13807af83e3", "type": "option",
 		"precondition": "aad7d438-a8af-4462-9728-77e2493bcacc",
 		"title": "Do your raw data need to be archived?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "904859c4-b9bf-44b6-9a64-933e489089e6", "label": "No, it is also stored elsewhere can be recovered easily" },
@@ -771,6 +828,7 @@
 		"uuid": "c0944ac9-f286-48f2-b864-4641d0fcdd55", "type": "option",
 		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
 		"title": "Did you plan how much intermediate data you will get during analysis and how long each step needs to be kept?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "96b1aa0f-56db-4613-b424-3fe33349386b", "label": "The volume of intermediate data will not be significant" },
@@ -781,6 +839,7 @@
 		"uuid": "deb647ec-a001-4370-87b8-a5b1e2479f87", "type": "option",
 		"precondition": "9a0cfd22-adce-46e6-b7ec-8ed581ac95be",
 		"title": "Is it possible to store intermediate temporary data on a separate (scratch) area that is not backed up?",
+		"phase": 1,
 		"text": "If the intermediate results are in your main work space, a restore in case of a problem could take much more time. It may be faster to recover it by re-running computations",
 		"answers":
 		[
@@ -792,6 +851,7 @@
 		"uuid": "3a076e83-73b0-4cdd-bb71-c5d41469a191", "type": "option",
 		"precondition": "5cbefa56-bc0c-4704-a9a4-3535ec513057",
 		"title": "Are you sure you will not need a backup of the data stored on the scratch file systems (any scratch you use)?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "fe80319d-f761-49ac-9faf-d4c5a9b349da", "label": "No" },
@@ -806,6 +866,7 @@
 		"uuid": "89f78871-68bd-4190-9ee7-57ec3b4c2356", "type": "option",
 		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
 		"title": "Will you have different versions of intermediate data that need to be kept?",
+		"phase": 2,
 		"text": "Consider storing only the workflow parameters if the data itself could be reproduced quickly",
 		"answers":
 		[
@@ -817,21 +878,23 @@
 		"uuid": "50a9c060-91e9-4e34-8cb2-2d41fa493f9e", "type": "option",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "Will you need to temporarily archive data sets (e.g. to tape)?",
-                "text": "Usually, data sets will be archived if it is unlikely you need them in the short term, but it would be hard to create them again, and/or they are essential for reproducing your work. Archival storage of large volumes can be significantly cheaper than keeping it in the working area for an extensive period.",
+		"phase": 1,
+		"text": "Usually, data sets will be archived if it is unlikely you need them in the short term, but it would be hard to create them again, and/or they are essential for reproducing your work. Archival storage of large volumes can be significantly cheaper than keeping it in the working area for an extensive period.",
 		"answers":
 		[
 			{ "uuid": "09ac9b88-4350-441b-97f4-5f85ced2ddf2", "label": "No" },
 			{ "uuid": "9797dc5a-afc9-418e-a456-0d555a52424a", "label": "Yes" }
 		],
-                "references":
-                [
-                        { "uuid": "1fa0cc82-65e6-492f-b982-19ea2636ed95", "description": "Data archive setup", "target": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "xref" }
-                ]
+		"references":
+		[
+		  { "uuid": "1fa0cc82-65e6-492f-b982-19ea2636ed95", "description": "Data archive setup", "target": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "xref" }
+		]
 	},
 	{
 		"uuid": "f4065e54-d27a-45de-be4c-10384feacd0d", "type": "option",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "How will your first data come in?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "2271d2cd-de50-460b-85a1-dddf9d28776c", "label": "No special planning is needed for the initial data" },
@@ -844,6 +907,7 @@
 		"uuid": "2ed7b5c7-2452-4087-b4ed-d15ca31a4e65", "type": "option",
 		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
 		"title": "How will project partners access the work space?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d", "label": "Explore" }
@@ -853,6 +917,7 @@
 		"uuid": "b1faddd1-2f9f-48a8-b9a7-d8f6f8c02470", "type": "option",
 		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
 		"title": "Who will arrange access control?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "d45f521d-f541-4f40-a3d8-d4a9ecdc65e3", "label": "No special provisions are needed" },
@@ -864,6 +929,7 @@
 		"uuid": "f99580d5-b3ea-498c-86ac-f7326bd999c2", "type": "option",
 		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
 		"title": "Will the work space storage need to be remote mounted?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "68be7c83-54ed-46d4-a77f-b99488665f1c", "label": "No" },
@@ -877,6 +943,7 @@
 		"uuid": "f14750e9-3a39-4aae-b2c8-845583934c1d", "type": "option",
 		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
 		"title": "Will data be copied out and in to the workspace storage by remote users?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "2c2cd046-89e0-4f55-bafa-92eb5f77c3a8", "label": "No, this should not be allowed" },
@@ -893,6 +960,7 @@
 		"uuid": "6b3f13db-407a-44e0-9d23-e6dd6a20ad59", "type": "option",
 		"precondition": "06a34c86-3c48-4fa4-8888-0ae6b613068f",
 		"title": "Are data integrity and reliability requirements also met by the other storage spaces used in the project?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "c7a0181c-1921-4b21-9481-f4274d48876c", "label": "This is not needed" },
@@ -903,6 +971,7 @@
 		"uuid": "b171ec17-d7b5-4726-ae22-0d892b106cf8", "type": "option",
 		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
 		"title": "How available/reliable should must the work space be?",
+		"phase": 1,
 		"text": "There are a number of questions that can help you to decide whether your work space will be reliable enough for your project.",
 		"answers":
 		[
@@ -913,6 +982,7 @@
 		"uuid": "25e06912-08a2-40e4-af76-cfbc5ada9925", "type": "option",
 		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
 		"title": "What is the acceptable risk for a total loss?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "44810299-8618-4a79-a732-13cc2ff21903", "label": "This is unacceptable" },
@@ -923,6 +993,7 @@
 		"uuid": "19640692-1c97-4574-8b3d-f4f6e1e6b564", "type": "option",
 		"precondition": "766e16e4-21c7-4030-9eda-1973f51061d4",
 		"title": "Is there software in the work space? Can it also be restored quickly?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "7b572fda-9d67-44e9-b1c3-6dfc42c34d89", "label": "There is no software" },
@@ -939,6 +1010,7 @@
 		"uuid": "0548db0c-bd34-40ce-be73-7a13a5e8eb7d", "type": "option",
 		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
 		"title": "Can you handle it when the work space is off line for a while?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "ef611a20-d5f9-4ea6-bb02-a7122bfd7eed", "label": "We could handle a few days of offline time per year" },
@@ -950,6 +1022,7 @@
 		"uuid": "6531dd45-f628-4aa7-a2c5-82c639b79ab8", "type": "option",
 		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
 		"title": "How long can you wait for a restore if the storage fails?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "c9d8c9ed-ba2d-4108-b798-493cdf9225df", "label": "We can wait for repair and a restore" },
@@ -961,6 +1034,7 @@
 		"uuid": "aacf28a0-aab9-4436-8b2b-95ef755ae32a", "type": "option",
 		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
 		"title": "How long can you wait for a restore if you accidentally damage a file?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "42fb53ea-76ed-494b-8582-f080d952a3ed", "label": "Days" },
@@ -972,6 +1046,7 @@
 		"uuid": "98d9789b-32fc-4e2f-876a-47760ad7c7ec", "type": "option",
 		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
 		"title": "Will you make backup copies of project data that is not in the work space?",
+		"phase": 1,
 		"text": "Are there any data files e.g. on laptops of project members? Also: supercomputing centers and other high performance computer centers often write in their terms of use that you need to take care of your own backups",
 		"answers":
 		[
@@ -988,6 +1063,7 @@
 		"uuid": "c1e83bdf-5914-44c2-8414-0a4e7fbaf272", "type": "option",
 		"precondition": "1d6ba101-fd62-43c8-ab53-76bc31847f58",
 		"title": "Are data all project members store adequately backed up and traceable?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "0c93a407-b04a-4c89-a8e4-299a4d77c21e", "label": "No",
@@ -999,6 +1075,7 @@
 	{
 		"uuid": "614ab69d-55a6-4214-b384-00ba21ce92a1", "type": "option",
 		"title": "Is the risk of information loss, leaks and vandalism acceptably low?",
+		"phase": 2,
 		"text": "There are many factors that can contribute to the risk of information loss or information leaks. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
 		"answers":
 		[
@@ -1009,6 +1086,7 @@
 		"uuid": "90324a7b-f3c9-4ed8-b301-edc9869cb7b3", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Do project members store data or software on computers in the lab or external hard drives connected to those computers?",
+		"phase": 2,
 		"text": "When assessing the risk, take into account who has access to the lab, who has (physical) access to the computer hardware itself. Also consider whether data on those systems is properly backed up",
 		"answers":
 		[
@@ -1022,6 +1100,7 @@
 		"uuid": "abaf4a70-17d4-449c-9b95-5b3bcfed7e9b", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Do project members carry data with them?",
+		"phase": 2,
 		"text": "Does anyone carry project data on laptops, USB sticks or other external media?",
 		"answers":
 		[
@@ -1034,6 +1113,7 @@
 		"uuid": "6aff9a57-acea-4f6d-ac98-9a067e03cc8e", "type": "option",
 		"precondition": "c9fc7d94-0f37-40af-9d12-7c828d1252fc",
 		"title": "Are all data carriers encrypted? Are accounts on the laptop password protected?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "546d6e41-80ea-417b-b0e3-a1d9d75a3794", "label": "No",
@@ -1046,6 +1126,7 @@
 		"uuid": "84ec46bd-e714-4d98-8525-cdd0d58777ef", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Do project members store project data in cloud accounts?",
+		"phase": 2,
 		"text": "Think about services like Dropbox, but also about Google Drive, Apple iCloud accounts, or Microsoft's Office365",
 		"answers":
 		[
@@ -1057,6 +1138,7 @@
 		"uuid": "2d57daa6-df2e-4bf9-b024-710e74781d88", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Do project members send project data or reports per e-mail or other messaging services?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "1846d736-7f9c-4177-9e36-308afde00a5a", "label": "No" },
@@ -1067,6 +1149,7 @@
 		"uuid": "a454fffd-f4a4-426d-b758-6d70bc4ee96b", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Do all data centers where project data is stored carry sufficient certifications?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "9acf74b1-e045-477d-be96-695692bb22c3", "label": "No",
@@ -1079,6 +1162,7 @@
 		"uuid": "39d8dad9-7666-405c-b35c-9e430c9691ed", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Are all project web services addressed via secure http (https://)?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "2b934f9d-d849-4e22-8e0c-65dbf7b9dbeb", "label": "No",
@@ -1091,6 +1175,7 @@
 		"uuid": "dc327e53-cf4f-44e7-8e66-40ddf1b4ae0a", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Have project members been instructed about the risks (generic and specific to the project)?",
+		"phase": 2,
 		"text": "Project members may need to know about passwords (not sharing accounts, using different passwords for each service, and two factor authentication), about security for data they carry (encryption, backups), data stored in their own labs and in personal cloud accounts, and about the use of open WiFi and https",
 		"answers":
 		[
@@ -1104,6 +1189,7 @@
 		"uuid": "67c34ee1-2e71-423c-97a7-fe6aa3723465", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Did you consider the possible impact to the project or organization if information is lost?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "4c5d329b-6e18-4f4e-92a9-f0298adf38fe", "label": "No",
@@ -1120,6 +1206,7 @@
 		"uuid": "a20ddc5d-e883-4bc4-9948-36a2cb477d10", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Did you consider the possible impact to the project or organization if information leaks?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "04dd5577-367f-4c34-b90c-4bc25d80c819", "label": "No",
@@ -1136,6 +1223,7 @@
 		"uuid": "8cd49d8f-9af0-4ea9-985a-5d45142ac388", "type": "option",
 		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
 		"title": "Did you consider the possible impact to the project or organization if information is vandalized?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "b4dbc287-8eed-4799-800e-5ce0ede13cd8", "label": "No",
@@ -1151,6 +1239,7 @@
 	{
 		"uuid": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "option",
 		"title": "Do you need to do compute capacity planning?",
+		"phase": 1,
 		"text": "If you require substantial amounts of compute power, amounts that are not trivially absorbed in what you usually have abailable, some planning is necessary. Do you think you need to do compute capacity planning?",
 		"answers":
 		[
@@ -1162,6 +1251,7 @@
 		"uuid": "30027b9a-2077-4c74-9048-f0532ada9b03", "type": "option",
 		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
 		"title": "Do you know how much CPU power, memory and I/O band width a typical analysis will take?",
+		"phase": 1,
 		"text": "Did you run pilot jobs? Do you know this information from comparable projects? Did you test whether the work scales up as you expected if you run more than one job?",
 		"answers":
 		[
@@ -1173,6 +1263,7 @@
 		"uuid": "dd918787-ffb1-499e-98f8-42050758c7ce", "type": "option",
 		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
 		"title": "What type of compute architecture is most suitable for your work? Will you have that available?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "75be8d48-34ba-4ac5-ba2c-b9fd435fe705", "label": "We will use a compute cluster" },
@@ -1185,6 +1276,7 @@
 		"uuid": "851a72ac-9497-4d8a-ae1a-6509d021a20b", "type": "option",
 		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
 		"title": "Is there sufficient experience with the chosen computer in the project, and sufficient time to support the project partners?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "b1bdced0-f4f2-48f4-907f-d5fed58e15a2", "label": "We will recruit" },
@@ -1197,6 +1289,7 @@
 		"uuid": "d8150021-19d7-4e92-90c3-d9c3d62d188e", "type": "option",
 		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
 		"title": "Have you established with the provider when will you need the compute capacity?",
+		"phase": 2,
 		"text": "Do you need the compute capacity also for development? Can you start developing locally and start with a deployment test later?",
 		"answers":
 		[
@@ -1208,6 +1301,7 @@
 		"uuid": "4c71d62c-3184-43d7-bdec-f762c682035e", "type": "option",
 		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
 		"title": "Is all required compute capacity available close to the project working storage area?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "c536e726-722c-428a-b11b-25c763da1a54", "label": "No" },
@@ -1218,6 +1312,7 @@
 		"uuid": "a39fb276-8c46-49e7-bfb9-af8ba876726f", "type": "option",
 		"precondition": "c536e726-722c-428a-b11b-25c763da1a54",
 		"title": "Did you plan the required network capacity between storage and compute services?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "010b4ce6-0f52-437d-9971-681acdf37524", "label": "There are no special networking requirements" },
@@ -1229,6 +1324,7 @@
 		"uuid": "3788d53f-c79f-43d2-b67b-7479f05cddb0", "type": "option",
 		"precondition": "c536e726-722c-428a-b11b-25c763da1a54",
 		"title": "Can all data be legally transported and processed at the computing site?",
+		"phase": 1,
 		"text": "Are the risks of data leaks covered?",
 		"answers":
 		[
@@ -1240,6 +1336,7 @@
 		"uuid": "410f3709-c283-4974-83c8-6c5d24899a68", "type": "option",
 		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
 		"title": "Will different groups work on different parts of the workflow? Will parts of the computing be done on 'local' infrastructure to the group?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "be99bdcc-76f2-43c3-b277-064062360dc1", "label": "All steps of the workflow will be performed at central computing locations" },
@@ -1254,6 +1351,7 @@
 		"uuid": "9e34d326-5f7b-494b-bc2e-2131eef6f844", "type": "option",
 		"precondition": "a2c4514b-61e4-47cf-ae54-7006fea37ec2",
 		"title": "Is there sufficient network capacity to the other computing locations?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "310adf1a-1b9c-42df-94ee-dd82699a2672", "label": "No",

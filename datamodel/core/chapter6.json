@@ -8,6 +8,7 @@
 	{
 		"uuid": "c8e35b21-9911-43f4-bb5e-0df3de1cd727", "type": "option",
 		"title": "Will data interpretation and modeling require significant compute infrastructure capacity?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "5905c733-5113-401f-9343-24911af54e05", "label": "No" },
@@ -21,6 +22,7 @@
 	{
 		"uuid": "948b5fd8-c1bd-457d-8f81-ea2fd093f541", "type": "option",
 		"title": "How will you be making sure there is good provenance of the data analysis?",
+		"phase": 2,
 		"text": "Data analysis is normally done manually on a step-by-step basis. It is essential to make sure all steps are properly documented, otherwise results will not be reproducible.",
 		"answers":
 		[
@@ -34,11 +36,13 @@
 	{
 		"uuid": "b73b8310-3b4f-49c8-a5c0-4208883754ac", "type": "text",
 		"precondition": "ccdb5296-919c-44ac-89df-351fd2e564ae",
-		"title": "What other arrangements?"
+		"title": "What other arrangements?",
+		"phase": 2
 	},
 	{
 		"uuid": "460803f2-cc23-4c57-b50e-c5177a3c11d5", "type": "option",
 		"title": "Will you be doing (automated) knowledge discovery?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "8592fc25-fd0f-438c-b0e9-2b0ad81475c7", "label": "No" },
