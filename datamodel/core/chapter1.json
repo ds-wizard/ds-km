@@ -9,6 +9,7 @@
 	{
 		"uuid": "efc80cc8-8318-4f8c-acb7-dc1c60e491c1", "type": "option",
 		"title": "Is there any pre-existing data?",
+		"phase": 1,
 		"text": "Are there any data sets available in the world that are relevant to your planned research?",
 		"answers":
 		[
@@ -28,6 +29,7 @@
 		"uuid": "59efe0c4-fc18-4082-a656-6d0c1db45899", "type": "option",
 		"precondition": "2663b978-5125-4224-9930-0a50dbe895c9",
 		"title": "Will you be using any pre-existing data (including other people's data)?",
+		"phase": 1,
 		"text": "Will you be referring to any earlier measured data, reference data, or data that should be mined from existing literature? Your own data as well as data from others?",
 		"answers":
 		[
@@ -47,6 +49,7 @@
 		"uuid": "fcc51962-08df-4f4c-85ad-6bb932107010", "type": "list",
 		"precondition": "dac677d4-99f9-4af8-935a-4a1c9c7cdbdf",
 		"title": "What reference data will you use?",
+		"phase": 2,
 		"text": "Much of todays data is used in comparison with reference data. A genome for instance is compared with a reference genome to identify genomic variants. If you use reference data, there are several other issues that you should consider. What are the reference data sets that you will use?",
 		"references":
 		[
@@ -148,6 +151,7 @@
 		"uuid": "be872000-cb98-442f-999c-ca3ef58dcfe8", "type": "list",
 		"precondition": "dac677d4-99f9-4af8-935a-4a1c9c7cdbdf",
 		"title": "What existing non-reference data sets will you use?",
+		"phase": 1,
 		"text": "Even if you will be producing your own data, you often will also be relying on existing data sets (e.g. from earlier . You may need to integrate your new data with an existing data set or retrieve additional information from related data bases. Will you be doing such things?",
 		"references":
 		[
@@ -158,7 +162,8 @@
 	{
 		"uuid": "39e0cc7c-17fe-4991-88d8-1280c3fe7923", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
-		"title": "Will the owners of this data set work with you on this study",
+		"title": "Will the owners of this data set work with you on this study?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "08fab0f9-20a7-4c22-9e7b-3a9fa81e49e9", "label": "No" },
@@ -175,6 +180,7 @@
 		"uuid": "f59d2d89-fe27-4a8a-b3e6-2782bcc2fb97", "type": "option",
 		"precondition": "08fab0f9-20a7-4c22-9e7b-3a9fa81e49e9",
 		"title": "Do you need to request access to the data",
+		"phase" : 1,
 		"answers":
 		[
 			{ "uuid": "d719a2b4-08e7-427e-9a8e-e4c6d827c0d4", "label": "No" },
@@ -185,6 +191,7 @@
 		"uuid": "27c83b38-1df2-4f91-89ac-2f6bf4e72190", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
 		"title": "Will any usage restrictions affect your reuse?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "7dc57afd-66cc-4760-8f37-eb0db7bb1a96", "label": "No" },
@@ -195,6 +202,7 @@
 		"uuid": "467ff3ad-156c-4285-9efb-c91072b3544e", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
 		"title": "Is extension of any consent for privacy sensitive data needed?",
+		"phase": 1,
 		"text": "If the data that you will re-use is coupled to people, is the informed consent that was originally obtained from those people covering your current research?",
 		"answers":
 		[
@@ -211,6 +219,7 @@
 		"uuid": "62ddfc73-1680-4bbf-b198-6a7231875fb1", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
 		"title": "How will you be accessing the data?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "423f7c77-c3bd-4ece-a9f6-ad9e3d0428a1", "label": "Already have a copy" },
@@ -222,6 +231,7 @@
 		"uuid": "588e3c1f-e9fd-411f-954e-f7a9b1cff1de", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
 		"title": "Do you know in what format the data is available?",
+		"phase": 2,
 		"text": "Do you know the data format of the data? Is this suitable for your work? Does it need to be converted?",
 		"answers":
 		[
@@ -233,6 +243,7 @@
 		"uuid": "3b088f38-81bd-46f9-8066-90513740b662", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
 		"title": "Is the data set fixed, or will it be updated in the future?",
+		"phase": 2,
 		"text": "Is the data set you will reuse a fixed data set (with a persistent identifier), or is it a data set that is being worked on (by others) and may be updated during your project or after?",
 		"answers":
 		[
@@ -244,6 +255,7 @@
 		"uuid": "2e7af465-4852-4411-8d8e-7f0ff64d8b25", "type": "option",
 		"precondition": "be872000-cb98-442f-999c-ca3ef58dcfe8",
 		"title": "Can you and will you use the complete existing data set?",
+		"phase": 2,
 		"text": "If you use any filtering, how will you make sure that your results will be reproducible by yourself and others at a later time?",
 		"answers":
 		[
@@ -256,6 +268,7 @@
 		"uuid": "8cedcf93-7676-4397-b3fc-a81167ff1853", "type": "option",
 		"precondition": "59efe0c4-fc18-4082-a656-6d0c1db45899",
 		"title": "Do you need to harmonize different sources of existing data?",
+		"phase": 1,
 		"text": "If you are combining data from different sources, harmonization may be required. You may need to re-analyse some original data.",
 		"answers":
 		[
@@ -272,6 +285,7 @@
 		"uuid": "1d1ac8bb-66c8-4b9e-bfc9-4c26f3598062", "type": "option",
 		"precondition": "a62a452b-dfed-478c-ad94-0e433277da94",
 		"title": "Will you be making your harmonization results available to others?",
+		"phase": 2,
 		"text": "By publishing either exactly what you did or (better) make sure that the harmonized data is available for reuse, you may save others the effort ",
 		"answers":
 		[
@@ -285,6 +299,7 @@
 		"uuid": "7e77ee02-ce26-4cd9-b07d-3eea03bc35c9", "type": "option",
 		"precondition": "59efe0c4-fc18-4082-a656-6d0c1db45899",
 		"title": "Will you be using data that needs to be (re-)made computer readable first?",
+		"phase": 1,
 		"text": "Some old data may need to be recovered, e.g. from tables in scientific papers or may be punch cards.",
 		"answers":
 		[
@@ -301,6 +316,7 @@
 		"uuid": "530124a4-c7e9-4821-b26d-32a8ecd0d978", "type": "option",
 		"precondition": "4a3e9d91-240b-4eae-bc90-02c12a2a4744",
 		"title": "Will you be making this data available in computer readable form to others?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "14c64eb2-d270-49b8-ac89-3ca42d52977f", "label": "No",
@@ -312,6 +328,7 @@
         {
 		"uuid": "588ad032-56ba-4d52-b29c-6a5b56aa6569", "type": "option",
 		"title": "Will reference data be created?",
+		"phase": 1,
 		"text": "Will any of the data that you will be creating form a reference data set for future research (by others)?",
 		"answers":
 		[
@@ -329,6 +346,7 @@
 		"uuid": "9f081091-0810-4f12-be7f-0a22ee928a14", "type": "text",
 		"precondition": "bdf55011-db06-4f4a-b26f-ebbbe029da04",
 		"title": "What will the Intellectual Property be like?",
+		"phase": 2,
 		"text": "Who will own the rights to the reference data set? Who will be able to use it?",
 		"references":
 		[
@@ -340,6 +358,7 @@
 		"uuid": "27769a31-717b-4204-8468-175ac93b195a", "type": "text",
 		"precondition": "bdf55011-db06-4f4a-b26f-ebbbe029da04",
 		"title": "How will you maintain it?",
+		"phase": 1,
 		"text": "How will maintenance be paid for in the long run? Will you host it yourself or deposit it with a repository? How will you deal with requests for help? And with requests for adding data?",
 		"references":
 		[
@@ -351,11 +370,13 @@
 		"uuid": "2679736a-800e-4eaa-a70f-818070540c48", "type": "text",
 		"precondition": "bdf55011-db06-4f4a-b26f-ebbbe029da04",
 		"title": "How will the release schedule be?",
+		"phase": 2,
 		"text": "Will you be updating the reference data at regular intervals?"
 	},
 	{
 		"uuid": "0e810343-6026-4992-8ea0-5539cbc77093", "type": "option",
 		"title": "Will you be storing samples?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "bd40f22d-6bce-464c-b525-e7813762a006", "label": "No" },
@@ -370,6 +391,7 @@
 	{
 		"uuid": "8d082e2f-7792-4ef7-a851-6e5041cba8b6", "type": "option",
 		"title": "Will you be collecting experimental data?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "16003c9d-4639-46ab-a305-df528f58d1c5", "label": "No" },

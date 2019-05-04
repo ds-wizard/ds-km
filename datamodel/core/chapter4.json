@@ -8,6 +8,7 @@
 	{
 		"uuid": "4ba3304e-225c-4916-bbf7-754de381253c", "type": "option",
 		"title": "Workflow development",
+		"phase": 1,
 		"text": "It is likely that you will be developing or modifying the workflow for data processing. There are a lot of aspects of this workflow that can play a role in your data management, such as the use of an existing work flow engine, the use of existing software vs development of new components, and whether every run needs human intervention or whether all data processing can be run in bulk once the work flow has been defined.",
 		"answers":
 		[
@@ -19,6 +20,7 @@
 		"uuid": "13c2a033-423c-4bb3-b596-840de2f6c9c9", "type": "option",
 		"precondition": "bb00eb32-e1c2-4288-a874-02264f757cb3",
 		"title": "Will you be exploring parameters to the workflow, or run in bulk?",
+		"phase": 1,
 		"text": "What will be the operational mode for your workflows? Will you be exploring options by changing tools and tweaking parameters? Of will you be running the same exact workflow on a large number of data files?",
 		"answers":
 		[
@@ -36,6 +38,7 @@
 		"uuid": "14ed71a8-80c6-465a-94db-1115502297bd", "type": "option",
 		"precondition": "bb00eb32-e1c2-4288-a874-02264f757cb3",
 		"title": "What data will the workflow developers or implementers use?",
+		"phase": 1,
 		"text": "The people implementing the data analysis work flow for your project probably need test data that they can use to see whether what they build works. How will this be arranged?",
 		"answers":
 		[
@@ -48,6 +51,7 @@
 		"uuid": "c56f2e8f-bb78-412e-b238-974a14482f28", "type": "option",
 		"precondition": "3996826a-b67a-42e7-9223-f2a438fddbe6",
 		"title": "When will they have access?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "94f0f330-54fd-425f-a644-b8a7c674026f", "label": "Data will be available at the start of the project, no waiting needed"},
@@ -59,6 +63,7 @@
 		"uuid": "d206fcaf-a238-48ef-925e-6f006d39f2af", "type": "option",
 		"precondition": "3996826a-b67a-42e7-9223-f2a438fddbe6",
 		"title": "How will data security be dealt with?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "01a9f738-7950-4ee0-b9d0-ecd0df8fa7f2", "label": "Data security is not an issue"},
@@ -70,23 +75,27 @@
 	{
 		"uuid": "4bf93fbc-1116-4d40-b2fb-625a0e2e20f9", "type": "text",
 		"precondition": "a3286c6a-ce1b-4ff0-8cee-9686d0bd1e72",
-		"title": "What other arrangements?"
+		"title": "What other arrangements?",
+		"phase": 1
 	},
 	{
 		"uuid": "9a1c0153-3eae-40d5-8e91-66e108ef1fe8", "type": "list",
 		"precondition": "bb00eb32-e1c2-4288-a874-02264f757cb3",
 		"title": "List existing software components you will use in the analysis workflow",
+		"phase": 2,
 		"text": "Your workflow may be available in components from different sources. Specify the different parts that you recognize and that you will each acquire in a different way"
 	},
 	{
 		"uuid": "996df4e8-90ea-4aaf-8c3d-d92b3d145dd3", "type": "text",
 		"precondition": "9a1c0153-3eae-40d5-8e91-66e108ef1fe8",
-		"title": "Where are you getting this software from? Please specify a web address if available."
+		"title": "Where are you getting this software from? Please specify a web address if available.",
+		"phase": 2
 	},
 	{
 		"uuid": "cfb67fc9-4a65-4221-87ca-7ca7c99f13a4", "type": "option",
 		"precondition": "9a1c0153-3eae-40d5-8e91-66e108ef1fe8",
 		"title": "What version of this software will you use?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "d707aef1-856d-4ab1-903a-2bccdd0c9a65", "label": "The exact version that we point to",
@@ -101,6 +110,7 @@
 		"uuid": "b482e4e9-9435-4e2c-9ce5-e35845ba53b0", "type": "option",
 		"precondition": "e3e4240a-0785-4a76-9dd6-ce073abf643b",
 		"title": "Will you re-run any analysis when a new version comes out?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "8a3adc2b-cef2-43a1-8552-644acc3939a7", "label": "No"},
@@ -112,6 +122,7 @@
 		"uuid": "b66496d0-6fd4-4854-8f07-961045de4b7c", "type": "option",
 		"precondition": "9a1c0153-3eae-40d5-8e91-66e108ef1fe8",
 		"title": "How is your experience with this software?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "30aedfab-3199-43b8-bcc6-caffad6148f0", "label": "We know the software well"},
@@ -124,18 +135,21 @@
 		"uuid": "2109e98d-fe60-412d-8e72-48b47a181627", "type": "list",
 		"precondition": "bb00eb32-e1c2-4288-a874-02264f757cb3",
 		"title": "List new software components you will develop for the analysis workflow",
+		"phase": 1,
 		"text": "Not all components you need may be available already. Please list here what you will be developing yourself. Do not underestimate the time needed to integrate components into a work flow!"
 	},
 	{
 		"uuid": "dbf05c2a-0108-4cae-947d-c0383140f006", "type": "text",
 		"precondition": "2109e98d-fe60-412d-8e72-48b47a181627",
 		"title": "Please specify the software repository you use for development",
+		"phase": 2,
 		"text": "Preferably use a direct URL other users could use"
 	},
 	{
 		"uuid": "99f4a43c-9848-488a-9b99-ff8dd6a4269c", "type": "option",
 		"precondition": "2109e98d-fe60-412d-8e72-48b47a181627",
 		"title": "Did you consider existing options?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "1f53a431-ec8d-4a16-875a-c2f7843a2294", "label": "Nothing like this exists", "advice": "really?",
@@ -152,6 +166,7 @@
 		"uuid": "3b0f752e-e46b-4c8b-835f-14c426036ece", "type": "option",
 		"precondition": "2109e98d-fe60-412d-8e72-48b47a181627",
 		"title": "What license will you use for your tool?",
+		"phase": 1,
 		"text": "Make sure the license is compatible with all components you use, and also make sure the license is made explicit in the repository.",
 		"answers":
 		[
@@ -170,12 +185,14 @@
 		"uuid": "6b5d7d2e-c117-4e61-a597-5207bc7fc057", "type": "text",
 		"precondition": "584339ee-b313-44ef-8aba-c0f252eb2ade",
 		"title": "What other license?",
+		"phase": 1,
 		"text": "Preferably give a web pointer to the license."
 	},
 	{
 		"uuid": "c83097bb-e057-4cde-848d-a2e57d6ee3c9", "type": "option",
 		"precondition": "584339ee-b313-44ef-8aba-c0f252eb2ade",
 		"title": "Is this a recognised reusable open source license?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "aefb5f4a-dd6e-44a1-8834-a064a4534196", "label": "No",
@@ -188,6 +205,7 @@
 		"uuid": "a1c37c05-57ff-499c-b58c-e90f511241fa", "type": "option",
 		"precondition": "bb00eb32-e1c2-4288-a874-02264f757cb3",
 		"title": "Did you choose the workflow engine you will be using?",
+		"phase": 2,
 		"answers":
 		[
                         { "uuid": "9e30350e-5d5b-4ecc-992c-3dd16f8638b3", "label": "Workflows will be run from a computer command line",
@@ -208,6 +226,7 @@
 		"uuid": "28b10fd8-28a6-49b8-822d-f3d47780ab20", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Do you need the workflow engine to produce provenance information automatically?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -225,6 +244,7 @@
 		"uuid": "15e6148f-f4e0-4bbc-93c5-6fdf4fe47608", "type": "option",
 		"precondition": "1693bb64-b047-4464-ae45-c5e8aca12263",
 		"title": "Does the provenance need to be stored or converted to some standard format?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -236,6 +256,7 @@
 		"uuid": "ba0000c2-65e0-4af3-95c3-bdcc1d3de291", "type": "option",
 		"precondition": "1693bb64-b047-4464-ae45-c5e8aca12263",
 		"title": "Can the work flow be annotated to make it understandable?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -249,6 +270,7 @@
 		"uuid": "ff6f53f1-1adc-4401-bbda-a159d283a8eb", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Do you need the workflow engine to be run high-throughput?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -260,6 +282,7 @@
 		"uuid": "fdeb19c8-393c-4c4e-8c88-58a9c4d19e2b", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Is ease of development of the workflow engine itself an issue for you?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -271,6 +294,7 @@
 		"uuid": "2122d8b6-ab79-4a20-9016-d2ab8d154a58", "type": "option",
 		"precondition": "40eb8be9-1726-4cf5-b9c6-1adbb5cbccd1",
 		"title": "Can you reach out to the developers? Is there a contact?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -282,6 +306,7 @@
 		"uuid": "c1cbd221-6881-42be-b6d6-8b842f3f05db", "type": "option",
 		"precondition": "40eb8be9-1726-4cf5-b9c6-1adbb5cbccd1",
 		"title": "Does the workflow engine need to support a particular compute back end you will use?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -293,6 +318,7 @@
 		"uuid": "20fa4bb1-ff56-4050-b20e-3544beb02c17", "type": "option",
 		"precondition": "40eb8be9-1726-4cf5-b9c6-1adbb5cbccd1",
 		"title": "Does the workflow engine need standard tools for administrators?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -304,6 +330,7 @@
 		"uuid": "f5b2b4d2-2031-47da-95ff-6d10792c841f", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Is ease of development of the workflows an issue for you?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -315,6 +342,7 @@
 		"uuid": "f3c858ab-a89f-4f08-9c17-ca45e38f9340", "type": "option",
 		"precondition": "d88f0055-2ca3-4070-89cd-b1a5422ccaba",
 		"title": "Does the workflow engine need a developer GUI?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -326,6 +354,7 @@
 		"uuid": "f1609178-599a-4da6-b93b-776e4f9b626c", "type": "option",
 		"precondition": "d88f0055-2ca3-4070-89cd-b1a5422ccaba",
 		"title": "Does it need to be easy to support new tools in a workflow?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -339,6 +368,7 @@
 		"uuid": "0567eb3f-3a55-4b8d-b61b-c530f8a52223", "type": "option",
 		"precondition": "d88f0055-2ca3-4070-89cd-b1a5422ccaba",
 		"title": "Does it need support for specific kinds of data processing or data integration pipelines?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -350,6 +380,7 @@
 		"uuid": "74d6de0c-8c7d-4001-8019-2a29391afed1", "type": "option",
 		"precondition": "d88f0055-2ca3-4070-89cd-b1a5422ccaba",
 		"title": "Does it need support for complex control structures like conditionals and/or loops?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -361,6 +392,7 @@
 		"uuid": "d8833614-8fb5-4535-b448-8e657d17ad44", "type": "option",
 		"precondition": "d88f0055-2ca3-4070-89cd-b1a5422ccaba",
 		"title": "Does it need native support for specific data types?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -372,6 +404,7 @@
 		"uuid": "5179b194-aef6-47c5-bfb0-a21a0ba950ef", "type": "option",
 		"precondition": "d88f0055-2ca3-4070-89cd-b1a5422ccaba",
 		"title": "Does it need  support for nested workflows?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -383,6 +416,7 @@
 		"uuid": "5a83b169-3e41-42a5-8a4e-5c8c78111d0e", "type": "option",
 		"precondition": "d88f0055-2ca3-4070-89cd-b1a5422ccaba",
 		"title": "Does it need  support collaborative editing of workflows?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -394,6 +428,7 @@
 		"uuid": "add9596e-eaad-4720-9a11-f779fe1e6538", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Is ease of use an issue for you?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -405,6 +440,7 @@
 		"uuid": "6d31cd2e-ca00-4cf8-961e-f84d4dabdda4", "type": "option",
 		"precondition": "4908bd0c-2d3d-486c-998e-7d622bd7e371",
 		"title": "Who are the people that will run the workflows?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -422,6 +458,7 @@
 		"uuid": "6ed1691c-9298-48d7-aaf8-224bca512419", "type": "option",
 		"precondition": "4908bd0c-2d3d-486c-998e-7d622bd7e371",
 		"title": "Does the running of work flows need to be controlled via a GUI?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -433,6 +470,7 @@
 		"uuid": "8330c11f-4a4f-4ed6-a088-58b50acfea62", "type": "option",
 		"precondition": "4908bd0c-2d3d-486c-998e-7d622bd7e371",
 		"title": "Do work flows need to be run on remote computers?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -449,6 +487,7 @@
 		"uuid": "38b2a0d8-ce59-46cd-afa0-258c1b2f469f", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Is durability of work flows important for you?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -467,6 +506,7 @@
 		"uuid": "0d13a230-a3eb-4f5e-b9c2-2f64a5d9c033", "type": "option",
 		"precondition": "5a54c4c2-b1c4-4e51-87e8-102a6af3d961",
 		"title": "Do you need the same workflow to run next year? Durability against 'workflow decay'?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -478,6 +518,7 @@
 		"uuid": "655180dc-1cb9-41f6-8a36-7c6ecf02009a", "type": "option",
 		"precondition": "5a54c4c2-b1c4-4e51-87e8-102a6af3d961",
 		"title": "Are all versions of all tools, including built-in tools, under total control of the project?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -493,6 +534,7 @@
 		"uuid": "92cab7ad-92ff-44ec-9678-8e5c95d66816", "type": "option",
 		"precondition": "5a54c4c2-b1c4-4e51-87e8-102a6af3d961",
 		"title": "Do you need to be able to export/import workflows (e.g. in the Common Workflow Language, CWL)?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -504,6 +546,7 @@
 		"uuid": "75af1eb3-1e0e-4be8-b0b6-cdb0883c791b", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Do you want your workflow engine to be professionally hosted by a specialized party?",
+		"phase": 2,
 		"text": "There is no concrete map of these features to suitable workflow engines at this moment, but filling in these questions can lead you to think about the most important features for the project",
 		"answers":
 		[
@@ -515,6 +558,7 @@
 		"uuid": "bdce5cee-2930-4b30-b3d5-d503ab0b5d1a", "type": "option",
 		"precondition": "00842b33-a854-4e25-8bed-05e2462fecf1",
 		"title": "Can you make a decision for the workflow engine based on the criteria deemed important?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "eb286cc2-f632-4c77-9a4d-8f3e8d734516", "label": "We will use 'make'" },
@@ -544,6 +588,7 @@
 		"uuid": "558f01a3-2563-4114-9244-812b212c9791", "type": "option",
 		"precondition": "bb00eb32-e1c2-4288-a874-02264f757cb3",
 		"title": "Do you plan taking special measures to guaranty the integrity of tools in the workflow?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "fe13a1d8-06be-430c-a486-7346b769b48f", "label": "No", "advice": "Consider changing this!",
@@ -556,6 +601,7 @@
 		"uuid": "4b4d5878-970b-41aa-bbf5-15072e704417", "type": "option",
 		"precondition": "ebc3a870-5f89-43ad-9d90-de5c91528ea2",
 		"title": "Will you only use well-scrutinized open source tools?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "1c921d11-0353-4cdb-8e64-265b2854269c", "label": "No" },
@@ -566,6 +612,7 @@
 		"uuid": "5ea8a4fd-4bed-48a9-aacf-71e2d4953eb4", "type": "option",
 		"precondition": "ebc3a870-5f89-43ad-9d90-de5c91528ea2",
 		"title": "Will you have all changes checked by a second developer before deploying them?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "7dbd8884-1e02-4c45-a31d-51d4a0922601", "label": "No" },
@@ -576,6 +623,7 @@
 		"uuid": "cd44886c-877f-4387-b299-f8d81b559f73", "type": "option",
 		"precondition": "ebc3a870-5f89-43ad-9d90-de5c91528ea2",
 		"title": "How will you handle upgrades to tools?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "805ed3e6-a9c0-4f57-b62b-c82c42b4761b", "label": "We will trust a new release and deploy",
@@ -594,6 +642,7 @@
 		"uuid": "099902bd-1637-4e32-a744-b95031030c6c", "type": "option",
 		"precondition": "ebc3a870-5f89-43ad-9d90-de5c91528ea2",
 		"title": "Will you test whether known correct results are obtained over time?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "a547baf0-4638-4b38-97b9-9a4eafce20fa", "label": "No",
@@ -612,6 +661,7 @@
 		"uuid": "df3aff84-acf9-4614-996b-e69f7ddb96de", "type": "option",
 		"precondition": "ebc3a870-5f89-43ad-9d90-de5c91528ea2",
 		"title": "Are all tools you use under your complete control?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "af507b8a-824b-4198-9adf-c54f984f4fb5", "label": "No, we use tools maintained by others" },
@@ -626,6 +676,7 @@
 		"uuid": "94898b30-877d-4776-a03a-c57c93a725ac", "type": "option",
 		"precondition": "af507b8a-824b-4198-9adf-c54f984f4fb5",
 		"title": "How will you deal with the situation where support for a tool is dropped?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "d3fe6de8-b411-41c7-a336-c49e37d4b9d1", "label": "We will keep running it unchanged",
@@ -639,31 +690,34 @@
 	{
 		"uuid": "1991077f-04ae-4808-90a5-e4b2f82e30bf", "type": "option",
 		"title": "How will you make sure to know what exactly has been run?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "12a85bf3-1407-4783-9e73-564d75e7c98a", "label": "Explore" }
 		],
-                "references":
-                [
-                        { "uuid": "0c4383ec-211b-4937-9e63-31eb3a2bea8b", "description": "Keeping provenance metadata", "target": "daa06d1a-6314-4c6d-93a8-69954c7f5c54", "type": "xref" }
-                ]
+		"references":
+		[
+		  { "uuid": "0c4383ec-211b-4937-9e63-31eb3a2bea8b", "description": "Keeping provenance metadata", "target": "daa06d1a-6314-4c6d-93a8-69954c7f5c54", "type": "xref" }
+		]
 	},
 	{
 		"uuid": "5e111fc1-9d17-4ec8-aafb-1694a538a3aa", "type": "option",
 		"precondition": "12a85bf3-1407-4783-9e73-564d75e7c98a",
 		"title": "Will you keep results together with all processing scripts or workflows including documentation of the versions of the tools that have been run?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "f5518b1e-77c8-47f7-98e4-4be5ea58f9ab", "label": "No",
-                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			  "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
 			{ "uuid": "0d9d77b1-bbcd-480e-b165-8bcb29bd4a67", "label": "Yes",
-                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+			  "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
 		]
 	},
 	{
 		"uuid": "a972fba5-7586-4156-bdf8-8251288dc341", "type": "option",
 		"precondition": "12a85bf3-1407-4783-9e73-564d75e7c98a",
 		"title": "Will you make use of the metadata fields in your output data files to register how the data was obtained?",
+		"phase": 2,
 		"text": "File formats like VCF (for genetics) and TIFF (for images) have possibilities to document metadata in the file header. It is a good idea to use work flow tools that use these fields to document what was done to obtain the data.",
 		"answers":
 		[
@@ -677,6 +731,7 @@
 		"uuid": "decb7c9c-c6dc-4027-8c0e-18934c852ca6", "type": "option",
 		"precondition": "12a85bf3-1407-4783-9e73-564d75e7c98a",
 		"title": "Will you use a central repository for all tools and their versions as used in your project?",
+		"phase": 1,
 		"text": "Especially if analysis and processing of data in the project is done on multiple different computers by different people, it is a good idea to have your own repository of tools and their blessed versions.",
 		"answers":
 		[
@@ -695,6 +750,7 @@
 		"uuid": "4c7cd15f-90f9-4ab3-8082-38da4f642de1", "type": "option",
 		"precondition": "12a85bf3-1407-4783-9e73-564d75e7c98a",
 		"title": "Will you use a central repository for reference data used in your project?",
+		"phase": 1,
 		"text": "Especially if analysis and processing of data in the project is done on multiple different computers by different people, it is a good idea to have your own repository of reference data versions.",
 		"answers":
 		[
@@ -713,6 +769,7 @@
 		"uuid": "49199b05-73d7-4912-a5ca-bc1e14a09468", "type": "option",
 		"precondition": "12a85bf3-1407-4783-9e73-564d75e7c98a",
 		"title": "Will you make use of standard workflow engines and automatic work flows for all data analysis in the project?",
+		"phase": 1,
 		"text": "It is much easier to guarantee consistency and reproducibility if all data processing is done using automated work flows, especially if the workflow engine automatically keeps adequate provenance data.",
 		"answers":
 		[
@@ -730,6 +787,7 @@
 		"uuid": "56bc8ebb-aba5-4745-8034-17ed3fe4fe07", "type": "option",
 		"precondition": "12a85bf3-1407-4783-9e73-564d75e7c98a",
 		"title": "Are all software tools in the work flow professionally maintained, with version control?",
+		"phase": 2,
 		"text": "Will you be able to find and reproduce exactly which version was used for any analysis? Not only for the major tools in the workflows, but also for all 'glue' code and small tools you created especially for the project?",
 		"answers":
 		[
@@ -742,6 +800,7 @@
 	{
 		"uuid": "918d5fd1-ea37-468f-8acd-ca3e80203900", "type": "option",
 		"title": "How will you validate the integrity of the results?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "30d1e85c-0e3e-482f-97f9-22a7658b329e", "label": "Explore" }
@@ -751,6 +810,7 @@
 		"uuid": "e8a08f27-9f82-4147-b446-822d34a5d468", "type": "option",
 		"precondition": "30d1e85c-0e3e-482f-97f9-22a7658b329e",
 		"title": "Will you run a subset of your jobs several times across the different compute infrastructures you are using?",
+		"phase": 2,
 		"text": "There are surprisingly many complications that can cause (slight) inconsistencies between results when workflows are run on different compute infrastructures. A good way to make sure this does not bite you is to run a subset of all jobs on all different infrastructure to check the consistency.",
 		"answers":
 		[
@@ -764,6 +824,7 @@
 		"uuid": "a3a4ce37-4ced-41df-8ec6-e42d87a6a3f1", "type": "option",
 		"precondition": "30d1e85c-0e3e-482f-97f9-22a7658b329e",
 		"title": "Will you be instrumenting the tools into pipelines and workflows using automated tools?",
+		"phase": 2,
 		"text": "Surrounding all tools in your data processing and analysis workflows with the 'boilerplate' code necessary on the computer system you are using is tedious and error prone. Especially if you are using the same tools in multiple different work flows and/or on multiple different computer architectures. Automated instrumentation, e.g. by using a workflow management system, can prevent many mistakes.",
 		"answers":
 		[
@@ -777,6 +838,7 @@
 		"uuid": "34a3ef8b-4a17-4030-9157-ed1c1bf60b80", "type": "option",
 		"precondition": "30d1e85c-0e3e-482f-97f9-22a7658b329e",
 		"title": "Will you use independently developed duplicate tools or workflows for critical steps to reduce or eliminate human errors?",
+		"phase": 2,
 		"text": "Validation of results without a golden standard is very hard. One way of doing it is to develop two solutions for a problem (two independent workflows or two independently developed tools) to check whether the results are identical or comparable.",
 		"answers":
 		[
@@ -790,6 +852,7 @@
 		"uuid": "faf72b3d-ac29-41d1-97f2-5223b199a086", "type": "option",
 		"precondition": "30d1e85c-0e3e-482f-97f9-22a7658b329e",
 		"title": "Will you run part of the data set repeatedly to catch unexpected changes in results?",
+		"phase": 2,
 		"text": "Running a small subset of the data repeatedly can be useful to catch unexpected problems that would otherwise be very hard to detect.",
 		"answers":
 		[
@@ -808,6 +871,7 @@
 	{
 		"uuid": "acc82522-327a-4c76-8c24-f8034f7dc1d4", "type": "option",
 		"title": "Do you have a contingency plan?",
+		"phase": 2,
 		"text": "What will you do if the compute facility is down?",
 		"answers":
 		[

@@ -150,8 +150,7 @@
                     "text": { "type": "string" },
                     "precondition": { "$ref": "#/common/uids/uuid" },
                     "references": { "$ref": "#/common/references/references" },
-                    "experts": { "$ref": "#/common/experts/experts" },
-                    "comment": { "type": "string" }
+                    "experts": { "$ref": "#/common/experts/experts" }
                 },
                 "required": ["uuid"]
             },
@@ -278,7 +277,7 @@
                     {
                         "type": "object",
                         "properties": {
-                            "addMetricsValues": { "$ref": "#/common/metrics/metric_values" }
+                            "addMetrics": { "$ref": "#/common/metrics/metric_measures" }
                         }
                     }
                 ]
@@ -301,8 +300,7 @@
                             "namespace": { "$ref": "#/common/namespace" },
                             "insertBefore": { "$ref": "#/common/uids/uuid" },
                             "addReferences": { "$ref": "#/common/references/references" },
-                            "addExperts": { "$ref": "#/common/experts/experts" },
-                            "addMetricsWeights": { "$ref": "#/common/metrics/metric_weights"}
+                            "addExperts": { "$ref": "#/common/experts/experts" }
                         },
                         "required": ["namespace"]
                     }

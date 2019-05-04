@@ -8,12 +8,13 @@
 	{
 		"uuid": "6516eae1-98b2-48f2-9862-b5fb140cfad7", "type": "option",
 		"title": "Will you be working with the philosophy 'as open as possible' for your data?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "ca5c002d-fb3f-4873-bede-a8f304a3934f", "label": "No", "advice": "You will need to explain!",
-                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
+			  "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
 			{ "uuid": "67a8f6e1-50db-4b04-b1fa-d52941f4e535", "label": "Yes",
-                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
+			  "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
 		],
 		"references":
 		[
@@ -24,6 +25,7 @@
 	{
 		"uuid": "a549d10b-aa46-4c0c-863f-30219ac5ecce", "type": "option",
 		"title": "Can all of your data become completely open immediately?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "b3739ebd-2d8e-42d3-9425-a7d6d1b26c79", "label": "No",
@@ -36,6 +38,7 @@
 		"uuid": "c010e830-bd89-460d-9498-cb41e7ffeb87", "type": "option",
 		"precondition": "b3739ebd-2d8e-42d3-9425-a7d6d1b26c79",
 		"title": " Are there legal reasons why (some of your) data can not be completely open?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "31f2fcda-dbb2-40f6-871b-c3cc59797a6b", "label": "No" },
@@ -46,6 +49,7 @@
 		"uuid": "019db0b3-9067-4134-8bfd-76db3cfc572a", "type": "option",
 		"precondition": "aac95530-2978-4759-803b-64721533faf0",
 		"title": "Are there privacy reasons why your data can not be open?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "b6dfc087-93d6-4dcf-b45c-3c6600395ec6", "label": "No" },
@@ -56,6 +60,7 @@
 		"uuid": "754148c2-6019-4318-8d44-d73becc989f4", "type": "option",
 		"precondition": "8a56768a-5c5a-44c0-b21c-46a231fbf6be",
 		"title": "Are there restrictions on where the data need to be stored?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "6fd34203-6217-4c1b-a706-c5fa155ea706", "label": "No" },
@@ -68,6 +73,7 @@
 		"uuid": "a25b30f4-2d0f-4132-9b8e-0950f0b0ed66", "type": "option",
 		"precondition": "8a56768a-5c5a-44c0-b21c-46a231fbf6be",
 		"title": "Could pseudonymization be used to make the data more openly available?",
+		"phase": 2,
 		"text": "Legally, pseudonymous data (which means that someone has the key to reverse the process) is still considered privacy sensitive information. However, the EU is working on special cases where the data can still be opened as long as the key availability is sufficiently limited.",
 		"answers":
 		[
@@ -79,6 +85,7 @@
 		"uuid": "5db6bd58-5d1d-4d02-9497-972cbef64c16", "type": "option",
 		"precondition": "49f268a6-9566-4aa4-bec3-44fec2e64548",
 		"title": "Can you make use of an existing 'trusted third party' for pseudonymization?",
+		"phase": 2,
 		"text": "Making use of the same pseudonymization for different studies makes it possible to integrate information later. Obviously it also raises the risk of re-identification",
 		"answers":
 		[
@@ -92,6 +99,7 @@
 		"uuid": "15ee1921-1fea-4f22-b462-b3cf7cdd4646", "type": "option",
 		"precondition": "8a56768a-5c5a-44c0-b21c-46a231fbf6be",
 		"title": "Could anonymization be used to make the data more openly available?",
+		"phase": 2,
 		"text": "Different anonymization techniques exist. Disadvantage of anonymization is that data integration becomes virtually impossible, but it may be the only way to open up your data for other research",
 		"answers":
 		[
@@ -103,6 +111,7 @@
 		"uuid": "69be6695-152b-48ba-a1fd-6662476e39b7", "type": "option",
 		"precondition": "8a56768a-5c5a-44c0-b21c-46a231fbf6be",
 		"title": "Could you use data aggregation to make the data openly available?",
+		"phase": 2,
 		"text": "Aggregated data, where typically at least 15 individuals are in any data point, are considered sufficiently anonymous. This is an alternative way of making data openly available for future research",
 		"answers":
 		[
@@ -114,6 +123,7 @@
 		"uuid": "a18d79d2-74b1-4524-a3c7-2c1a87b66a75", "type": "option",
 		"precondition": "aac95530-2978-4759-803b-64721533faf0",
 		"title": "Are there IP reasons why your data can not be open?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "cad24d70-f9b5-4159-b352-2f91dbc92ac5", "label": "No" },
@@ -124,6 +134,7 @@
 		"uuid": "b4f9916a-c846-49ff-bfd2-f5d1346de553", "type": "option",
 		"precondition": "2ffa365d-83f6-4adb-bcc6-377fec82a297",
 		"title": "Is it clear who owns data and documents?",
+		"phase": 2,
 		"answers":
 		[
 			{ "uuid": "3de2edc2-c05f-49a7-8d1b-699cdaa98350", "label": "No",
@@ -136,6 +147,7 @@
 		"uuid": "c9ed4379-19e2-4ce3-8962-5c2fca69b6cd", "type": "option",
 		"precondition": "2ffa365d-83f6-4adb-bcc6-377fec82a297",
 		"title": "Will someone be given decision power to move documents or data to a new place after the project has finished?",
+		"phase": 3,
 		"text": "In one case in the past, all documents that had been assembled by a project in a documentation system had to be deleted because not a single person could decide to move them to a new platform when the documentation system was going off-line.",
 		"answers":
 		[
@@ -149,6 +161,7 @@
 		"uuid": "55f03a4a-034b-422a-adf6-757416b7650a", "type": "option",
 		"precondition": "aac95530-2978-4759-803b-64721533faf0",
 		"title": "Will you be allowing authenticated access to the data?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "da8b25a9-8865-4ce8-a2ba-d592c42daa4c", "label": "No" },
@@ -159,6 +172,7 @@
 		"uuid": "baed9cce-91ab-45d0-a272-92246b2e6c72", "type": "option",
 		"precondition": "18a46146-25f6-4e5c-90ae-c6b9be9cc3f0",
 		"title": "Where will the data be stored?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "09f8f08d-04ae-463a-bbe0-f5ce05595777", "label": "In a domain repository (like EBI's EGA) that arranges restricted access",
@@ -173,6 +187,7 @@
 		"uuid": "278a8218-eb9f-43b4-8dac-cd6a644537fa", "type": "option",
 		"precondition": "18a46146-25f6-4e5c-90ae-c6b9be9cc3f0",
 		"title": "Who will take care of authentication of potential users?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "dc4e23fd-5477-41c8-919d-74df342f2d33", "label": "We will use username/password authentication, possibly augmented with two-factor security",
@@ -185,12 +200,14 @@
 	{
 		"uuid": "7b187628-eb1e-40f7-9e75-5787a1ff5a3e", "type": "text",
 		"precondition": "109e8083-1eb6-4b69-b7ae-32dab8b6a5f6",
-		"title": "What other arrangements?"
+		"title": "What other arrangements?",
+		"phase": 3
 	},
 	{
 		"uuid": "23909308-55cf-4e94-a616-2a74c809aa48", "type": "option",
 		"precondition": "18a46146-25f6-4e5c-90ae-c6b9be9cc3f0",
 		"title": "Who will take care of authorization of potential users?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "ed47c9b7-9c2b-48ab-bdf4-efd8913f673e", "label": "One of the project members will authorize", "advice" : "It is not a good idea to tie this to a person",
@@ -205,17 +222,20 @@
 	{
 		"uuid": "0de7232f-802d-4e1f-a84c-2895d08901ce", "type": "text",
 		"precondition": "d010e09e-8ce8-47c6-a1f9-f281519ba936",
-		"title": "Which existing Data Access Committee?"
+		"title": "Which existing Data Access Committee?",
+		"phase": 3
 	},
 	{
 		"uuid": "346003fa-5ea6-41ed-a3b7-68d7e26a0b3e", "type": "text",
 		"precondition": "f57960de-3cfb-47da-a30b-da7c5d27a38e",
-		"title": "What other arrangements?"
+		"title": "What other arrangements?",
+		"phase": 3
 	},
 	{
 		"uuid": "c534c029-cb42-46a9-a118-87abfe3b54da", "type": "option",
 		"precondition": "18a46146-25f6-4e5c-90ae-c6b9be9cc3f0",
 		"title": "Are the criteria for application to access the data openly available?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "b3d0fe1f-6ffd-4c29-9e67-22fcad6fb00b", "label": "No",
@@ -228,6 +248,7 @@
 		"uuid": "b7cb192b-349a-4966-b37d-b63903bf2204", "type": "option",
 		"precondition": "18a46146-25f6-4e5c-90ae-c6b9be9cc3f0",
 		"title": "Has auditing for the re-use been arranged?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "651f3154-1f37-4367-9651-ba5dfdf09783", "label": "No",
@@ -240,6 +261,7 @@
 		"uuid": "85a9d872-3d41-4560-82c4-b850a6e2d5ac", "type": "option",
 		"precondition": "b3739ebd-2d8e-42d3-9425-a7d6d1b26c79",
 		"title": "Are there business reasons why (some of your) data can not be completely open?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "c87ef228-d9e5-4387-8ff6-5b6a05402a95", "label": "No",
@@ -253,12 +275,14 @@
 	{
 		"uuid": "43370b85-0ee0-4f0f-b7de-9b04a54a2480", "type": "text",
 		"precondition": "0cfc22ec-5551-4a37-84ec-308c85440af5",
-		"title": "What other business reasons are there not to open all data immediately?"
+		"title": "What other business reasons are there not to open all data immediately?",
+		"phase": 1
 	},
 	{
 		"uuid": "c10f9098-5b1c-4abc-adaa-bdef2fb537ca", "type": "option",
 		"precondition": "b3739ebd-2d8e-42d3-9425-a7d6d1b26c79",
 		"title": "Are there other reasons why (some of your) data can not be completely open?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "0eeabfdc-d62a-4868-bece-b696bccecc3a", "label": "No",
@@ -272,12 +296,14 @@
 	{
 		"uuid": "b289fdcc-aedc-496e-8169-e0bbe2346d1f", "type": "text",
 		"precondition": "2b755a90-8a43-41c0-9020-5e2b9ca8f88e",
-		"title": "What other reasons are there not to open all data immediately?"
+		"title": "What other reasons are there not to open all data immediately?",
+		"phase": 1
 	},
 	{
 		"uuid": "f5c12fcf-15d0-44ba-a53c-49ea9d7f620f", "type": "option",
 		"precondition": "b3739ebd-2d8e-42d3-9425-a7d6d1b26c79",
 		"title": "Will you use a limited embargo?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "3da39a55-18e5-4b0a-8da1-5b7fc5260ad1", "label": "No, some restricted data will be embargoed indefinitely",
@@ -291,17 +317,20 @@
 	{
 		"uuid": "b51a276b-3c57-40ef-bacc-0130d56db965", "type": "text",
 		"precondition": "3da39a55-18e5-4b0a-8da1-5b7fc5260ad1",
-		"title": "What is the maximum embargo period?"
+		"title": "What is the maximum embargo period?",
+		"phase": 1
 	},
 	{
 		"uuid": "4e0c1edf-660c-4ebf-81f5-9fa959dead30", "type": "list",
 		"title": "Specify a list of data sets you will be publishing",
+		"phase": 3,
 		"text": "Specify a short name for each data set, sufficient for yourself to know what data it is about. It is useful to think about a data set as some collection of data that will be ending up in the same place."
 	},
 	{
 		"uuid": "80a682bd-8a5c-4a52-935d-680509838a4e", "type": "option",
 		"precondition": "4e0c1edf-660c-4ebf-81f5-9fa959dead30",
 		"title": "What kind of repository will this data be stored in?",
+		"phase": 3,
 		"text": "Domain repositories often have the best functionality to make the data findable and reusable. Many of them are listed in https://fairsharing,org/",
 		"answers":
 		[
@@ -324,6 +353,7 @@
 		"uuid": "f83a9afd-c6de-452b-be9f-bd76e5eb6b54", "type": "option",
 		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
 		"title": "Will you be able to support this repository for a sufficiently long time?",
+		"phase": 3,
 		"text": "Maintaining a repository is a long term commitment that can most of the time not be funded from project money. Think about who will be doing the system maintenance, hardware maintenance, and who will make necessary code changes to accommodate future (safe) versions of the system",
 		"answers":
 		[
@@ -337,6 +367,7 @@
 		"uuid": "cbbfb0da-caf1-4c04-b72f-de39c4a8fb33", "type": "option",
 		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
 		"title": "What is the service level you will be offering to users of the data/repository?",
+		"phase": 3,
 		"text": "The amount of funding needed to maintain a repository is strongly dependent on the services offered",
 		"answers":
 		[
@@ -354,23 +385,26 @@
 		"uuid": "f691ad73-1284-4c7d-999d-34bb0612dd42", "type": "option",
 		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
 		"title": "Did you arrange for system administration (at least security updates) and hardware maintenance for the server(s)?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "4dd69e44-097b-42fc-98a4-4ce379453d46", "label": "No",
-                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			  "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
 			{ "uuid": "d2c01a84-fc1d-4108-95c4-9e9e9198f93e", "label": "Yes",
-                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+			  "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{
 		"uuid": "221c322e-dff5-438f-8a2e-90e762681156", "type": "text",
 		"precondition": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff",
-		"title": "What repository?"
+		"title": "What repository?",
+		"phase": 3
 	},
 	{
 		"uuid": "b1492627-9cb6-465a-945a-a2a7ff9a8189", "type": "option",
 		"precondition": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff",
 		"title": "Will you contact the repository beforehand?",
+		"phase": 3,
 		"text": "Contacting the repository early may be useful to establish conditions, formats, and metadata requirements for submission. It may also be necessary to establish whether the repository can accommodate your data",
 		"answers":
 		[
@@ -383,12 +417,14 @@
 	{
 		"uuid": "fc0857c1-e4d2-47f5-86b1-0292bfc7eecf", "type": "text",
 		"precondition": "620b1090-2a57-4f3c-b336-97c9e95da637",
-		"title": "What other arrangements?"
+		"title": "What other arrangements?",
+		"phase": 3
 	},
 	{
 		"uuid": "46039bea-87e6-4c61-8567-4e819404b4d0", "type": "option",
 		"precondition": "4e0c1edf-660c-4ebf-81f5-9fa959dead30",
 		"title": "Will you be adding a reference to the published data to at least one data catalogue?",
+		"phase": 3,
 		"text": "Data is sometimes difficult to locate, especially if it is not in a domain-specific repository. Data catalogues may increase findability.",
 		"answers":
 		[
@@ -401,6 +437,7 @@
 	{
 		"uuid": "92a10652-3675-48f2-8d50-180a29cec62e", "type": "option",
 		"title": "Will you be making sure that blocks of data deposited in different repositories can be recognized as belonging to the same study?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "2f7e45cd-0f00-4228-865e-62f64ccde1b1", "label": "No",
@@ -415,11 +452,13 @@
 	{
 		"uuid": "1accb605-505a-488b-be74-26faa3e34e2b", "type": "text",
 		"precondition": "6445c352-5685-4e23-ac52-ebcabe353bd0",
-		"title": "What other arrangements?"
+		"title": "What other arrangements?",
+		"phase": 3
 	},
 	{
 		"uuid": "3d20fbb7-c401-4fa2-aeaa-ec5a2ef35322", "type": "option",
 		"title": "Did you work out the financial aspects of making the data available?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "e1f2f5cb-2e70-4d0d-b00c-c1f4792b6f49", "label": "Explore" }
@@ -428,6 +467,7 @@
 	{
 		"uuid": "25e9fe5b-d8f7-4b43-a903-7809a571a2bb", "type": "option",
 		"title": "Will your publications be open access?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "9e292e79-343e-4c87-8121-2ff19fc2e8d8", "label": "No",
@@ -446,6 +486,7 @@
 	{
 		"uuid": "4baf405e-262e-4f1a-bfdc-fe72fc628650", "type": "option",
 		"title": "Are there any recurring fees to keep data or documents available?",
+		"phase": 1,
 		"text": "Are you using any commercially licensed products to keep data, software or documents available, for which a regular fee must be paid?",
 		"answers":
 		[
@@ -456,6 +497,7 @@
 	{
 		"uuid": "f9d84278-b61d-4314-94e9-12644bfa1d00", "type": "option",
 		"title": "Will you be archiving your data after the project in 'cold storage'?",
+		"phase": 1,
 		"text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended? Possibly as a continuation of archival as part of data storage strategy during the project? Data archival is distinct from data publishing, an archive is usually limited in who can access the data.",
 		"answers":
 		[
@@ -475,6 +517,7 @@
 		"uuid": "553834d6-ff71-4b76-b4b4-b90d19a3f0a4", "type": "option",
 		"precondition": "562a4823-3e58-44da-ba65-db522c4bbbd9",
 		"title": "Will data formats of data in cold storage be upgraded if they become obsolete?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "24782dc1-c7f9-4b9f-868e-09f6f6e5a0ed", "label": "No",
@@ -487,6 +530,7 @@
 		"uuid": "5a192c70-d824-49d2-965c-dca90deb04ac", "type": "option",
 		"precondition": "562a4823-3e58-44da-ba65-db522c4bbbd9",
 		"title": "Will data be migrated regularly to more modern storage media (e.g. newer tapes)?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "2bb32b88-b374-4090-82e4-64f5eab44850", "label": "No",
@@ -498,6 +542,7 @@
 	{
 		"uuid": "a84cdefc-8c41-4949-9353-5916532ad50c", "type": "option",
 		"title": "Will you also publish data if the results of your study are negative/inconclusive or unpublishable?",
+		"phase": 1,
 		"text": "Even if you do not obtain the results you had foreseen from your own study, the data can still be valuable for reuse in another context. Also, publishing the data can avoid that someone else collects a similar data set with a similar negative result.",
 		"answers":
 		[
@@ -510,12 +555,14 @@
 	{
 		"uuid": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4", "type": "list",
 		"title": "Specify a list of software packages you will be publishing",
+		"phase": 3,
 		"text": "Specify a short name for each software package."
 	},
 	{
 		"uuid": "36938ca8-e22d-47a6-8859-a52f536101c5", "type": "option",
 		"precondition": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4",
 		"title": "Will you be adding a proper open-source license?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "d675443d-3581-4b7e-bfeb-9b06349fec1a", "label": "No",
@@ -529,17 +576,20 @@
 	{
 		"uuid": "0184bfcc-69ab-48c8-9d62-e23ae73a60be", "type": "string",
 		"precondition": "0a779591-6b8e-4e65-96b6-e3782f71532c",
-		"title": "What is the license?"
+		"title": "What is the license?",
+		"phase": 3
 	},
 	{
 		"uuid": "87b45400-169d-424d-8e71-d2034618dab5", "type": "string",
 		"precondition": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4",
-		"title": "Where will the software package be available?"
+		"title": "Where will the software package be available?",
+		"phase": 3
 	},
 	{
 		"uuid": "3effd452-f0ae-4c25-b971-2b5762889ca4", "type": "option",
 		"precondition": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4",
 		"title": "Will this software be listed in a catalogue?",
+		"phase": 3,
 		"answers":
 		[
 			{ "uuid": "89e5e0fe-2066-4fc1-b872-be6b317a213b", "label": "No",
@@ -551,6 +601,7 @@
 	{
 		"uuid": "9b3e6391-d5c3-4d82-bf60-342ed2ac1f43", "type": "option",
 		"title": "Will there be planning of valorization or translational returns?",
+		"phase": 1,
 		"answers":
 		[
 			{ "uuid": "382dc918-7ff3-4cd0-a821-e0040945c7d2", "label": "No" },
