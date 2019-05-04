@@ -347,6 +347,12 @@
 		]
 	},
 	{
+		"uuid": "9ff389f0-2236-48cf-880c-040ea1bb0d2f", "type": "text",
+		"precondition": "8b13234e-879b-4221-be12-4df24e6de00e",
+		"title": "Describe your SOP (Standard Operating Procedure) for file naming",
+                "text": "Describe how everyone in the project will be naming files and folders, and what folder structure you will use"
+	},
+	{
 		"uuid": "37d0367b-3b69-4b3e-9303-71e628b1f360", "type": "option",
 		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
 		"title": "Will you be keeping the relationships between data clear in the file names?",
