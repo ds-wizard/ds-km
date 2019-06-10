@@ -1,0 +1,18 @@
+{
+	"uuid": "12ab6996-2a19-4f61-ad2a-010e413299d2",
+	"namespace": "lifesciences",
+	"formatversion": 2,
+	"questions" :
+	[
+	{
+		"uuid": "9a1c0153-3eae-40d5-8e91-66e108ef1fe8", "namespace": "core",
+		"integrations":
+		[
+			{ "uuid": "610c03ce-c53f-455b-938f-41bf4cbfa470",
+			  "type": "biotools",
+			  "params": {},
+			  "credits": "Tool list provided by bio.tools" }
+		]
+	}
+	]
+}

@@ -15,7 +15,15 @@
 		[
 			{ "uuid": "ee5c094c-6a70-4e32-9a51-f1af339f180f", "type": "dmpbook", "chapter": "2.1" },
 			{ "uuid": "6ef479ac-8aa7-44d2-88a7-76dc7efa1b91", "type": "resourcepage", "shortuid": "njy" }
-		]
+		],
+                "integrations":
+                [
+                  { "uuid": "3a3600a1-ee0c-4702-8475-ad459c2abec3",
+                    "type": "fairsharing",
+                    "params": {},
+                    "credits": "Formats and standards from FAIRsharing"
+                  }
+                ]
 	},
 	{
 		"uuid": "ecff019a-d4e6-44c6-a8fe-c84eb15ed8b7", "type": "option",

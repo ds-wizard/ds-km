@@ -23,7 +23,15 @@
 		"precondition": "238ace4b-22bb-4a9d-a312-e30d82d4382d",
 		"title": "List the data formats you will be using for data integration",
 		"phase": 1,
-		"text": "Answer some questions for each"
+		"text": "Answer some questions for each",
+		"integrations": 
+		[
+		  { "uuid": "d7aca8d4-7435-4122-b5fd-54fc30b34bf9",
+		    "type": "fairsharing",
+		    "params": {},
+		    "credits": "Standards and formats from FAIRsharing"
+		  }
+		]
 	},
 	{
 		"uuid": "87fe7235-0a0f-4788-8f44-04523461655f", "type": "option",

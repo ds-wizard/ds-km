@@ -398,7 +398,16 @@
 		"uuid": "221c322e-dff5-438f-8a2e-90e762681156", "type": "text",
 		"precondition": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff",
 		"title": "What repository?",
-		"phase": 3
+		"phase": 3,
+		"integrations": 
+		[
+			{
+				"uuid": "c86a4d6f-9927-45d3-b091-0fbdb83ba3fa",
+				"type": "fairsharing",
+				"params": {},
+				"credits": "Repositories from FAIRsharing"
+			}
+		]
 	},
 	{
 		"uuid": "b1492627-9cb6-465a-945a-a2a7ff9a8189", "type": "option",

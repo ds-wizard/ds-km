@@ -117,6 +117,22 @@
                 "default": []
             }
         },
+        "integrations": {
+            "integration": {
+                "type": "object",
+                "properties": {
+                    "uuid": { "$ref": "#/common/uids/uuid" },
+                    "type": { "type": "string" },
+                    "params": { "type": "object" },
+                    "credits": { "type": "string" }
+                },
+                "required": ["uuid", "type", "params", "credits"]
+            },
+            "integrations": {
+                "type": "array",
+                "items": { "$ref": "#/common/integrations/integration" }
+            }
+        },
         "project_phase": {
             "type": "integer",
             "minimum": 1,
@@ -150,7 +166,8 @@
                     "text": { "type": "string" },
                     "precondition": { "$ref": "#/common/uids/uuid" },
                     "references": { "$ref": "#/common/references/references" },
-                    "experts": { "$ref": "#/common/experts/experts" }
+                    "experts": { "$ref": "#/common/experts/experts" },
+                    "integrations": { "$ref": "#/common/integrations/integrations" }
                 },
                 "required": ["uuid"]
             },
@@ -300,7 +317,8 @@
                             "namespace": { "$ref": "#/common/namespace" },
                             "insertBefore": { "$ref": "#/common/uids/uuid" },
                             "addReferences": { "$ref": "#/common/references/references" },
-                            "addExperts": { "$ref": "#/common/experts/experts" }
+                            "addExperts": { "$ref": "#/common/experts/experts" },
+                            "addIntegrations": { "$ref": "#/common/integrations/integrations" }
                         },
                         "required": ["namespace"]
                     }
