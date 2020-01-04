@@ -2,7 +2,8 @@
 	"uuid": "83438863-0aa0-4458-b14b-2b2c0d4f811d",
 	"namespace": "core",
 	"formatversion": 2,
-	"title": "Data integration",
+	"title": "Interpreting data",
+	"text": "The interpretation of the data consistst of the last steps of processing (often with manual interventions), visualisation, and data integration. In this chapter many questions about data interoperability will come up.",
 	"questions" :
 	[
 	{
@@ -428,6 +429,21 @@
 		[
 			{ "uuid": "45169011-2336-4eb4-8026-fa7fa9ca9649", "label": "No" },
 			{ "uuid": "fa0f8ecf-9cd5-4395-9228-0aeca4339ea4", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "460803f2-cc23-4c57-b50e-c5177a3c11d5", "type": "option",
+		"title": "Will you be doing (automated) knowledge discovery?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "8592fc25-fd0f-438c-b0e9-2b0ad81475c7", "label": "No" },
+			{ "uuid": "8d4640c2-25c2-4c1d-a1f2-6fb47a560b96", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "10f24580-e6a1-45a1-b1b1-c8664057f4ec", "type": "dmpbook", "chapter": "6.6" },
+			{ "uuid": "c392c250-2848-4f53-8492-c8d8081fa517", "type": "resourcepage", "shortuid": "bzu" }
 		]
 	}
 	]

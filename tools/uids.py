@@ -35,7 +35,12 @@ def iter_datamodel_chapter(root):
         for name in files:
             if name.startswith('chapter') and name.endswith('.json'):
                 with open(os.path.join(act_dir, name)) as f:
-                    yield json.load(f)
+                    try:
+                        x=json.load(f)
+                    except:
+                        sys.stderr.write("ERR loading> %s\n"%f)
+                        raise
+                    yield x
 
 
 # TODO: distinguish core/local

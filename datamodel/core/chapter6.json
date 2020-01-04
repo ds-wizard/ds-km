@@ -2,21 +2,605 @@
 	"uuid": "d5b27482-b598-4b8c-b534-417d4ad27394",
 	"namespace": "core",
 	"formatversion": 2,
-	"title": "Data interpretation",
+	"title": "Preserving data",
+        "text": "In this chapter, issues regarding data publication and long term archiving are addressed.",
 	"questions" :
 	[
 	{
-		"uuid": "c8e35b21-9911-43f4-bb5e-0df3de1cd727", "type": "option",
-		"title": "Will data interpretation and modeling require significant compute infrastructure capacity?",
+		"uuid": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "option",
+		"title": "Will you be archiving data (using so-called 'cold storage') for long term preservation already during your project?",
 		"phase": 1,
+		"text": "Much of the raw data you have will need to be archived for your own later use somewhere. This is often done off-line on tape, not on the disks of the compute facility. Please note that this does not refer to the data publication.",
 		"answers":
 		[
-			{ "uuid": "5905c733-5113-401f-9343-24911af54e05", "label": "No" },
-			{ "uuid": "b5c79d03-4f0f-4714-91a8-9b04a8f3980f", "label": "Yes", "advice": "Make sure this has been taken into account in the capacity planning under 'Data design and planning'" }
+			{ "uuid": "a547dc69-a3e8-46e4-bb4b-21fd104231f9", "label": "No" },
+			{ "uuid": "e81599af-4519-4987-b74e-9545428ed0e3", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		],
 		"references":
 		[
-			{ "uuid": "a981b60d-2870-4a40-83ad-436395876f06", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref", "description": "Compute capacity planning" }
+			{ "uuid": "c6e67e46-6f79-402b-adba-3d5a56346534", "type": "dmpbook", "chapter": "2.5.1.1" },
+			{ "uuid": "769a924d-a683-44ac-b85d-e5f3c8adaf49", "type": "resourcepage", "shortuid": "kjp" },
+                        { "uuid": "7d1b6960-92db-4074-b908-74132bce1444", "description": "Archiving data when the project is finished", "target": "f9d84278-b61d-4314-94e9-12644bfa1d00", "type": "xref" }
+		]
+	},
+	{
+		"uuid": "b16e76a9-34a8-4ba5-9420-b58bebaeac8d", "type": "option",
+		"precondition": "a547dc69-a3e8-46e4-bb4b-21fd104231f9",
+		"title": "Can the original data be regenerated?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "5e55c2ce-614a-4af8-ab92-972e8f5baea7", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "8d1f370f-6e4f-46ae-a169-1f7e969335e1", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "fd49ed4f-4e3a-4cf7-9857-8ff20fe1fbcf", "type": "dmpbook", "chapter": "2.5.1.2" },
+			{ "uuid": "b95d3cbb-3698-442e-b036-9fc84e889219", "type": "resourcepage", "shortuid": "ixr" }
+		]
+	},
+	{
+		"uuid": "7f8ff791-8593-4e00-93f9-e31c5dff5ffb", "type": "option",
+		"precondition": "a547dc69-a3e8-46e4-bb4b-21fd104231f9",
+		"title": "When is the raw data archived?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "fbe7ef0d-3199-47de-ad28-1b9299200156", "label": "As soon as it comes in, in chunks" },
+			{ "uuid": "92dc2ba0-2cac-4710-8dc7-c1cf6e573235", "label": "As soon as it has all arrived, in one session" },
+			{ "uuid": "c861d005-a681-4a3a-a54b-7a229b6662ee", "label": "All at once with the results at the end of the project" }
+		],
+                "references":
+                [
+                        { "uuid": "3575556d-82dd-43bd-b9f1-5f1f28dbee86", "description": "Archiving raw data from the working area", "target": "ba381732-f499-419f-8744-e13807af83e3", "type": "xref" }
+                ]
+	},
+	{
+		"uuid": "c659c36f-d142-4453-8d8b-db7c05f31371", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Is the archived data changing over time, needing re-archival?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "86e40411-deee-4dc0-88dc-a257c7f4a3ad", "label": "No" },
+			{ "uuid": "48d7128a-a237-4d32-8fc6-464089b46892", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "a4278d17-062e-42c2-affc-911baee339d4", "type": "dmpbook", "chapter": "2.5.1.3" },
+			{ "uuid": "01798396-0a1b-430b-9275-ada0679d4b3f", "type": "resourcepage", "shortuid": "tgk" }
+		]
+	},
+	{
+		"uuid": "1147485f-b9a9-486c-8341-27e05718c508", "type": "option",
+		"precondition": "48d7128a-a237-4d32-8fc6-464089b46892",
+		"title": "Do you need frequent backups?",
+		"phase": 1,
+		"text": "The general term 'backup' is used for protection against two different kinds of problems: equipment failure and human error. Protections against these two may need different solutions. Both are considered backup for this and subsequent questions.",
+		"answers":
+		[
+			{ "uuid": "e2ad7b2b-cc9a-445b-8a94-c41032a7e787", "label": "No, data changes infrequently" },
+			{ "uuid": "67d52405-a902-4661-8158-91ab1d268832", "label": "Yes, data changes frequently" }
+		]
+	},
+	{
+		"uuid": "f6476ea3-1ec5-447b-a776-4f0bfca38f8f", "type": "option",
+		"precondition": "48d7128a-a237-4d32-8fc6-464089b46892",
+		"title": "Will you be relying on these backups to recover from human error (accidental changes or deletions)?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "6f307c89-c1b2-4dcc-8315-585a65f08a87", "label": "No" },
+			{ "uuid": "899b6dc9-59fa-4246-b152-915d4864f771", "label": "Yes", "advice": "This puts other demands on the possibility to restore files. Make sure this is covered" }
+		]
+	},
+	{
+		"uuid": "c2a38110-f7a3-432f-ae98-4e448e496b44", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the archive be stored on disk or on tape?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "18f50141-094d-426b-8a75-4c4fce59389b", "label": "Disk" },
+			{ "uuid": "ebbe4ef1-ec2a-44b8-bbc9-f15a743c438f", "label": "Tape" },
+			{ "uuid": "45ad8d8d-4efc-47b1-946d-2de59aa1fcb4", "label": "Other" }
+		]
+	},
+	{
+		"uuid": "41a8d19b-2468-4c60-9f5e-7a8fee26eedb", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the archive be stored in a remote location, protecting the data against disasters?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "a15afda5-9e5a-40bd-a802-fc811fa39d20", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "4bc5017e-2808-4fc1-95b9-77bd2e755bb6", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "ed3d43ad-d2b5-4194-8b05-08c95da0a7f2", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the archive need to be protected against loss or theft?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "f312f518-69cb-442b-95a4-9523a25770db", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "29498f8c-ea29-4855-82db-5b1228dc09ba", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "2c797727-559d-4bcf-a4a1-713accfcd602", "type": "option",
+		"precondition": "29498f8c-ea29-4855-82db-5b1228dc09ba",
+		"title": "Will the archive be encrypted?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "5e4bb06c-01ff-4964-890f-6f56bc4b819a", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "ad3ab129-dab0-421c-9840-e35b53931768", "label": "No, the data does not need protection",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.8 } ] },
+			{ "uuid": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		],
+                "references":
+                [
+                        { "uuid": "decf61b1-7afa-447d-aeae-0b8e55d87abd", "description": "Access rights to the archive", "target": "b7d9008e-9691-44f0-a026-0f63d808db39", "type": "xref" }
+                ]
+	},
+	{
+		"uuid": "905d4cda-afa1-4cc0-8df6-3d989c7b8b2e", "type": "option",
+		"precondition": "2a127f74-c296-40f9-8ff5-d2a5a0b4ab98",
+		"title": "Is it clear who has access to the key? Also in case of a required data restore?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "68a83934-190b-4e33-9ac0-138e34e5a206", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "05e2cbc6-fdac-4f74-b6e6-733012da2657", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "7458c3bc-60aa-44ba-8d59-a0672dc8de63", "type": "option",
+		"precondition": "29498f8c-ea29-4855-82db-5b1228dc09ba",
+		"title": "Is it clear who has physical access to the archives?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "e9ab764f-e3fa-4704-9200-4d527a54f754", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "7658b228-018a-4eba-9970-f5bb2c4de70a", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "87abded2-1edb-4f69-bd6c-8b90f7706206", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will your project require the archives to be available on-line?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "bb1ba41d-9b1b-45dd-bdc7-c7b8ea451ab5", "label": "No" },
+			{ "uuid": "25b31312-053b-4ef8-ae37-c44b7182634d", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "5365f996-a83c-4e0c-b554-e7ac276c6a19", "type": "dmpbook", "chapter": "2.5.3" },
+			{ "uuid": "7e2d5781-283c-448d-91b5-ed57c4a133e8", "type": "resourcepage", "shortuid": "ybd" }
+		]
+	},
+	{
+		"uuid": "b3caa015-cdd5-4812-84b5-596855a30545", "type": "option",
+		"precondition": "25b31312-053b-4ef8-ae37-c44b7182634d",
+		"title": "Will data integrity be guaranteed?",
+		"phase": 2,
+		"text": "If the 'master copy' of the data is available on line, it should probably be protected against being tampered with.",
+		"answers":
+		[
+			{ "uuid": "60ea11ca-2179-4f7d-9587-bd22c22e4daa", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "c5a2baff-b326-483f-834c-7f2b39979ea2", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "86459c42-89ee-4874-bb54-fec0881332e0", "type": "option",
+		"precondition": "25b31312-053b-4ef8-ae37-c44b7182634d",
+		"title": "Is there an interface and a defined process for people to request access to the data?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "1ec0c5b1-b905-4bb4-aa56-45f7321258c1", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "01322e43-a6ae-458c-9a01-5b70bd3b9be9", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "b7d9008e-9691-44f0-a026-0f63d808db39", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Has it been established who has access to the archive, and how fast?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "dc7c7529-58c6-4414-84cc-7a19325cb73b", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		],
+                "references":
+                [
+                        { "uuid": "b0430030-df3e-4d67-897f-335fa6185858", "description": "Archive encryption", "target": "2c797727-559d-4bcf-a4a1-713accfcd602", "type": "xref" }
+                ]
+	},
+	{
+		"uuid": "47559455-2969-41f4-aee8-e9ce558ab2f0", "type": "option",
+		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
+		"title": "Has it been established who can ask for a restore during the project?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "0591c012-e567-4383-b39f-22b0abfe0847", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "c406aebf-a807-4bda-bcdf-5066d0b1c17b", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "3d837696-3a99-4362-86a3-f460dd878b75", "type": "option",
+		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
+		"title": "If the data is voluminous, will the project be able to cope with the time needed for a restore?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "acf31ff1-9d81-4671-89fb-fa4c60c5845a", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "dfb89c83-afc2-481e-895c-bff5468d6daf", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "feb954c1-c38e-4615-addd-4c714a06809a", "type": "option",
+		"precondition": "d748ea2b-bbe7-4b05-82e2-bee5e10e8441",
+		"title": "Has authority over the data been arranged for when the project is finished (potentially long ago)? Is there a data access committee?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "79bf552f-4230-4026-9976-984ecdb8d889", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "aad68118-2159-4871-8d35-aeab6e66314e", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "2dd94cbc-42f3-4077-b6da-83e0275290c5", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Has it been established how long the archived data need to be kept? For each of the different parts of the archive (raw data / results)?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "1d8e9897-3713-4480-98ba-9b1c71f41eaf", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "07fdfbfb-9c7c-4e9c-83fa-bccf85094fb6", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "bd56375c-4b3a-40d0-af06-7dfb66025150", "type": "dmpbook", "chapter": "2.5.5" },
+			{ "uuid": "e6d881c0-a80c-45b7-9d62-eca9330af09f", "type": "resourcepage", "shortuid": "kdp" }
+		]
+	},
+	{
+		"uuid": "e23201aa-df56-4ade-9406-baa1fb6b1c0c", "type": "option",
+		"precondition": "e81599af-4519-4987-b74e-9545428ed0e3",
+		"title": "Will the data still be understandable after a long time?",
+		"phase": 2,
+		"text": "See also all questions about keeping metadata and data formats. Make sure the metadata is kept close to the data in the archive, and that community supported data formats are used for all long term archiving.",
+		"answers":
+		[
+			{ "uuid": "2e2460d5-5233-434b-9229-7cd775cb13b2", "label": "No",
+			  "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "31de7c36-5d2c-469a-82b8-af870cb3560c", "label": "Yes",
+			  "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "6171537c-de59-4ce7-8042-387bad700619", "type": "dmpbook", "chapter": "2.5.6" },
+			{ "uuid": "00cf7418-99f5-494b-b77a-bc34a1ce77c5", "type": "resourcepage", "shortuid": "zmu" }
+		]
+	},
+	{
+		"uuid": "4e0c1edf-660c-4ebf-81f5-9fa959dead30", "type": "list",
+		"title": "Specify a list of data sets you will be publishing",
+		"phase": 3,
+		"text": "Specify a short name for each data set, sufficient for yourself to know what data it is about. It is useful to think about a data set as some collection of data that will be ending up in the same place."
+	},
+	{
+		"uuid": "80a682bd-8a5c-4a52-935d-680509838a4e", "type": "option",
+		"precondition": "4e0c1edf-660c-4ebf-81f5-9fa959dead30",
+		"title": "What kind of repository will this data be stored in?",
+		"phase": 3,
+		"text": "Domain repositories often have the best functionality to make the data findable and reusable. Many of them are listed in https://fairsharing,org/",
+		"answers":
+		[
+			{ "uuid": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff", "label": "A domain-specific repository",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] },
+			{ "uuid": "fb96d008-f31a-4a1a-b203-b3f9bb32fcc8", "label": "Our national repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.5 } ] },
+			{ "uuid": "df0b2ee3-8e4d-42a1-9bb2-c69228074406", "label": "Our institutional repository", "advice": "Disadvantage of a general purpose repository is the lack of data-specific features (e.g. 'play' instead of 'download' for an audio file) and limited findability",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.5 } ] },
+			{ "uuid": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0", "label": "A special-purpose repository for the project",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "2e0ed21b-2180-4497-8c41-fd2609904400", "type": "url", "weblink": "https://fairsharing.org/", "anchor": "FAIRSharing" },
+			{ "uuid": "e83b0c27-e218-447b-bc0d-7041521e01a1", "type": "url", "weblink": "https://re3data.org/", "anchor": "Registry of Research data Repositories" }
+		]
+	},
+	{
+		"uuid": "f83a9afd-c6de-452b-be9f-bd76e5eb6b54", "type": "option",
+		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
+		"title": "Will you be able to support this repository for a sufficiently long time?",
+		"phase": 3,
+		"text": "Maintaining a repository is a long term commitment that can most of the time not be funded from project money. Think about who will be doing the system maintenance, hardware maintenance, and who will make necessary code changes to accommodate future (safe) versions of the system",
+		"answers":
+		[
+			{ "uuid": "dc921fac-cf77-4d3d-bb9c-907d37f838ef", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "714e0a22-c059-4f80-9780-6f7f2e2ce53b", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "cbbfb0da-caf1-4c04-b72f-de39c4a8fb33", "type": "option",
+		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
+		"title": "What is the service level you will be offering to users of the data/repository?",
+		"phase": 3,
+		"text": "The amount of funding needed to maintain a repository is strongly dependent on the services offered",
+		"answers":
+		[
+			{ "uuid": "dc1082fd-1c90-492c-833c-3e0909c643bb", "label": "Download only", "advice": "That functionality level can surely be found in another place too!" },
+			{ "uuid": "da6725a2-62bb-4fe7-a76f-a4e396646b19", "label": "A search and simple access interface" },
+			{ "uuid": "d65ddfda-9b08-4ab6-90e5-07df748d7929", "label": "An advanced processing service", "advice": "Make sure to budget sufficient compute resources for the users" }
+		],
+		"references":
+		[
+			{ "uuid": "7651094b-48bb-47df-81ab-8539d4799fe9", "type": "dmpbook", "chapter": "7.4.1" },
+			{ "uuid": "8ec39b4c-0a3b-4267-9932-0c73b5f1eecd", "type": "resourcepage", "shortuid": "ivg" }
+		]
+	},
+	{
+		"uuid": "f691ad73-1284-4c7d-999d-34bb0612dd42", "type": "option",
+		"precondition": "afd9f4d5-20e0-4fa0-a42a-376c132ff5b0",
+		"title": "Did you arrange for system administration (at least security updates) and hardware maintenance for the server(s)?",
+		"phase": 3,
+		"answers":
+		[
+			{ "uuid": "4dd69e44-097b-42fc-98a4-4ce379453d46", "label": "No",
+			  "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "d2c01a84-fc1d-4108-95c4-9e9e9198f93e", "label": "Yes",
+			  "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "221c322e-dff5-438f-8a2e-90e762681156", "type": "text",
+		"precondition": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff",
+		"title": "What repository?",
+		"phase": 3,
+		"integrations": 
+		[
+			{
+				"uuid": "c86a4d6f-9927-45d3-b091-0fbdb83ba3fa",
+				"type": "fairsharing",
+				"params": {},
+				"credits": "Repositories from FAIRsharing"
+			}
+		]
+	},
+	{
+		"uuid": "b1492627-9cb6-465a-945a-a2a7ff9a8189", "type": "option",
+		"precondition": "1dc412c6-da92-4cc2-8639-316c0c6ec5ff",
+		"title": "Will you contact the repository beforehand?",
+		"phase": 3,
+		"text": "Contacting the repository early may be useful to establish conditions, formats, and metadata requirements for submission. It may also be necessary to establish whether the repository can accommodate your data",
+		"answers":
+		[
+			{ "uuid": "c86c80b4-72b3-4194-956a-27e40d3c23eb", "label": "No, this submission is routine both for us and the repository" },
+			{ "uuid": "e09562c0-346c-4c95-b470-c5810aab18fa", "label": "Yes, we have contacted the repository" },
+			{ "uuid": "93c590a5-60a6-481d-9482-9145435143a2", "label": "Yes, we will contact the repository" },
+			{ "uuid": "620b1090-2a57-4f3c-b336-97c9e95da637", "label": "We have made other arrangements" }
+		]
+	},
+	{
+		"uuid": "fc0857c1-e4d2-47f5-86b1-0292bfc7eecf", "type": "text",
+		"precondition": "620b1090-2a57-4f3c-b336-97c9e95da637",
+		"title": "What other arrangements?",
+		"phase": 3
+	},
+	{
+		"uuid": "46039bea-87e6-4c61-8567-4e819404b4d0", "type": "option",
+		"precondition": "4e0c1edf-660c-4ebf-81f5-9fa959dead30",
+		"title": "Will you be adding a reference to the published data to at least one data catalogue?",
+		"phase": 3,
+		"text": "Data is sometimes difficult to locate, especially if it is not in a domain-specific repository. Data catalogues may increase findability.",
+		"answers":
+		[
+			{ "uuid": "0224af28-8272-4360-b8b2-0fcc835832e9", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "9e39ea26-cdaf-483b-9502-d47fc4f69bab", "label": "Yes",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "92a10652-3675-48f2-8d50-180a29cec62e", "type": "option",
+		"title": "Will you be making sure that blocks of data deposited in different repositories can be recognized as belonging to the same study?",
+		"phase": 3,
+		"answers":
+		[
+			{ "uuid": "2f7e45cd-0f00-4228-865e-62f64ccde1b1", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "0e748d3d-fd83-470f-918a-0321b1fc9f11", "label": "Yes, all data sets will have links to the related data",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] },
+			{ "uuid": "18ca5e47-464d-40c5-881b-c15e54bd2bff", "label": "Yes, all data sets will be linked from a single catalog entry",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] },
+			{ "uuid": "6445c352-5685-4e23-ac52-ebcabe353bd0", "label": "Yes, we have made other arrangements" }
+		]
+	},
+	{
+		"uuid": "1accb605-505a-488b-be74-26faa3e34e2b", "type": "text",
+		"precondition": "6445c352-5685-4e23-ac52-ebcabe353bd0",
+		"title": "What other arrangements?",
+		"phase": 3
+	},
+	{
+		"uuid": "3d20fbb7-c401-4fa2-aeaa-ec5a2ef35322", "type": "option",
+		"title": "Did you work out the financial aspects of making the data available?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "e1f2f5cb-2e70-4d0d-b00c-c1f4792b6f49", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "25e9fe5b-d8f7-4b43-a903-7809a571a2bb", "type": "option",
+		"title": "Will your publications be open access?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "9e292e79-343e-4c87-8121-2ff19fc2e8d8", "label": "No",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 0.0 } ] },
+			{ "uuid": "5b5d1c59-2e3a-4e1a-aafa-c2451c8e11da", "label": "Yes, this is budgeted in the project",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] },
+			{ "uuid": "ef5e44f4-4902-4117-b783-59270cb327c9", "label": "Yes, our department/institute will pay for open access publishing",
+                          "metrics": [ { "uuid": "cc02c5a0-9754-4432-a7e0-ce0f3cf7a0a0", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "fa2d9ff4-bbc9-41d7-83f9-36a2b3c5d138", "type": "dmpbook", "chapter": "7.2" },
+			{ "uuid": "7fde61fc-f50c-4e58-87be-8426359f25bb", "type": "resourcepage", "shortuid": "mjf" }
+		]
+	},
+	{
+		"uuid": "4baf405e-262e-4f1a-bfdc-fe72fc628650", "type": "option",
+		"title": "Are there any recurring fees to keep data or documents available?",
+		"phase": 1,
+		"text": "Are you using any commercially licensed products to keep data, software or documents available, for which a regular fee must be paid?",
+		"answers":
+		[
+			{ "uuid": "ccbe8121-ac77-4619-a49d-5a755c01d5a2", "label": "No" },
+			{ "uuid": "5951120f-af93-4f15-b15a-b2be9a89efff", "label": "Yes", "advice": "Make sure this will be kept running by the department or institute. It is best to also have a backup plan, being able to move data and documents to a different place if a service is discontinued. For this, you may need to arrange permission from all project partners beforehand." }
+		]
+	},
+	{
+		"uuid": "f9d84278-b61d-4314-94e9-12644bfa1d00", "type": "option",
+		"title": "Will you be archiving your data after the project in 'cold storage'?",
+		"phase": 1,
+		"text": "Will you be storing (in cold storage) copies of your own data for a longer period after the project has ended? Possibly as a continuation of archival as part of data storage strategy during the project? Data archival is distinct from data publishing, an archive is usually limited in who can access the data.",
+		"answers":
+		[
+			{ "uuid": "b6890d88-88e4-4667-8b28-82bc73c728be", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "562a4823-3e58-44da-ba65-db522c4bbbd9", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "f9e87496-28a0-41ee-a95f-f23c01baecf4", "type": "dmpbook", "chapter": "7.4.4" },
+			{ "uuid": "658723a8-b622-4d11-bfa3-ac3ecfb6fc1b", "type": "resourcepage", "shortuid": "fxe" },
+                        { "uuid": "4edaeeb8-0e4d-4ae7-b1c6-2e324bebdfd6", "description": "Archival during the project", "target": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "xref" }
+		]
+	},
+	{
+		"uuid": "553834d6-ff71-4b76-b4b4-b90d19a3f0a4", "type": "option",
+		"precondition": "562a4823-3e58-44da-ba65-db522c4bbbd9",
+		"title": "Will data formats of data in cold storage be upgraded if they become obsolete?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "24782dc1-c7f9-4b9f-868e-09f6f6e5a0ed", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "522019ce-14d8-4f74-b4a5-79b05a2abac1", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "5a192c70-d824-49d2-965c-dca90deb04ac", "type": "option",
+		"precondition": "562a4823-3e58-44da-ba65-db522c4bbbd9",
+		"title": "Will data be migrated regularly to more modern storage media (e.g. newer tapes)?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "2bb32b88-b374-4090-82e4-64f5eab44850", "label": "No",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "6a1acee5-200a-449f-8200-4b294c8bc5f0", "label": "Yes",
+                          "metrics": [ { "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "a84cdefc-8c41-4949-9353-5916532ad50c", "type": "option",
+		"title": "Will you also publish data if the results of your study are negative/inconclusive or unpublishable?",
+		"phase": 1,
+		"text": "Even if you do not obtain the results you had foreseen from your own study, the data can still be valuable for reuse in another context. Also, publishing the data can avoid that someone else collects a similar data set with a similar negative result.",
+		"answers":
+		[
+			{ "uuid": "2eec960b-5033-4fcd-9d7e-219873762acc", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "a19404c9-94ae-4b3a-a728-2457084a5b31", "label": "Yes",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4", "type": "list",
+		"title": "Specify a list of software packages you will be publishing",
+		"phase": 3,
+		"text": "Specify a short name for each software package."
+	},
+	{
+		"uuid": "36938ca8-e22d-47a6-8859-a52f536101c5", "type": "option",
+		"precondition": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4",
+		"title": "Will you be adding a proper open-source license?",
+		"phase": 3,
+		"answers":
+		[
+			{ "uuid": "d675443d-3581-4b7e-bfeb-9b06349fec1a", "label": "No",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "0a779591-6b8e-4e65-96b6-e3782f71532c", "label": "Yes, we have decided on an open source license",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] },
+			{ "uuid": "6d887b51-696e-41ee-947f-d0022d7c6aee", "label": "Yes, we will decide on an open source license",
+                          "metrics": [ { "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.3 } ] }
+		]
+	},
+	{
+		"uuid": "0184bfcc-69ab-48c8-9d62-e23ae73a60be", "type": "string",
+		"precondition": "0a779591-6b8e-4e65-96b6-e3782f71532c",
+		"title": "What is the license?",
+		"phase": 3
+	},
+	{
+		"uuid": "87b45400-169d-424d-8e71-d2034618dab5", "type": "string",
+		"precondition": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4",
+		"title": "Where will the software package be available?",
+		"phase": 3
+	},
+	{
+		"uuid": "3effd452-f0ae-4c25-b971-2b5762889ca4", "type": "option",
+		"precondition": "1ae8d7b0-4bcd-4914-aaea-fa389fc056f4",
+		"title": "Will this software be listed in a catalogue?",
+		"phase": 3,
+		"answers":
+		[
+			{ "uuid": "89e5e0fe-2066-4fc1-b872-be6b317a213b", "label": "No",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "3a417eea-0b1d-4dc8-b5f5-f109d7513eb4", "label": "Yes",
+                          "metrics": [ { "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
 		]
 	},
 	{
@@ -39,20 +623,53 @@
 		"title": "What other arrangements?",
 		"phase": 2
 	},
-	{
-		"uuid": "460803f2-cc23-4c57-b50e-c5177a3c11d5", "type": "option",
-		"title": "Will you be doing (automated) knowledge discovery?",
-		"phase": 2,
+        {
+		"uuid": "588ad032-56ba-4d52-b29c-6a5b56aa6569", "type": "option",
+		"title": "Will reference data be created?",
+		"phase": 1,
+		"text": "Will any of the data that you will be creating form a reference data set for future research (by others)?",
 		"answers":
 		[
-			{ "uuid": "8592fc25-fd0f-438c-b0e9-2b0ad81475c7", "label": "No" },
-			{ "uuid": "8d4640c2-25c2-4c1d-a1f2-6fb47a560b96", "label": "Yes" }
+			{ "uuid": "1e28b25b-bfe8-4d67-9643-6e57587a9495", "label": "No" },
+			{ "uuid": "bdf55011-db06-4f4a-b26f-ebbbe029da04", "label": "Yes" }
 		],
 		"references":
 		[
-			{ "uuid": "10f24580-e6a1-45a1-b1b1-c8664057f4ec", "type": "dmpbook", "chapter": "6.6" },
-			{ "uuid": "c392c250-2848-4f53-8492-c8d8081fa517", "type": "resourcepage", "shortuid": "bzu" }
+			{ "uuid": "b4c4132e-23e2-4302-aa6d-bf29804899e7", "type": "dmpbook", "chapter": "1.12"},
+			{ "uuid": "fa42d193-2513-48eb-9e1e-766f53a49e1e", "type": "resourcepage", "shortuid": "rbz"},
+                        { "uuid": "75f0120d-b3a8-4042-8249-dfe2de83a3d5", "description": "Reuse of existing reference data", "target": "fcc51962-08df-4f4c-85ad-6bb932107010", "type": "xref" }
 		]
+	},
+	{
+		"uuid": "9f081091-0810-4f12-be7f-0a22ee928a14", "type": "text",
+		"precondition": "bdf55011-db06-4f4a-b26f-ebbbe029da04",
+		"title": "What will the Intellectual Property be like?",
+		"phase": 2,
+		"text": "Who will own the rights to the reference data set? Who will be able to use it?",
+		"references":
+		[
+			{ "uuid": "e7f94c40-7295-40df-8bbd-f115b052b6c0", "type": "dmpbook", "chapter": "1.12.1" },
+			{ "uuid": "c858e11d-4265-4f2f-9dc6-73e15d428481", "type": "resourcepage", "shortuid": "hct" }
+		]
+	},
+	{
+		"uuid": "27769a31-717b-4204-8468-175ac93b195a", "type": "text",
+		"precondition": "bdf55011-db06-4f4a-b26f-ebbbe029da04",
+		"title": "How will you maintain it?",
+		"phase": 1,
+		"text": "How will maintenance be paid for in the long run? Will you host it yourself or deposit it with a repository? How will you deal with requests for help? And with requests for adding data?",
+		"references":
+		[
+			{ "uuid": "14efd439-8beb-4480-b3b1-fdf18bd5a154", "type": "dmpbook", "chapter": "1.12.2" },
+			{ "uuid": "10d0b9b7-3f37-4dab-bb10-76e6e58a6420", "type": "resourcepage", "shortuid": "usx" }
+		]
+	},
+	{
+		"uuid": "2679736a-800e-4eaa-a70f-818070540c48", "type": "text",
+		"precondition": "bdf55011-db06-4f4a-b26f-ebbbe029da04",
+		"title": "How will the release schedule be?",
+		"phase": 2,
+		"text": "Will you be updating the reference data at regular intervals?"
 	}
 	]
 }

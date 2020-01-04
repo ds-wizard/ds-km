@@ -1,10 +1,374 @@
 {
-	"uuid": "10a10ffd-bfe1-4c6b-bbb6-3dfb1e63a5d5",
-	"namespace": "core",
-	"formatversion": 2,
-	"title": "Data processing and curation",
-	"questions" :
-	[
+    "uuid": "10a10ffd-bfe1-4c6b-bbb6-3dfb1e63a5d5",
+    "namespace": "core",
+    "formatversion": 2,
+    "title": "Processing data",
+    "text": "In the processing phase, the data will be undergoing the mostly automated steps for processing, before the analysis and interpretation.",
+    "questions" :
+    [
+	{
+		"uuid": "72099c46-16e7-47a2-a320-cc768b7085fe", "type": "option",
+		"title": "Will you need a shared working space to work with your data?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "1d6ba101-fd62-43c8-ab53-76bc31847f58", "label": "No" },
+			{ "uuid": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "df36fb68-131c-4f31-a42b-684abf523bbc", "type": "option",
+		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
+		"title": "How will you work with your data?",
+		"phase": 1,
+		"text": "There are several questions regarding the dynamics of the data in the working area, who works with it, the software that is run on it, etc.",
+		"answers":
+		[
+			{ "uuid": "5af813b7-cb41-4eb9-afe7-ca364771b74e", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "73bfcfcf-a619-4f6a-a901-2e8ce01d039a", "type": "text",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "What kind of data will you have in your work space?",
+		"phase": 1,
+		"text": "When making the work space, it helps to know whether you expect to work with very many small files, a few very large files, whether you will use a (SQL) database to store most of the data. Maybe your data is suitable for a system like Hadoop? Such information can be collected here."
+	},
+	{
+		"uuid": "f6e66f4f-7b11-420f-a4b6-5fc972bc66d9", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "Do you need the work space to be close to the compute capacity?",
+		"phase": 1,
+		"text": "If you have large volumes of data that are intensely and repeatedly used by the computing work flow, it may be needed to keep the storage in the same place as where the computing takes place.",
+		"answers":
+		[
+			{ "uuid": "12f3cb44-db3c-4ea8-b4fb-2834a11da6a7", "label": "No" },
+			{ "uuid": "4cf287dd-6a24-4768-93b4-dd4a7767afb8", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "83081d6a-7e18-4ccf-97cd-f89193e73382", "target": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "xref", "description": "Compute capacity planning" },
+			{ "uuid": "afc5ae15-69ef-4dd9-b701-eaa5dbb8fddb", "type": "dmpbook", "chapter": "2.7" },
+			{ "uuid": "cec4d69c-0a8b-4e0c-98c7-309d0c57d692", "type": "resourcepage", "shortuid": "wia" }
+		]
+	},
+	{
+		"uuid": "50f9d580-3e62-434b-81ff-86daed56aca8", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "Will you be working with your data in another form than the way it will be archived?",
+		"phase": 1,
+		"text": "Archival and working with data have different requirements. You want archived information to be in a form that others could read and in a format that is also understandable in a number of years. When working with the data, you need to be able to address it efficiently. If the two differ, you need to plan for conversions.",
+		"answers":
+		[
+			{ "uuid": "df08a7fa-61af-418f-9eb8-965ba50efcc8", "label": "No, data format will be archived in the same way we work with it" },
+			{ "uuid": "02b8d129-3300-47cb-811a-e86a40c5d8bd", "label": "Yes, archival will require a conversion step" }
+		]
+	},
+	{
+		"uuid": "4ee4d67d-62c5-47f0-a741-f2629b65cf8a", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "How does the storage need change over time?",
+		"phase": 1,
+		"text": "To perform capacity planning, it is important to know what the need for storage capacity at the beginning and the end of the project will be.",
+		"answers":
+		[
+			{ "uuid": "eef277cb-1032-401e-b242-e74afde575dc", "label": "Storage needs will be the same during the whole project" },
+			{ "uuid": "014d23a8-93a8-4fd2-ba1c-8656177f37b2", "label": "Storage needs are large at the beginning and will be reduced later" },
+			{ "uuid": "ab40db7f-ea89-4830-b507-4f2f08a9453e", "label": "Storage needs are small at the beginning and will grow later" },
+			{ "uuid": "51a8248e-8659-47fd-a8e3-112eed64f65b", "label": "Storage needs are largest in the middle of the project" },
+			{ "uuid": "aca843cd-e38e-4174-8ce1-477c2b405fdf", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "8526a988-9561-42c6-8af4-7c96aa4c536d", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "When will your raw data become available?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "adfc7ca3-c8e3-465b-8eb2-4327b8780684", "label": "Raw data will come in right at the start" },
+			{ "uuid": "19755f9d-8ec2-4fd9-8bdf-b25d5889d7ee", "label": "Raw data will come in during the project" }
+		]
+	},
+	{
+		"uuid": "01cd836b-915e-4751-b543-b326bf812594", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "How much of the raw data do you need to keep in the work space?",
+		"phase": 1,
+		"text": "Sometimes the raw data is relatively large, and it pays of to clean it quickly.",
+		"answers":
+		[
+			{ "uuid": "fe62c9a0-a621-46b6-bc42-881d0c3d8719", "label": "Raw data will need to stay in the work space" },
+			{ "uuid": "aad7d438-a8af-4462-9728-77e2493bcacc", "label": "Raw data can be cleaned out or archived quickly" },
+			{ "uuid": "93555e7b-d17c-4341-9ad9-9f2f833a3193", "label": "Raw data do not form a major part of the storage needs" },
+			{ "uuid": "0ddd0082-eae1-4c48-ba4a-30912f0643e7", "label": "Raw data will only be loaded in the work space on demand from the primary archives" }
+		]
+	},
+	{
+		"uuid": "ba381732-f499-419f-8744-e13807af83e3", "type": "option",
+		"precondition": "aad7d438-a8af-4462-9728-77e2493bcacc",
+		"title": "Do your raw data need to be archived?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "904859c4-b9bf-44b6-9a64-933e489089e6", "label": "No, it is also stored elsewhere can be recovered easily" },
+			{ "uuid": "e4da5030-9de8-4fe9-81d9-28a75edc09d9", "label": "No, it can be remeasured easily and more cheaply than archiving" },
+			{ "uuid": "44cad909-ea78-454b-aede-794503da9401", "label": "Yes" }
+		],
+                "references":
+                [
+                        { "uuid": "e4e53d85-6774-4472-b7cb-0f9eaad04a15", "description": "Timing archival of raw data", "target": "7f8ff791-8593-4e00-93f9-e31c5dff5ffb", "type": "xref" }
+                ]
+
+	},
+	{
+		"uuid": "c0944ac9-f286-48f2-b864-4641d0fcdd55", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "Did you plan how much intermediate data you will get during analysis and how long each step needs to be kept?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "96b1aa0f-56db-4613-b424-3fe33349386b", "label": "The volume of intermediate data will not be significant" },
+			{ "uuid": "9a0cfd22-adce-46e6-b7ec-8ed581ac95be", "label": "A large volume of intermediate data will be in the work space" }
+		]
+	},
+	{
+		"uuid": "deb647ec-a001-4370-87b8-a5b1e2479f87", "type": "option",
+		"precondition": "9a0cfd22-adce-46e6-b7ec-8ed581ac95be",
+		"title": "Is it possible to store intermediate temporary data on a separate (scratch) area that is not backed up?",
+		"phase": 1,
+		"text": "If the intermediate results are in your main work space, a restore in case of a problem could take much more time. It may be faster to recover it by re-running computations",
+		"answers":
+		[
+			{ "uuid": "55bab6f7-6ab9-4eb7-ae2b-1947cce2da84", "label": "We will use the main work space for temporary data" },
+			{ "uuid": "5cbefa56-bc0c-4704-a9a4-3535ec513057", "label": "We can offload intermediate results to a scratch area that is not backed up" }
+		]
+	},
+	{
+		"uuid": "3a076e83-73b0-4cdd-bb71-c5d41469a191", "type": "option",
+		"precondition": "5cbefa56-bc0c-4704-a9a4-3535ec513057",
+		"title": "Are you sure you will not need a backup of the data stored on the scratch file systems (any scratch you use)?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "fe80319d-f761-49ac-9faf-d4c5a9b349da", "label": "No" },
+			{ "uuid": "f4bf87cf-f5e6-4f06-adcf-0dcf9bb37e2a", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "94544b24-90e3-4d95-a0c0-bfed45cbdac9", "type": "url", "weblink": "https://www.csc.fi/web/blog/post/-/blogs/the-largest-unplanned-outage-in-years-and-how-we-survived-it", "anchor": "How CSC restored 850 million temporary files" }
+		]
+	},
+	{
+		"uuid": "89f78871-68bd-4190-9ee7-57ec3b4c2356", "type": "option",
+		"precondition": "aca843cd-e38e-4174-8ce1-477c2b405fdf",
+		"title": "Will you have different versions of intermediate data that need to be kept?",
+		"phase": 2,
+		"text": "Consider storing only the workflow parameters if the data itself could be reproduced quickly",
+		"answers":
+		[
+			{ "uuid": "28452352-0aea-43ee-9b22-f0131d7eba51", "label": "No" },
+			{ "uuid": "ee686b11-0a50-4845-baae-d3ed3b3f5fcc", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "50a9c060-91e9-4e34-8cb2-2d41fa493f9e", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "Will you need to temporarily archive data sets (e.g. to tape)?",
+		"phase": 1,
+		"text": "Usually, data sets will be archived if it is unlikely you need them in the short term, but it would be hard to create them again, and/or they are essential for reproducing your work. Archival storage of large volumes can be significantly cheaper than keeping it in the working area for an extensive period.",
+		"answers":
+		[
+			{ "uuid": "09ac9b88-4350-441b-97f4-5f85ced2ddf2", "label": "No" },
+			{ "uuid": "9797dc5a-afc9-418e-a456-0d555a52424a", "label": "Yes" }
+		],
+		"references":
+		[
+		  { "uuid": "1fa0cc82-65e6-492f-b982-19ea2636ed95", "description": "Data archive setup", "target": "d5784d24-0e66-4821-bd62-a711fb6d7a40", "type": "xref" }
+		]
+	},
+	{
+		"uuid": "f4065e54-d27a-45de-be4c-10384feacd0d", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "How will your first data come in?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "2271d2cd-de50-460b-85a1-dddf9d28776c", "label": "No special planning is needed for the initial data" },
+			{ "uuid": "9ad1d4fd-997d-45a8-8cc4-f594a8e4fdf8", "label": "Initial data will need to be made available through a local network copy" },
+			{ "uuid": "202c1232-9f5e-4a68-b0e0-3986a7bc96fa", "label": "We will need a high-speed network connection to copy the initial data" },
+			{ "uuid": "94aa40a4-9b14-4923-a26a-3523566329e3", "label": "Initial data will arrive on separate media and will need to be copied to the work space" }
+		]
+	},
+	{
+		"uuid": "2ed7b5c7-2452-4087-b4ed-d15ca31a4e65", "type": "option",
+		"precondition": "5af813b7-cb41-4eb9-afe7-ca364771b74e",
+		"title": "How will project partners access the work space?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "b1faddd1-2f9f-48a8-b9a7-d8f6f8c02470", "type": "option",
+		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
+		"title": "Who will arrange access control?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "d45f521d-f541-4f40-a3d8-d4a9ecdc65e3", "label": "No special provisions are needed" },
+			{ "uuid": "9b723841-1bd4-487c-b45c-f0a369330b3a", "label": "Project management will need to be able to give people access" },
+			{ "uuid": "4bb35a94-e387-4460-bcf3-d638f248e52c", "label": "The work space should be connected to a single-sign-on system" }
+		]
+	},
+	{
+		"uuid": "f99580d5-b3ea-498c-86ac-f7326bd999c2", "type": "option",
+		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
+		"title": "Will the work space storage need to be remote mounted?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "68be7c83-54ed-46d4-a77f-b99488665f1c", "label": "No" },
+                        { "uuid": "f848f3ec-08c8-4197-bd4f-6d438bac4d70", "label": "No, data will be copied if it needs to be processed elsewhere" },
+                        { "uuid": "bdf255fd-6dd6-4f1e-a9e2-d6aec9d01678", "label": "No, all data processing will be done in the same environment (virtual research environment)" },
+			{ "uuid": "6baa53fe-c657-4da3-bb65-9b71f7141c6d", "label": "Yes, for occasional exploration" },
+			{ "uuid": "5ab6d069-f46c-4514-8114-79c9fe01a93f", "label": "Yes, for actual computations, requiring high performance" }
+		]
+	},
+	{
+		"uuid": "f14750e9-3a39-4aae-b2c8-845583934c1d", "type": "option",
+		"precondition": "54e9c073-52ee-4f8d-a1aa-1d279ec0f61d",
+		"title": "Will data be copied out and in to the workspace storage by remote users?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "2c2cd046-89e0-4f55-bafa-92eb5f77c3a8", "label": "No, this should not be allowed" },
+                        { "uuid": "8fee76df-9eef-4912-9b11-31ebad574ced", "label": "No, all data processing will be done in the same environment (virtual research environment)" },
+			{ "uuid": "8fa969a0-7477-41be-aefc-a54a8045c954", "label": "Yes, occasionally" },
+			{ "uuid": "06a34c86-3c48-4fa4-8888-0ae6b613068f", "label": "Yes, for actual computations, requiring high performance" }
+		],
+                "references":
+                [
+                        { "uuid": "5b22075d-c62f-4e7f-8a57-79c930d81094", "description": "Workflow that is split over multiple work locations", "target": "410f3709-c283-4974-83c8-6c5d24899a68", "type": "xref" }
+                ]
+	},
+	{
+		"uuid": "6b3f13db-407a-44e0-9d23-e6dd6a20ad59", "type": "option",
+		"precondition": "06a34c86-3c48-4fa4-8888-0ae6b613068f",
+		"title": "Are data integrity and reliability requirements also met by the other storage spaces used in the project?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "c7a0181c-1921-4b21-9481-f4274d48876c", "label": "This is not needed" },
+			{ "uuid": "a1c5e3e9-d286-4e5b-8223-c7e6bbc6e333", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "b171ec17-d7b5-4726-ae22-0d892b106cf8", "type": "option",
+		"precondition": "e7324e1a-bfcb-4f2b-855a-35701dfb1ad5",
+		"title": "How available/reliable should must the work space be?",
+		"phase": 1,
+		"text": "There are a number of questions that can help you to decide whether your work space will be reliable enough for your project.",
+		"answers":
+		[
+			{ "uuid": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "25e06912-08a2-40e4-af76-cfbc5ada9925", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "What is the acceptable risk for a total loss?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "44810299-8618-4a79-a732-13cc2ff21903", "label": "This is unacceptable" },
+			{ "uuid": "766e16e4-21c7-4030-9eda-1973f51061d4", "label": "All essential data is also stored elsewhere" }
+		]
+	},
+	{
+		"uuid": "19640692-1c97-4574-8b3d-f4f6e1e6b564", "type": "option",
+		"precondition": "766e16e4-21c7-4030-9eda-1973f51061d4",
+		"title": "Is there software in the work space? Can it also be restored quickly?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "7b572fda-9d67-44e9-b1c3-6dfc42c34d89", "label": "There is no software" },
+			{ "uuid": "1217ef1b-01fd-48e6-900d-60edb99b4621", "label": "Software in the work space is only a copy" },
+			{ "uuid": "af2e1ca5-9a21-4c3b-a973-e9f41fd613da", "label": "Special care will be taken for the software and configurations" }
+		],
+		"references":
+		[
+			{ "uuid": "7184e426-c352-4ace-8448-e3bc8bbe17af", "type": "dmpbook", "chapter": "2.6" },
+			{ "uuid": "4b9261db-1a1d-42c1-a147-f3951338be36", "type": "resourcepage", "shortuid": "cbq" }
+		]
+	},
+	{
+		"uuid": "0548db0c-bd34-40ce-be73-7a13a5e8eb7d", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "Can you handle it when the work space is off line for a while?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "ef611a20-d5f9-4ea6-bb02-a7122bfd7eed", "label": "We could handle a few days of offline time per year" },
+			{ "uuid": "d96d5e47-aec8-4576-9e3a-734ab58dfe62", "label": "We can only miss the work space for a few hours during work hours" },
+			{ "uuid": "b6da4858-f72c-498b-a827-d4632a458098", "label": "Problems during the evenings and weekends can not wait for work hours to be repaired" }
+		]
+	},
+	{
+		"uuid": "6531dd45-f628-4aa7-a2c5-82c639b79ab8", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "How long can you wait for a restore if the storage fails?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "c9d8c9ed-ba2d-4108-b798-493cdf9225df", "label": "We can wait for repair and a restore" },
+			{ "uuid": "27db87e3-46b2-4705-b98c-47ddf4b4cd56", "label": "A spare copy needs to be deployed quickly" },
+			{ "uuid": "5797b252-0550-46e1-bf13-c65edd2df45e", "label": "No waiting is possible, a hot copy must be ready to take over" }
+		]
+	},
+	{
+		"uuid": "aacf28a0-aab9-4436-8b2b-95ef755ae32a", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "How long can you wait for a restore if you accidentally damage a file?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "42fb53ea-76ed-494b-8582-f080d952a3ed", "label": "Days" },
+			{ "uuid": "91463928-1cf4-43e0-bb4e-d1fc7b077ac8", "label": "Hours" },
+			{ "uuid": "a639ec31-e226-404e-97fb-567d2f52e321", "label": "Any user needs to be able to restore an old copy instantaneously" }
+		]
+	},
+	{
+		"uuid": "98d9789b-32fc-4e2f-876a-47760ad7c7ec", "type": "option",
+		"precondition": "0d64d3c6-4312-47a9-92ad-0bc9440d6e45",
+		"title": "Will you make backup copies of project data that is not in the work space?",
+		"phase": 1,
+		"text": "Are there any data files e.g. on laptops of project members? Also: supercomputing centers and other high performance computer centers often write in their terms of use that you need to take care of your own backups",
+		"answers":
+		[
+                        { "uuid": "7c732053-6df4-466b-8732-0db2bd1e1ffc", "label": "This is left to the project participants",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "a1ead63a-1bc8-42e6-8bdc-3e1e8a901307", "label": "There is no data elsewhere" },
+			{ "uuid": "278810f9-6396-4203-9fa6-6cd3a003159c", "label": "All data elsewhere is adequately backed up",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "0884ac19-9bde-4bf1-afdd-0794c2c69092", "label": "We make (automated) backups of all data stored outside of the working area",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "c1e83bdf-5914-44c2-8414-0a4e7fbaf272", "type": "option",
+		"precondition": "1d6ba101-fd62-43c8-ab53-76bc31847f58",
+		"title": "Are data all project members store adequately backed up and traceable?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "0c93a407-b04a-4c89-a8e4-299a4d77c21e", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "ec92df2d-f6db-4cc8-8317-ae24ab4fa08a", "label": "Yes, protected against both equipment failure and human error",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		]
+	},
 	{
 		"uuid": "4ba3304e-225c-4916-bbf7-754de381253c", "type": "option",
 		"title": "Workflow development",
@@ -866,6 +1230,294 @@
 			{ "uuid": "199d32a0-b997-4570-ac83-8d6ded27dd3a", "type": "dmpbook", "chapter": "4.2.4"},
 			{ "uuid": "12145f57-2bf5-456b-b35c-66f533b316bc", "type": "resourcepage", "shortuid": "egv"},
                         { "uuid": "fbe68369-30cb-422b-b5c1-fd871bb16331", "description": "Validation of tools updates", "target": "099902bd-1637-4e32-a744-b95031030c6c", "type": "xref" }
+		]
+	},
+	{
+		"uuid": "e87ef779-2c4b-4c0d-a1f1-821290123a3c", "type": "option",
+		"title": "Do you need to do compute capacity planning?",
+		"phase": 1,
+		"text": "If you require substantial amounts of compute power, amounts that are not trivially absorbed in what you usually have abailable, some planning is necessary. Do you think you need to do compute capacity planning?",
+		"answers":
+		[
+			{ "uuid": "3cc05034-3c04-4f08-bd9b-c37e87fb9c81", "label": "No" },
+			{ "uuid": "ae82cfc8-6b5f-4f06-a969-d430db181ac5", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "30027b9a-2077-4c74-9048-f0532ada9b03", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Do you know how much CPU power, memory and I/O band width a typical analysis will take?",
+		"phase": 1,
+		"text": "Did you run pilot jobs? Do you know this information from comparable projects? Did you test whether the work scales up as you expected if you run more than one job?",
+		"answers":
+		[
+			{ "uuid": "ea6d837d-19b7-4203-8821-136ae24738c4", "label": "No" },
+			{ "uuid": "34954537-51c3-4592-9275-a504cdc3e587", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "dd918787-ffb1-499e-98f8-42050758c7ce", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "What type of compute architecture is most suitable for your work? Will you have that available?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "75be8d48-34ba-4ac5-ba2c-b9fd435fe705", "label": "We will use a compute cluster" },
+			{ "uuid": "3a67d096-5028-48bf-8028-407db2cd3083", "label": "We will use grid computing" },
+			{ "uuid": "6ce8d928-2bb9-4df1-8d08-cbea2fc355fd", "label": "We will use cloud computing" },
+			{ "uuid": "3a79dfdf-be0c-4835-bb89-4e1bc899cfbc", "label": "We will use a mix of computing architectures for different parts of the work" }
+		]
+	},
+	{
+		"uuid": "851a72ac-9497-4d8a-ae1a-6509d021a20b", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Is there sufficient experience with the chosen computer in the project, and sufficient time to support the project partners?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "b1bdced0-f4f2-48f4-907f-d5fed58e15a2", "label": "We will recruit" },
+			{ "uuid": "2756894c-fe93-47da-ba87-3a31a06a1b70", "label": "Training has been arranged" },
+			{ "uuid": "0fb8abbe-26fa-4756-a1e9-43476e5e1fd1", "label": "Our people will be able to call for help" },
+			{ "uuid": "23ce8320-0b90-4360-a9db-6001ad9e7582", "label": "We have sufficient knowledge in the project" }
+		]
+	},
+	{
+		"uuid": "d8150021-19d7-4e92-90c3-d9c3d62d188e", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Have you established with the provider when will you need the compute capacity?",
+		"phase": 2,
+		"text": "Do you need the compute capacity also for development? Can you start developing locally and start with a deployment test later?",
+		"answers":
+		[
+			{ "uuid": "a4e0eb91-aebf-4d5c-909c-b85029477939", "label": "No" },
+			{ "uuid": "9029ca4e-1e6b-450f-a7fd-9a9c7a7809e4", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "4c71d62c-3184-43d7-bdec-f762c682035e", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Is all required compute capacity available close to the project working storage area?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "c536e726-722c-428a-b11b-25c763da1a54", "label": "No" },
+			{ "uuid": "d439ecac-d31f-45eb-a04f-42a326e383ca", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "a39fb276-8c46-49e7-bfb9-af8ba876726f", "type": "option",
+		"precondition": "c536e726-722c-428a-b11b-25c763da1a54",
+		"title": "Did you plan the required network capacity between storage and compute services?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "010b4ce6-0f52-437d-9971-681acdf37524", "label": "There are no special networking requirements" },
+			{ "uuid": "acec64f8-f20b-4295-85d6-a8831ee6a1a3", "label": "Copying or network delays are considered to be acceptable" },
+			{ "uuid": "b477c114-fa99-41db-aa52-b63c36ce662d", "label": "We will be able to use a dedicated network connection" }
+		]
+	},
+	{
+		"uuid": "3788d53f-c79f-43d2-b67b-7479f05cddb0", "type": "option",
+		"precondition": "c536e726-722c-428a-b11b-25c763da1a54",
+		"title": "Can all data be legally transported and processed at the computing site?",
+		"phase": 1,
+		"text": "Are the risks of data leaks covered?",
+		"answers":
+		[
+			{ "uuid": "e208ad3c-97e0-45b3-93cf-646bde4b7b45", "label": "No" },
+			{ "uuid": "bd3c4a00-eeb5-4b8e-a3e3-a8f5c77e9745", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "410f3709-c283-4974-83c8-6c5d24899a68", "type": "option",
+		"precondition": "ae82cfc8-6b5f-4f06-a969-d430db181ac5",
+		"title": "Will different groups work on different parts of the workflow? Will parts of the computing be done on 'local' infrastructure to the group?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "be99bdcc-76f2-43c3-b277-064062360dc1", "label": "All steps of the workflow will be performed at central computing locations" },
+			{ "uuid": "a2c4514b-61e4-47cf-ae54-7006fea37ec2", "label": "Some steps may be performed at local computing locations" }
+		],
+                "references":
+                [
+                        { "uuid": "468bad94-ef86-4d24-8e97-d635fb1f68b0", "description": "Copying data into and out of the main working area of the project", "target": "f14750e9-3a39-4aae-b2c8-845583934c1d", "type": "xref" }
+                ]
+	},
+	{
+		"uuid": "9e34d326-5f7b-494b-bc2e-2131eef6f844", "type": "option",
+		"precondition": "a2c4514b-61e4-47cf-ae54-7006fea37ec2",
+		"title": "Is there sufficient network capacity to the other computing locations?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "310adf1a-1b9c-42df-94ee-dd82699a2672", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "d2ceec96-5471-4073-8a25-e5201ad41c68", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "614ab69d-55a6-4214-b384-00ba21ce92a1", "type": "option",
+		"title": "Is the risk of information loss, leaks and vandalism acceptably low?",
+		"phase": 2,
+		"text": "There are many factors that can contribute to the risk of information loss or information leaks. They are often part of the behavior of the people that are involved in the project, but can also be steered by properly planned infrastructure.",
+		"answers":
+		[
+			{ "uuid": "b2f76c0a-847a-403c-9ed6-09cad10e625e", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "90324a7b-f3c9-4ed8-b301-edc9869cb7b3", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members store data or software on computers in the lab or external hard drives connected to those computers?",
+		"phase": 2,
+		"text": "When assessing the risk, take into account who has access to the lab, who has (physical) access to the computer hardware itself. Also consider whether data on those systems is properly backed up",
+		"answers":
+		[
+			{ "uuid": "17172079-ddce-40a7-b93a-f86dc6611452", "label": "No",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0} ] },
+			{ "uuid": "7134876a-bd96-44dd-b483-a0089bb1e5be", "label": "Yes",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0} ] }
+		]
+	},
+	{
+		"uuid": "abaf4a70-17d4-449c-9b95-5b3bcfed7e9b", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members carry data with them?",
+		"phase": 2,
+		"text": "Does anyone carry project data on laptops, USB sticks or other external media?",
+		"answers":
+		[
+			{ "uuid": "3c8f999d-c962-42a4-a7c3-05b21a4029ab", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "c9fc7d94-0f37-40af-9d12-7c828d1252fc", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "6aff9a57-acea-4f6d-ac98-9a067e03cc8e", "type": "option",
+		"precondition": "c9fc7d94-0f37-40af-9d12-7c828d1252fc",
+		"title": "Are all data carriers encrypted? Are accounts on the laptop password protected?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "546d6e41-80ea-417b-b0e3-a1d9d75a3794", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "dda8513e-431d-474e-b00d-107ae995e0ee", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.5 } ] }
+		]
+	},
+	{
+		"uuid": "84ec46bd-e714-4d98-8525-cdd0d58777ef", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members store project data in cloud accounts?",
+		"phase": 2,
+		"text": "Think about services like Dropbox, but also about Google Drive, Apple iCloud accounts, or Microsoft's Office365",
+		"answers":
+		[
+			{ "uuid": "099bfaa6-157a-49e5-8ef7-dad0876654f7", "label": "No" },
+			{ "uuid": "b5e75eac-3db1-4736-8b22-7f8ed99218ab", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "2d57daa6-df2e-4bf9-b024-710e74781d88", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do project members send project data or reports per e-mail or other messaging services?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "1846d736-7f9c-4177-9e36-308afde00a5a", "label": "No" },
+			{ "uuid": "eed11bd7-45b8-4ca7-8c46-95c3977f2c22", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "a454fffd-f4a4-426d-b758-6d70bc4ee96b", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Do all data centers where project data is stored carry sufficient certifications?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "9acf74b1-e045-477d-be96-695692bb22c3", "label": "No",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0} ] },
+			{ "uuid": "a9629ff2-30b2-4295-ae35-98320cfdb254", "label": "Yes",
+                          "metrics": [ {"uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0} ] }
+		]
+	},
+	{
+		"uuid": "39d8dad9-7666-405c-b35c-9e430c9691ed", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Are all project web services addressed via secure http (https://)?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "2b934f9d-d849-4e22-8e0c-65dbf7b9dbeb", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "bb176104-3bf1-4bc8-b8e8-a4b09e14b88c", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "dc327e53-cf4f-44e7-8e66-40ddf1b4ae0a", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Have project members been instructed about the risks (generic and specific to the project)?",
+		"phase": 2,
+		"text": "Project members may need to know about passwords (not sharing accounts, using different passwords for each service, and two factor authentication), about security for data they carry (encryption, backups), data stored in their own labs and in personal cloud accounts, and about the use of open WiFi and https",
+		"answers":
+		[
+			{ "uuid": "d802675e-f76b-4714-87ee-1b328da826ab", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "4f86bb87-06f6-4d52-a9c0-52fc97bb441c", "label": "Yes",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "67c34ee1-2e71-423c-97a7-fe6aa3723465", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Did you consider the possible impact to the project or organization if information is lost?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "4c5d329b-6e18-4f4e-92a9-f0298adf38fe", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "a8a4dc7d-bf8c-44e3-b8b2-3e04f206f460", "label": "Yes; the effect is small",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "a0ec7128-1c2d-4034-b621-211bd01a9839", "label": "Yes; the risk is acceptably low",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "928db5fa-e16f-4c28-a321-ad62e1849b90", "label": "Yes; we will need to work on this.",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.2 } ] }
+		]
+	},
+	{
+		"uuid": "a20ddc5d-e883-4bc4-9948-36a2cb477d10", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Did you consider the possible impact to the project or organization if information leaks?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "04dd5577-367f-4c34-b90c-4bc25d80c819", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "7c9c8543-b8f8-47b0-8279-757dbc14922f", "label": "Yes; the effect is small",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "6306207c-7be6-4cdf-86c4-33e0d9898479", "label": "Yes; the risk is acceptably low",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "efec7b38-d9a9-4495-8ba7-625dd7da6a09", "label": "Yes; we will need to work on this.",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.2 } ] }
+		]
+	},
+	{
+		"uuid": "8cd49d8f-9af0-4ea9-985a-5d45142ac388", "type": "option",
+		"precondition": "b2f76c0a-847a-403c-9ed6-09cad10e625e",
+		"title": "Did you consider the possible impact to the project or organization if information is vandalized?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "b4dbc287-8eed-4799-800e-5ce0ede13cd8", "label": "No",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.0 } ] },
+			{ "uuid": "ae0c3b93-f054-4052-91c0-fa9c518f5ca8", "label": "Yes; the effect is small",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] },
+			{ "uuid": "b1e1861b-b55f-406f-b915-b440c64d8747", "label": "Yes; the risk is acceptably low",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 0.8 } ] },
+			{ "uuid": "e8943baf-4c0c-4f30-8b57-88c06f3bc4ad", "label": "Yes; we will need to work on this.",
+                          "metrics": [ { "uuid": "8845fe2b-79df-4138-baea-3a035bf5e249", "measure": 1.0 } ] }
 		]
 	},
 	{

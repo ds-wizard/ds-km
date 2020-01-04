@@ -1,10 +1,422 @@
 {
-	"uuid": "c4eda690-066f-495a-8c29-8e8a258ac487",
+	"uuid": "b1df3c74-0b1f-4574-81c4-4cc2d780c1af",
 	"namespace": "core",
 	"formatversion": 2,
-	"title": "Data Capture/Measurement",
+	"title": "Creating and collecting data",
+	"text": "We will make sure that we know what data comes when, that we have adequate storage space to deal with it, and that all the responsibilities have been taken care of.",
 	"questions" :
 	[
+	{
+	    "uuid": "b08fe063-33f8-4380-b3a9-ba1e586dedf2", "type": "list",
+		"title": "What data formats/types will you be using?",
+		"phase": 1,
+		"text": "Have you identified types of data that you will use that are used by others too? Some types of data (e.g. genetic variants in the life sciences) are used by many different projects. For such data, often common standards exist that help to make these data reusable. Are you using such common data formats?",
+		"references":
+		[
+			{ "uuid": "ee5c094c-6a70-4e32-9a51-f1af339f180f", "type": "dmpbook", "chapter": "2.1" },
+			{ "uuid": "6ef479ac-8aa7-44d2-88a7-76dc7efa1b91", "type": "resourcepage", "shortuid": "njy" }
+		],
+                "integrations":
+                [
+                  { "uuid": "3a3600a1-ee0c-4702-8475-ad459c2abec3",
+                    "type": "fairsharing",
+                    "params": {},
+                    "credits": "Formats and standards from FAIRsharing"
+                  }
+                ]
+	},
+	{
+		"uuid": "ecff019a-d4e6-44c6-a8fe-c84eb15ed8b7", "type": "option",
+		"precondition": "b08fe063-33f8-4380-b3a9-ba1e586dedf2",
+		"title": "Is this a standard data format used by others too?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "52b7aba3-d809-4a30-b3f8-90caa7a32a10", "label": "No",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] },
+			{ "uuid": "d4ce2c56-b3df-4013-9220-289b28f922de", "label": "Yes", 
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "ced5a7c2-4034-4763-a1d5-3cb815cdfddb", "type": "option",
+		"precondition": "b08fe063-33f8-4380-b3a9-ba1e586dedf2",
+		"title": "Does this data format enable sharing and long term archiving?",
+		"phase": 1,
+		"text": "Complicated (binary) file formats tend to change over time, and software may not stay compatible with older versions. Also, some formats hamper long term usability by making use of patents or being hampered by restrictive licensing",
+		"answers":
+		[
+			{ "uuid": "86e547b8-e3ae-44b2-89ad-3a0d67decc56", "label": "No" },
+			{ "uuid": "985e488d-257f-479d-8113-5dcbe105a08e", "label": "Yes",
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
+		]
+	},	
+	{
+		"uuid": "bf32374c-b24e-4b03-9898-a753cff56fcf", "type": "option",
+		"precondition": "86e547b8-e3ae-44b2-89ad-3a0d67decc56",
+		"title": "Will you convert to a file format more suitable for archiving later?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "3159d107-d322-4126-958f-900fc011eeae", "label": "No", 
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] },
+			{ "uuid": "7d8dc2f5-2699-4fb3-8bf6-e620868a0583", "label": "Yes", "advice": "You may need to reserve time and budget for this",
+                          "metrics": [ { "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "5ba53879-eb48-47f2-a73b-f7f7d83bf030", "type": "option",
+	    "title": "Will you be using new types of data?",
+		"phase": 1,
+		"text": "Sometimes the type of data you collect can not be stored in a commonly used data format. In such cases you may need to make your own, keeping interoperability as high as possible.",
+		"answers":
+		[
+			{ "uuid": "c470de83-0a9b-4d7d-a2cd-903bfbedc8d1", "label": "No, all of my data will fit in common formats",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
+			{ "uuid": "bf76127e-0497-46eb-8b5d-e4cfcb84f622", "label": "Yes, I will need to use custom formats for some of my data" }
+		],
+		"references":
+		[
+			{ "uuid": "fd42abc4-5567-456b-b5b5-0ef90ab6415f", "type": "dmpbook", "chapter": "2.2" },
+			{ "uuid": "359feab2-a7ee-4d16-8ef4-6b86a7177c05", "type": "resourcepage", "shortuid": "ikk" }
+		]
+	},
+	{
+		"uuid": "ae235844-e3b6-461c-8c1d-668148dbf53b", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Will you need to add fields in your data format to a data type registry?",
+		"phase": 1,
+		"text": "Even if the data format you are using is unique to your project, the discrete data items should be reused or reusable as much as possible. Data type registries can help with that.",
+		"answers":
+		[
+			{ "uuid": "48ed91ec-5dbc-497a-9f84-f26daa60c0bd", "label": "No, all of my data types are described in a data type registry already",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
+			{ "uuid": "e4fdba2a-f6e6-4087-99a6-0e00c1bcd5f7", "label": "Yes, I will add new types to an existing data type registry",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
+			{ "uuid": "28c5197f-a3fe-4b96-b0fb-83e271155a95", "label": "Yes, I will create my own data type registry",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.5 } ] },
+			{ "uuid": "727ca842-3063-43f2-9185-99175604d5dc", "label": "I will not be using a data type registry",
+			              "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] }
+		]
+	},
+	{
+		"uuid": "7fe217e0-9af0-422f-a45b-6873f0344bcd", "type": "text",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Which data type registries will you use?",
+		"phase": 1
+	},
+	{
+		"uuid": "b211f896-b363-4978-9423-212644ff5d72", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Do you need to create vocabularies or ontologies for any of your data items?",
+		"phase": 1,
+		"text": "For good interoperability the use of controlled vocabularies for each discrete data item is advisable. If such vocabularies exist, it is best to reuse those.",
+		"answers":
+		[
+			{ "uuid": "efe50d9c-4dc2-49c5-ae61-1dc8ff0d7655", "label": "No, suitable public controlled vocabularies or ontologies exist for all of my data types",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] },
+			{ "uuid": "668ecd34-4413-4aa9-8921-616325766ec0", "label": "Yes, I will make and publish a vocabulary or ontology for some of my data",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.5 } ] },
+			{ "uuid": "fbc5f5d3-946c-4842-bed7-8afc02964b65", "label": "Not all of my discrete data items will be coming from an ontology or vocabulary",
+                          "metrics": [ {  "uuid": "2cedbdd7-9853-4a03-b095-2185031c1d85", "measure": 0.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "79c3b4ff-e265-412f-9c6d-8be6310094d1", "type": "dmpbook", "chapter": "2.2.2" },
+			{ "uuid": "d5005824-b8f2-4eb5-b3bb-d5021e1c36d8", "type": "resourcepage", "shortuid": "ske" }
+		]
+	},
+	{
+		"uuid": "a9103296-915a-4bdf-b259-116775d5e676", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "How will you design your new data format?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "bda912f3-14a7-4242-b293-025f1b19892d", "label": "There is a closely related more generic and open format that I can specialize",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.5 } ] },
+			{ "uuid": "b4334e27-3e6c-4215-b4cb-f60eabd9c61e", "label": "I will use a Linked Data format",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.8 } ] },
+			{ "uuid": "974fa3ea-4047-4006-a49c-f7972bf9c961", "label": "I will use a completely custom data format",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "88001c99-0082-4291-8c54-140f2ddc5112", "type": "dmpbook", "chapter": "2.2.3" },
+			{ "uuid": "3881e36b-e722-40a8-b79c-b150daa685bc", "type": "resourcepage", "shortuid": "jwg" }
+		]
+	},
+	{
+		"uuid": "caba60b1-57b3-4288-8d3e-aa3542c28027", "type": "option",
+		"precondition": "bf76127e-0497-46eb-8b5d-e4cfcb84f622",
+		"title": "Will you describe your new data format for others?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "057e84be-3329-4fa2-9cc8-d37f53a44cd0", "label": "No, this is not needed",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 0.0 } ] },
+			{ "uuid": "252757f4-e4ed-4c3f-8c13-b14f55133dfe", "label": "Yes, I will register my standards at a data standards registry",
+                          "metrics": [ {  "uuid": "a42bded3-a085-45f8-b384-32b4a77c8385", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "8c962e6f-17ee-4b22-8ebb-9f06f779e3b3", "type": "option",
+		"title": "How will you be storing metadata?",
+		"phase": 2,
+		"text": "For the re-usability of your data by yourself or others at a later stage, a lot of information about the data, how it was collected and how it can be used should be stored with the data. Such data about the data is called metadata, and this set of questions are about this metadata",
+		"answers":
+		[
+			{ "uuid": "6d18bfff-0f53-469b-934e-9806dda9d4fb", "label": "Explore" }
+		],
+		"references":
+		[
+			{ "uuid": "27e5a2b0-7512-47b0-bc82-2c097eb2f623", "type": "dmpbook", "chapter": "2.3" },
+			{ "uuid": "326cc8df-1902-493e-84e1-4f2a4bf93074", "type": "resourcepage", "shortuid": "rhm" }
+		]
+	},
+	{
+		"uuid": "6226d7f2-565f-4991-94b3-c00be6aca20e", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Do suitable 'Minimal Metadata About ...' (MIA...) standards exist for your experiments?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "a23664b1-a17c-41fe-855c-db274984b355", "label": "No", "advice": "Did you really check a service like fairsharing.org to verify this?",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "08bd1365-7f0e-4b78-aeb1-3c0e85e84cb6", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "2bdad98e-ef5f-4645-9ec7-bf5101e0b4c1", "type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}]
+	},
+	{
+		"uuid": "44a9d6c0-f96c-47d2-8c7a-902a9c222067", "type": "option",
+		"precondition": "a23664b1-a17c-41fe-855c-db274984b355",
+		"title": "Do you have a good idea of what metadata is needed to make it possible for others to read and interpret your data in the future?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "49e35bb1-6145-4b44-b390-9e1fe896415e", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "b3acec51-6385-43f1-a28a-123ab28b798f", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "67a39c34-fe6f-415e-93d1-998fc2911748", "type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards"}
+		]
+	},
+	{
+		"uuid": "ed872b74-6bf7-4cba-8f36-4da4509e4a4f", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Do you know how and when you will be collecting the necessary metadata?",
+		"phase": 2,
+		"text": "Often it is easiest to make sure you collect the metadata as early as possible.",
+		"answers":
+		[
+			{ "uuid": "bc41fb1c-e64b-44cd-b0d6-45aebc3a9b84", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "2fb268e0-2c25-475a-b7e1-7794a05a3091", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "cab1617b-adf5-46c0-9e55-66348e35961f", "type": "url", "weblink": "http://fairsharing.org/", "anchor": "FAIRsharing repository of standards" }
+		]
+	},
+	{
+		"uuid": "15573266-7ddf-4c6b-962e-45691d34cf61", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Will you consider re-usability of your data beyond your original purpose?",
+		"phase": 2,
+		"text": "Adding more than the strict minimum metadata about your experiment will possibly allow more wide re-use of your data, with associated higher data citation rates. Please note that it is not easy for yourself to see all other ways in which others could be reusing your data.",
+		"answers":
+		[
+			{ "uuid": "b2ca0d26-7fdd-44f1-b064-bc4cd4c45661", "label": "No, I will just document the bare minimum",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "cb765913-50c9-482e-bf10-5f5f91d0e473", "label": "Yes, I will document more metadata than needed for reproducibility" }
+		]
+	},
+	{
+		"uuid": "73bf7531-3490-4c0f-b6a2-a9f4f2bc3e1a", "type": "option",
+		"precondition": "cb765913-50c9-482e-bf10-5f5f91d0e473",
+		"title": "How will you balance the extra efforts with the potential for added reusability?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "3002eaed-c31f-4bdd-83ed-49262ae79165", "label": "I will see what I can do",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] },
+			{ "uuid": "7ef32aea-b6a7-4297-92bd-0869a13276ad", "label": "I will use preselected additional standard modules of metadata",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.8 } ] },
+			{ "uuid": "018fc8a0-c51e-48f4-99d5-77e8c9dcf51f", "label": "I will collect all metadata I can gather and document the data set beyond minimal standards",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "c961b59a-b635-4a77-87ba-bc1b449bb012", "type": "option",
+		"precondition": "cb765913-50c9-482e-bf10-5f5f91d0e473",
+		"title": "Do you need to exchange your data with others?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "c0d4739d-2694-4fe2-a6d6-d7cc073fc9eb", "label": "No" },
+			{ "uuid": "fb7addc1-c3ba-4eeb-973c-109aeef11ced", "label": "Yes" }
+		]
+	},
+	{
+		"uuid": "02b3fed1-0b50-4a80-b8b6-a225a1107022", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Did you consider how to monitor data integrity?",
+		"phase": 2,
+		"text": "Working with large amounts of heterogenous data in a larger research group has implications for the data integrity. How do you make sure every step of the workflow is done with the right version of the data? How do you handle the situation when a mistake is uncovered? Will you be able to redo the strict minimum data handling?",
+		"answers":
+		[
+			{ "uuid": "8608d3df-7d7f-4893-8f80-e5297167b213", "label": "Explore" }
+		],
+		"references":
+		[
+			{ "uuid": "2eda3f51-e6f5-40a3-b8d0-8059973320b6", "type": "dmpbook", "chapter": "2.3.1" },
+			{ "uuid": "fc0d8147-e363-44c1-ae7d-204da22f2675", "type": "resourcepage", "shortuid": "spg" }
+		]
+	},
+	{
+		"uuid": "e0759fdc-7ce9-4020-816d-73119f634c7e", "type": "option",
+		"precondition": "8608d3df-7d7f-4893-8f80-e5297167b213",
+		"title": "Will you be keeping a master list with checksums of certified/correct/canonical/verified data?",
+		"phase": 2,
+		"text": "Data corruption or mistakes can happen with large amounts of files or large files. Keeping a master list with data checksums can be helpful to prevent expensive mistakes. It can also be helpful to keep the sample list under version control forcing that all changes are well documented.",
+		"answers":
+		[
+			{ "uuid": "637f4603-0a24-47d1-a2f7-96958b4841fd", "label": "No",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "e7a8b914-54f3-4a72-9136-74a99db73926", "label": "Yes",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "acb86509-e93a-4d87-a958-74def0678e10", "type": "option",
+		"precondition": "8608d3df-7d7f-4893-8f80-e5297167b213",
+		"title": "Will you define a way to detect file or sample swaps, e.g. by measuring something independently?",
+		"phase": 2,
+		"answers":
+		[
+			{ "uuid": "4bd98e96-3d02-4967-b56b-d94a7b0079c6", "label": "No",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 0.0 } ] },
+			{ "uuid": "ec3718dd-c8f4-417d-91ca-93408fa89953", "label": "Yes",
+                          "metrics": [ {  "uuid": "0feac7e6-add4-4723-abae-be5ce7864c63", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "ae28a862-5020-44c2-8c78-3abc185b190f", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "Do all datasets you work with have a license?",
+		"phase": 1,
+		"text": "It is not always clear to everyone in the project (ad outside) what can and can not be done with a data set. It is helpful to associate each data set with a license as early as possible in the project. A data license should ideally be as free as possible: any restriction like 'only for non-commercial use' or 'attribution required' may reduce the reusability and thereby the number of citations. If possible, use a computer-readable and computer actionable license.",
+		"answers":
+		[
+			{ "uuid": "0b0e1e89-3b7b-4d9e-95f6-d96397b28c3b", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "6110d79f-1cf0-4a89-8a6d-84a472388fd8", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "0551adc9-7faa-4ddc-a07b-08fbde2a247b", "type": "option",
+		"precondition": "6110d79f-1cf0-4a89-8a6d-84a472388fd8",
+		"title": "Will you store the licenses with the data at all time?",
+		"phase": 2,
+		"text": "It is very likely that data will be moved and copied. At some point people may lose track of the origins. It can be helpful to have the licenses (of coarse as open as possible) stored in close association with the data.",
+		"answers":
+		[
+			{ "uuid": "e95aca23-fa1b-4e91-b6f3-748aed0d0925", "label": "No",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.0 } ] },
+			{ "uuid": "245e5ab0-baa7-48b3-97b8-55d2af5e4fa8", "label": "Yes",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "6b372aca-a25b-4cf6-b67f-21d03d8516f0", "type": "dmpbook", "chapter": "2.3.2" },
+			{ "uuid": "a72f329d-00bc-44a1-bfb5-f4009c548858", "type": "resourcepage", "shortuid": "atw" }
+		]
+	},
+	{
+		"uuid": "daa06d1a-6314-4c6d-93a8-69954c7f5c54", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "How will you keep provenance?",
+		"phase": 2,
+		"text": "To make your experiments reproducible, all steps in the data processing must be documented in detail. The software you used, including version number, all options and parameters. This information together for every step of the analysis is part of the so-called data provenance. There are more questions regarding this in the chapter on data processing and curation.",
+		"answers":
+		[
+			{ "uuid": "5480e0b8-8e0b-4b66-929f-eef3b89e6113", "label": "All steps will be documented in an (electronic) lab notebook",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 0.5 } ] },
+			{ "uuid": "32a1e3ef-6aa8-4eae-a517-b1dcf866d118", "label": "Our work flow system documents the provenance automatically and completely",
+                          "metrics": [ {  "uuid": "0bafe0c2-a8f2-4c74-80c8-dbf3a5b8e9b7", "measure": 1.0 } ] }
+		],
+		"references":
+		[
+			{ "uuid": "7d7b817f-9f82-4cdf-96a9-565bc67f3129", "description": "Keeping a log of every step in the analysis workflow that has been run", "target": "1991077f-04ae-4808-90a5-e4b2f82e30bf", "type": "xref" }
+		]
+	},
+	{
+		"uuid": "8e886b55-3287-48e7-b353-daf6ab40f7d8", "type": "option",
+		"precondition": "6d18bfff-0f53-469b-934e-9806dda9d4fb",
+		"title": "How will you do file naming and file organization?",
+		"phase": 2,
+		"text": "Putting some thoughts into file naming can save a lot of trouble later.",
+		"answers":
+		[
+			{ "uuid": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c", "label": "Explore" }
+		]
+	},
+	{
+		"uuid": "d4fe0b55-4aee-4d05-88d4-a3f4cad2cfa9", "type": "option",
+		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
+		"title": "Did you make a SOP (Standard Operating Procedure) for file naming?",
+		"phase": 2,
+		"text": "It can help if everyone in the project uses the same naming scheme.",
+		"answers":
+		[
+			{ "uuid": "f449e055-8f13-495c-aea9-7440800f6a45", "label": "No",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "8b13234e-879b-4221-be12-4df24e6de00e", "label": "Yes",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "9ff389f0-2236-48cf-880c-040ea1bb0d2f", "type": "text",
+		"precondition": "8b13234e-879b-4221-be12-4df24e6de00e",
+		"title": "Describe your SOP (Standard Operating Procedure) for file naming",
+                "text": "Describe how everyone in the project will be naming files and folders, and what folder structure you will use"
+	},
+	{
+		"uuid": "37d0367b-3b69-4b3e-9303-71e628b1f360", "type": "option",
+		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
+		"title": "Will you be keeping the relationships between data clear in the file names?",
+		"phase": 2,
+		"text": "Advice: Use the same identifiers for sample IDs etc throughout the entire project.",
+		"answers":
+		[
+			{ "uuid": "9beb6069-5477-4b99-b28c-921cf38e8470", "label": "No",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "8032494b-e0cb-4fe5-94e7-d8a203292537", "label": "Yes",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
+		]
+	},
+	{
+		"uuid": "7dfd022e-6d6e-4923-a81a-ca1f11024b57", "type": "option",
+		"precondition": "c05f27a2-30ac-44fd-9ac9-cd6f62b16d0c",
+		"title": "Will all the metadata in the file names also be available in the proper metadata?",
+		"phase": 2,
+		"text": "The file names are very useful as metadata for people involved in the project, but to computers they are just identifiers. To prevent accidents with e.g. renamed files metadata information should always also be available elsewhere and not only through the file name.",
+		"answers":
+		[
+			{ "uuid": "df53b7a2-1b1e-4f5d-99df-b9a7a1da91e9", "label": "No, the file names in the project are an essential part of the metadata",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 0.0 } ] },
+			{ "uuid": "2f695e7c-0661-4b43-ba55-1a82a2c706ef", "label": "Yes, all metadata is also explicitly available elsewhere",
+                          "metrics": [ {  "uuid": "8db30660-d4e5-4c0a-bf3e-553f3f0f997a", "measure": 1.0 } ] }
+		]
+	},
 	{
 		"uuid": "f5fef09d-ade5-4019-b089-f05bd89c34bc", "type": "list",
 		"title": "Please specify what data sets you will acquire using measurement equipment",
@@ -358,6 +770,21 @@
 		[
 			{ "uuid": "2bfd3b78-6013-42b3-ba13-51041aac5618", "label": "Nothing like this has ever been done before" },
 			{ "uuid": "62028d39-f35d-4b09-ad7a-a0772d45573e", "label": "Existing solutions are not suitable", "advice": "Did you consider collaborating to improve an existing solution?" }
+		]
+	},
+	{
+		"uuid": "0e810343-6026-4992-8ea0-5539cbc77093", "type": "option",
+		"title": "Will you be storing samples?",
+		"phase": 1,
+		"answers":
+		[
+			{ "uuid": "bd40f22d-6bce-464c-b525-e7813762a006", "label": "No" },
+			{ "uuid": "05873934-f03d-4d90-8bfd-291350c14673", "label": "Yes" }
+		],
+		"references":
+		[
+			{ "uuid": "21fc0d1e-bde3-4855-8f3f-0fa9454e2fa0", "type": "dmpbook", "chapter": "1.13" },
+			{ "uuid": "26fead29-e1dc-4d34-8733-01c5f6132fa0", "type": "resourcepage", "shortuid": "kuz" }
 		]
 	}
 	]
